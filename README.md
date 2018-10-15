@@ -8,25 +8,25 @@ SV thực hiện:
 1. Nguyễn Thiện Nhân 14520626
 2. Trần Minh Công 14520100
 
-# Coral Talk
+## Coral Talk
 
 ### Cài đặt 
 
-1. Cài đặt và chạy docker 
+* Cài đặt và chạy docker 
 
-2. Chạy mongodb trên docker hoặc local, để đơn giản mình chỉ hướng dẫn chạy mongodb trên docker 
+* Chạy mongodb trên docker hoặc local, để đơn giản mình chỉ hướng dẫn chạy mongodb trên docker 
 
 ```bash
     docker run -p 127.0.0.1:27017:27017 -d mongo
 ```
 
-3. Chạy redis trên docker
+* Chạy redis trên docker
 
 ```bash
     docker run -p 127.0.0.1:6379:6379 -d redis
 ```
 
-4. Tạo file cấu hình các biến môi trường, trong thư mục talk tạo file `.env` với nội dung như sau:
+* Tạo file cấu hình các biến môi trường, trong thư mục talk tạo file `.env` với nội dung như sau:
 
 ```
     NODE_ENV=production
@@ -46,19 +46,19 @@ SV thực hiện:
     NLP_URL_SERVER=http://127.0.0.1:3000/
 ```
 
-5. Cài đặt thư viện
+* Cài đặt thư viện
 
 ```shell
     npm install
 ```
 
-6. Nén file react fontend với webpack
+* Nén file react fontend với webpack
 
 ```shell
     npm run build
 ```
 
-7. Chạy ứng dụng
+* Chạy ứng dụng
 
 ```shell
     npm run watch:server
@@ -70,11 +70,11 @@ Comment với nội dung bất kỳ bot sẽ tự động phản hồi lại t�
 
 ### Kiểm thử api trả lời tự động comment
 
-1. Tắt tính năng tự động trả lời comment tức thì
+* Tắt tính năng tự động trả lời comment tức thì
 
 Trong file `comments (/xeras/congtran/talk/services/comments.js)` comment dòng 84 -> 87 (trước có dòng comment `// send reply comment`)
 
-2. Sử dụng api reply comment
+* Sử dụng api reply comment
 
 yêu cầu: cần có `id`, `asset_id` của comment sẽ reply (chú ý lấy thông tin ở terminal khi comment sẽ tự động log ra id và asset_id của comment đó)
 
