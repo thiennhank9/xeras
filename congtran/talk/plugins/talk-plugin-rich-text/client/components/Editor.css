@@ -1,0 +1,20 @@
+@custom-media --narrow-viewport (max-width: 420px);
+
+.commentContent {
+  composes: content from "./CommentContent.css";
+
+  /* Prevent zoom on narrow viewports */
+  @media (--narrow-viewport) {
+    font-size: 16px;
+  }
+}
+
+.placeholder {
+  position: absolute;
+  margin: 12px 0 0 12px;
+  color: #bbb;
+}
+
+.icon {
+  font-size: 20px;
+}

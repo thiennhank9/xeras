@@ -1,0 +1,9 @@
+.offTopic {
+  height: 100%;
+  margin-top: 10px;
+}
+
+.offTopicLabel {
+  padding: 10px 20px;
+  display: block;
+}
