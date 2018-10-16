@@ -64,9 +64,39 @@ SV thực hiện:
     npm run watch:server
 ```
 
+* Đăng ký sử dụng talk lần đầu
+
+Truy cập [http://127.0.0.1:3000/admin/install](http://127.0.0.1:3000/admin/install) và làm theo hướng dẫn
+
+* Cấp quyển truy cập cho domain
+
+Sau khi đăng ký truy cập [http://127.0.0.1:3000/admin/configure/tech](http://127.0.0.1:3000/admin/configure/tech) đăng nhập vào hệ thống, sau đó tại mục `Permitted Domains` (mục đầu tiên) điền tên domain `http://127.0.0.1:3000` vào. Sau đó chọn nút `Save Changes` bên trái.
+
+* Lấy token xác thực cho bot
+
+Gửi một Post request bằng Postman có các thuộc tính như sau
+
+```shell
+    url: http://127.0.0.1:3000/api/v1/auth/local
+    type: POST
+    headers: {
+        'Content-Type': 'application/json'
+    }
+    body: {
+        "email": "your email",
+	    "password": "your password"
+    }
+```
+
+Token được trả ở phía dưới cùng của dữ liệu trả về.
+
+* Gắn token xác thực cho bot
+
+Trong file `bots_indentify.js (/xeras/congtran/talk/services/auto_reply_comment/bots_identifi.js)` sửa thuộc tính `bot_jwt_token` thành token vừa lấy được ở trên
+
 ### Kiểm thử auto reply bot
 
-Comment với nội dung bất kỳ bot sẽ tự động phản hồi lại tức thì.
+Truy cập [http://127.0.0.1:3000/dev](http://127.0.0.1:3000/dev) comment với nội dung bất kỳ bot sẽ tự động phản hồi lại tức thì.
 
 ### Kiểm thử api trả lời tự động comment
 
