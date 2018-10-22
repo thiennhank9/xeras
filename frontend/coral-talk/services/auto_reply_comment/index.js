@@ -1,6 +1,7 @@
 const axios = require('axios');
 const bots = require('./bots_identifi');
 const config = require('../../config');
+const sampleData = require('./sampleDataTest');
 
 module.exports = {
   getComment: async comment => {
@@ -54,4 +55,15 @@ module.exports = {
 
     return comment;
   },
+  getReplyContent: comment => {
+    let replyContent = "Câu hỏi của bạn hiện chưa được hỗ trợ, vui lòng đến các cửa hàng gần nhất để được tư vấn trực tiếp!!!";
+    for (let category in sampleData) {
+      sampleData[category].Questions.every((question, index) => {
+        if (question === comment) {
+          replyContent = sampleData[category].Answers[index];
+        }
+      })
+    }
+    return replyContent;
+  }
 };
