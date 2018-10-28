@@ -58,7 +58,7 @@ module.exports = {
   getReplyContent: comment => {
     let replyContent = "Câu hỏi của bạn hiện chưa được hỗ trợ, vui lòng đến các cửa hàng gần nhất để được tư vấn trực tiếp!!!";
     for (let category in sampleData) {
-      sampleData[category].Questions.every((question, index) => {
+      sampleData[category].Questions.forEach((question, index) => {
         if (question === comment) {
           replyContent = sampleData[category].Answers[index];
         }
