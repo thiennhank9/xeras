@@ -1,0 +1,24 @@
+# For details on the syntax of docker-compose.yml files, check out:
+# https://docs.docker.com/compose/compose-file/compose-file-v2/
+
+version: '2'
+services:
+  mongo:
+    image: mongo:latest
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo:/data/db
+  redis:
+    image: redis:latest
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis:/data
+volumes:
+  mongo:
+    external: false
+  redis:
+    external: false
