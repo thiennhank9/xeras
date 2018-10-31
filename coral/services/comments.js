@@ -78,12 +78,12 @@ module.exports = {
     await incrReplyCount(comment, 1);
 
     // catch comment here
-    autoRelyComment.getComment(comment);
+    // autoRelyComment.getComment(comment);
 
     // send reply comment
     if (comment.author_id != '6e40f4dc-afe2-4895-b095-5b18cc3c6ecf') {
-      comment.content = autoRelyComment.getReplyContent(comment.body);
-      autoRelyComment.sendReplyComment(comment);
+      // comment.content = autoRelyComment.getReplyContent(comment.body);
+      // autoRelyComment.sendReplyComment(comment);
     }
     // autoRelyComment.sendReplyComment(comment);
 

@@ -29,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 $tabs = apply_filters( 'woocommerce_product_tabs', array() );
 
 if ( ! empty( $tabs ) ) : ?>
-<div>
+
 	<div class="woocommerce-tabs wc-tabs-wrapper">
 		<ul class="tabs wc-tabs" role="tablist">
 			<?php foreach ( $tabs as $key => $tab ) : ?>
@@ -44,6 +44,11 @@ if ( ! empty( $tabs ) ) : ?>
 			</div>
 		<?php endforeach; ?>
 	</div>
-	<div style='width:100%;height:300px;background-color:white;border-style:dashed;border-color:red'>CORAL TALK SHOULD BE HERE</div>
-</div>
+
+	<div id="coral_talk_stream"></div>
+	<script src="http://127.0.0.1:3000/static/embed.js" async onload="
+	Coral.Talk.render(document.getElementById('coral_talk_stream'), {
+		talk: 'http://127.0.0.1:3000/'
+	});
+	"></script>
 <?php endif; ?>

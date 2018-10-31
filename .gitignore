@@ -70,3 +70,5 @@ coral/plugins/*
 
 coral/**/node_modules/*
 coral/yarn-error.log
+
+sites/phonestore_wp/*

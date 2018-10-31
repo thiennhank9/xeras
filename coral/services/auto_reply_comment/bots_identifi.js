@@ -4,6 +4,6 @@ module.exports = [
     bot_name: 'thaanhdo111',
     bot_email: 'thaanh.do@kyanon.com',
     bot_jwt_token:
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ZTQwZjRkYy1hZmUyLTQ4OTUtYjA5NS01YjE4Y2MzYzZlY2YiLCJpYXQiOjE1Mzk1Mzk3NDksImV4cCI6MTU3MTA3NTc0OSwiYXVkIjoidGFsayIsImlzcyI6Imh0dHA6Ly8xMjcuMC4wLjE6MzAwMC8iLCJqdGkiOiJjZDUxYzRhNy01M2RmLTQ4ZmYtOWIzNS1kZDMxYzNlNTRkYjAifQ.7L0tuqZQCr0S_rWb02bPTckPmbZRO_iHgqaZNCQ_E4c',
+      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2ZTQwZjRkYy1hZmUyLTQ4OTUtYjA5NS01YjE4Y2MzYzZlY2YiLCJpYXQiOjE1NDExNzYwNzksImV4cCI6MTU3MjcxMjA3OSwiYXVkIjoidGFsayIsImlzcyI6Imh0dHBzOi8vY29yYWwtdGFsay5jb20iLCJqdGkiOiJmNjg4MGQyYS0zNTg3LTRhMTctOGZkMS1iYTZjY2YwMDNmMmUifQ.xvOyEEDV_opgcDGw0OdcD-ffmQWo5vIJA58-EvTwpLY',
   },
 ];
