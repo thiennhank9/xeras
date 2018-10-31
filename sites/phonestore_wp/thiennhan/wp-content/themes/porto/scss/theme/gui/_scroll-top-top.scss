@@ -1,0 +1,30 @@
+/* Scroll to Top */
+html {
+    #topcontrol {
+        @include transition (all 0.3s);
+        background: #404040;
+        background: rgba(64, 64, 64, 0.75);
+        border-radius: $border-base $border-base 0 0;
+        color: #FFF;
+        height: 9px;
+        padding: 7px 10px 30px;
+        #{$right}: 20px;
+        text-align: center;
+        text-decoration: none;
+        min-width: 40px;
+        z-index: 1040;
+
+        &:hover {
+            background: #404040;
+        }
+    }
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+
+    html #topcontrol {
+        display: none;
+    }
+
+}

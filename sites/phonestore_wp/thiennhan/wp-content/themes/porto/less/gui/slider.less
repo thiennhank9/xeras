@@ -1,0 +1,81 @@
+
+// Carousel
+
+.owl-item.loading,
+.yith-wcan-loading,
+.master-slider .ms-loading-container .ms-loading,
+.master-slider .ms-slide .ms-slide-loading,
+#fancybox-loading,
+.blueimp-gallery > .slides > .slide-loading,
+.slick-slider .slick-loading .slick-list,
+.ult-carousel-wrapper > div:first-child > .ult-item-wrap:first-child,
+#infscr-loading .infinite-loading,
+.loading-overlay .loader {
+    &:before {
+        border-color: @skinColor;
+    }
+}
+
+.owl-theme .owl-controls {
+    .owl-buttons {
+        div {
+            color: @skinColor;
+            &:hover {
+                color: lighten(@skinColor, 5%);
+            }
+        }
+    }
+    .owl-page.active span,
+    .owl-page:hover span{
+        background: darken(@skinColor, 6%);
+    }
+}
+
+.slick-slider {
+    .slick-dots {
+        li.slick-active,
+        li:hover {
+            i {
+                color: darken(@skinColor, 6%) !important;
+            }
+        }
+    }
+}
+
+// Master Slider
+.master-slider {
+    direction: ltr;
+
+    .ms-container {
+        .ms-nav-prev,
+        .ms-nav-next,
+        .ms-slide-vpbtn,
+        .ms-video-btn {
+            color: @skinColor;
+        }
+        .ms-bullet {
+            background: @skinColor;
+        }
+    }
+
+    .ms-slide .ms-slide-loading {
+
+        &:before {
+            border-color: @skinColor;
+        }
+    }
+}
+
+.blueimp-gallery > .prev,
+.blueimp-gallery > .next,
+.blueimp-gallery > .close,
+body .blueimp-gallery > .play-pause,
+body .blueimp-gallery-playing > .play-pause,
+body:last-child .blueimp-gallery > .play-pause,
+body:last-child .blueimp-gallery-playing > .play-pause {
+    color: @skinColor;
+
+    &:hover {
+        color: lighten(@skinColor, 10%);
+    }
+}

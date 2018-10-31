@@ -1,0 +1,46 @@
+<wpml-config>
+    <admin-texts>
+        <key name="porto_settings">
+            <key name="welcome-msg" />
+            <key name="header-copyright" />
+            <key name="menu-sidebar-title" />
+            <key name="menu-title" />
+            <key name="breadcrumbs-prefix"/>
+            <key name="footer-ribbon" />
+            <key name="blog-title" />
+            <key name="portfolio-slug-name" />
+            <key name="portfolio-name" />
+            <key name="portfolio-singular-name" />
+            <key name="portfolio-cat-slug-name" />
+            <key name="portfolio-skill-slug-name" />
+            <key name="portfolio-title" />
+            <key name="single-portfolio-title" />
+            <key name="member-slug-name" />
+            <key name="member-title" />
+            <key name="member-name" />
+            <key name="member-singular-name" />
+            <key name="member-cat-slug-name" />
+            <key name="faq-slug-name" />
+            <key name="faq-name" />
+            <key name="faq-singular-name" />
+            <key name="faq-cat-slug-name" />
+            <key name="faq-title" />
+            <key name="product-tab-title" />
+            <key name="catalog-readmore-label" />
+            <key name="header-contact-info" />
+            <key name="footer-copyright" />
+            <key name="menu-block" />
+        </key>
+    </admin-texts>
+    <custom-fields>
+        <custom-field action="translate">member_firstname</custom-field>
+        <custom-field action="translate">member_lastname</custom-field>
+        <custom-field action="translate">member_role</custom-field>
+        <custom-field action="translate">member_overview</custom-field>
+        <custom-field action="translate">portfolio_client</custom-field>
+        <custom-field action="translate">custom_tab_title1</custom-field>
+        <custom-field action="translate">custom_tab_title2</custom-field>
+        <custom-field action="translate">custom_tab_content1</custom-field>
+        <custom-field action="translate">custom_tab_content2</custom-field>
+    </custom-fields>
+</wpml-config>

@@ -1,0 +1,194 @@
+
+// Footer
+
+.footer-top {
+    background-color: @footer_top_bg_color;
+    background-repeat: @footer_top_bg_repeat;
+    background-size: @footer_top_bg_size;
+    background-attachment: @footer_top_bg_attachment;
+    background-position: @footer_top_bg_position;
+    background-image: @footer_top_bg_image;
+    .gradient(@footer_top_bg_from, @footer_top_bg_to, @footer_top_bg_gradient);
+    padding_top: @footer_top_padding_top;
+    padding_bottom: @footer_top_padding_bottom;
+}
+
+#footer {
+    background-color: @footer_bg_color;
+    background-repeat: @footer_bg_repeat;
+    background-size: @footer_bg_size;
+    background-attachment: @footer_bg_attachment;
+    background-position: @footer_bg_position;
+    background-image: @footer_bg_image;
+    color: @footer_text_color;
+    .gradient(@footer_bg_from, @footer_bg_to, @footer_bg_gradient);
+
+    p,
+    .widget > div > ul li, .widget > ul li {
+        color: @footer_text_color;
+    }
+
+    a,
+    a:hover {
+        color: @footer_link_color;
+    }
+
+    h1, h2, h3, h4, h5, h6, .widgettitle, .widget-title {
+        color: @footer_heading_color;
+
+        a {
+            color: @footer_heading_color;
+        }
+    }
+
+    .footer-ribbon {
+        background: @footer_ribbon_bg_color;
+        font-family: @alt_font_family;
+        font-weight: @alt_font_weight;
+        color: @footer_ribbon_text_color;
+
+        a,
+        a:hover,
+        a:focus {
+            color: @footer_ribbon_text_color;
+        }
+    }
+
+    .footer-ribbon:before {
+        .ribbonBorderColor() when (@rtl = 1) {
+            border-left-color: darken(@footer_ribbon_bg_color, 15%);
+        }
+        .ribbonBorderColor() when not (@rtl = 1) {
+            border-right-color: darken(@footer_ribbon_bg_color, 15%);
+        }
+        .ribbonBorderColor;
+    }
+
+    .widget {
+        .tagcloud {
+            a {
+                border-color: fade(@footer_text_color, 30%);
+
+                &:hover {
+                    border-color: @skinColor;
+                    background-color: @skinColor;
+                }
+            }
+        }
+
+        > div > ul,
+        > ul {
+            border-color: fade(@footer_text_color, 30%);
+
+            li {
+                border-color: fade(@footer_text_color, 30%);
+            }
+        }
+    }
+
+    .post-item-small {
+        border-color: fade(@footer_text_color, 30%);
+    }
+
+    .footer-bottom {
+        background-color: @footer_bottom_bg_color;
+        background-repeat: @footer_bottom_bg_repeat;
+        background-size: @footer_bottom_bg_size;
+        background-attachment: @footer_bottom_bg_attachment;
+        background-position: @footer_bottom_bg_position;
+        background-image: @footer_bottom_bg_image;
+        .gradient(@footer_bottom_bg_from, @footer_bottom_bg_to, @footer_bottom_bg_gradient);
+
+        p,
+        .widget > div > ul li, .widget > ul li {
+            color: @footer_bottom_text_color;
+        }
+
+        a,
+        a:hover {
+            color: @footer_bottom_link_color;
+        }
+    }
+
+    .widget.follow-us {
+        .share-links {
+            a {
+                background: @footer_social_bg_color;
+                color: @footer_social_link_color;
+            }
+
+            .share-twitter {
+                .socialGradient(#1aa9e1, @footer_social_bg_color);
+            }
+            .share-facebook {
+                .socialGradient(#3b5a9a, @footer_social_bg_color);
+            }
+            .share-linkedin {
+                .socialGradient(#0073b2, @footer_social_bg_color);
+            }
+            .share-rss {
+                .socialGradient(#ff8201, @footer_social_bg_color);
+            }
+            .share-googleplus {
+                .socialGradient(#dd4b39, @footer_social_bg_color);
+            }
+            .share-pinterest {
+                .socialGradient(#cc2127, @footer_social_bg_color);
+            }
+            .share-youtube {
+                .socialGradient(#c3191e, @footer_social_bg_color);
+            }
+            .share-instagram {
+                .socialGradient(#7c4a3a, @footer_social_bg_color);
+            }
+            .share-skype {
+                .socialGradient(#00b0f6, @footer_social_bg_color);
+            }
+            .share-email {
+                .socialGradient(#dd4b39, @footer_social_bg_color);
+            }
+            .share-vk {
+                .socialGradient(#6383a8, @footer_social_bg_color);
+            }
+            .share-xing {
+                .socialGradient(#1a7576, @footer_social_bg_color);
+            }
+            .share-tumblr {
+                .socialGradient(#304e6c, @footer_social_bg_color);
+            }
+            .share-reddit {
+                .socialGradient(#ff4107, @footer_social_bg_color);
+            }
+            .share-vimeo {
+                .socialGradient(#52b8ea, @footer_social_bg_color);
+            }
+            .share-whatsapp {
+                .socialGradient(#3c8a38, @footer_social_bg_color);
+            }
+        }
+    }
+
+    a.tooltip-icon {
+        border-color: @footer_link_color;
+        color: @footer_link_color;
+    }
+}
+
+.footer-wrapper {
+    &.fixed {
+        #footer {
+            .footer-bottom {
+                .backgroundOpacity(@footer_bottom_bg_color, @footer_opacity);
+            }
+        }
+    }
+}
+#footer-boxed {
+    .calcContainerWidth(@calc_footer_width);
+}
+
+html #topcontrol:hover {
+    i {
+        //color: @skinColor;
+    }
+}

@@ -1,0 +1,60 @@
+// STATES
+// -----------------------------------------------------------------------------
+.text-muted {
+    color: $color-muted !important;
+}
+
+html.dark {
+    .text-muted {
+        color: darken( $dark-default-text, 20% ) !important;
+    }
+}
+
+// COLORs
+// -----------------------------------------------------------------------------
+.text-dark {
+    color: $color-dark !important;
+    &.wpb_text_column p {
+        color: $color-dark !important;
+    }
+}
+
+.text-light {
+    color: #FFF !important;
+
+    &.wpb_text_column p {
+        color: #FFF !important;
+    }
+}
+
+// WEIGHTS
+// -----------------------------------------------------------------------------
+.text-weight-light {
+    font-weight: $font-weight-light;
+}
+
+.text-weight-normal {
+    font-weight: $font-weight-normal;
+}
+
+.text-weight-semibold {
+    font-weight: $font-weight-semibold;
+}
+
+.text-weight-bold {
+    font-weight: $font-weight-bold;
+}
+
+// TEXT OTHERS
+// -----------------------------------------------------------------------------
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}

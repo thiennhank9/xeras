@@ -1,0 +1,128 @@
+
+img {
+    @include user-select(none);
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+}
+
+.thumbnail,
+.img-thumbnail {
+    &.full {
+        width: 100%;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+
+/* Thumbnails */
+.img-thumbnail {
+    border-radius: $border-strong;
+    position: relative;
+    .zoom {
+        border-radius: 100%;
+        bottom: 4px;
+        cursor: pointer;
+        color: #FFF;
+        display: block;
+        height: 30px;
+        padding: 0;
+        position: absolute;
+        #{$right}: 4px;
+        text-align: center;
+        width: 30px;
+        @include opacity(0);
+        @include transition(all 0.3s);
+        i {
+            font-size: 14px;
+            line-height: 28px;
+        }
+    }
+    .link {
+        @include transition (all 0.3s);
+        color: #fff;
+        display: inline-block;
+        font-size: 25px;
+        height: 50px;
+        line-height: 50px;
+        position: absolute;
+        border-radius: corner-values(0 0 0 25px);
+        #{$right}: -100px;
+        text-align: center;
+        top: -100px;
+        width: 50px;
+        i {
+            font-size: 24px;
+            #{$left}: 3px;
+            position: relative;
+            top: -4px;
+        }
+    }
+    &:hover {
+        .zoom {
+            @include opacity(1);
+        }
+        .link {
+            #{$right}: 0;
+            top: 0;
+        }
+    }
+    .inner {
+        overflow: hidden;
+        position: relative;
+    }
+}
+
+.thumbnail {
+    .zoom {
+        border-radius: 100%;
+        bottom: 4px;
+        cursor: pointer;
+        color: #FFF;
+        display: block;
+        height: 30px;
+        padding: 0;
+        position: absolute;
+        #{$right}: 4px;
+        text-align: center;
+        width: 30px;
+        @include opacity(0);
+        @include transition(all 0.3s);
+        i {
+            font-size: 14px;
+            line-height: 28px;
+        }
+    }
+    &:hover {
+        .zoom {
+            @include opacity(1);
+        }
+    }
+}
+
+.gallery-row {
+    margin: 0 -4px;
+}
+
+.img-opacity-effect {
+    a {
+        img {
+            border-radius: $border-thick;
+            @include transition(opacity 0.2s ease-in-out 0s);
+            overflow: hidden;
+        }
+        img:hover {
+            @include opacity(.9);
+        }
+    }
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+
+}

@@ -1,0 +1,104 @@
+
+.mobile-hide-sidebar {
+    @media #{$screen-normal} {
+        display: none;
+    }
+}
+
+.category-filter {
+    @if $dark == 1 {
+        background: $dark-bg;
+    } @else {
+        background: #fff;
+    }
+    position: fixed;
+    height: 100%;
+    width: 260px;
+    top: 0;
+    botom: 0;
+    #{$left}: 0;
+    z-index: 100000;
+    @include transform(translate(if-ltr(-260px, 260px)));
+    @include transition(all 0.2s ease-in-out 0s);
+
+    .filter-toggle {
+        display: none;
+        cursor: pointer;
+        @if $dark == 1 {
+            background: $dark-bg;
+        } @else {
+            background: #fff;
+        }
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        #{$right}: -40px;
+        top: 0;
+        bottom: 40px;
+        margin: auto;
+        font-size: 17px;
+        line-height: 38px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: corner-values(0 $border-medium $border-medium 0);
+        border: 1px solid $input-border-color;
+        border-#{$left}-width: 0;
+        @include transition(all 0.2s ease-in-out 0s);
+
+        &:hover {
+            color: $color-dark;
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
+        }
+
+        @media #{$screen-normal} {
+            display: block;
+        }
+    }
+
+    .filter-content {
+        @media #{$screen-normal} {
+            display: block;
+            padding: 15px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            height: 100%;
+        }
+    }
+}
+
+.filter-overlay {
+    @include opacity(0);
+
+    &.active {
+        background: #000;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 99999;
+        min-height: 100vh;
+        @include opacity(0.35);
+        @include transition(opacity 0.2s ease-in-out 0s);
+    }
+}
+
+html.filter-opened {
+    overflow: hidden;
+    margin-top: 0 !important;
+    height: 100%;
+
+    body {
+        height: 100%;
+
+        > * {
+            z-index: 0;
+        }
+
+        .category-filter {
+            z-index: 100000;
+            @include transition(all 0.3s ease-in-out 0s);
+            @include transform(translate(0px));
+        }
+    }
+}

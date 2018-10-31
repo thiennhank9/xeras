@@ -1,0 +1,53 @@
+/* Loading Overlay */
+.loading-overlay-showing {
+    overflow-x: hidden;
+
+    & > .loading-overlay {
+        opacity: 1;
+        visibility: visible;
+        @include transition-delay( 0 );
+    }
+}
+
+.loading-overlay {
+    @include transition( visibility 0s ease-in-out 0.5s, opacity 0.5s ease-in-out );
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+    visibility: hidden;
+    @if $dark == 1 {
+        background: $dark-bg;
+    } @else {
+        background: #FFF;
+    }
+
+    .loader {
+        &:before {
+            content: " ";
+            display: inline-block !important;
+            border-width: 3px 5px 2px 0;
+            width: 32px;
+            height: 32px;
+            @include animate-spin;
+            border-image: none;
+            border-radius: 20px;
+            border-style: solid;
+            border-bottom-color: transparent !important;
+            vertical-align: middle;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+    }
+}
+
+body > .loading-overlay {
+    position: fixed;
+    z-index: 999999;
+}

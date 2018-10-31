@@ -1,0 +1,52 @@
+
+// Thumb
+.thumb-info {
+    .thumb-info-type {
+        background-color: @skinColor;
+    }
+    .thumb-info-action-icon {
+        background-color: @skinColor;
+    }
+    &.thumb-info-preview {
+        .preview-tip {
+            background-color: @color-primary;
+            color: @color-primary-inverse;
+            font-family: @alt_font_family;
+            &:before {
+                .previewTipBorderColor() when (@rtl = 1) {
+                    border-left-color: darken(@color-primary, 15%);
+                }
+                .previewTipBorderColor() when not (@rtl = 1) {
+                    border-right-color: darken(@color-primary, 15%);
+                }
+                .previewTipBorderColor;
+            }
+        }
+    }
+}
+
+html {
+    .for(@colors-list); .-each(@value) {
+    @name:  extract(@value, 1);
+    @color:  extract(@value, 2);
+    @color-inverse:  extract(@value, 3);
+
+    .thumb-info {
+        &.thumb-info-preview {
+            .preview-tip-@{name}{
+                background-color: @color;
+                color: @color-inverse;
+                &:before {
+                    .previewTipBorderColor1() when (@rtl = 1) {
+                        border-left-color: darken(@color, 15%);
+                    }
+                    .previewTipBorderColor1() when not (@rtl = 1) {
+                        border-right-color: darken(@color, 15%);
+                    }
+                    .previewTipBorderColor1;
+                }
+            }
+        }
+    }
+}
+}

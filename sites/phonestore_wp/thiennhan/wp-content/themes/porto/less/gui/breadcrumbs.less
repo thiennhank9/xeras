@@ -1,0 +1,60 @@
+.page-top {
+    background-color: @breadcrumbs_bg_color;
+    background-repeat: @breadcrumbs_bg_repeat;
+    background-size: @breadcrumbs_bg_size;
+    background-attachment: @breadcrumbs_bg_attachment;
+    background-position: @breadcrumbs_bg_position;
+    background-image: @breadcrumbs_bg_image;
+    .gradient(@breadcrumbs_bg_from, @breadcrumbs_bg_to, @breadcrumbs_bg_gradient);
+
+    border-top: @breadcrumbs_border_top_width solid @breadcrumbs_border_top_color;
+    border-bottom: @breadcrumbs_border_bottom_width solid @breadcrumbs_border_bottom_color;
+
+    > .container {
+        padding: @breadcrumbs_padding;
+    }
+
+    ul.breadcrumb {
+        > li {
+            color: @breadcrumbs_text_color;
+            a {
+                color: @breadcrumbs_link_color;
+            }
+        }
+    }
+
+    .yoast-breadcrumbs,
+    .breadcrumbs-wrap {
+        color: @breadcrumbs_text_color;
+        a {
+            color: @breadcrumbs_link_color;
+        }
+    }
+
+    h1 {
+        color: @breadcrumbs_title_color;
+    }
+
+    &.page-header-1 h1 {
+        margin-bottom: (-16px + @breadcrumbs_border_bottom_width);
+        padding-bottom: (17px - @breadcrumbs_border_bottom_width);
+        border-bottom: @breadcrumbs_border_bottom_width solid @skinColor;
+    }
+
+    .product-nav {
+        .product-link {
+            color: @breadcrumbs_link_color;
+        }
+        .product-popup {
+            color: @body_color;
+            &:before {
+                border-bottom-color: @skinColor;
+            }
+        }
+    }
+}
+
+#breadcrumbs-boxed {
+    .calcContainerWidth(@calc_breadcrumbs_width);
+}
+
