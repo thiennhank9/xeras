@@ -1,0 +1,31 @@
+uuid: c5fe5d38-624f-475c-82f9-c73ad11e8431
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:752181e6-1dc0-4bcd-97ce-03f2c025dcbd'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: menuwhitetopbarnotfixed
+theme: jango_sub
+region: header
+weight: -34
+provider: null
+plugin: 'block_content:752181e6-1dc0-4bcd-97ce-03f2c025dcbd'
+settings:
+  id: 'block_content:752181e6-1dc0-4bcd-97ce-03f2c025dcbd'
+  label: 'Menu White Top Bar Not Fixed'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/shop-home-2\r\n/shop-home-3\r\n/shop-home-4\r\n/shop-home-5\r\n/shop-home-6\r\n/node/117/8\r\n/node/117/9\r\n/node/117/10\r\n/node/117/11\r\n/node/117/12\r\n/node/170/header/*\r\n/node/118/*\r\n/meet-team\r\n/contact-us-2\r\n/home-version-2\r\n/home-version-3\r\n/home-version-4\r\n/home-version-5\r\n/home-version-6\r\n/home-version-7\r\n/home-version-9\r\n/home-version-10\r\n/home-version-11\r\n/home-version-12\r\n/onepage-version-*"
+    negate: true
+    context_mapping: {  }

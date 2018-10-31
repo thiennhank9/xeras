@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_list
+    - field.field.node.page.body
+    - node.type.page
+  module:
+    - user
+id: node.page.teaser_list
+targetEntityType: node
+bundle: page
+mode: teaser_list
+content: {  }
+hidden:
+  body: true
+  langcode: true
+  links: true

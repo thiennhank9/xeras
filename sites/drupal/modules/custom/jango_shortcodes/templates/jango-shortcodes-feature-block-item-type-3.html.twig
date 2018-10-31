@@ -1,0 +1,16 @@
+<div class="c-content-feature-5">
+  <div class="c-content-title-1" style="width: 175px;">
+    <h3 class="c-left c-font-dark c-font-uppercase c-font-bold">{{ label }}</h3>
+    <div class="c-line-left c-theme-bg"></div>
+  </div>
+  <div class="c-text c-font-16 c-font-sbold c-font-uppercase">{{ text|raw }}</div>
+  <a href="{{ link }}"
+     class="btn c-btn-uppercase btn-md c-btn-sbold c-btn-square c-theme-btn">
+    {% if button_label != FALSE %}
+      {{ button_label }}
+    {% else %}
+      {{ 'Purchase'|t }}
+    {% endif %}
+  </a>
+  <img class="c-photo img-responsive" style="width:60%;" src="{{ url }}" alt=""/>
+</div>

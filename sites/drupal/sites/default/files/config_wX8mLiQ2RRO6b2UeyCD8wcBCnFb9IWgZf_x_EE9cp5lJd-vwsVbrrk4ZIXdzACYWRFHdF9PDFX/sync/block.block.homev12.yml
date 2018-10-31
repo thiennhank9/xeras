@@ -1,0 +1,26 @@
+uuid: 67865ae2-08f3-446d-8bda-dfc9d4a4ed1f
+langcode: en
+status: true
+dependencies:
+  module:
+    - md_slider
+    - system
+  theme:
+    - jango_sub
+id: homev12
+theme: jango_sub
+region: header
+weight: 5
+provider: null
+plugin: 'md_slider_block:home_v12'
+settings:
+  id: 'md_slider_block:home_v12'
+  label: 'MD Slider: Home V12'
+  provider: md_slider
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/home-version-12\r\n/onepage-version-4"
+    negate: false
+    context_mapping: {  }

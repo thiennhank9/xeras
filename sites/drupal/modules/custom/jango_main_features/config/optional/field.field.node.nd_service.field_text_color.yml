@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_text_color
+    - node.type.nd_service
+id: node.nd_service.field_text_color
+field_name: field_text_color
+entity_type: node
+bundle: nd_service
+label: 'Text Color'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

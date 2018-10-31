@@ -1,0 +1,26 @@
+uuid: bddffabb-861a-4754-a09f-f9a8f8a0faed
+langcode: en
+status: true
+dependencies:
+  module:
+    - md_slider
+    - system
+  theme:
+    - jango_sub
+id: meetjango
+theme: jango_sub
+region: header
+weight: -4
+provider: null
+plugin: 'md_slider_block:meet_jango'
+settings:
+  id: 'md_slider_block:meet_jango'
+  label: 'MD Slider: Meet Jango'
+  provider: md_slider
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/170/header/*\r\n/home-version-3\r\n/onepage-version-2"
+    negate: false
+    context_mapping: {  }

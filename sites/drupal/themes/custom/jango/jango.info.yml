@@ -1,0 +1,19 @@
+name: Jango
+type: theme
+description: 'Jango is Responsive Drupal 8 Theme.'
+core: 8.x
+regions:
+  header: Header
+  highlighted: Highlighted
+  page_top: 'Page Top'
+  content: Content
+  sidebar: Sidebar
+  content_full: 'Content Full Width'
+  page_bottom: 'Page Bottom'
+  footer: Footer
+
+libraries:
+  - jango/global-styling
+  - jango/global-scripts
+stylesheets-remove:
+  - core/themes/stable/css/system/components/align.module.css

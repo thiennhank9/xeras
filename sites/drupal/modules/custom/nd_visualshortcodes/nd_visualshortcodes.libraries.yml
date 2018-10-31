@@ -1,0 +1,24 @@
+shortcodes: 
+  version: 1.0
+  css:
+    theme:
+      css/nd_visualshortcodes.css: {}
+    base:
+      css/social-icons.css: {}    
+      css/jquery.colorpicker.css: {}    
+      css/font-awesome/css/font-awesome.css: {}
+      css/nikadevs-cms-layout-builder-min-bootstrap.css: {}
+  js:
+    js/nd_visualshortcodes.js: {}
+    js/jquery-sortable.js: {}
+    js/jquery.colorpicker.js: {}
+    js/switchery.js: {}
+    js/easypaginate.js: {}
+  dependencies:
+    - core/jquery.ui
+    - core/jquery.ui.dialog
+    - core/drupal.ajax
+    - core/drupalSettings
+    - core/jquery.once
+    - core/jquery.form
+    - core/drupal.vertical-tabs

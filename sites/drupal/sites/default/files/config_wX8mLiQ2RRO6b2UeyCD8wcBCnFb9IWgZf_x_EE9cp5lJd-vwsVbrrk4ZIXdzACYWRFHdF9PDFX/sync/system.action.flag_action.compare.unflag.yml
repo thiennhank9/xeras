@@ -1,0 +1,13 @@
+uuid: 3de06b92-43e2-4052-99e8-1ca81f07fce3
+langcode: en
+status: true
+dependencies:
+  module:
+    - flag
+id: flag_action.compare.unflag
+label: 'Remove from Compare'
+type: commerce_product
+plugin: 'flag_action:compare.unflag'
+configuration:
+  flag_id: compare
+  flag_action: unflag

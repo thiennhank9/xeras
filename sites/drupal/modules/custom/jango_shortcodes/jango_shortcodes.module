@@ -1,0 +1,873 @@
+<?php
+
+use Drupal\file\Entity\File;
+use Drupal\taxonomy\Entity\Vocabulary;
+use Drupal\Core\Url;
+use Drupal\Core\Link;
+
+/**
+ * Implements hook_theme().
+ */
+function jango_shortcodes_theme() {
+  return [
+    'jango_shortcodes_menu' => [
+      'variables' => [
+        'menu' => '',
+        'width' => '',
+        'logo' => '',
+        'type' => '',
+        'class' => '',
+        'search' => '',
+        'search_block' => '',
+        'bg_color' => '',
+        'cart' => '',
+        'cart_count' => '',
+        'count_text' => '',
+        'cart_total_price' => '',
+        'cart_block' => '',
+        'login' => '',
+        'is_authenticated' => '',
+        'is_dev_host' => '',
+        'header_top' => '',
+        'header_top_menu' => '',
+        'header_top_class' => '',
+        'header_top_social_menu' => '',
+        'language' => '',
+        'lang_code' => '',
+        'site_name' => '',
+        'body_classes' => '',
+      ],
+    ],
+    'jango_shortcodes_menu_2' => [
+      'variables' => [
+        'menu' => '',
+        'width' => '',
+        'logo' => '',
+        'type' => '',
+        'class' => '',
+        'search' => '',
+        'search_block' => '',
+        'bg_color' => '',
+        'cart' => '',
+        'cart_count' => '',
+        'count_text' => '',
+        'cart_total_price' => '',
+        'cart_block' => '',
+        'login' => '',
+        'is_authenticated' => '',
+        'is_dev_host' => '',
+        'header_top' => '',
+        'header_top_menu' => '',
+        'header_top_class' => '',
+        'header_top_social_menu' => '',
+        'language' => '',
+        'lang_code' => '',
+        'site_name' => '',
+        'body_classes' => '',
+      ],
+    ],
+    'jango_shortcodes_menu_drop_down' => [
+      'variables' => [
+        'links' => '',
+      ],
+    ],
+    'jango_shortcodes_breadcrumbs' => [
+      'variables' => [],
+    ],
+    'jango_shortcodes_progress' => [
+      'variables' => [
+        'color1' => '',
+        'color2' => '',
+        'color3' => '',
+        'striped1' => '',
+        'striped2' => '',
+        'striped3' => '',
+        'percent1' => '',
+        'percent2' => '',
+        'percent3' => '',
+      ],
+    ],
+    'jango_shortcodes_accordion' => [
+      'variables' => [
+        'link_title' => '',
+        'accordion_count' => '',
+        'aria_expanded' => '',
+        'id' => '',
+        'icon' => '',
+        'title' => '',
+        'link_content' => '',
+        'style' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_pricing_table_type_1' => [
+      'variables' => [
+        'class' => '',
+        'label1' => '',
+        'label2' => '',
+        'label3' => '',
+        'label4' => '',
+        'label5' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_pricing_table_type_2' => [
+      'variables' => [
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_pricing_item_type_1' => [
+      'variables' => [
+        'class' => '',
+        'label' => '',
+        'str' => '',
+        'price' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_pricing_item_type_2' => [
+      'variables' => [
+        'lb_back' => '',
+        'color_text' => '',
+        'name' => '',
+        'price' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_slider_container_image' => [
+      'variables' => [
+        'label' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_slider_container_block' => [
+      'variables' => [
+        'text1' => '',
+        'text2' => '',
+      ],
+    ],
+    'jango_shortcodes_slider_item_image' => [
+      'variables' => [
+        'url' => '',
+        'height' => '',
+      ],
+    ],
+    'jango_shortcodes_slider_item_block' => [
+      'variables' => [
+        'block_color' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_gmap' => [
+      'variables' => [
+        'text' => '',
+        'lat' => '',
+        'lng' => '',
+        'type' => '',
+        'scrollwheel' => '',
+        'address' => '',
+      ],
+    ],
+    'jango_shortcodes_gmap_info' => [
+      'variables' => [
+        'label' => '',
+        'address' => '',
+        'contacts' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_counter' => [
+      'variables' => [
+        'text_bold' => '',
+        'background_color' => '',
+        'border_color' => '',
+        'border' => '',
+        'font_color' => '',
+        'count' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_panel' => [
+      'variables' => [
+        'type' => '',
+        'header' => '',
+        'body' => '',
+        'text' => '',
+        'footer' => '',
+      ],
+    ],
+    'jango_shortcodes_panel_box' => [
+      'variables' => [
+        'dark' => '',
+        'title' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_product_banner_image_hover_button' => [
+      'variables' => [
+        'button_link' => '',
+        'button_text' => '',
+        'height' => '',
+        'filename' => '',
+      ],
+    ],
+    'jango_shortcodes_product_banner_title_button' => [
+      'variables' => [
+        'height' => '',
+        'filename' => '',
+        'title' => '',
+        'button_link' => '',
+        'button_text' => '',
+      ],
+    ],
+    'jango_shortcodes_product_banner_image_hover_text' => [
+      'variables' => [
+        'title' => '',
+        'button_link' => '',
+        'button_text' => '',
+        'height' => '',
+        'filename' => '',
+      ],
+    ],
+    'jango_shortcodes_product_banner_promo' => [
+      'variables' => [
+        'height' => '',
+        'filename' => '',
+        'button_link' => '',
+        'button_text' => '',
+        'title' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_product_banner_image_text_image' => [
+      'variables' => [
+        'style' => '',
+      ],
+    ],
+    'jango_shortcodes_product_banner_image_text_text' => [
+      'variables' => [
+        'content_align' => '',
+        'style' => '',
+        'title' => '',
+        'text' => '',
+        'price' => '',
+        'button_link' => '',
+        'button_text' => '',
+      ],
+    ],
+    'jango_shortcodes_product_filter_rating' => [
+      'variables' => [
+        'title' => '',
+      ],
+    ],
+    'jango_shortcodes_product_filter_availability' => [
+      'variables' => [
+        'title' => '',
+      ],
+    ],
+    'jango_shortcodes_product_filter_price_from_to_textfields' => [
+      'variables' => [
+        'title' => '',
+        'currency' => '',
+      ],
+    ],
+    'jango_shortcodes_product_filter_price' => [
+      'variables' => [
+        'title' => '',
+        'currency' => '',
+        'min' => '',
+        'max' => '',
+        'price_type' => '',
+        'from' => '',
+        'to' => '',
+        'price_handle' => '',
+      ],
+    ],
+    'jango_shortcodes_modals' => [
+      'variables' => [
+        'modal_class' => '',
+        'label' => '',
+        'modal_d' => '',
+        'text' => '',
+        'footer_color' => '',
+        'link' => '',
+        'link_label' => '',
+      ],
+    ],
+    'jango_shortcodes_step_item' => [
+      'variables' => [
+        'icon' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_clients_carousel' => [
+      'variables' => [
+        'items' => '',
+      ],
+    ],
+    'jango_shortcodes_clients_block' => [
+      'variables' => [
+        'items' => '',
+      ],
+    ],
+    'jango_shortcodes_parallax_block_diagonal' => [
+      'variables' => [
+        'image' => '',
+        'content' => '',
+        'bg_color' => '',
+        'url' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_parallax_block_arrow' => [
+      'variables' => [
+        'bg_color' => '',
+        'image' => '',
+        'content' => '',
+        'url' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_parallax_block_circle' => [
+      'variables' => [
+        'image' => '',
+        'url' => '',
+        'content' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_testimonials_container_carousel' => [
+      'variables' => [
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_testimonials_container_slider' => [
+      'variables' => [
+        'title' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_testimonials_container_reviews' => [
+      'variables' => [
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_testimonials_container_arrow' => [
+      'variables' => [
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_testimonial_item_carousel' => [
+      'variables' => [
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_testimonial_item_slider' => [
+      'variables' => [
+        'url' => '',
+        'name' => '',
+        'position' => '',
+        'text' => '',
+        'author' => '',
+      ],
+    ],
+    'jango_shortcodes_testimonial_item_block' => [
+      'variables' => [
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_testimonial_item_reviews' => [
+      'variables' => [
+        'bg_type' => '',
+        'text' => '',
+        'img' => '',
+        'name' => '',
+        'position' => '',
+      ],
+    ],
+    'jango_shortcodes_testimonial_item_arrow' => [
+      'variables' => [
+        'text' => '',
+        'url' => '',
+        'font_color' => '',
+        'name' => '',
+        'position' => '',
+      ],
+    ],
+    'jango_shortcodes_tabbed_container_type_1' => [
+      'variables' => [
+        'text' => '',
+        'tabs_content' => '',
+        'url' => '',
+        'attrs' => '',
+      ],
+    ],
+    'jango_shortcodes_tabbed_container_type_2' => [
+      'variables' => [
+        'class' => '',
+        'class_ul' => '',
+        'text' => '',
+        'tabs_content' => '',
+        'attrs' => '',
+      ],
+    ],
+    'jango_shortcodes_tabbed_container_type_3' => [
+      'variables' => [
+        'bg_type' => '',
+        'text' => '',
+        'tabs_content' => '',
+        'attrs' => '',
+      ],
+    ],
+    'jango_shortcodes_tabbed_item_type_1' => [
+      'variables' => [
+        'li_class' => '',
+        'id' => '',
+        'icon' => '',
+        'label' => '',
+      ],
+    ],
+    'jango_shortcodes_tabbed_item_type_1_tabs_content' => [
+      'variables' => [
+        'class' => '',
+        'id' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_tabbed_item_type_2' => [
+      'variables' => [
+        'li_class' => '',
+        'a_class' => '',
+        'id' => '',
+        'label' => '',
+      ],
+    ],
+    'jango_shortcodes_tabbed_item_type_2_tabs_content' => [
+      'variables' => [
+        'class' => '',
+        'id' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_tabbed_item_type_3' => [
+      'variables' => [
+        'li_class' => '',
+        'id' => '',
+        'label' => '',
+      ],
+    ],
+    'jango_shortcodes_tabbed_item_type_3_tabs_content' => [
+      'variables' => [
+        'class' => '',
+        'id' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_services_item_type_1' => [
+      'variables' => [
+        'icon_type' => '',
+        'icon' => '',
+        'label' => '',
+        'description' => '',
+      ],
+    ],
+    'jango_shortcodes_services_item_type_2' => [
+      'variables' => [
+        'label' => '',
+        'description' => '',
+        'label_2' => '',
+        'description_2' => '',
+        'label_3' => '',
+        'description_3' => '',
+        'label_4' => '',
+        'description_4' => '',
+      ],
+    ],
+    'jango_shortcodes_services_item_type_3' => [
+      'variables' => [
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_breadcrumb' => [
+      'variables' => [
+        'title' => '',
+        'subtitle' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_heading' => [
+      'variables' => [
+        'label_align' => '',
+        'color' => '',
+        'class' => '',
+        'icon' => '',
+        'tag' => 'h3',
+        'title' => '',
+        'line_classes' => '',
+        'description' => '',
+      ],
+    ],
+    'jango_shortcodes_content_bar' => [
+      'variables' => [
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_feature_block_item_type_1' => [
+      'variables' => [
+        'icon' => '',
+        'label' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_feature_block_item_type_3' => [
+      'variables' => [
+        'label' => '',
+        'text' => '',
+        'link' => '',
+        'button_label' => '',
+        'url' => '',
+      ],
+    ],
+    'jango_shortcodes_feature_block_item_type_4' => [
+      'variables' => [
+        'icon' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_feature_block_item_type_5_right' => [
+      'variables' => [
+        'icon' => '',
+        'text' => '',
+        'border' => '',
+      ],
+    ],
+    'jango_shortcodes_feature_block_item_type_5_left' => [
+      'variables' => [
+        'icon' => '',
+        'text' => '',
+        'border' => '',
+      ],
+    ],
+    'jango_shortcodes_feature_block_item_type_6_right' => [
+      'variables' => [
+        'icon' => '',
+        'text' => '',
+        'border' => '',
+      ],
+    ],
+    'jango_shortcodes_feature_block_item_type_6_left' => [
+      'variables' => [
+        'icon' => '',
+        'text' => '',
+        'border' => '',
+      ],
+    ],
+    'jango_shortcodes_feature_block_item_type_7_right' => [
+      'variables' => [
+        'bg_color' => '',
+        'icon' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_feature_block_item_type_7_left' => [
+      'variables' => [
+        'bg_color' => '',
+        'icon' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_feature_block_item_type_8' => [
+      'variables' => [
+        'icon' => '',
+        'class' => '',
+        'text' => '',
+      ],
+    ],
+    'jango_shortcodes_animated_progress_bar_not_line' => [
+      'variables' => [
+        'bg_type' => '',
+        'font_color' => '',
+        'type_bar' => '',
+        'stroke_width' => '',
+        'percent' => '',
+        'data' => '',
+        'animation_stroke' => '',
+        'icon' => '',
+        'description' => '',
+      ],
+    ],
+    'jango_shortcodes_animated_progress_bar' => [
+      'variables' => [
+        'icon' => '',
+        'font_color' => '',
+        'description' => '',
+        'bg_type' => '',
+        'line_width' => '',
+        'percent' => '',
+        'data' => '',
+        'animation_stroke' => '',
+      ],
+    ],
+    'jango_shortcodes_twitter' => [
+      'variables' => [
+        'text' => '',
+        'url' => '',
+        'bg' => '',
+        'limit' => '',
+      ],
+    ],
+    'jango_shortcodes_app_showcase_bg_type_1' => [
+      'variables' => [
+        'path_to_theme' => '',
+        'url' => '',
+        'label' => '',
+        'description' => '',
+        'label2' => '',
+        'description2' => '',
+        'label3' => '',
+        'description3' => '',
+        'label4' => '',
+        'description4' => '',
+      ],
+    ],
+    'jango_shortcodes_app_showcase' => [
+      'variables' => [
+        'path_to_theme' => '',
+        'url' => '',
+        'label' => '',
+        'description' => '',
+        'label2' => '',
+        'description2' => '',
+        'label3' => '',
+        'description3' => '',
+        'label4' => '',
+        'description4' => '',
+      ],
+    ],
+  ];
+}
+
+/**
+ * @param $string
+ * @return mixed
+ */
+function restore_html_string($string) {
+  return str_replace(['|LS|', '|RS|', '|LF|', '|RF|', '|{', '|}'], ['[', ']', '{', '}', '<', '>'], $string);
+}
+
+/**
+ * @return array
+ */
+function return_taxonomy_vocabularies() {
+  $array = [];
+  foreach (Vocabulary::loadMultiple() as $vocabulary) {
+    $array[$vocabulary->get('vid')] = $vocabulary->get('name');
+  }
+  return $array;
+}
+
+/**
+ * @param string $class
+ * @return array
+ */
+function _jango_shortcodes_body_class($class = '') {
+  static $classes;
+  $classes = empty($classes) ? [] : $classes;
+  $classes[] = $class;
+  return $classes;
+}
+
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function jango_theme_registry_alter(&$theme_registry) {
+  $theme_registry['menu']['variables']['sub_class'] = '';
+}
+
+/**
+ * @param $menu_name
+ * @param string $class
+ * @param string $id
+ * @return mixed|null
+ */
+function render_menu($menu_name, $class = '', $id = '') {
+  $menu_tree = \Drupal::menuTree();
+  // Build the typical default set of menu tree parameters.
+  $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+  // Load the tree based on this set of parameters.
+  $tree = $menu_tree->load($menu_name, $parameters);
+  // Transform the tree using the manipulators you want.
+  $manipulators = [
+    // Only show links that are accessible for the current user.
+    ['callable' => 'menu.default_tree_manipulators:checkAccess'],
+    // Use the default sorting of menu links.
+    ['callable' => 'menu.default_tree_manipulators:generateIndexAndSort'],
+  ];
+  $tree = $menu_tree->transform($tree, $manipulators);
+
+  // Finally, build a renderable array from the transformed tree.
+  $menu = $menu_tree->build($tree);
+  if (!empty($class)) {
+    $menu['#attributes']['class'] = is_array($class) ? $class : explode(' ', $class);
+  }
+  if (!empty($id)) {
+    $menu['#attributes']['id'] = $id;
+  }
+
+  return \Drupal::service('renderer')->render($menu);
+}
+
+/**
+ * @param $attrs
+ * @return string
+ */
+function _jango_shortcodes_shortcode_attributes($attrs) {
+  if (empty($attrs)) {
+    return '';
+  }
+  $allowed_attributes = [
+    'class' => 'class',
+    'href' => 'href',
+    'id' => 'id',
+    'animation' => 'class',
+    'animation_delay' => 'data-wow-delay',
+    'data-background' => 'data-background',
+    'data-uri' => 'data-uri',
+    'style' => 'style',
+    'extra_style' => 'style',
+    'align' => 'align',
+    'target' => 'target',
+    'font' => 'class',
+    'data_height' => 'data-auto-height',
+  ];
+  $attrs['class'] = isset($attrs['class']) ? $attrs['class'] : '';
+  $attrs['class'] = $attrs['class'] . (isset($attrs['extra_classes']) ? ' ' . $attrs['extra_classes'] : '');
+  if (isset($attrs['link']) && $attrs['link'] == \Drupal::service('path.current')->getPath()
+  ) {
+    $attrs['class'] = $attrs['class'] . ' active';
+  }
+  if (isset($attrs['animation']) && $attrs['animation']) {
+    $attrs['class'] = $attrs['class'] . ' wow';
+  }
+  if (isset($attrs['animation_delay']) && $attrs['animation_delay']) {
+    $attrs['animation_delay'] = number_format($attrs['animation_delay'] / 1000, 2) . 's';
+  }
+
+  $output = '';
+  $attrs_array = ['class' => ''];
+  foreach ($attrs as $name => $value) {
+    $value = trim($value);
+    if (strpos($name, 'style_') === 0) {
+      $value_style = str_replace(['style_', '_'], ['', '-'], $name);
+      if (strpos($value_style, '-radius') !== FALSE) {
+        $value = strpos($value, '%') !== FALSE ? $value : (int) $value . 'px;';
+        $value = '-webkit-' . $value_style . ': ' . $value . '; -moz-' . $value_style . ': ' . $value . '; ' . $value_style . ': ' . $value . '';
+      }
+      elseif (strpos($name, 'margin') !== FALSE || strpos($name, 'padding') !== FALSE || strpos($name, 'width') !== FALSE || strpos($name, 'height') !== FALSE) {
+        $value = strpos($value, '%') !== FALSE ? $value : (int) $value . 'px;';
+        $value = $value_style . ': ' . $value;
+      }
+      elseif (strpos($name, 'color') !== FALSE) {
+        $value = $value_style . ': #' . trim($value, '#') . ';';
+      }
+      elseif (strpos($value_style, 'image') !== FALSE) {
+        $file = File::load($value);
+        $filename = $file ? file_create_url($file->getFileUri()) : '';
+        $value = $value_style . ': url("' . $filename . '");';
+      }
+      else {
+        $value = $value_style . ': ' . $value . ';';
+      }
+      $name = 'style';
+    }
+    if (isset($allowed_attributes[$name])) {
+      $name = $allowed_attributes[$name];
+      if ($value !== '') {
+        $attrs_array[$name] = (isset($attrs_array[$name]) ? $attrs_array[$name] . ' ' : '') . $value;
+      }
+    }
+    elseif (strpos($name, 'data-') === 0) {
+      if ($value !== '') {
+        $attrs_array[$name] = (isset($attrs_array[$name]) ? $attrs_array[$name] . ' ' : '') . $value;
+      }
+    }
+  }
+  $attrs_array['class']  = isset($attrs_array['class'] ) ? $attrs_array['class']  : '';
+  if (isset($attrs['style_background_color']) && strtolower(trim($attrs['style_background_color'], '#')) == '000000') {
+    $attrs_array['class'] = $attrs_array['class'] . ' text-white';
+  }
+  if (isset($attrs['style_background_color']) && strtolower(trim($attrs['style_background_color'], '#')) == 'ffffff') {
+    $attrs_array['class'] = $attrs_array['class'] . ' text-black';
+  }
+  if (isset($attrs['text_align']) && $attrs['text_align']) {
+    $attrs_array['style'] = (isset($attrs_array['style']) ? $attrs_array['style'] : '') . ' text-align:' . $attrs['text_align'] . ';';
+    $attrs_array['class'] = $attrs_array['class'] . ' text-center';
+  }
+
+  foreach ($attrs_array as $name => $value) {
+    if ($value) {
+      $output .= " $name = '$value'";
+    }
+  }
+  return $output;
+}
+
+/**
+ * @param string $image
+ * @param int $collect
+ * @return array|string
+ */
+function _jango_shortcodes_shortcode_slider_pager_image($image = '', $collect = 0) {
+  static $pager;
+  $return = '';
+  if (!$pager) {
+    $pager = [];
+  }
+  if ($image) {
+    $pager[] = $image;
+  }
+  else {
+    $return = $pager;
+    $pager = [];
+  }
+  return $return;
+}
+
+/**
+ * @param $menu_items
+ * @return array
+ */
+function _jango_shortcodes_simple_menu($menu_items) {
+  $links = ['<li class="expanded c-dropdown"><a href="#" class="c-toggler">' . t('No menu') . '</a></li>'];
+  if (is_array($menu_items) && !empty($menu_items)) {
+    global $links;
+    foreach ($menu_items as $item) {
+      // Fix for external links
+      $link_url = $item['url']->isExternal() ? Url::fromUri($item['url']->getUri(), $item['url']->getOptions()) : Url::fromRoute($item['url']->getRouteName(), $item['url']->getRouteParameters(), $item['url']->getOptions());
+      if (!empty($item['below'])) {
+        $link_options = [
+          'attributes' => [
+            'class' => ['c-toggler'],
+          ],
+        ];
+        $link_url->setOptions($link_options);
+        $icon_text = t($item['title'] . '<span class="c-arrow"></span>');
+        $generated_link = \Drupal::service('link_generator')
+          ->generate($icon_text, $link_url)
+          ->getGeneratedLink();
+        $links[] = '<li class="expanded c-dropdown">' . $generated_link . '<ul class="c-dropdown-menu">';
+        _jango_shortcodes_simple_menu($item['below']);
+        $links[] = '</ul></li>';
+      }
+      else {
+        $link = Link::fromTextAndUrl($item['title'], $link_url)->toRenderable();
+        $links[] = '<li>' . render($link) . '</li>';
+      }
+    }
+  }
+  return [
+    '#theme' => 'jango_shortcodes_menu_drop_down',
+    '#links' => $links,
+  ];
+
+}

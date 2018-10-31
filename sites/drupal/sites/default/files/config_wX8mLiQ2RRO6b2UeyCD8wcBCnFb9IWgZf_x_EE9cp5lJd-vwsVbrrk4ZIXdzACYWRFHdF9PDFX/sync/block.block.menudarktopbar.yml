@@ -1,0 +1,31 @@
+uuid: c8d37ba7-83d1-42a1-8e2c-e0d4afed8fcf
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:9f9e5be7-74e1-46fe-a36e-5942986aa63f'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: menudarktopbar
+theme: jango_sub
+region: header
+weight: -26
+provider: null
+plugin: 'block_content:9f9e5be7-74e1-46fe-a36e-5942986aa63f'
+settings:
+  id: 'block_content:9f9e5be7-74e1-46fe-a36e-5942986aa63f'
+  label: 'Menu Dark Top Bar'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/170/header/v5-extended
+    negate: false
+    context_mapping: {  }

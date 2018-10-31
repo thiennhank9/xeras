@@ -1,0 +1,21 @@
+uuid: 9ab22662-ff4d-4522-9977-e66d9e3395e6
+langcode: en
+status: false
+dependencies:
+  module:
+    - commerce_cart
+  theme:
+    - jango_sub
+id: cart
+theme: jango_sub
+region: footer
+weight: 0
+provider: null
+plugin: commerce_cart
+settings:
+  id: commerce_cart
+  label: Cart
+  provider: commerce_cart
+  label_display: '0'
+  dropdown: true
+visibility: {  }

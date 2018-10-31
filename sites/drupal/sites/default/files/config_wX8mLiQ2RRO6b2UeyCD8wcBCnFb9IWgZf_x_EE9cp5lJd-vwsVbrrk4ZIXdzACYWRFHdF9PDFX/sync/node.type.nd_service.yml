@@ -1,0 +1,17 @@
+uuid: c4c2625d-876b-43e1-9aca-b5fdc9a71992
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus: {  }
+    parent: ''
+name: Service
+type: nd_service
+description: ''
+help: ''
+new_revision: false
+preview_mode: 0
+display_submitted: false

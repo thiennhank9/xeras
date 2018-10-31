@@ -1,0 +1,46 @@
+<!-- Navigation panel -->
+<nav class="main-nav {{ color }}">
+  <div class="full-wrapper relative clearfix">
+    <!-- Logo ( * your text or image into link tag *) -->
+    <div class="nav-logo-wrap local-scroll">
+      <a href="{{ url('<front>') }}" class="logo">
+          <img src="{{ logo }}" alt="{{ site_name }}" title = "{{ site_name }}" />
+      </a>
+    </div>
+    <div class="mobile-nav">
+        <i class="fa fa-bars"></i>
+    </div>
+    
+    <!-- Main Menu -->
+    <div class="inner-nav desktop-nav">
+      <ul class="clearlist">
+        {{ menu }}
+        <li><a style="height: 75px; line-height: 75px;">&nbsp;</a></li>
+        {% if search %}
+          <li class="search-dropdown-list mega-align-right">
+            <a href="#" class="mn-has-sub" style="height: 75px; line-height: 75px;"><i class="fa fa-search"></i> {{ 'Search'|t }}</a>
+            <ul class="mn-sub" style="display: none;">
+              <li>
+                <div class="mn-wrap">
+                  {{ search }}
+                </div>
+              </li>
+            </ul>
+          </li>
+        {% endif %}
+        {% if cart %}
+          <li>
+            <a href="{{ url('cart') }}" style="height: 75px; line-height: 75px;"><i class="fa fa-shopping-cart"></i> {{ 'Cart'|t }} </a>
+          </li>
+        {% endif %}
+        {% if language %}
+          <li>
+            <a href="#" style="height: 75px; line-height: 75px;" class = "mn-has-sub">{{ lang_code }} <i class="fa fa-angle-down"></i></a>
+            {{ language }}
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+    <!-- End Main Menu -->
+  </div>
+</nav>

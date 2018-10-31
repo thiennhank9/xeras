@@ -1,0 +1,24 @@
+ar:
+  talk-plugin-google-auth:
+    sign_in: "تسجيل الدخول عبر حساب جوجل"
+    sign_up: "اشترك عبر حساب جوجل"
+en:
+  talk-plugin-google-auth:
+    sign_in: "Sign in with Google"
+    sign_up: "Sign up with Google"
+es:
+  talk-plugin-google-auth:
+    sign_in: "Entrar con Google"
+    sign_up: "Registrarse con Google"
+fr:
+  talk-plugin-google-auth:
+    sign_in: "Connectez-vous avec Google"
+    sign_up: "Inscrivez-vous avec Google"
+zh_CN:
+  talk-plugin-google-auth:
+    sign_in: "使用 Google 帐号"
+    sign_up: "使用 Google 帐号"
+zh_TW:
+  talk-plugin-google-auth:
+    sign_in: "使用 Google 帳號"
+    sign_up: "使用 Google 帳號"

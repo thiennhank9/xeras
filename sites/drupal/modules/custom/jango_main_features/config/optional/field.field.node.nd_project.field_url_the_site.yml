@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_url_the_site
+    - node.type.nd_project
+id: node.nd_project.field_url_the_site
+field_name: field_url_the_site
+entity_type: node
+bundle: nd_project
+label: 'URL the site'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

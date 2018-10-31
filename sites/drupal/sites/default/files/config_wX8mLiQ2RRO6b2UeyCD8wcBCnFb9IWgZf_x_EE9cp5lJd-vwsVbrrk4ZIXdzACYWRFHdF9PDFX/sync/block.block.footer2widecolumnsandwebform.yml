@@ -1,0 +1,31 @@
+uuid: 53ce931d-fa9a-4c2b-b487-86515c4a8dce
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ae3eec3a-1774-4f13-8c2a-1e9f7012fb7b'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: footer2widecolumnsandwebform
+theme: jango_sub
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:ae3eec3a-1774-4f13-8c2a-1e9f7012fb7b'
+settings:
+  id: 'block_content:ae3eec3a-1774-4f13-8c2a-1e9f7012fb7b'
+  label: 'Footer: 2 Wide Columns and WebForm'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /onepage-version-6
+    negate: false
+    context_mapping: {  }

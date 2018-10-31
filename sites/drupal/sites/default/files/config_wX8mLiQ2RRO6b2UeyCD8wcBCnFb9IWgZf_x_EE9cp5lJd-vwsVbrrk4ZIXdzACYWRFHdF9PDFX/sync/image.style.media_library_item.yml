@@ -1,0 +1,17 @@
+uuid: 20b03a32-c51b-4aaa-8830-56b4f124779f
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: F3Ml590Rq0UwO56YFDW15CyIpuEI_P91RDf1iHyyr1U
+name: media_library_item
+label: 'Media library item'
+effects:
+  4d207f58-9aeb-4cc2-9e68-b73febc92d5c:
+    uuid: 4d207f58-9aeb-4cc2-9e68-b73febc92d5c
+    id: image_scale
+    weight: 1
+    data:
+      width: 100
+      height: 100
+      upscale: true

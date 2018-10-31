@@ -1,0 +1,13 @@
+uuid: a680d2ea-e085-45ff-80f2-c1d8a3fcabd4
+langcode: en
+status: true
+dependencies:
+  module:
+    - flag
+id: flag_action.compare.flag
+label: 'Add to Compare'
+type: commerce_product
+plugin: 'flag_action:compare.flag'
+configuration:
+  flag_id: compare
+  flag_action: flag

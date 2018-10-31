@@ -1,0 +1,26 @@
+uuid: fef4ede6-2b0c-4d7b-a0c6-a07d15bf24e2
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - file
+id: pathauto_files
+label: 'Pathauto Files'
+type: 'canonical_entities:file'
+pattern: 'files/[file:name]'
+selection_criteria:
+  72426d97-eac3-4bb6-aa38-2d1640242745:
+    id: 'entity_bundle:file'
+    bundles:
+      audio: audio
+      document: document
+      image: image
+      video: video
+    negate: false
+    context_mapping:
+      file: file
+    uuid: 72426d97-eac3-4bb6-aa38-2d1640242745
+selection_logic: and
+weight: -5
+relationships: {  }

@@ -1,0 +1,16 @@
+<div class="owl-wrapper" data-slider="owl">
+  <div class="owl-carousel owl-theme c-theme owl-bordered1 c-owl-nav-center" data-items="6" data-desktop-items="4"
+       data-desktop-small-items="3" data-tablet-items="3" data-mobile-small-items="2" data-slide-speed="5000">
+
+    {% for item in items %}
+
+      <div class="item">
+        <a href="{{ item.href }}">
+          <img src="{{ item.src }}" alt="Carousel item"/>
+        </a>
+      </div>
+
+    {% endfor %}
+
+  </div>
+</div>

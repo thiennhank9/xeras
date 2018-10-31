@@ -1,0 +1,53 @@
+{% for id, row in layout.rows %}
+
+    {% if row.settings.tag is defined %}
+      {% if row.settings.tag == 'none' %}
+          {% set tag = '' %}
+      {% else %}
+          {% set tag = row.settings.tag %}
+      {% endif %}
+    {% else %}
+        {% set tag = '' %}
+    {% endif %}
+
+    {% if tag %}
+        <{{ tag }} class="{{ row.wrap.attributes.class|join(' ') }}" style="{{ row.wrap.attributes.style }}">
+    {% endif %}
+
+    {% if row.settings.full_width is defined %}
+        {% set container_class = '-fluid' %}
+    {% else %}
+        {% set container_class = '' %}
+    {% endif %}
+
+      <div class="container{{ container_class }}">
+
+        <div id="{{ row.attributes.id }}" class="{{ row.attributes.class|join(' ') }} {{ row.settings.class|join(' ') }}">
+
+          {% for region_key, region in layout.regions %}
+
+            {% if id == region.row_id and region.content is not empty %}
+
+              {% if region.settings.tag %}
+                <{{ region.settings.tag }} id="{{ region.attributes.id }}" class="{{ region.attributes.class|join(' ') }}" style="{{ region.attributes.style }}">
+              {% endif %}
+
+                {{ region.content }}
+
+              {% if region.settings.tag %}
+                </{{ region.settings.tag }}>
+              {% endif %}
+
+            {% endif %}
+
+          {% endfor %}
+
+        </div>
+
+      </div>
+
+    {% if tag %}
+        </{{ tag }}>
+    {% endif %}
+
+{% endfor %}

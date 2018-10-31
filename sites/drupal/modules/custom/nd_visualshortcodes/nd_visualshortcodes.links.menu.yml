@@ -1,0 +1,5 @@
+nd_visualshortcodes.settings:
+  title: 'Visual shortcodes'
+  parent: system.admin_config_content
+  description: 'Visual shortcodes settings'
+  route_name: nd_visualshortcodes.settings

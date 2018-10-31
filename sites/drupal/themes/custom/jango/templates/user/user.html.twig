@@ -1,0 +1,59 @@
+{#
+/**
+ * @file
+ * Default theme implementation to present all user data.
+ *
+ * This template is used when viewing a registered user's page,
+ * e.g., example.com/user/123. 123 being the user's ID.
+ *
+ * Available variables:
+ * - content: A list of content items. Use 'content' to print all content, or
+ *   print a subset such as 'content.field_example'. Fields attached to a user
+ *   such as 'user_picture' are available as 'content.user_picture'.
+ * - attributes: HTML attributes for the container element.
+ * - user: A Drupal User entity.
+ *
+ * @see template_preprocess_user()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% set current = url('<current>')['#markup'] %}
+{% set user_page = path('entity.user.canonical', {'user': user.id}) %}
+
+{% if user_page in current %}
+
+  {% set username = user.name.value %}
+  <div class="c-content-title-1">
+    <h3 class="c-font-uppercase c-font-bold">{{ 'My Dashboard'|t }}</h3>
+    <div class="c-line-left"></div>
+    <p>
+      {{ 'Hello'|t }}
+      <a href="{{ path('entity.user.canonical', {'user': user.id}) }}" class="c-theme-link">{{ username }}</a>
+      ({{ 'not'|t }}
+      <a href="{{ path('entity.user.canonical', {'user': user.id}) }}" class="c-theme-link">{{ username }}</a>?
+      <a href="{{ url('user.logout') }}" class="c-theme-link">{{ 'Sign out'|t }}</a>).
+      <br>
+    </p>
+  </div>
+  <article{{ attributes.addClass('profile', 'row') }}>
+    <div class="col-md-6 col-sm-6 col-xs-12 c-margin-b-20">
+      <h3 class="c-font-uppercase c-font-bold">{{ username }}</h3>
+      {% if content %}
+        {{ content|without('user_picture', 'member_for') }}
+      {% endif %}
+    </div>
+  </article>
+
+{% else %}
+
+  <article{{ attributes }}>
+    {% if content %}
+      <div style="width: 50px;">
+        {{- content -}}
+      </div>
+    {% endif %}
+  </article>
+
+{% endif %}

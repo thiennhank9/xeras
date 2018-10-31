@@ -1,0 +1,101 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - editor
+    - entity_embed
+    - shortcode
+name: 'Full HTML'
+format: full_html
+weight: -6
+filters:
+  filter_align:
+    id: filter_align
+    provider: filter
+    status: true
+    weight: 8
+    settings: {  }
+  filter_caption:
+    id: filter_caption
+    provider: filter
+    status: true
+    weight: 9
+    settings: {  }
+  filter_htmlcorrector:
+    id: filter_htmlcorrector
+    provider: filter
+    status: true
+    weight: 10
+    settings: {  }
+  editor_file_reference:
+    id: editor_file_reference
+    provider: editor
+    status: true
+    weight: 11
+    settings: {  }
+  entity_embed:
+    id: entity_embed
+    provider: entity_embed
+    status: true
+    weight: 0
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: false
+    weight: -10
+    settings:
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type> <li> <dl> <dt> <dd> <h2 id> <h3 id> <h4 id> <h5 id> <h6 id> <drupal-entity data-entity-type data-entity-uuid data-view-mode data-entity-embed-display data-entity-embed-display-settings data-align data-caption data-embed-button> <s> <sup> <sub> <img src alt data-entity-type data-entity-uuid data-align data-caption> <table> <caption> <tbody> <thead> <tfoot> <th> <td> <tr> <hr> <p> <h1> <pre>'
+      filter_html_help: true
+      filter_html_nofollow: false
+  shortcode:
+    id: shortcode
+    provider: shortcode
+    status: false
+    weight: 0
+    settings:
+      nd_quote: '1'
+      row: '1'
+      nd_save: '1'
+      nd_progress: '1'
+      nd_pricing_table: '1'
+      nd_message: '1'
+      nd_node: '1'
+      nd_pricing_item: '1'
+      nd_slider: '1'
+      nd_slider_item: '1'
+      nd_title: '1'
+      nd_video: '1'
+      nd_view: '1'
+      nd_text_n_tooltip: '1'
+      nd_text_rotator: '1'
+      nd_tabs: '1'
+      nd_tab: '1'
+      nd_menu: '1'
+      nd_image: '1'
+      nd_chartpieitem: '1'
+      nd_chartpie: '1'
+      col: '1'
+      nd_button: '1'
+      nd_block: '1'
+      nd_accordions: '1'
+      nd_bg: '1'
+      nd_container: '1'
+      nd_counter: '1'
+      nd_hr: '1'
+      html: '1'
+      nd_icon: '1'
+      nd_header: '1'
+      nd_gmap: '1'
+      nd_div: '1'
+      nd_feature: '1'
+      nd_accordion: '1'
+      link: '1'
+      quote: '1'
+      random: '1'
+      item: '1'
+      img: '1'
+      clear: '1'
+      dropcap: '1'
+      highlight: '1'
+      button: '1'

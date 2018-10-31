@@ -1,0 +1,11 @@
+{%
+  set classes = [
+    'x11',
+  ]
+%}
+
+<ul {{ attributes.addClass(classes) }}>
+  {% for row in rows %}
+    {{ row }}
+  {% endfor %}
+</ul>

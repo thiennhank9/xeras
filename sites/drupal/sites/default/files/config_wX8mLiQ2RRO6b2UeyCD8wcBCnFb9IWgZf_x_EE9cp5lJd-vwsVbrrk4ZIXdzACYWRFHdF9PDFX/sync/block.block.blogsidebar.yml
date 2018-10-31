@@ -1,0 +1,31 @@
+uuid: 19cd9005-bd34-4063-a648-73ee701cff3f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:5a2ab80f-b330-4fb0-8ba9-0fb41fa83c11'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: blogsidebar
+theme: jango_sub
+region: sidebar
+weight: -35
+provider: null
+plugin: 'block_content:5a2ab80f-b330-4fb0-8ba9-0fb41fa83c11'
+settings:
+  id: 'block_content:5a2ab80f-b330-4fb0-8ba9-0fb41fa83c11'
+  label: 'Blog Sidebar'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/blog/*\r\n/blog-list-view\r\n/blog-grid-view"
+    negate: false
+    context_mapping: {  }

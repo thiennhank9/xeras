@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: product__600x450_
+label: 'Product (600x450)'
+effects:
+  8e27663c-c11a-423e-8605-40a96c1e8e2b:
+    uuid: 8e27663c-c11a-423e-8605-40a96c1e8e2b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 450

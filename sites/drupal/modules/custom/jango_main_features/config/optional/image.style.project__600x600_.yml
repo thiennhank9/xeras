@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: project__600x600_
+label: 'Project (600x600)'
+effects:
+  f0485b98-76de-4a96-9660-e319d051a4ef:
+    uuid: f0485b98-76de-4a96-9660-e319d051a4ef
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 600

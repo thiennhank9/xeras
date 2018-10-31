@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: project__900x900_
+label: 'Project (900x900)'
+effects:
+  1fb5e085-ee72-4abd-a88c-9c29d15786bb:
+    uuid: 1fb5e085-ee72-4abd-a88c-9c29d15786bb
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 900
+      height: 900

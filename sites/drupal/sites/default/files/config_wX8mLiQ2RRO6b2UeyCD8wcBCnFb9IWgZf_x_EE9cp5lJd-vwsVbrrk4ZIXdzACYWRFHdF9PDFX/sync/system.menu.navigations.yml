@@ -1,0 +1,8 @@
+uuid: 093b3986-77f7-424e-9164-f2e43036b8b3
+langcode: und
+status: true
+dependencies: {  }
+id: navigations
+label: Navigations
+description: ''
+locked: false

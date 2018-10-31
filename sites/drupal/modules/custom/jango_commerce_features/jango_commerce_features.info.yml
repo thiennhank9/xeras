@@ -1,0 +1,33 @@
+name: 'Jango Commerce Features'
+description: 'Commerce views, content types and other settings for Jango theme shop.'
+type: module
+core: 8.x
+dependencies:
+  - commerce
+  - commerce_cart
+  - commerce_log
+  - commerce_order
+  - commerce_payment
+  - commerce_price
+  - commerce_product
+  - commerce_promotion
+  - commerce_store
+  - commerce_variation_cart_form
+  - entity_browser
+  - field
+  - file
+  - fivestar
+  - flag
+  - image
+  - inline_entity_form
+  - jango_cms
+  - jango_main_features
+  - options
+  - path
+  - system
+  - taxonomy
+  - text
+  - user
+  - views
+  - views_flipped_table
+version: 8.x-1.0

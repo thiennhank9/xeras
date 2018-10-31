@@ -1,0 +1,27 @@
+<div class="nd_visualshortcodes_enabled_list">
+  <div class="nd_visualshortcodes_enabled_list_search">
+
+    <input type="text"
+           class="form-control" {% if value %} value="{{ shortcodes[value].title | lower }}" data-exactly="1" {% endif %}
+           placeholder="Search shortcode"/></div>
+  <div class="nd_visualshortcodes_enabled_links">
+
+    {% for key,shortcode  in shortcodes %}
+      {% if shortcode.status and shortcode.icon %}
+        {% if key == "a_nd_saved" %}
+          {% if  saved %}
+            <a href="#" data-title="{{ shortcode.title | lower }}" data-shortcode="{{ key }}"
+               class="btn btn-md btn-info">
+					 <span>
+					 {% if shortcode.icon %} <i class="{{ shortcode.icon }}"></i>  {% endif %} {{ shortcode.title }}</span></a>
+          {% endif %}
+        {% else %}
+          <a href="#" data-title="{{ shortcode.title | lower }}" data-shortcode="{{ key }}" class="btn btn-md btn-info">
+				 <span>
+				 {% if shortcode.icon %} <i class="{{ shortcode.icon }}"></i>  {% endif %} {{ shortcode.title }}</span></a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+  </div>
+</div>

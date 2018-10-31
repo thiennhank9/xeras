@@ -1,0 +1,31 @@
+uuid: 0158785c-528a-4239-b363-cb7d1783e5d1
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c759a28a-bd74-4230-9c86-3ac4f9dcfa7f'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: menudarktopbarnotfixed
+theme: jango_sub
+region: header
+weight: -21
+provider: null
+plugin: 'block_content:c759a28a-bd74-4230-9c86-3ac4f9dcfa7f'
+settings:
+  id: 'block_content:c759a28a-bd74-4230-9c86-3ac4f9dcfa7f'
+  label: 'Menu Dark Top Bar Not Fixed'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/118/inner-header/v1-extended
+    negate: false
+    context_mapping: {  }

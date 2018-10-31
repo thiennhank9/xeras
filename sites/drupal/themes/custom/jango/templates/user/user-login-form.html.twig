@@ -1,0 +1,31 @@
+<div class="c-shop-login-register-1">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-default c-panel">
+        <div class="panel-body c-panel-body">
+          {{ rendered }}
+        </div>
+      </div>
+    </div>
+    {% if toggle_checkbox %}
+      <div class="col-md-6">
+        <div class="panel panel-default c-panel">
+          <div class="panel-body c-panel-body">
+            <div class="c-content-title-1">
+              <h3 class="c-left">
+                <i class="icon-user"></i>{{ 'Don\'t have an account yet?'|t }}</h3>
+              <div class="c-line-left c-theme-bg"></div>
+              <p>{{ 'Join us and enjoy shopping online today.'|t }}</p>
+            </div>
+            <div class="c-margin-fix">
+              {{ toggle_checkbox }}
+            </div>
+            <div class="c-form-register">
+              <a href="{{ url('user.register') }}" class="c-theme-link">{{ 'User Register Form'|t }}</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</div>

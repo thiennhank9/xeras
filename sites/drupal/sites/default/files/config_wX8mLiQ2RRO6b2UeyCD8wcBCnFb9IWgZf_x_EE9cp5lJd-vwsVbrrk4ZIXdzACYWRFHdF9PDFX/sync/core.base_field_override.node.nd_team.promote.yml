@@ -1,0 +1,22 @@
+uuid: aaaa1ce3-1118-403d-90db-ed433a8bba26
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.nd_team
+id: node.nd_team.promote
+field_name: promote
+entity_type: node
+bundle: nd_team
+label: 'Promoted to front page'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

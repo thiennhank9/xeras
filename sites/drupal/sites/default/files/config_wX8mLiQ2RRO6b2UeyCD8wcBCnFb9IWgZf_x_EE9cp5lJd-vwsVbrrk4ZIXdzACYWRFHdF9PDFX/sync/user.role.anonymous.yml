@@ -1,0 +1,33 @@
+uuid: d4bec746-a560-4ec5-bb62-2d1320578d0e
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: j5zLMOdJBqC0bMvSdth5UebkprJB8g_2FXHqhfpJzow
+id: anonymous
+label: 'Anonymous user'
+weight: 0
+is_admin: false
+permissions:
+  - 'access cart'
+  - 'access checkout'
+  - 'access comments'
+  - 'access commerce_product overview'
+  - 'access commerce_product_attribute overview'
+  - 'access content'
+  - 'access site-wide contact form'
+  - 'access user profiles'
+  - 'flag compare'
+  - 'flag compare_prodvar'
+  - 'flag wishlist'
+  - 'search content'
+  - 'unflag compare'
+  - 'unflag compare_prodvar'
+  - 'unflag wishlist'
+  - 'use text format restricted_html'
+  - 'view any commerce_product'
+  - 'view commerce_product'
+  - 'view commerce_product_attribute'
+  - 'view files'
+  - 'view own commerce_order'
+  - 'view own commerce_product'

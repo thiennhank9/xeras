@@ -1,0 +1,19 @@
+uuid: 8e77f571-b213-4f3c-85b2-6545d36fcc06
+langcode: en
+status: false
+dependencies:
+  config:
+    - comment.type.comment
+    - core.entity_view_mode.comment.full
+    - field.field.comment.comment.comment_body
+_core:
+  default_config_hash: 1yBeJcGufCbnbSolmaYgTIXZWYUaO7kw6xszGA8TYs8
+id: comment.comment.full
+targetEntityType: comment
+bundle: comment
+mode: full
+content: {  }
+hidden:
+  comment_body: true
+  langcode: true
+  links: true

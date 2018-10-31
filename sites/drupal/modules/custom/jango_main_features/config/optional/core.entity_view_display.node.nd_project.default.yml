@@ -1,0 +1,73 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.nd_project.body
+    - field.field.node.nd_project.field_categories
+    - field.field.node.nd_project.field_client
+    - field.field.node.nd_project.field_images
+    - field.field.node.nd_project.field_small_description
+    - field.field.node.nd_project.field_url_the_site
+    - field.field.node.nd_project.field_video
+    - image.style.project__1200x900_
+    - node.type.nd_project
+  module:
+    - jango_cms
+    - text
+    - user
+id: node.nd_project.default
+targetEntityType: node
+bundle: nd_project
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_categories:
+    weight: 3
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_client:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+  field_images:
+    weight: 4
+    label: hidden
+    settings:
+      image_style: project__1200x900_
+      image_link: ''
+    third_party_settings: {  }
+    type: jango_cms_project_image_slider
+    region: content
+  field_small_description:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_url_the_site:
+    weight: 5
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_video: true
+  langcode: true
+  links: true

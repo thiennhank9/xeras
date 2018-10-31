@@ -1,0 +1,11 @@
+type: module
+name: NikaDevs Main Functions
+description: All required functions for NikaDevs themes.
+package: "NikaDevs"                                                        
+core: 8.x
+version: "8.x-1.2"
+core: "8.x"
+project: "NikaDevs"
+
+dependencies:
+  - filter

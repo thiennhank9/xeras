@@ -1,0 +1,31 @@
+uuid: 8dc5bd40-6a80-48e8-9196-51dc67860c4e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:3038387f-5568-413b-87e6-8d67d844bfcf'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: footer5darkbg2columns
+theme: jango_sub
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:3038387f-5568-413b-87e6-8d67d844bfcf'
+settings:
+  id: 'block_content:3038387f-5568-413b-87e6-8d67d844bfcf'
+  label: 'Footer 5 - Dark BG, 2 Columns'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/118/footer-5
+    negate: false
+    context_mapping: {  }

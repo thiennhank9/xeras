@@ -1,0 +1,20 @@
+uuid: f8e4e6da-936b-4441-9980-23bd5ede82b1
+langcode: en
+status: false
+dependencies:
+  module:
+    - language
+  theme:
+    - jango_sub
+id: languageswitcher
+theme: jango_sub
+region: footer
+weight: 0
+provider: null
+plugin: 'language_block:language_interface'
+settings:
+  id: 'language_block:language_interface'
+  label: 'Language switcher'
+  provider: language
+  label_display: '0'
+visibility: {  }

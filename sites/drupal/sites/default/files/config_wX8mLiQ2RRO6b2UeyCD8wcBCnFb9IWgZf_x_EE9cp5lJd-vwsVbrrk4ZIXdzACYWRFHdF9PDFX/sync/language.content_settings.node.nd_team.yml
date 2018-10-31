@@ -1,0 +1,11 @@
+uuid: bdea2517-0545-4de9-bd10-2b318acb77f2
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.nd_team
+id: node.nd_team
+target_entity_type_id: node
+target_bundle: nd_team
+default_langcode: site_default
+language_alterable: true

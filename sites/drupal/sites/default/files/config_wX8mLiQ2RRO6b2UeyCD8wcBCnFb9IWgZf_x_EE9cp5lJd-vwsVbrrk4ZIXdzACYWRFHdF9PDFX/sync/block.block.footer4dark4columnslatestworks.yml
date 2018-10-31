@@ -1,0 +1,31 @@
+uuid: 4f72ea36-4387-4903-b364-7ec3e446dfee
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6f149860-57bd-4b37-bbf1-4c2183279174'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: footer4dark4columnslatestworks
+theme: jango_sub
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:6f149860-57bd-4b37-bbf1-4c2183279174'
+settings:
+  id: 'block_content:6f149860-57bd-4b37-bbf1-4c2183279174'
+  label: 'Footer 4 - Dark, 4 Columns, Latest Works'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/shop-home-1\r\n/shop-home-6\r\n/node/118/footer-1\r\n/node/118/footer-2\r\n/node/118/footer-3\r\n/node/118/footer-5\r\n/node/118/footer-6\r\n/node/118/footer-7\r\n/node/118/footer-8\r\n/node/118/footer-9\r\n/shop-home-1\r\n/shop-home-7\r\n/product/*\r\n/product-list*\r\n/products-split\r\n/products-filter\r\n/product-search/*\r\n/products-images\r\n/shop-product-grid*\r\n/products-grid-white-border\r\n/cart*\r\n/checkout*\r\n/user/*/left-sidebar\r\n/user*\r\n/shop-components*\r\n<front>\r\n/home-version-2\r\n/home-version-3\r\n/home-version-4\r\n/home-version-5\r\n/home-version-6\r\n/home-version-7\r\n/home-version-8\r\n/onepage-version-*"
+    negate: true
+    context_mapping: {  }

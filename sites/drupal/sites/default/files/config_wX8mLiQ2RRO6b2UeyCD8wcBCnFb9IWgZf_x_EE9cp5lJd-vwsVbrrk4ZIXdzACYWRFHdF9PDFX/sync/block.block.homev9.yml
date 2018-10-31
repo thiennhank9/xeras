@@ -1,0 +1,26 @@
+uuid: 5083064f-4247-41e1-b600-e158e781ec41
+langcode: en
+status: true
+dependencies:
+  module:
+    - md_slider
+    - system
+  theme:
+    - jango_sub
+id: homev9
+theme: jango_sub
+region: header
+weight: 3
+provider: null
+plugin: 'md_slider_block:home_v9'
+settings:
+  id: 'md_slider_block:home_v9'
+  label: 'MD Slider: Home V9'
+  provider: md_slider
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /home-version-9
+    negate: false
+    context_mapping: {  }

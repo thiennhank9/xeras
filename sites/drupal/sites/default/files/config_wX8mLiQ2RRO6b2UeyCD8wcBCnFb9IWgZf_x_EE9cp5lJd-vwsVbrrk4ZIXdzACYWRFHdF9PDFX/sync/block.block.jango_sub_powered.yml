@@ -1,0 +1,22 @@
+uuid: 9c83b0a2-6949-4c45-9240-f0343ec13200
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - jango_sub
+_core:
+  default_config_hash: jQQUUWN2Uxr5qZtc9zcJKBCxpKY8orN1u2HPqYYRQDI
+id: jango_sub_powered
+theme: jango_sub
+region: header
+weight: 27
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

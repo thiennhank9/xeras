@@ -1,0 +1,31 @@
+uuid: 0cf2bdbb-f977-4353-975f-d585c02b8d20
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ca1bf237-aa9c-4922-9fc2-4dcbb510186d'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: footer3light4columnstwitter
+theme: jango_sub
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:ca1bf237-aa9c-4922-9fc2-4dcbb510186d'
+settings:
+  id: 'block_content:ca1bf237-aa9c-4922-9fc2-4dcbb510186d'
+  label: 'Footer 3 - Light, 4 Columns, Twitter'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/118/footer-3\r\n/shop-home-1\r\n/shop-home-7\r\n/product/*\r\n/product-list*\r\n/products-split\r\n/products-filter\r\n/product-search/*\r\n/products-images\r\n/shop-product-grid*\r\n/products-grid-white-border\r\n/cart*\r\n/checkout*\r\n/user/*/left-sidebar\r\n/user*\r\n/shop-components*\r\n<front>\r\n/home-version-2\r\n/home-version-3\r\n/home-version-5\r\n/home-version-8"
+    negate: false
+    context_mapping: {  }

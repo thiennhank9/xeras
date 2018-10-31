@@ -1,0 +1,31 @@
+uuid: 5fe83948-eb7d-456d-bc2b-744dbbb45e26
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:b16296e8-17bf-4a1b-aad4-88b28f21d6d6'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: menudarkwidetopbarnotfixed
+theme: jango_sub
+region: header
+weight: -18
+provider: null
+plugin: 'block_content:b16296e8-17bf-4a1b-aad4-88b28f21d6d6'
+settings:
+  id: 'block_content:b16296e8-17bf-4a1b-aad4-88b28f21d6d6'
+  label: 'Menu Dark Wide Top Bar Not Fixed'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/118/inner-header/v3
+    negate: false
+    context_mapping: {  }

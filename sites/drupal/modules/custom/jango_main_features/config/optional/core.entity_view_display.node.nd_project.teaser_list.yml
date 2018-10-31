@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_list
+    - field.field.node.nd_project.body
+    - field.field.node.nd_project.field_categories
+    - field.field.node.nd_project.field_client
+    - field.field.node.nd_project.field_images
+    - field.field.node.nd_project.field_small_description
+    - field.field.node.nd_project.field_url_the_site
+    - field.field.node.nd_project.field_video
+    - node.type.nd_project
+  module:
+    - user
+id: node.nd_project.teaser_list
+targetEntityType: node
+bundle: nd_project
+mode: teaser_list
+content: {  }
+hidden:
+  body: true
+  field_categories: true
+  field_client: true
+  field_images: true
+  field_small_description: true
+  field_url_the_site: true
+  field_video: true
+  langcode: true
+  links: true

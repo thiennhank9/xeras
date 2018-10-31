@@ -1,0 +1,14 @@
+<div class="c-media">
+  <div class="c-content-media-2-slider" data-slider="owl">
+    <div class="owl-carousel owl-theme c-theme owl-single" data-single-item="true" data-auto-play="4000">
+      {% for image in images %}
+        <div class="item">
+          <div class="hidden">
+            {{ image.img|raw }}
+          </div>
+          <div class="c-content-media-2" style="min-height: {{ height }}px; background-image: url('{{ image.uri }}');"></div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+uuid: 5ea82c25-1ef7-4b96-bf7f-7c1879f1d1e4
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_payment_example
+id: payment_gateway_example
+label: 'Payment gateway Example'
+weight: null
+plugin: example_offsite_redirect
+configuration:
+  redirect_method: post
+  mode: test
+  payment_method_types:
+    - credit_card

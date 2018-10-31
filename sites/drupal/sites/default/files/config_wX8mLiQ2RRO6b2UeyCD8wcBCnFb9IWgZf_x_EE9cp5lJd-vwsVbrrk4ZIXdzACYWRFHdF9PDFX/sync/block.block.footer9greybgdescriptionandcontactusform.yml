@@ -1,0 +1,31 @@
+uuid: af267924-c0c6-4f92-8839-8f90ee509e80
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:b5595344-fa6e-4224-900e-fad75b94ab93'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: footer9greybgdescriptionandcontactusform
+theme: jango_sub
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:b5595344-fa6e-4224-900e-fad75b94ab93'
+settings:
+  id: 'block_content:b5595344-fa6e-4224-900e-fad75b94ab93'
+  label: 'Footer 9: Grey BG, Description and Contact Us Form'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/118/footer-9\r\n/onepage-version-1\r\n/onepage-version-5\r\n/onepage-version-10\r\n/onepage-version-11"
+    negate: false
+    context_mapping: {  }

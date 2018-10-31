@@ -1,0 +1,26 @@
+uuid: b58044cb-0f2c-4120-a78d-61d59f8351f3
+langcode: en
+status: true
+dependencies:
+  module:
+    - md_slider
+    - system
+  theme:
+    - jango_sub
+id: shophome3
+theme: jango_sub
+region: header
+weight: -6
+provider: null
+plugin: 'md_slider_block:shop_home_3'
+settings:
+  id: 'md_slider_block:shop_home_3'
+  label: 'MD Slider: Shop Home 3'
+  provider: md_slider
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/88
+    negate: false
+    context_mapping: {  }

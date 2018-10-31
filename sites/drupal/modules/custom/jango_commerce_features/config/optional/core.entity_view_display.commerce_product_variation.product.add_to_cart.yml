@@ -1,0 +1,33 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.product
+    - core.entity_view_mode.commerce_product_variation.add_to_cart
+    - field.field.commerce_product_variation.product.field_images
+    - field.field.commerce_product_variation.product.field_old_price
+    - field.field.commerce_product_variation.product.field_stock_amount
+  module:
+    - commerce_variation_cart_form
+third_party_settings:
+  commerce_variation_cart_form:
+    combine: '1'
+id: commerce_product_variation.product.add_to_cart
+targetEntityType: commerce_product_variation
+bundle: product
+mode: add_to_cart
+content:
+  commerce_variation_cart_form:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_images: true
+  field_old_price: true
+  field_stock_amount: true
+  langcode: true
+  price: true
+  product_id: true
+  sku: true
+  title: true
