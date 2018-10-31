@@ -1,0 +1,74 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+<article{{ attributes.addClass('row', 'c-margin-b-40', 'node-product-teaser-list') }}>
+  <div class="c-content-product-2 c-bg-white">
+    <div class="col-md-4">
+      <div class="c-content-overlay">
+        {{ product.field_sale_label }}
+        {{ product.field_new_label }}
+        <div class="c-overlay-wrapper">
+          <div class="c-overlay-content">
+            <a href="{{ product_url }}" class="btn btn-md c-btn-grey-1 c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">
+              {{ 'Explore'|t }}
+            </a>
+          </div>
+        </div>
+        <div class="hidden">
+          {{ product['variation_field_images'][0] }}
+        </div>
+        <div class="c-bg-img-center c-overlay-object" data-height="height" style="height: 230px; background-image: url('{{ image_url }}');"></div>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="c-info-list">
+        {% if product.title %}
+          <h3 class="c-title c-font-bold c-font-22 c-font-dark">
+            <a class="c-theme-link" href="{{ product_url }}">
+              {{ product['title'][0] }}
+            </a>
+          </h3>
+        {% endif %}
+        <div class="c-desc c-font-16 c-font-thin c-margin-b-10">
+          {{ product.field_short_description }}
+        </div>
+        <p class="c-price c-font-26 c-font-thin">
+          {{ product['variation_price'][0] }}
+          <span class="c-font-26 c-font-line-through c-font-red">
+            {{ product['variation_field_old_price'][0] }}
+          </span>
+        </p>
+      </div>
+      <div>
+        <div class="extra-components">
+          {{ product.variations }}
+        </div>
+        <span class="flag-outer flag-outer-compare">
+          {{ product.flag_compare }}
+        </span>
+        <span class="flag-outer flag-outer-wishlist">
+          {{ product.flag_wishlist }}
+        </span>
+        {{- product|without('variation_attributes', 'variations', 'variation_sku', 'title', 'variation_title', 'variation_field_stock_amount', 'variation_field_images', 'field_sale_label', 'field_new_label', 'variation_price', 'variation_field_old_price', 'field_short_description', 'flag_compare', 'flag_wishlist') -}}
+      </div>
+    </div>
+  </div>
+</article>

@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - shortcode
+name: HTML
+format: html
+weight: -4
+filters:
+  shortcode:
+    id: shortcode
+    provider: shortcode
+    status: false
+    weight: 0
+    settings:
+      nd_quote: '1'
+      row: '1'
+      nd_save: '1'
+      nd_progress: '1'
+      nd_pricing_table: '1'
+      nd_message: '1'
+      nd_node: '1'
+      nd_pricing_item: '1'
+      nd_slider: '1'
+      nd_slider_item: '1'
+      nd_title: '1'
+      nd_video: '1'
+      nd_view: '1'
+      nd_text_n_tooltip: '1'
+      nd_text_rotator: '1'
+      nd_tabs: '1'
+      nd_tab: '1'
+      nd_menu: '1'
+      nd_image: '1'
+      nd_chartpieitem: '1'
+      nd_chartpie: '1'
+      col: '1'
+      nd_button: '1'
+      nd_block: '1'
+      nd_accordions: '1'
+      nd_bg: '1'
+      nd_container: '1'
+      nd_counter: '1'
+      nd_hr: '1'
+      html: '1'
+      nd_icon: '1'
+      nd_header: '1'
+      nd_gmap: '1'
+      nd_div: '1'
+      nd_feature: '1'
+      nd_accordion: '1'
+      link: '1'
+      quote: '1'
+      random: '1'
+      item: '1'
+      img: '1'
+      clear: '1'
+      dropcap: '1'
+      highlight: '1'
+      button: '1'

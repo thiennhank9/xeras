@@ -1,0 +1,22 @@
+{#
+/**
+ * @file
+ * Default theme implementation for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="c-checkbox c-toggle-hide" data-animation-speed="600">
+  <input{{ attributes }} />{{ children }}
+  <label for="{{ attributes.storage.id }}">
+    <span class="inc"></span>
+    <span class="check"></span>
+    <span class="box"></span>{{ label }}
+  </label>
+</div>

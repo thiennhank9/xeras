@@ -1,0 +1,8 @@
+uuid: 50d0cf2f-f155-4c90-91ee-cded656beece
+langcode: und
+status: true
+dependencies: {  }
+id: onepage
+label: OnePage
+description: ''
+locked: false

@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+
+<div class="c-shop-cart-page-1">
+
+  <div class="row c-cart-table-title">
+    <div class="col-md-1 c-cart-qty">
+      <h3 class="c-font-uppercase c-font-bold c-font-16 c-font-grey-2">{{ 'Qty'|t }}</h3>
+    </div>
+    <div class="col-md-2 c-cart-image">
+      <h3 class="c-font-uppercase c-font-bold c-font-16 c-font-grey-2">{{ 'Image'|t }}</h3>
+    </div>
+    <div class="col-md-4 c-cart-desc">
+      <h3 class="c-font-uppercase c-font-bold c-font-16 c-font-grey-2">{{ 'Description'|t }}</h3>
+    </div>
+    <div class="col-md-2 c-cart-ref">
+      <h3 class="c-font-uppercase c-font-bold c-font-16 c-font-grey-2">{{ 'SKU'|t }}</h3>
+    </div>
+    <div class="col-md-2 c-cart-total">
+      <h3 class="c-font-uppercase c-font-bold c-font-16 c-font-grey-2">{{ 'Total'|t }}</h3>
+    </div>
+  </div>
+  {% for row in rows %}
+    {%
+      set row_classes = [
+        'row',
+        'c-cart-table-row',
+        default_row_class ? 'views-row',
+      ]
+    %}
+    <div{{ row.attributes.addClass(row_classes) }}>
+      {{ row.content }}
+    </div>
+{% endfor %}
+</div>

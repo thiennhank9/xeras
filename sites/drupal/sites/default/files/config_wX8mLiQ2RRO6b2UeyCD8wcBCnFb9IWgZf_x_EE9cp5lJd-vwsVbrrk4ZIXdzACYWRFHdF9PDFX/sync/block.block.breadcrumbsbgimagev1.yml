@@ -1,0 +1,31 @@
+uuid: eeada5b3-73b8-4684-8ba1-0b75189231c4
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:0627241c-d82b-41d1-87bd-788126a352ad'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: breadcrumbsbgimagev1
+theme: jango_sub
+region: header
+weight: 11
+provider: null
+plugin: 'block_content:0627241c-d82b-41d1-87bd-788126a352ad'
+settings:
+  id: 'block_content:0627241c-d82b-41d1-87bd-788126a352ad'
+  label: 'Breadcrumbs - BG Image V1'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/117/3\r\n/about-us-2\r\n/about-us-3\r\n/about-us-4\r\n/faq-*\r\n/product-launch"
+    negate: false
+    context_mapping: {  }

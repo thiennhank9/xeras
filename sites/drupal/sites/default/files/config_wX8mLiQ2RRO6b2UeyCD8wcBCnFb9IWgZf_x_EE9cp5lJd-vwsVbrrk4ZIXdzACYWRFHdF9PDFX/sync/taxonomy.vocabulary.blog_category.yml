@@ -1,0 +1,9 @@
+uuid: 57df8376-3454-4675-960b-8f55b013f82e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Blog Category'
+vid: blog_category
+description: ''
+hierarchy: 0
+weight: 0

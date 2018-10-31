@@ -1,0 +1,31 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="c-content-latest-works cbp cbp-l-grid-masonry-projects fadeInLeft">
+  {% if title %}
+    <h3>{{ title }}</h3>
+  {% endif %}
+
+  {% for key, row in rows %}
+    {% set img_class = key == 0 ? '' : ' fadeInLeft' %}
+    <div class="cbp-item{{ img_class }}" data-wow-delay="0.4s">
+      {{ row.content }}
+    </div>
+  {% endfor %}
+</div>

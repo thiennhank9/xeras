@@ -1,0 +1,9 @@
+<div class="panel-heading" role="tab" id="accordiontab">
+  <h4 class="panel-title">
+    <a class="c-font-bold c-font-19 {{ link_title }}" data-toggle="collapse" data-parent="#accordion-{{ accordion_count }}" href="#{{ id }}" {{ aria_expanded }} aria-controls="{{ id }}">
+      <i class="{{ icon }}"></i>{{ title }}</a>
+  </h4>
+</div>
+<div id="{{ id }}" class="panel-collapse collapse {{ link_content }}" role="tabpanel" aria-labelledby="accordiontab" {{ aria_expanded }} style="{{ style }}">
+  <div class="panel-body c-font-18">{{ text|raw }}</div>
+</div>

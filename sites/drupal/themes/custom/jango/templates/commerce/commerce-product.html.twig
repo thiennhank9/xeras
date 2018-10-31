@@ -1,0 +1,110 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+<article{{ attributes }}>
+  <div>
+    <div class="c-shop-product-details-2">
+      <div class="row">
+        <div class="col-md-6">
+          {{ product.variation_field_images }}
+        </div>
+        <div class="col-md-6">
+          <div class="c-product-meta">
+            <div class="c-content-title-1">
+              <h3 class="c-font-uppercase c-font-bold">{{ product.title }}</h3>
+              <div class="c-line-left"></div>
+            </div>
+            <div class="c-product-badge">
+              {% if product.field_sale_label[0]['#markup'] != 'Off' %}
+                {{ product.field_sale_label }}
+              {% endif %}
+              {% if product.field_new_label[0]['#markup'] != 'Off' %}
+                {{ product.field_new_label }}
+              {% endif %}
+            </div>
+            <div class="c-product-review">
+              {{ product.field_rating }}
+              <div class="c-product-write-review">
+                <a class="c-font-red write-review-link" href="#reviews">
+                  {{ 'Write a review'|t }}
+                </a>
+              </div>
+            </div>
+            <div class="c-product-price">
+              {{ product.variation_price }}
+              <span class="c-font-16 c-font-line-through c-font-red">
+                {{ product.variation_field_old_price }}
+              </span>
+            </div>
+            <div class="c-product-short-desc">
+              {{ product.field_short_description }}
+            </div>
+            {{ product.variations }}
+            <span class="flag-outer flag-outer-compare ">
+              {{ product.flag_compare }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<div class="c-content-box c-size-lg pb-0 product-field-groups">
+  <!-- End Product Content -->
+  <div class="c-shop-product-tab-1 pb-0">
+    <div class="nav-justified  bootstrap-nav-wrapper">
+      <ul class="nav nav-justified  nav-tabs">
+        <li class="nav_item  align-center active">
+          <a href="#bootstrap-fieldgroup-nav-item--description" data-toggle="tab">{{ 'Description'|t }}</a></li>
+        <li class="nav_item align-center ">
+          <a href="#bootstrap-fieldgroup-nav-item--additional-information" data-toggle="tab">{{ 'Additional Information'|t }}</a>
+        </li>
+        <li class="nav_item ">
+          <a href="#bootstrap-fieldgroup-nav-item--reviews" class = "review-toggler" id = "reviews" data-toggle="tab">{{ 'Reviews'|t }}</a></li>
+      </ul>
+
+      <div class="tab-content nav-justified">
+        <div id="bootstrap-fieldgroup-nav-item--description" class="tab-pane active">
+          {{- product|without('variation_attributes', 'title', 'variation_title', 'variation_field_stock_amount', 'variation_field_images', 'field_product_category', 'field_sale_label', 'field_new_label', 'field_rating', 'variation_price', 'variations', 'flag_compare', 'flag_wishlist', 'variation_field_old_price', 'variation_sku', 'field_short_description') -}}
+        </div>
+        <div id="bootstrap-fieldgroup-nav-item--additional-information" class="tab-pane ">
+          <div class="field field-name-field-sizes field-type-list-text field-label-above">
+            {{ product.variation_attributes.variation_attribute_size }}
+          </div>
+          <div class="field field-name-field-colors field-type-list-text field-label-above">
+            {{ product.variation_attributes.variation_attribute_color }}
+          </div>
+          <div class="collapsible bg-full-width c-bg-grey speed-fast effect-none">
+          {{ product.variation_sku }}
+          {{ product.field_product_category }}
+          </div>
+        </div>
+        <div id="bootstrap-fieldgroup-nav-item--reviews" class="tab-pane ">
+          <h3 class="c-font-uppercase c-font-bold c-font-22 c-center c-margin-b-40 c-margin-t-40">{{ 'Reviews for'|t }} {{ product.title }}</h3>
+          <div class="c-product-review-input">
+            {{ product.field_reviews }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

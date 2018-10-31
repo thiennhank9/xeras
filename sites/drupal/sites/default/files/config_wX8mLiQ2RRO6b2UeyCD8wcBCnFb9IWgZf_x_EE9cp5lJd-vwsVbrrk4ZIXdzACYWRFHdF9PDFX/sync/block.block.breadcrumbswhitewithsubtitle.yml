@@ -1,0 +1,31 @@
+uuid: fa2803a3-e79d-44eb-9bee-03affa0ac87b
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:92eac6b6-45bd-4cec-8909-fd8803aa101e'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: breadcrumbswhitewithsubtitle
+theme: jango_sub
+region: header
+weight: 10
+provider: null
+plugin: 'block_content:92eac6b6-45bd-4cec-8909-fd8803aa101e'
+settings:
+  id: 'block_content:92eac6b6-45bd-4cec-8909-fd8803aa101e'
+  label: 'Breadcrumbs - White with SubTitle'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/117/2
+    negate: false
+    context_mapping: {  }

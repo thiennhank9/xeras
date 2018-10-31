@@ -1,0 +1,79 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.product_display
+    - core.entity_view_mode.commerce_product.teaser_list
+    - field.field.commerce_product.product_display.body
+    - field.field.commerce_product.product_display.field_colors
+    - field.field.commerce_product.product_display.field_new_label
+    - field.field.commerce_product.product_display.field_product_category
+    - field.field.commerce_product.product_display.field_rating
+    - field.field.commerce_product.product_display.field_sale_label
+    - field.field.commerce_product.product_display.field_short_description
+    - field.field.commerce_product.product_display.field_sizes
+    - field.field.commerce_product.product_display.stores
+    - field.field.commerce_product.product_display.variations
+  module:
+    - text
+id: commerce_product.product_display.teaser_list
+targetEntityType: commerce_product
+bundle: product_display
+mode: teaser_list
+content:
+  field_new_label:
+    weight: 4
+    label: hidden
+    settings:
+      format: custom
+      format_custom_true: New
+      format_custom_false: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_sale_label:
+    weight: 3
+    label: hidden
+    settings:
+      format: custom
+      format_custom_true: Sale
+      format_custom_false: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+  field_short_description:
+    type: text_default
+    weight: 5
+    region: content
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+  flag_compare:
+    weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  flag_wishlist:
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  variations:
+    type: entity_reference_entity_view
+    weight: 0
+    label: hidden
+    settings:
+      view_mode: teaser_list
+      link: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  body: true
+  created: true
+  field_colors: true
+  field_product_category: true
+  field_rating: true
+  field_sizes: true
+  langcode: true
+  stores: true
+  uid: true

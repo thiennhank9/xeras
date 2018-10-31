@@ -1,0 +1,94 @@
+.form-item label {
+  display: block;
+}
+.form-type-checkbox label{
+  display: inline-block;
+}
+
+/* Color Radios */
+.color-radios input[type="radio"] {
+  display:none;
+}
+.color-radios .form-item{
+  display: inline-block;
+}
+.color-radios label {
+  display: inline-block !important;
+  width: 32px;
+  height: 32px;
+  border: 2px solid transparent !important;
+  border-radius: 50%;
+  text-indent: -9999px;
+}
+.color-radios label:hover {
+  cursor: pointer;
+}
+.color-radios input[type="radio"]:checked + label {
+  border: 2px solid #3d3d3d !important;
+}
+#edit-skin-default + label{
+  background: #32c5d2;
+}
+#edit-skin-green1 + label{
+  background: #52c9ba;
+}
+#edit-skin-green2 + label{
+  background: #5dc09c;
+}
+#edit-skin-green3 + label{
+  background: #84c68f;
+}
+#edit-skin-yellow1 + label{
+  background: #c8d046;
+}
+#edit-skin-yellow2 + label{
+  background: #c5bf66;
+}
+#edit-skin-yellow3 + label{
+  background: #c5b96b;
+}
+#edit-skin-red1 + label{
+  background: #cd6262;
+}
+#edit-skin-red2 + label{
+  background: #e7505a;
+}
+#edit-skin-red3 + label{
+  background: #d05163;
+}
+#edit-skin-purple1 + label{
+  background: #b771b0;
+}
+#edit-skin-purple2 + label{
+  background: #e7505a;
+}
+#edit-skin-purple3 + label{
+  background: #d05163;
+}
+#edit-skin-blue1 + label{
+  background: #6e8cd7;
+}
+#edit-skin-blue2 + label{
+  background: #5893dd;
+}
+#edit-skin-blue3 + label{
+  background: #57bfe1;
+}
+#edit-skin-brown1 + label{
+  background: #8a7f68;
+}
+#edit-skin-brown2 + label{
+  background: #685e47;
+}
+#edit-skin-brown3 + label{
+  background: #7a6a61;
+}
+#edit-skin-dark1 + label{
+  background: #525e64;
+}
+#edit-skin-dark2 + label{
+  background: #31383c;
+}
+#edit-skin-dark3 + label{
+  background: #41515b;
+}

@@ -1,0 +1,45 @@
+<?php
+
+function commerce_ext_schema() {
+  $schema['taxonomy_index_commerce_product'] = array(
+    'description' => 'Maintains denormalized information about commerce_product/term relationships.',
+    'fields' => array(
+      'product_id' => array(
+        'description' => 'The commerce_product ID this record tracks.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'tid' => array(
+        'description' => 'The term ID.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'created' => array(
+        'description' => 'The Unix timestamp when the commerce_product was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+    ),
+    'primary key' => array('product_id', 'tid'),
+    'indexes' => array(
+      'term_commerce_product' => array('tid', 'created'),
+    ),
+    'foreign keys' => array(
+      'tracked_commerce_product' => array(
+        'table' => 'commerce_product',
+        'columns' => array('product_id' => 'product_id'),
+      ),
+      'term' => array(
+        'table' => 'taxonomy_term_data',
+        'columns' => array('tid' => 'tid'),
+      ),
+    ),
+  );
+
+  return $schema;
+}

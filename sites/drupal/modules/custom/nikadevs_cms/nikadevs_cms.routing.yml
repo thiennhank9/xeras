@@ -1,0 +1,55 @@
+nikadevs_cms.manage:
+  path: 'admin/config/cms'
+  defaults:
+    _controller: '\Drupal\nikadevs_cms\Controller\NikaDevsCmsController::nikadevs_cms_admin'
+    _title: 'Manage CMS'
+  requirements:
+    _permission: 'use nikadevs cms'
+
+nikadevs_cms.drop:
+  path: 'admin/drop_layout_builder'
+  defaults:
+    _controller: '\Drupal\nikadevs_cms\Controller\NikaDevsCmsController::nikadevs_cms_drop_layout_builder'
+    _title: 'Manage CMS'
+  requirements:
+    _permission: 'use nikadevs cms'
+
+nikadevs_cms.update:
+  path: 'nikadevs_cms/layout_builder/update'
+  defaults:
+    _controller: '\Drupal\nikadevs_cms\Controller\NikaDevsCmsController::nikadevs_cms_layout_builder_update'
+    _title: 'Manage CMS'
+  requirements:
+    _permission: 'use nikadevs cms'
+
+nikadevs_cms.blockupdate:
+  path: 'nikadevs_cms/block_settings/update'
+  defaults:
+    _controller: '\Drupal\nikadevs_cms\Controller\NikaDevsCmsController::nikadevs_cms_block_settings_update'
+    _title: 'Manage CMS'
+  requirements:
+    _permission: 'use nikadevs cms'
+
+nikadevs_cms.filedelete:
+  path: 'nikadevs_cms/file_delete/%file'
+  defaults:
+    _controller: '\Drupal\nikadevs_cms\Controller\NikaDevsCmsController::nikadevs_cms_filedelete'
+    _title: 'Manage CMS'
+  requirements:
+    _permission: 'use nikadevs cms'
+
+nikadevs_cms.release:
+  path: 'nikadevs_cms/release'
+  defaults:
+    _controller: '\Drupal\nikadevs_cms\Controller\NikaDevsCmsController::release_cleanup'
+    _title: 'Manage CMS'
+  requirements:
+    _permission: 'use nikadevs cms'
+
+nikadevs_cms.flag_cleanup:
+  path: 'nikadevs_cms/flag_cleanup'
+  defaults:
+    _controller: '\Drupal\nikadevs_cms\Controller\NikaDevsCmsController::flag_cleanup'
+    _title: 'Manage CMS'
+  requirements:
+    _permission: 'use nikadevs cms'

@@ -1,0 +1,18 @@
+<div class="c-shop-product-details-2">
+  <div class="c-product-gallery">
+    <div class="c-product-gallery-content">
+      {% for img in images %}
+        <div class="c-zoom">
+          {{ img }}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="row c-product-gallery-thumbnail">
+      {% for small_img in small_images %}
+        <div class="c-product-thumb col-xs-{{ col }}">
+          {{ small_img }}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>

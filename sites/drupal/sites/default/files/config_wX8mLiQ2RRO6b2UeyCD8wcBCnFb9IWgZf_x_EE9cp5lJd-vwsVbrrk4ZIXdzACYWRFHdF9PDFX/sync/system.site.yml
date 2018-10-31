@@ -1,0 +1,15 @@
+uuid: 14a15c7d-ecf6-4dc8-b8d1-4f964cff594b
+name: Jango
+mail: support2@nikadevs.com
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /node/170
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: AyT9s8OUcclfALRE_imByOMgtZ19eOlqdF6zI3p7yqo
+mail_notification: ''

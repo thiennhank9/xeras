@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: product_700x900
+label: 'Product (700x900)'
+effects:
+  6e6811ca-fc2e-49cb-9564-1fcd1c15415b:
+    uuid: 6e6811ca-fc2e-49cb-9564-1fcd1c15415b
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 700
+      height: 900

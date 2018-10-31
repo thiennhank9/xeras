@@ -1,0 +1,9 @@
+uuid: 2381509b-2e7d-4a45-a79f-487d43a6edaa
+langcode: en
+status: true
+dependencies: {  }
+name: Clients
+vid: nd_clients
+description: ''
+hierarchy: 0
+weight: 0

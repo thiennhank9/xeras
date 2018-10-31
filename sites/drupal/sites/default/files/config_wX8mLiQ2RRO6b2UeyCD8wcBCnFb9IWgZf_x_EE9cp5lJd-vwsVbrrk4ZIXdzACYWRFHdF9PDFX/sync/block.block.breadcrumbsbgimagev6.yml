@@ -1,0 +1,31 @@
+uuid: e7faf8a8-9b1c-4762-9d11-95df2f31ec75
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:ae1f6b25-fe73-4286-ac45-02b7ebe4f3a9'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: breadcrumbsbgimagev6
+theme: jango_sub
+region: header
+weight: 16
+provider: null
+plugin: 'block_content:ae1f6b25-fe73-4286-ac45-02b7ebe4f3a9'
+settings:
+  id: 'block_content:ae1f6b25-fe73-4286-ac45-02b7ebe4f3a9'
+  label: 'Breadcrumbs - BG Image V6'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/117/8\r\n/meet-team"
+    negate: false
+    context_mapping: {  }

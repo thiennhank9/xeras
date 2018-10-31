@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: portfolio_long__285x590_
+label: 'Portfolio Long (285x590)'
+effects:
+  ab0e2e60-eb43-493d-8e43-4118649ad84d:
+    uuid: ab0e2e60-eb43-493d-8e43-4118649ad84d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 285
+      height: 590

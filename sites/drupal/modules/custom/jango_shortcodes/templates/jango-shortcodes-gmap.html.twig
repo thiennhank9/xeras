@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="c-content-contact-1 c-opt-1">
+    <div class="row" data-auto-height=".c-height">
+      <div class="col-sm-8 c-desktop"></div>
+      <div class="col-sm-4" style="height: 612px;">
+        {{ text|raw }}
+      </div>
+    </div>
+  </div>
+</div>
+<div id="gmapbg" class="c-content-contact-1-gmap" style="height: 615px;"
+           data-lat="{{ lat }}"
+           data-lng="{{ lng }}"
+           data-type="{{ type }}"
+           {{ scrollwheel }}
+           data-address="{{ address }}">
+</div>

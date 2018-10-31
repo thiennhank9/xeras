@@ -1,0 +1,104 @@
+langcode: en
+status: open
+dependencies: {  }
+open: null
+close: null
+uid: 1
+template: false
+id: contact_us_webform_no_paddings
+title: 'Contact Us WebForm - No Paddings'
+description: ''
+category: ''
+elements: "wrapper:\n  '#type': fieldset\n  '#title': Wrapper\n  '#title_display': invisible\n  '#attributes':\n    class:\n      - c-form-wrap\n  wrapper_left:\n    '#type': fieldset\n    '#title': wrapper-left\n    '#title_display': invisible\n    '#attributes':\n      class:\n        - c-form-wrap-group\n    your_name_clean:\n      '#type': textfield\n      '#title': 'Your Name'\n      '#title_display': invisible\n      '#placeholder': 'Your Name'\n    subject_clean:\n      '#type': textfield\n      '#title': Subject\n      '#title_display': invisible\n      '#placeholder': Subject\n  wrapper_right:\n    '#type': fieldset\n    '#title': wrapper-right\n    '#title_display': invisible\n    '#attributes':\n      class:\n        - c-form-wrap-group\n    your_email_clean:\n      '#type': email\n      '#title': 'Your Email'\n      '#title_display': invisible\n      '#placeholder': 'Your Emai'\n    contact_phone_clean:\n      '#type': tel\n      '#title': 'Contact Phone'\n      '#title_display': invisible\n      '#placeholder': 'Contact Phone'\n      '#international': true\ncomment_clean:\n  '#type': textarea\n  '#title': Comment\n  '#title_display': invisible\n  '#rows': '8'\n  '#placeholder': 'Write comment here...'\nsubmit:\n  '#type': processed_text\n  '#text': '<input class=\"btn c-btn-dark c-btn-uppercase btn-lg c-btn-sbold btn-block c-btn-square\" type=\"submit\" name=\"op\" value=\"Send it\">'\n  '#format': html\nactions:\n  '#type': webform_actions\n  '#title': 'Submit button(s)'\n  '#submit_hide': true\n"
+css: ''
+javascript: ''
+settings:
+  ajax: false
+  page: true
+  page_submit_path: ''
+  page_confirm_path: ''
+  form_submit_once: false
+  form_exception_message: ''
+  form_open_message: ''
+  form_close_message: ''
+  form_previous_submissions: true
+  form_confidential: false
+  form_confidential_message: ''
+  form_convert_anonymous: false
+  form_prepopulate: false
+  form_prepopulate_source_entity: false
+  form_prepopulate_source_entity_required: false
+  form_prepopulate_source_entity_type: ''
+  form_disable_autocomplete: false
+  form_novalidate: false
+  form_unsaved: false
+  form_disable_back: false
+  form_autofocus: false
+  form_details_toggle: false
+  submission_label: ''
+  submission_log: false
+  submission_user_columns: {  }
+  wizard_progress_bar: true
+  wizard_progress_pages: false
+  wizard_progress_percentage: false
+  wizard_start_label: ''
+  wizard_complete: true
+  wizard_complete_label: ''
+  preview: 0
+  preview_label: ''
+  preview_title: ''
+  preview_message: ''
+  preview_attributes: {  }
+  preview_excluded_elements: {  }
+  draft: none
+  draft_multiple: false
+  draft_auto_save: false
+  draft_saved_message: ''
+  draft_loaded_message: ''
+  confirmation_type: page
+  confirmation_title: ''
+  confirmation_message: ''
+  confirmation_url: ''
+  confirmation_attributes: {  }
+  confirmation_back: true
+  confirmation_back_label: ''
+  confirmation_back_attributes: {  }
+  limit_total: null
+  limit_total_message: ''
+  limit_user: null
+  limit_user_message: ''
+  purge: none
+  purge_days: null
+  entity_limit_total: null
+  entity_limit_user: null
+  results_disabled: false
+  results_disabled_ignore: false
+  token_update: false
+access:
+  create:
+    roles:
+      - anonymous
+      - authenticated
+    users: {  }
+  view_any:
+    roles: {  }
+    users: {  }
+  update_any:
+    roles: {  }
+    users: {  }
+  delete_any:
+    roles: {  }
+    users: {  }
+  purge_any:
+    roles: {  }
+    users: {  }
+  view_own:
+    roles: {  }
+    users: {  }
+  update_own:
+    roles: {  }
+    users: {  }
+  delete_own:
+    roles: {  }
+    users: {  }
+handlers: {  }

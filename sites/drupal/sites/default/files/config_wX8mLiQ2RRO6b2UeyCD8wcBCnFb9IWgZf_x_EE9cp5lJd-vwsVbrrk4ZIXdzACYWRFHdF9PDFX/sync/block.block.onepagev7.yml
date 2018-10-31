@@ -1,0 +1,26 @@
+uuid: 220984f5-a9c3-4dd4-a82b-e79222a0043d
+langcode: en
+status: true
+dependencies:
+  module:
+    - md_slider
+    - system
+  theme:
+    - jango_sub
+id: onepagev7
+theme: jango_sub
+region: header
+weight: 6
+provider: null
+plugin: 'md_slider_block:onepage_v7'
+settings:
+  id: 'md_slider_block:onepage_v7'
+  label: 'MD Slider: OnePage V7'
+  provider: md_slider
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /onepage-version-7
+    negate: false
+    context_mapping: {  }

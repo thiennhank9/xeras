@@ -1,0 +1,6 @@
+<label class="control-label c-font-uppercase c-font-bold">{{ title|t }}</label>
+<p>{{ 'Price Range:'|t }} {{ currency }}<span class="range-text">{{ min }} - {{ currency }} {{ max }}</span></p>
+<div class="c-price-range-slider {{ price_type }} input-group">
+  <input type="text" class="nd-price-slider" value="" data-slider-min="{{ min }}" data-slider-max="{{ max }}"
+         data-slider-step="1" data-slider-value="[{{ from }},{{ to }}]" {{ price_handle }} />
+</div>

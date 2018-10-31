@@ -1,0 +1,31 @@
+uuid: 1617f5f7-296b-44a3-877c-747b5ce2aeeb
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:89fd501c-01c6-4743-9c6b-48842f6ae95b'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: menuwhitewideonepage
+theme: jango_sub
+region: header
+weight: -11
+provider: null
+plugin: 'block_content:89fd501c-01c6-4743-9c6b-48842f6ae95b'
+settings:
+  id: 'block_content:89fd501c-01c6-4743-9c6b-48842f6ae95b'
+  label: 'Menu White - Wide - OnePage'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /onepage-version-8
+    negate: false
+    context_mapping: {  }

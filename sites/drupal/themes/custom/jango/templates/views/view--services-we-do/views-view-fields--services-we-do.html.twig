@@ -1,0 +1,105 @@
+{#
+/**
+ * @file
+ * Default view template to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="col-md-6">
+  <div class="c-content-tile-1 c-bg-{{ fields.field_background_and_arrow_color.content|striptags|trim }}">
+    <div class="row">
+      {% if fields.field_arrow.content|striptags|trim == 'right' %}
+        <div class="col-sm-6">
+          <div class="c-tile-content c-content-v-center" data-height="height">
+            <div class="c-wrapper">
+              <div class="c-body c-center">
+                <h3 class="c-tile-title c-font-25 c-line-height-34 c-font-uppercase c-font-bold c-font-white">
+                  {{ fields.title.content }}
+                </h3>
+                <p class="c-tile-body c-font-{{ fields.field_text_color.content|striptags|trim }}">
+                  {{ fields.body.content }}
+                </p>
+                {{ fields.view_node.content }}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="c-tile-content c-arrow-{{ fields.field_arrow.content|striptags|trim }} c-arrow-{{ fields.field_background_and_arrow_color_1.content|striptags|trim }} c-content-overlay">
+            <div class="c-overlay-wrapper">
+              <div class="c-overlay-content">
+                <a href="{{ fields.path.content|striptags|trim }}">
+                  <i class="icon-link"></i>
+                </a>
+                <a href="{{ fields.jango_cms_single_image_url.content|striptags|trim }}" data-lightbox="fancybox" data-fancybox-group="gallery-4">
+                  <i class="icon-magnifier"></i>
+                </a>
+              </div>
+            </div>
+            <div class="c-image c-overlay-object" data-height="height" style="background-image: url({{ fields.jango_cms_single_image_url_1.content|striptags|trim }})"></div>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if fields.field_arrow.content|striptags|trim == 'left' %}
+        <div class="col-sm-6">
+          <div class="c-tile-content c-arrow-{{ fields.field_arrow.content|striptags|trim }} c-arrow-{{ fields.field_background_and_arrow_color_1.content|striptags|trim }} c-content-overlay">
+            <div class="c-overlay-wrapper">
+              <div class="c-overlay-content">
+                <a href="{{ fields.path.content|striptags|trim }}">
+                  <i class="icon-link"></i>
+                </a>
+                <a href="{{ fields.jango_cms_single_image_url.content|striptags|trim }}" data-lightbox="fancybox" data-fancybox-group="gallery-4">
+                  <i class="icon-magnifier"></i>
+                </a>
+              </div>
+            </div>
+            <div class="c-image c-overlay-object" data-height="height" style="background-image: url({{ fields.jango_cms_single_image_url_1.content|striptags|trim }})"></div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="c-tile-content c-content-v-center" data-height="height">
+            <div class="c-wrapper">
+              <div class="c-body c-center">
+                <h3 class="c-tile-title c-font-25 c-line-height-34 c-font-uppercase c-font-bold c-font-white">
+                  {{ fields.title.content }}
+                </h3>
+                <p class="c-tile-body c-font-{{ fields.field_text_color.content|striptags|trim }}">
+                  {{ fields.body.content }}
+                </p>
+                {{ fields.view_node.content }}
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  {{ fields|without('field_background_and_arrow_color', 'field_background_and_arrow_color_1', 'title', 'body', 'view_node', 'jango_cms_single_image_url', 'jango_cms_single_image_url_1', 'path', 'field_text_color', 'field_arrow') }}
+</div>

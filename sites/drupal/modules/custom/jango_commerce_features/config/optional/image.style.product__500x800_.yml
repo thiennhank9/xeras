@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: product__500x800_
+label: 'Product (500x800)'
+effects:
+  98d01658-67bd-4ea9-b8c8-70262c5929a8:
+    uuid: 98d01658-67bd-4ea9-b8c8-70262c5929a8
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 500
+      height: 800

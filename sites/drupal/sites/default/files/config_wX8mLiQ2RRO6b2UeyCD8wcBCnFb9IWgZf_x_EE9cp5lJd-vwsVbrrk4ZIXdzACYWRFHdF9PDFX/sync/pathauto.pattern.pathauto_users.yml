@@ -1,0 +1,14 @@
+uuid: 414be91d-9604-4a4f-ad32-7e41277ab6d5
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+id: pathauto_users
+label: 'Pathauto Users'
+type: 'canonical_entities:user'
+pattern: 'users/[user:name]'
+selection_criteria: {  }
+selection_logic: and
+weight: 0
+relationships: {  }

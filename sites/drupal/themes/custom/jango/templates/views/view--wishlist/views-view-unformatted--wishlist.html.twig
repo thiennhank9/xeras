@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ *
+ * Available variables:
+ * - title: The title of this group of rows. May be empty.
+ * - rows: A list of the view's row items.
+ *   - attributes: The row's HTML attributes.
+ *   - content: The row's content.
+ * - view: The view object.
+ * - default_row_class: A flag indicating whether default classes should be
+ *   used on rows.
+ *
+ * @see template_preprocess_views_view_unformatted()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="c-shop-wishlist-1 view-wishlist">
+  <div class="c-border-bottom hidden-sm hidden-xs">
+    <div class="row">
+      <div class="col-md-3">
+        <h3 class="c-font-uppercase c-font-16 c-font-grey-2 c-font-bold">{{ 'Product'|t }}</h3>
+      </div>
+      <div class="col-md-5">
+        <h3 class="c-font-uppercase c-font-16 c-font-grey-2 c-font-bold">{{ 'Description'|t }}</h3>
+      </div>
+      <div class="col-md-2">
+        <h3 class="c-font-uppercase c-font-16 c-font-grey-2 c-font-bold center">{{ 'Stock'|t }}</h3>
+      </div>
+      <div class="col-md-2">
+        <h3 class="c-font-uppercase c-font-16 c-font-grey-2 c-font-bold">{{ 'Price'|t }}</h3>
+      </div>
+    </div>
+  </div>
+
+  {% if title %}
+    <h3>{{ title }}</h3>
+  {% endif %}
+  {% for row in rows %}
+    {%
+      set row_classes = [
+        default_row_class ? 'views-row',
+        'c-border-bottom',
+        'c-row-item',
+      ]
+    %}
+    <div{{ row.attributes.addClass(row_classes) }}>
+      <div class="row">
+        {{ row.content }}
+      </div>
+    </div>
+  {% endfor %}
+</div>

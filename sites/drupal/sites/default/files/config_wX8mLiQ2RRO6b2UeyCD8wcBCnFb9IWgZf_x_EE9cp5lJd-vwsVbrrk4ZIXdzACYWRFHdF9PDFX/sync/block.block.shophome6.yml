@@ -1,0 +1,26 @@
+uuid: f8e3f29b-6bf5-4efb-899a-0047e35184c7
+langcode: en
+status: true
+dependencies:
+  module:
+    - md_slider
+    - system
+  theme:
+    - jango_sub
+id: shophome6
+theme: jango_sub
+region: header
+weight: -5
+provider: null
+plugin: 'md_slider_block:shop_home_6'
+settings:
+  id: 'md_slider_block:shop_home_6'
+  label: 'MD Slider: Shop Home 6'
+  provider: md_slider
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/80
+    negate: false
+    context_mapping: {  }

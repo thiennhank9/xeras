@@ -1,0 +1,28 @@
+jango_cms_home:
+  path: 'home/{type}'
+  defaults:
+    _controller: '\Drupal\jango_cms\Controller\JangoCMSController::home_variants'
+    _title: 'Homepage'
+  requirements:
+    _permission: 'access content'
+jango_cms_onepage:
+  path: 'onepage/{type}'
+  defaults:
+    _controller: '\Drupal\jango_cms\Controller\JangoCMSController::onepage_variants'
+    _title: 'Onepage'
+  requirements:
+    _permission: 'access content'
+jango_cms_save_variable:
+  path: 'ajax/jango/save-variable'
+  defaults:
+    _controller: '\Drupal\jango_cms\Controller\JangoCMSController::save_variable'
+    _title: 'Save variable'
+  requirements:
+    _permission: 'use nikadevs cms'
+jango_cms_teaser:
+  path: 'node/{node}/teaser'
+  defaults:
+    _controller: '\Drupal\jango_cms\Controller\JangoCMSController::view_mode_teaser'
+    _title: 'Node teaser'
+  requirements:
+    _permission: 'access content'

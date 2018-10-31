@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_arrow
+    - node.type.nd_service
+  module:
+    - options
+id: node.nd_service.field_arrow
+field_name: field_arrow
+entity_type: node
+bundle: nd_service
+label: Arrow
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

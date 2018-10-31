@@ -1,0 +1,509 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Ajax\AjaxResponse;
+use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\file\Entity\File;
+use Drupal\Component\Utility\Xss;
+
+include_once 'inc/functions.php';
+
+/**
+ * Implements hook_theme().
+ */
+function jango_cms_theme() {
+  return [
+    'jango_project_next_prev' => [
+      'variables' => [
+        'prev' => '',
+        'next' => '',
+        'all_works' => '',
+      ],
+    ],
+    'jango_cms_images_team_formatter' => [
+      'variables' => [
+        'path' => '',
+        'url' => '',
+      ],
+    ],
+    'jango_cms_slider_image_formatter' => [
+      'variables' => [
+        'images' => '',
+        'height' => '',
+      ],
+    ],
+    'jango_cms_project_image_slider_formatter' => [
+      'variables' => [
+        'images' => '',
+      ],
+    ],
+    'jango_cms_vimeo_video_formatter' => [
+      'variables' => [
+        'video_id' => '',
+      ],
+    ],
+    'jango_cms_image_hover_2_icons_formatter' => [
+      'variables' => [
+        'path' => '',
+        'url' => '',
+        'image' => '',
+      ],
+    ],
+    'jango_cms_images_one_main_formatter' => [
+      'variables' => [
+        'images' => '',
+        'small_images' => '',
+        'col' => '',
+      ],
+    ],
+    'jango_cms_view_tabs_content_transfer' => [
+      'variables' => [
+        'path' => '',
+        'url' => '',
+      ],
+    ],
+  ];
+}
+
+/**
+ * @param array $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @return \Drupal\Core\Ajax\AjaxResponse
+ */
+function jango_cms_ajax_user_register_form(array $form, FormStateInterface $form_state) {
+  $entity = \Drupal::entityManager()
+    ->getStorage('user')
+    ->create(array());
+
+  $formObject = \Drupal::entityManager()
+    ->getFormObject('user', 'register')
+    ->setEntity($entity);
+
+  $form = \Drupal::formBuilder()->getForm($formObject);
+
+  $response = new AjaxResponse();
+  $response->addCommand(new ReplaceCommand('.c-form-register', $form));
+  return $response;
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function jango_cms_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  switch ($form_id) {
+    case 'user_login_form':
+      $form['#attributes']['class'][] = 'c-form-login mt-80 mb-80';
+      unset($form['name']['#description'], $form['pass']['#description']);
+      $form['name']['#attributes']['class'][] = 'form-control c-square c-theme input-lg required';
+      $form['pass']['#attributes']['class'][] = 'form-control c-square c-theme input-lg required';
+      $form['name']['#nd_icon'] = 'glyphicon glyphicon-user';
+      $form['pass']['#nd_icon'] = 'glyphicon glyphicon-lock';
+      $config = \Drupal::config('user.settings');
+      $setting = $config->get('register');
+      if($setting != USER_REGISTER_ADMINISTRATORS_ONLY) {
+        $form['toggle_checkbox'] = [
+          '#type' => 'checkbox',
+          '#title' => t('Register Now!'),
+          '#ajax' => [
+            'callback' => 'jango_cms_ajax_user_register_form',
+          ],
+          '#default_value' => FALSE,
+        ];
+      }
+      break;
+
+    case 'user_pass':
+      $form['#prefix'] = '<div class="row mt-20"><div class="col-md-4 col-md-offset-4">';
+      $form['#suffix'] = '</div></div>';
+      $form['actions']['submit']['#attributes']['class'] = ['btn-full'];
+      break;
+
+    case 'user_register_form':
+      $form['account']['mail']['#attributes']['class'][] = 'form-control c-square c-theme input-lg required';
+      $form['account']['name']['#attributes']['class'][] = 'username form-control c-square c-theme input-lg required';
+      break;
+
+    case 'search_block_form':
+      $form['actions']['submit']['#value'] = t('Go!');
+      $form['keys']['#prefix'] = '<div class="container-inline"><div class="input-group">';
+      $form['actions']['#suffix'] = '</div></div>';
+      // Only for header search form.
+      if ($form['#id'] == 'search-block-form') {
+        $form['keys']['#wrapper_attributes']['class'][] = 'c-quick-search';
+        $form['actions']['#attributes']['class'] = ['hidden'];
+      }
+      else {
+        $form['keys']['#attributes']['placeholder'] = t('Search');
+      }
+      break;
+
+    case 'comment_comment_form':
+      $form['subject']['widget'][0]['value']['#title_display'] = 'invisible';
+      $form['field_website']['widget'][0]['value']['#attributes']['placeholder'] = t($form['field_website']['widget'][0]['value']['#title']);
+      $form['field_website']['widget'][0]['value']['#title_display'] = 'invisible';
+      $form['field_body']['widget'][0]['value']['#attributes']['placeholder'] = t('Write your comment here ...');
+      $form['field_body']['widget'][0]['value']['#title_display'] = 'invisible';
+      $form['actions']['submit']['#value'] = t('Submit');
+      $form['actions']['submit']['#attributes']['class'] = [
+        'btn',
+        'c-theme-btn',
+        'c-btn-uppercase',
+        'btn-md',
+        'c-btn-sbold',
+        'btn-block',
+        'c-btn-square',
+        'btn-medium',
+        'btn-mod',
+        'form-submit',
+        'c-btn',
+        'c-btn-square',
+        'c-font-bold',
+        'c-font-uppercase',
+        'c-font-white',
+      ];
+      break;
+
+    case 'views_exposed_form':
+      if (isset($form['body_value_op']) && isset($form['body_value'])) {
+        $form['body_value_op']['#title'] = t('Keywords');
+        $form['body_value']['#title_display'] = 'invisible';
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ * @param \Drupal\views\ViewExecutable $view
+ */
+function jango_cms_views_pre_render(\Drupal\views\ViewExecutable $view) {
+  switch ($view->id()) {
+    case 'product_details_2':
+      // @todo: title parameter %1 in View not works.
+      global $breadcrumb_page_title;
+      foreach($view->result as $value) {
+        $title = $value->_entity->get('title')->value;
+        $view->setTitle($title);
+        $breadcrumb_page_title = $title;
+      }
+      break;
+  }
+}
+
+/**
+ * @param $vars
+ */
+function jango_cms_jango_isotope_gallery_transfer(&$vars) {
+  $jango_isotope_gallery = \Drupal::config('jango_cms.settings')->get('jango_isotope_gallery');
+  foreach ($vars['view']->result as $id => $result) {
+    $vars['rows'][0]['#rows'][$id]['#options']['jango_isotope_gallery'] = $jango_isotope_gallery;
+  }
+}
+
+/**
+ * @param $vars
+ */
+function jango_cms_view_tabs_transfer(&$vars, $category_field_name, $view_id, $view_display = '') {
+  $view_tabs = [];
+  foreach ($vars['view']->result as $id => $result) {
+    $fields = $result->_entity->getFields();
+    if (array_key_exists($category_field_name, $fields)) {
+      $field_values = $fields[$category_field_name]->getValue();
+      if (!empty($field_values)) {
+        $names = [];
+        foreach ($field_values as $value) {
+          $term = Term::load($value['target_id']);
+          if ($term) {
+            $category_name = $term->get('name')->value;
+            $key = [
+              $view_id,
+              $view_display,
+              $value['target_id'],
+            ];
+            $cid = implode('-', $key);
+            $names[] = $cid;
+            $view_tabs[$cid] = $category_name;
+          }
+        }
+        $vars['rows'][0]['#rows'][$id]['#options']['tab_classes'] = implode(' ', $names);
+      }
+    }
+  }
+  asort($view_tabs);
+  $vars['rows'][0]['#rows']['view_tabs']['#tabs'] = $view_tabs;
+}
+
+/**
+ * @param $vars
+ */
+function jango_cms_view_tabs_content_transfer(&$vars, $category_field_name, $image_field_name, $view_id, $view_display = '') {
+  $view_tabs_content = [];
+  foreach ($vars['view']->result as $id => $result) {
+    $entity = $result->_entity;
+    $fields = $entity->getFields();
+    if (array_key_exists($category_field_name, $fields)) {
+      $field_values = $fields[$category_field_name]->getValue();
+      $url = '#';
+      if ($entity->hasVariations()) {
+        $variations = $entity->getVariations();
+        $variation = reset($variations);
+        $variation_fields = $variation->getFields();
+        if (array_key_exists($image_field_name, $variation_fields)) {
+          if ($variation_fields[$image_field_name]->getFieldDefinition()->getType() == 'image') {
+            $fid = $variation_fields[$image_field_name]->target_id;
+            $uri = File::load($fid)->getFileUri();
+            $url = file_create_url($uri);
+          }
+        }
+      }
+      if (!empty($field_values)) {
+        foreach ($field_values as $value) {
+          $key = [
+            $view_id,
+            $view_display,
+            $value['target_id'],
+          ];
+          $cid = implode('-', $key);
+          $entity_type_id = $entity->getEntityTypeId();
+          switch ($entity_type_id) {
+            case 'commerce_product':
+              $entity_type = 'product';
+              break;
+
+            default:
+              $entity_type = $entity_type_id;
+          }
+          $path = \Drupal::service('path.alias_manager')->getAliasByPath('/' . $entity_type . '/' . $entity->id());
+          $theme_array = [
+            '#theme' => 'jango_cms_view_tabs_content_transfer',
+            '#path' => base_path() . ltrim($path, '/'),
+            '#url' => $url,
+          ];
+          $view_tabs_content[$cid][] = \Drupal::service('renderer')->renderPlain($theme_array);
+        }
+      }
+    }
+  }
+  ksort($view_tabs_content);
+  $vars['rows'][0]['#rows']['view_tabs_content']['#tabs_content'] = $view_tabs_content;
+}
+
+/**
+ * Implements template_preprocess_views_view().
+ * @param $variables
+ */
+function jango_cms_preprocess_views_view(&$variables) {
+  $vid = $variables['view']->id();
+  $current_display = $variables['view']->current_display;
+  switch ($vid) {
+    case 'project':
+      switch ($current_display) {
+        case 'full_width_gallery':
+        case 'extended_portfolio':
+        case 'masonry_gallery':
+        case 'classic_porfolio_page':
+        case 'page_2col_portfolio':
+        case 'page_index_gallery':
+        case 'page_lightbox_gallery':
+        case 'page_masonry_portfolio':
+        case 'page_1':
+          jango_cms_view_tabs_transfer($variables, 'field_categories', $vid);
+          if ($current_display == 'page_1') {
+            jango_cms_jango_isotope_gallery_transfer($variables);
+          }
+          break;
+
+        case 'page_3':
+        case 'page_3_2':
+        case 'isotope_grid':
+        case 'isotope_grid_overlay':
+        case 'latest_portfolio_block':
+          jango_cms_jango_isotope_gallery_transfer($variables);
+          break;
+      }
+      break;
+
+    case 'products_filter':
+      jango_cms_view_tabs_transfer($variables, 'field_product_category', $vid, $current_display);
+      jango_cms_view_tabs_content_transfer($variables, 'field_product_category', 'field_images',$vid, $current_display);
+      break;
+  }
+}
+
+/**
+ * Display a view as a grid style.
+ * @param $vars
+ */
+function jango_cms_preprocess_views_view_grid(&$vars) {
+  $view     = $vars['view'];
+  $options  = $view->style_plugin->options;
+  $handler  = $view->style_plugin;
+  $default_row_class = isset($options['default_row_class']) ? $options['default_row_class'] : TRUE;
+  $row_class_special = isset($options['row_class_special']) ? $options['row_class_special'] : TRUE;
+
+  $columns  = $options['columns'];
+
+  $rows = array();
+  $row_indexes = array();
+
+  if ($options['alignment'] == 'horizontal') {
+    $row = array();
+    $col_count = 0;
+    $row_count = 0;
+    $count = 0;
+    foreach ($vars['rows'] as $row_index => $item) {
+      $count++;
+      $row[] = $item;
+      $row_indexes[$row_count][$col_count] = $row_index;
+      $col_count++;
+      if ($count % $columns == 0) {
+        $rows[] = $row;
+        $row = array();
+        $col_count = 0;
+        $row_count++;
+      }
+    }
+    if ($row) {
+      // Fill up the last line only if it's configured, but this is default.
+      if (!empty($handler->options['fill_single_line']) && count($rows)) {
+        for ($i = 0; $i < ($columns - $col_count); $i++) {
+          $row[] = '';
+        }
+      }
+      $rows[] = $row;
+    }
+  }
+  else {
+    $num_rows = floor(count($vars['rows']) / $columns);
+    // The remainders are the 'odd' columns that are slightly longer.
+    $remainders = count($vars['rows']) % $columns;
+    $row = 0;
+    $col = 0;
+    foreach ($vars['rows'] as $count => $item) {
+      $rows[$row][$col] = $item;
+      $row_indexes[$row][$col] = $count;
+      $row++;
+
+      if (!$remainders && $row == $num_rows) {
+        $row = 0;
+        $col++;
+      }
+      elseif ($remainders && $row == $num_rows + 1) {
+        $row = 0;
+        $col++;
+        $remainders--;
+      }
+    }
+    for ($i = 0; $i < count($rows[0]); $i++) {
+      // This should be string so that's okay :)
+      if (!isset($rows[count($rows) - 1][$i])) {
+        $rows[count($rows) - 1][$i] = '';
+      }
+    }
+  }
+
+  // Apply the row classes
+  foreach ($rows as $row_number => $row) {
+    $row_classes = array();
+    if ($default_row_class) {
+      $row_classes[] =  'row-' . ($row_number + 1);
+    }
+    if ($row_class_special) {
+      if ($row_number == 0) {
+        $row_classes[] =  'row-first';
+      }
+      if (count($rows) == ($row_number + 1)) {
+        $row_classes[] =  'row-last';
+      }
+    }
+    $vars['row_classes'][$row_number] = implode(' ', $row_classes);
+    foreach ($rows[$row_number] as $column_number => $item) {
+      $column_classes = array();
+      if ($default_row_class) {
+        $column_classes[] = 'col-'. ($column_number + 1);
+      }
+      if ($row_class_special) {
+        if ($column_number == 0) {
+          $column_classes[] = 'col-first';
+        }
+        elseif (count($rows[$row_number]) == ($column_number + 1)) {
+          $column_classes[] = 'col-last';
+        }
+      }
+//      if (isset($row_indexes[$row_number][$column_number]) && $column_class = $view->style_plugin->getRowClass($row_indexes[$row_number][$column_number])) {
+      if (isset($row_indexes[$row_number][$column_number]) && $column_class = $view->style_plugin->options['row_class_custom']) {
+        $column_classes[] = $column_class;
+      }
+      $vars['column_classes'][$row_number][$column_number] = implode(' ', $column_classes);
+    }
+  }
+  $view_tabs = isset($vars['rows']['view_tabs']) ? $vars['rows']['view_tabs'] : [];
+  $view_tabs_content = isset($vars['rows']['view_tabs_content']) ? $vars['rows']['view_tabs_content'] : [];
+  $vars['rows'] = $rows;
+  if (!empty($view_tabs)) {
+    $vars['rows']['view_tabs'] = $view_tabs;
+  }
+  if (!empty($view_tabs)) {
+    $vars['rows']['view_tabs_content'] = $view_tabs_content;
+  }
+  $vars['class'] = 'views-view-grid cols-' . $columns;
+
+  // Add the summary to the list if set.
+  if (!empty($handler->options['summary'])) {
+    $vars['attributes_array'] = array('summary' => Xss::filterAdmin($handler->options['summary']));
+  }
+
+  // Add the caption to the list if set.
+  if (!empty($handler->options['caption'])) {
+    $vars['caption'] = Xss::filterAdmin($handler->options['caption']);
+  }
+  else {
+    $vars['caption'] = '';
+  }
+}
+
+/**
+ * Display the simple view of rows one after another
+ */
+function jango_cms_preprocess_views_view_unformatted(&$vars) {
+  $view = $vars['view'];
+  $rows = $vars['rows'];
+  $style = $view->style_plugin;
+  $options = $style->options;
+
+  $vars['classes_array'] = array();
+  $vars['classes'] = array();
+  $default_row_class = isset($options['default_row_class']) ? $options['default_row_class'] : FALSE;
+  $row_class_special = isset($options['row_class_special']) ? $options['row_class_special'] : FALSE;
+  // Set up striping values.
+  $count = 0;
+  $max = count($rows);
+  foreach ($rows as $id => $row) {
+    $count++;
+    if ($default_row_class) {
+      $vars['classes'][$id][] = 'views-row';
+      $vars['classes'][$id][] = 'views-row-' . $count;
+    }
+    if ($row_class_special) {
+      $vars['classes'][$id][] = 'views-row-' . ($count % 2 ? 'odd' : 'even');
+      if ($count == 1) {
+        $vars['classes'][$id][] = 'views-row-first';
+      }
+      if ($count == $max) {
+        $vars['classes'][$id][] = 'views-row-last';
+      }
+    }
+
+    if ($row_class = $view->style_plugin->getRowClass($id)) {
+      $vars['classes'][$id][] = $row_class;
+    }
+
+    // Flatten the classes to a string for each row for the template file.
+    $vars['classes_array'][$id] = isset($vars['classes'][$id]) ? implode(' ', $vars['classes'][$id]) : '';
+  }
+}

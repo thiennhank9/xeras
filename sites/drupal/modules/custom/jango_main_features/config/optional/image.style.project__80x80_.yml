@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: project__80x80_
+label: 'Project (80x80)'
+effects:
+  8263b3ac-d603-4322-b2af-1c3d96fc17a7:
+    uuid: 8263b3ac-d603-4322-b2af-1c3d96fc17a7
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 80
+      height: 80

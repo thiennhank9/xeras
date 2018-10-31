@@ -1,0 +1,31 @@
+uuid: 6eec5abb-52a9-4ea4-827a-a841da147db2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:fd88a460-41f3-4b27-97c6-4c18595cc633'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: menutransparenttopbarfixed
+theme: jango_sub
+region: header
+weight: -32
+provider: null
+plugin: 'block_content:fd88a460-41f3-4b27-97c6-4c18595cc633'
+settings:
+  id: 'block_content:fd88a460-41f3-4b27-97c6-4c18595cc633'
+  label: 'Menu Transparent Top Bar Fixed'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/88\r\n/node/170/header/v1-extended"
+    negate: false
+    context_mapping: {  }

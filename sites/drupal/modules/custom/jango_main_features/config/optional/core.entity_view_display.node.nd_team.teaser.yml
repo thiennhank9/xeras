@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.nd_team.body
+    - field.field.node.nd_team.field_image
+    - field.field.node.nd_team.field_position
+    - field.field.node.nd_team.field_social_links
+    - node.type.nd_team
+  module:
+    - text
+    - user
+id: node.nd_team.teaser
+targetEntityType: node
+bundle: nd_team
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 0
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_image: true
+  field_position: true
+  field_social_links: true
+  langcode: true
+  links: true

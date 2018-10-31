@@ -1,0 +1,9 @@
+name: Commerce ext
+type: module
+description: 'Extend some commerce features.'
+package: Custom
+core: 8.x
+dependencies:
+  - taxonomy
+  - commerce_product
+  - views

@@ -1,0 +1,7 @@
+nikadevs_cms.settings:
+  type: config_object
+  label: 'nikadevs_cms settings'
+  mapping:
+    nikadevs_cms_layout:
+      type: string
+      label: 'Layout'

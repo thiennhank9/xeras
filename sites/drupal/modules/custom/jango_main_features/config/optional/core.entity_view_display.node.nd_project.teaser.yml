@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.nd_project.body
+    - field.field.node.nd_project.field_categories
+    - field.field.node.nd_project.field_client
+    - field.field.node.nd_project.field_images
+    - field.field.node.nd_project.field_small_description
+    - field.field.node.nd_project.field_url_the_site
+    - field.field.node.nd_project.field_video
+    - image.style.project__600x300_
+    - node.type.nd_project
+  module:
+    - jango_cms
+    - text
+    - user
+id: node.nd_project.teaser
+targetEntityType: node
+bundle: nd_project
+mode: teaser
+content:
+  body:
+    label: hidden
+    type: text_summary_or_trimmed
+    weight: 0
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    region: content
+  field_client:
+    type: jango_cms_vimeo_video
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_images:
+    type: jango_cms_images_slider
+    weight: 3
+    label: hidden
+    settings:
+      image_style: project__600x300_
+      image_link: ''
+    third_party_settings: {  }
+    region: content
+  field_url_the_site:
+    type: jango_cms_vimeo_video
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_categories: true
+  field_small_description: true
+  field_video: true
+  langcode: true
+  links: true

@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * Default order total summary template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - totals: An array of order totals values with the following keys:
+ *   - subtotal: The order subtotal price.
+ *   - adjustments: An array of adjustment totals:
+ *     - type: The adjustment type.
+ *     - label: The adjustment label.
+ *     - total: The adjustment total price.
+ *     - weight: The adjustment weight, taken from the adjustment type.
+ *   - total: The order total price.
+ *
+ * @ingroup themeable
+ */
+#}
+{{ attach_library('commerce_order/total_summary') }}
+<div{{ attributes.addClass('line-item-summary') }}>
+  <div class="order-total-line order-total-line__total line-item-total">
+    <span class="order-total-line-label line-item-total-label">{{ 'Total:'|t }} </span>
+    <span class="order-total-line-value line-item-total-raw">{{ totals.total|commerce_price_format }}</span>
+  </div>
+</div>

@@ -1,0 +1,737 @@
+<?php
+
+use Drupal\Core\Url;
+use Drupal\file\Entity\File;
+use Drupal\tb_megamenu\TBMegaMenuBuilder;
+use Drupal\image\Plugin\Field\FieldType\ImageItem;
+use Drupal\image\Entity\ImageStyle;
+
+/*
+if (function_exists('drupal_get_title') == FALSE){
+  function drupal_get_title() {
+    $request = \Drupal::request();
+    $route_match = \Drupal::routeMatch();
+    return \Drupal::service('title_resolver')->getTitle($request, $route_match->getRouteObject());
+  }
+}*/
+
+/**
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param null $form_id
+ */
+function jango_form_system_theme_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface &$form_state, $form_id = NULL) {
+  $form['#attached']['library'][] = 'jango/theme-settings-styling';
+  // Work-around for a core bug affecting admin themes. See issue #943212.
+  if (isset($form_id)) {
+    return;
+  }
+
+  $form['options'] = [
+    '#type' => 'vertical_tabs',
+    '#default_tab' => 'nikadevs_layout_builder',
+    '#weight' => '-10',
+    '#title' => t('Jango Theme settings'),
+  ];
+
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('nikadevs_cms')) {
+    $form['nikadevs_layout_builder'] = [
+      '#type' => 'details',
+      '#title' => t('Nikadevs Settings'),
+      '#group' => 'options',
+    ];
+    $form['nikadevs_layout_builder']['layout_builder'] = nikadevs_cms_layout_builder();
+  }
+  else {
+    drupal_set_message('Enable NikaDevs CMS module to use layout builder.');
+  }
+
+  // Main details.
+  $form['main'] = [
+    '#type' => 'details',
+    '#title' => t('Main settings'),
+    '#group' => 'options',
+  ];
+  $skins = [
+    'default',
+    'green1',
+    'green2',
+    'green3',
+    'yellow1',
+    'yellow2',
+    'yellow3',
+    'red1',
+    'red2',
+    'red3',
+    'purple1',
+    'purple2',
+    'purple3',
+    'blue1',
+    'blue2',
+    'blue3',
+    'brown1',
+    'brown2',
+    'brown3',
+    'dark1',
+    'dark2',
+    'dark3',
+  ];
+  $form['main']['skin'] = [
+    '#type' => 'radios',
+    '#title' => t('Skin'),
+    '#options' => array_combine($skins, $skins),
+    '#default_value' => theme_get_setting('skin'),
+    '#attributes' => [
+      'class' => ['color-radios'],
+    ],
+  ];
+  $form['main']['retina'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Enable Retina Script'),
+    '#default_value' => theme_get_setting('retina'),
+    '#description' => t("Only for retina displays and for manually added images. The script will check if the same image with suffix @2x exists and will show it."),
+  ];
+  $form['main']['phone'] = [
+    '#type' => 'textfield',
+    '#title' => t('Phone'),
+    '#default_value' => theme_get_setting('phone'),
+  ];
+  $form['main']['loader_image'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Page loading GIF image'),
+    '#default_value' => theme_get_setting('loader_image'),
+  ];
+
+  // Pagination.
+  $pagination_type = [
+    'pagination pagination-sm' => t('Default pagination small'),
+    'pagination' => t('Default pagination'),
+    'pagination pagination-lg' => t('Default pagination large'),
+    'c-content-pagination c-theme' => t('Pagination element circle'),
+    'c-content-pagination c-square c-theme' => t('Pagination element square'),
+    'c-content-pagination c-theme advanced' => t('Pagination element circle advanced'),
+    'c-content-pagination c-square c-theme advanced' => t('Pagination element square advanced'),
+    'pager' => t('Pager'),
+  ];
+  $form['main']['pagination_type'] = [
+    '#type' => 'select',
+    '#title' => t('Pagination type'),
+    '#options' => $pagination_type,
+    '#default_value' => theme_get_setting('pagination_type'),
+    '#attributes' => ['class' => ['form-control']],
+  ];
+
+  // Megamenu.
+  $form['mega_menu'] = [
+    '#type' => 'details',
+    '#title' => t('Mega Menu'),
+  ];
+  $mega_menu_bg_color = [
+    'dark' => t('Dark'),
+    'light' => t('Light'),
+  ];
+  $form['mega_menu']['mega_menu_bg_color'] = [
+    '#type' => 'select',
+    '#title' => t('Skin'),
+    '#options' => $mega_menu_bg_color,
+    '#default_value' => theme_get_setting('mega_menu_bg_color'),
+    '#attributes' => ['class' => ['form-control']],
+  ];
+
+  // 404.
+  $form['404'] = [
+    '#type' => 'details',
+    '#title' => t('Page not Found -404'),
+    '#group' => 'options',
+  ];
+  $form['404']['404_bg'] = [
+    '#title' => t('Background Image'),
+    '#type' => 'managed_file',
+    '#default_value' => theme_get_setting('404_bg'),
+    '#upload_location' => 'public://',
+    '#required' => FALSE,
+  ];
+
+  // Maintenance.
+  $form['maintenance'] = [
+    '#type' => 'details',
+    '#title' => t('Maintenance Page'),
+    '#group' => 'options',
+  ];
+  $form['maintenance']['maintenance_bg'] = [
+    '#title' => t('Background Image'),
+    '#type' => 'managed_file',
+    '#default_value' => theme_get_setting('maintenance_bg'),
+    '#upload_location' => 'public://',
+    '#required' => FALSE,
+  ];
+
+  // GMap.
+  $form['gmap'] = [
+    '#type' => 'details',
+    '#title' => t('Google Map Settings'),
+    '#group' => 'options',
+  ];
+  $form['gmap']['gmap_key'] = [
+    '#type' => 'textfield',
+    '#title' => t('Google Maps API Key'),
+    '#default_value' => theme_get_setting('gmap_key') ? theme_get_setting('gmap_key') : '',
+    '#description' => 'More information: <a href = "https://developers.google.com/maps/documentation/javascript/get-api-key">https://developers.google.com/maps/documentation/javascript/get-api-key</a>'
+  ];
+}
+
+/**
+ * Implements template_preprocess_form().
+ * @param $variables
+ */
+//function template_preprocess_form(&$variables) {
+//}
+
+/**
+ * Implements hook_element_info_alter().
+ */
+function jango_element_info_alter(&$elements) {
+  if (isset($_GET['q']) && strpos($_GET['q'], 'ajax') !== FALSE) {
+    return;
+  }
+  foreach ($elements as &$element) {
+    if (!empty($element['#input'])) {
+      $element['#process'][] = '_jango_process_input';
+    }
+  }
+}
+
+/**
+ * Prepares variables for input templates.
+ *
+ * Default template: input.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - element: An associative array containing the properties of the element.
+ *     Properties used: #attributes.
+ */
+function jango_preprocess_input(&$variables) {
+  $element = $variables['element'];
+  // Remove name attribute if empty, for W3C compliance.
+  if (isset($variables['attributes']['name']) && empty((string) $variables['attributes']['name'])) {
+    unset($variables['attributes']['name']);
+  }
+  $variables['children'] = $element['#children'];
+  $variables['label'] = isset($element['#title']) ? $element['#title'] : '';
+  $variables['nd_icon'] = isset($element['#nd_icon']) ? '<span class="' . $element['#nd_icon'] . ' form-control-feedback c-font-grey"></span>' : '';
+}
+
+/**
+ * @param $element
+ * @param $form_state
+ * @return mixed
+ */
+function _jango_process_input(&$element, &$form_state) {
+  $types = [
+    'textarea',
+    'textfield',
+    'email',
+    'webform_email',
+    'webform_number',
+    'select',
+    'password',
+    'password_confirm',
+    'search',
+  ];
+  $element['#wrapper_attributes']['class'][] = 'form-group';
+  if (!empty($element['#type']) && (in_array($element['#type'], $types))) {
+    if (!isset($element['#attributes']['class']) || !is_array($element['#attributes']['class']) || (!in_array('input-lg', $element['#attributes']['class']))
+      && !in_array('input-sm', $element['#attributes']['class'])) {
+      $element['#attributes']['class'][] = 'input-lg';
+    }
+    $element['#attributes']['class'][] = 'form-control c-square c-theme';
+  }
+  // Only for header search form.
+  if ($element['#type'] == 'search' && $element['#id'] == 'edit-keys') {
+    $element['#field_suffix'] = '×';
+  }
+  if ($element['#type'] == 'submit') {
+    $element['#attributes']['class'] = isset($element['#attributes']['class']) ? $element['#attributes']['class'] : [];
+    $element['#attributes']['class'] = array_merge($element['#attributes']['class'], [
+      'btn-medium',
+      'btn',
+      'btn-mod',
+      'c-btn',
+      'c-btn-square',
+      'c-theme-btn',
+      'c-font-bold',
+      'c-font-uppercase',
+      'c-font-white'
+    ]);
+  }
+
+  return $element;
+}
+
+/**
+ * @param $variables
+ */
+function jango_preprocess_node(&$variables) {
+  if ($variables['node']->getType() == 'nd_blog') {
+    $variables['comment_count'] = $variables['node']->get('field_comments')->comment_count;
+
+    if ($variables['elements']['#view_mode'] == 'full') {
+      $query = \Drupal::database()->select('node_revision', 'nr');
+      $query->leftJoin('node', 'n', 'n.nid = nr.nid');
+      $query->condition('n.type', 'nd_blog');
+      $query->fields('n', ['nid']);
+      $query->orderBy('nr.revision_timestamp', 'DESC');
+      $nids = $query->execute()->fetchAll();
+
+      $nid = $variables['node']->id();
+      $offset = 0;
+      foreach ($nids as $i => $entity) {
+        $offset = $entity->nid == $nid ? $i : $offset;
+      }
+      $next = !$offset ? $nids[count($nids) - 1] : $nids[$offset - 1];
+      $prev = ($offset + 1) == count($nids) ? $nids[0] : $nids[$offset + 1];
+
+      $variables['next'] = Url::fromRoute('entity.node.canonical', ['node' => $next->nid]);
+      $variables['prev'] = Url::fromRoute('entity.node.canonical', ['node' => $prev->nid]);
+    }
+  }
+}
+
+/**
+ * Implements template_preprocess_commerce_product().
+ * @param array $variables
+ */
+function jango_preprocess_commerce_product(&$variables) {
+  $product = isset($variables['elements']['#commerce_product']) ? $variables['elements']['#commerce_product'] : '';
+  if (!empty($product) && $product->hasVariations()) {
+    $image_field_name = 'field_images';
+    $variations = $product->getVariations();
+    $variation = reset($variations);
+    $variation_fields = $variation->getFields();
+    if (array_key_exists($image_field_name, $variation_fields)) {
+      if ($variation_fields[$image_field_name]->getFieldDefinition()->getType() == 'image') {
+        $fid = $variation_fields[$image_field_name]->target_id;
+        $file = File::load($fid);
+//        $filename = ImageStyle::load('product_700x900')->buildUrl($file->getFileUri());
+        $variables['image_url'] = !empty($file) ? ImageStyle::load('product_700x900')->buildUrl($file->getFileUri()) : '';
+      }
+    }
+  }
+}
+
+/**
+ * @param $variables
+ */
+function jango_preprocess_breadcrumb(&$variables) {
+  global $breadcrumb_page_title;
+  $title = !is_null($breadcrumb_page_title) ? $breadcrumb_page_title : drupal_get_title();
+  $variables['breadcrumb'][] = ['text' => '/'];
+  $variables['breadcrumb'][] = ['text' => $title];
+}
+
+/**
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ */
+function jango_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['#attributes']['class'][] = 'form';
+}
+
+/**
+ * @param $form
+ * @param \Drupal\Core\Form\FormStateInterface $form_state
+ * @param $form_id
+ * @return mixed
+ */
+function jango_form_comment_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  $form['author']['#prefix'] = '<div class="row mb-md-10"><div class="col-md-6 mb-md-10">';
+  $form['field_email']['#prefix'] = '</div><div class="col-md-6 mb-md-10">';
+  $form['field_email']['#suffix'] = '</div></div>';
+  return $form;
+}
+
+/**
+ * Implementation of hook_page_attachments_alter().
+ */
+function jango_page_attachments_alter(&$page) {
+  $page['#attached']['drupalSettings']['base_path'] = base_path();
+  $page['#attached']['drupalSettings']['theme_path'] = drupal_get_path('theme', 'jango');
+}
+
+/**
+ * Implementation of hook_preprocess_page().
+ */
+function jango_preprocess_page(array &$variables) {
+  // Get all regions for current theme.
+  $current_theme = \Drupal::config('system.theme')->get('default');
+  $theme_settings = $current_theme . '.settings';
+  $layouts = \Drupal::configFactory()
+    ->getEditable($theme_settings)
+    ->get('nikadevs_cms_layout');
+
+  if (function_exists('nikadevs_cms_page_layout') && $layouts != []) {
+    $variables['nikadevs_page'] = nikadevs_cms_page_layout(array('page' => $variables['page']));
+    $variables['layout_builder_activated'] = TRUE;
+  }
+  else {
+    $variables['layout_builder_activated'] = FALSE;
+  }
+
+  $title = drupal_get_title();
+  if ($title == 'Page not found') {
+    $variables['logo'] = theme_get_setting('logo');
+    $variables['phone'] = theme_get_setting('phone');
+    $variables['mail'] = \Drupal::config('system.site')->get('mail');
+    $bg_404 = theme_get_setting('404_bg');
+    if (!empty($bg_404) && isset($bg_404[0])) {
+      $file = File::load($bg_404[0]);
+      $variables['bg_404'] = file_create_url($file->getFileUri());
+    }
+  }
+  if ($title == 'Maintenance Page') {
+    $logo = theme_get_setting('logo');
+    $variables['logo'] = $logo['url'];
+    jango_preprocess_maintenance_page($variables);
+  }
+}
+
+/**
+ * Implementation of hook_preprocess_page().
+ */
+function jango_preprocess_maintenance_page(&$variables) {
+  $variables['phone'] = theme_get_setting('phone');
+  $variables['mail'] = \Drupal::config('system.site')->get('mail');
+  $maintenance_bg = theme_get_setting('maintenance_bg');
+  if (!empty($maintenance_bg) && isset($maintenance_bg[0])) {
+    $file = File::load($maintenance_bg[0]);
+    $variables['maintenance_bg'] = file_create_url($file->getFileUri());
+  }
+}
+
+/**
+ * @param array $suggestions
+ * @param array $variables
+ * @return array
+ */
+function jango_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if (!empty($node) && $node->getTitle() == 'Page not found') {
+    $suggestions[] = 'page__system__404';
+  }
+  if (!empty($node) && $node->getTitle() == 'Maintenance Page') {
+    $suggestions[] = 'maintenance_page';
+  }
+  return $suggestions;
+}
+
+/**
+ * Implementation of hook_preprocess_html().
+ */
+function jango_preprocess_html(&$variables) {
+  $variables['#attached']['library'][] = 'jango/google-font';
+
+  $language_interface = \Drupal::languageManager()->getCurrentLanguage();
+  $lng_dir = $language_interface->getDirection() == 'rtl' ? 'rtl' : 'ltr';
+  $variables['#attached']['library'][] = 'jango/language-dir-' . $lng_dir;
+
+  $hosts = ['avoluvach', 'development'];
+  $variables['dev'] = (strpos($_SERVER['HTTP_HOST'], 'nikadevs') !== FALSE || in_array($_SERVER['HTTP_HOST'], $hosts)) ? TRUE : FALSE;
+  $variables['loader_image'] = theme_get_setting('loader_image');
+  $variables['gmap_key'] = theme_get_setting('gmap_key');
+  $variables['attributes']['class'][] = 'appear-animate';
+
+  $skin = theme_get_setting('skin');
+  $variables['#attached']['library'][] = 'jango/' . $skin . '-' . $lng_dir;
+
+  if (theme_get_setting('retina')) {
+    $variables['#attached']['library'][] = 'jango/retina';
+  }
+  // @todo: Too early calls "_jango_shortcodes_body_class()" and returns nothing.
+//  $variables['classes_array'] = isset($variables['classes_array']) ? array_merge($variables['classes_array'], _jango_shortcodes_body_class()) : _jango_shortcodes_body_class();
+}
+
+/**
+ * Prepare variables for tb_megamenu_item.
+ *
+ * @param array $vars variables are declared in theme.
+ */
+function jango_preprocess_tb_megamenu_item(&$vars) {
+  $vars['depth_class'] = $vars['level'] == 1 ? 'c-link' : '';
+  $id = $vars['link']['id'];
+  $vars['trail_class'] = array_key_exists($id, $vars['trail']) ? 'c-active' : '';
+}
+
+/**
+ * @param $vars
+ */
+function jango_preprocess_tb_megamenu_submenu(&$vars) {
+  $plugin_id = $vars['parent']->link->getPluginId();
+  $item_config = isset($vars['menu_config'][$plugin_id]) ? $vars['menu_config'][$plugin_id] : [];
+  $submenu_config = isset($item_config['submenu_config']) ? $item_config['submenu_config'] : [];
+  $vars['submenu_config'] = $submenu_config;
+  TBMegaMenuBuilder::editSubMenuConfig($submenu_config);
+
+  $vars['attributes']->removeClass([
+    'nav-child',
+    'tb-megamenu-submenu',
+    'mega-dropdown-menu'
+  ]);
+
+  if ($vars['level'] == 1 && isset($vars['menu_config'][$plugin_id]['rows_content'][0][0]['col_config']['width'])) {
+    if ($vars['menu_config'][$plugin_id]['rows_content'][0][0]['col_config']['width'] == 12) {
+      $vars['attributes']->addClass(['c-menu-type-classic', 'c-pull-left']);
+    }
+    else {
+      $vars['attributes']->addClass([
+        'c-menu-type-mega2',
+        'c-menu-type-fullwidth',
+        'row'
+      ]);
+    }
+  }
+  if ($vars['level'] == 1 && !isset($vars['menu_config'][$plugin_id]['rows_content'][0][0]['col_config']['width'])) {
+    $vars['attributes']->addClass(['c-menu-type-classic', 'c-pull-left']);
+  }
+  if ($vars['level'] == 2) {
+    $vars['attributes']->addClass('c-menu-type-inline');
+  }
+}
+
+
+/**
+ * Prepare variables for tb_megamenu_item.
+ *
+ * @param array $vars variables are declared in theme.
+ */
+function jango_preprocess_tb_megamenu_column(&$vars) {
+  $width = isset($vars['col']['col_config']['width']) ? $vars['col']['col_config']['width'] : '12';
+  $vars['attributes']->addClass('col-md-' . $width);
+}
+
+/**
+ * Implementation of hook_menu_local_tasks_alter().
+ */
+function jango_menu_local_tasks($variables) {
+  $output = '';
+  if (!empty($variables['primary'])) {
+    $variables['primary']['#prefix'] = '<h2 class="element-invisible">' . t('Primary tabs') . '</h2>';
+    $variables['primary']['#prefix'] .= '<ul class="tabs primary">';
+    $variables['primary']['#suffix'] = '</ul>';
+    $output .= render($variables['primary']);
+  }
+  if (!empty($variables['secondary'])) {
+    $variables['secondary']['#prefix'] = '<h2 class="element-invisible">' . t('Secondary tabs') . '</h2>';
+    $variables['secondary']['#prefix'] .= '<ul class="tabs primary">';
+    $variables['secondary']['#suffix'] = '</ul>';
+    $output .= render($variables['secondary']);
+  }
+
+  return $output;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function jango_theme(&$existing, $type, $theme, $path) {
+  $hooks['user_login_form'] = [
+    'template' => 'user/user-login-form',
+    'render element' => 'form',
+  ];
+  return $hooks;
+}
+
+/**
+ * @param $variables
+ */
+function jango_preprocess_user_login_form(&$variables) {
+  $variables['toggle_checkbox'] = \Drupal::service('renderer')
+    ->render($variables['form']['toggle_checkbox']);
+  $variables['rendered'] = \Drupal::service('renderer')
+    ->render($variables['form']);
+}
+
+/**
+ * Implements theme_field()
+ */
+function jango_field__field_sale_label($variables) {
+  $output = '';
+  if (count($variables['items'])) {
+    for ($i = 0; $i < count($variables['items']); $i++) {
+      if ($variables['element']['#view_mode'] == 'teaser' || $variables['element']['#view_mode'] == 'teaser_list') {
+        $output .= $variables['items'][$i]['content']['#markup'] ? '<div class="c-label c-bg-red c-font-uppercase c-font-white c-font-13 c-font-bold">' . t($variables['items'][$i]['content']['#markup']) . '</div>' : '';
+      }
+      else {
+        $output .= $variables['items'][$i]['content']['#markup'] ? '<div class="c-product-sale">' . t($variables['items'][$i]['content']['#markup']) . '</div>' : '';
+      }
+    }
+  }
+  return $output;
+}
+
+/**
+ * Implements theme_field()
+ */
+function jango_field__field_new_label($variables) {
+  $output = '';
+  if (count($variables['items'])) {
+    for ($i = 0; $i < count($variables['items']); $i++) {
+      if ($variables['element']['#view_mode'] == 'teaser' || $variables['element']['#view_mode'] == 'teaser_list') {
+        $output .= $variables['items'][$i]['content']['#markup'] ? '<div class="c-label c-label-right c-theme-bg c-font-uppercase c-font-white c-font-13 c-font-bold">' . t($variables['items'][$i]['content']['#markup']) . '</div>' : '';
+      }
+      else {
+        $output .= $variables['items'][$i]['content']['#markup'] ? '<div class="c-product-new">' . t($variables['items'][$i]['content']['#markup']) . '</div>' : '';
+      }
+    }
+  }
+  return $output;
+}
+
+/**
+ * Implements template_preprocess_pager().
+ * @param $variables
+ */
+function jango_preprocess_pager(&$variables) {
+  $element = $variables['pager']['#element'];
+  $parameters = $variables['pager']['#parameters'];
+  $quantity = $variables['pager']['#quantity'];
+  $route_name = $variables['pager']['#route_name'];
+  $route_parameters = isset($variables['pager']['#route_parameters']) ? $variables['pager']['#route_parameters'] : [];
+  global $pager_page_array, $pager_total;
+
+  // Nothing to do if there is only one page.
+  if ($pager_total[$element] <= 1) {
+    return;
+  }
+
+  $tags = $variables['pager']['#tags'];
+
+  // Calculate various markers within this pager piece:
+  // Middle is used to "center" pages around the current page.
+  $pager_middle = ceil($quantity / 2);
+  // current is the page we are currently paged to.
+  $pager_current = $pager_page_array[$element] + 1;
+  // first is the first page listed by this pager piece (re quantity).
+  $pager_first = $pager_current - $pager_middle + 1;
+  // last is the last page listed by this pager piece (re quantity).
+  $pager_last = $pager_current + $quantity - $pager_middle;
+  // max is the maximum page number.
+  $pager_max = $pager_total[$element];
+  // End of marker calculations.
+
+  // Prepare for generation loop.
+  $i = $pager_first;
+  if ($pager_last > $pager_max) {
+    // Adjust "center" if at end of query.
+    $i = $i + ($pager_max - $pager_last);
+    $pager_last = $pager_max;
+  }
+  if ($i <= 0) {
+    // Adjust "center" if at start of query.
+    $pager_last = $pager_last + (1 - $i);
+    $i = 1;
+  }
+  // End of generation loop preparation.
+
+  // Create the "first" and "previous" links if we are not on the first page.
+  $pagination_type = theme_get_setting('pagination_type');
+  $items = [];
+  if ($pager_page_array[$element] > 0) {
+    if ($pagination_type == 'c-content-pagination c-theme advanced' || $pagination_type == 'c-content-pagination c-square c-theme advanced') {
+      $items['first'] = [];
+      $options = [
+        'query' => pager_query_add_page($parameters, $element, 0),
+      ];
+      $items['first']['href'] = Url::fromRoute($route_name, $route_parameters, $options);
+      if (isset($tags[0])) {
+        $items['first']['text'] = $tags[0];
+      }
+    }
+
+    $items['previous'] = [];
+    $options = [
+      'query' => pager_query_add_page($parameters, $element, $pager_page_array[$element] - 1),
+    ];
+    $items['previous']['href'] = Url::fromRoute($route_name, $route_parameters, $options);
+    if (isset($tags[1])) {
+      $items['previous']['text'] = $tags[1];
+    }
+  }
+
+  $class = '';
+  if ($i != $pager_max) {
+    // Add an ellipsis if there are further previous pages.
+    if ($i > 1) {
+      $variables['ellipses']['previous'] = TRUE;
+    }
+    // Now generate the actual pager piece.
+    for (; $i <= $pager_last && $i <= $pager_max; $i++) {
+      $options = [
+        'query' => pager_query_add_page($parameters, $element, $i - 1),
+      ];
+      $items['pages'][$i]['href'] = Url::fromRoute($route_name, $route_parameters, $options);
+
+      switch ($pagination_type) {
+        case 'c-content-pagination c-theme':
+        case 'c-content-pagination c-square c-theme':
+        case 'c-content-pagination c-circle c-theme':
+        case 'c-content-pagination c-theme advanced':
+        case 'c-content-pagination c-square c-theme advanced':
+          $class = ' c-active';
+          break;
+        default :
+          $class = ' active';
+          break;
+      }
+      if ($pagination_type != 'pager') {
+        if ($i == $pager_current) {
+          $variables['current'] = $i;
+        }
+      }
+    }
+    // Add an ellipsis if there are further next pages.
+    if ($i < $pager_max + 1) {
+      $variables['ellipses']['next'] = TRUE;
+    }
+  }
+
+  // Create the "next" and "last" links if we are not on the last page.
+  if ($pager_page_array[$element] < ($pager_max - 1)) {
+    $items['next'] = [];
+    $options = [
+      'query' => pager_query_add_page($parameters, $element, $pager_page_array[$element] + 1),
+    ];
+    $items['next']['href'] = Url::fromRoute($route_name, $route_parameters, $options);
+    if (isset($tags[3])) {
+      $items['next']['text'] = $tags[3];
+    }
+
+    if ($pagination_type == 'c-content-pagination c-theme advanced' || $pagination_type == 'c-content-pagination c-square c-theme advanced') {
+      $items['last'] = [];
+      $options = [
+        'query' => pager_query_add_page($parameters, $element, $pager_max - 1),
+      ];
+      $items['last']['href'] = Url::fromRoute($route_name, $route_parameters, $options);
+      if (isset($tags[4])) {
+        $items['last']['text'] = $tags[4];
+      }
+    }
+  }
+  $variables['items'] = $items;
+  $variables['current_class'] = $class;
+  $variables['pagination_type'] = $pagination_type;
+
+  // The rendered link needs to play well with any other query parameter used
+  // on the page, like exposed filters, so for the cacheability all query
+  // parameters matter.
+  $variables['#cache']['contexts'][] = 'url.query_args';
+}
+/**
+ * Implements template_preprocess_user().
+ * @param $variables
+ */
+function jango_preprocess_user(&$variables) {
+  $variables['content']['user_picture'][0]['#item_attributes']['class'] = 'media-object';
+}

@@ -1,0 +1,32 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - options
+id: commerce_product.field_sizes
+field_name: field_sizes
+entity_type: commerce_product
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: S
+      label: S
+    -
+      value: M
+      label: M
+    -
+      value: L
+      label: L
+    -
+      value: XL
+      label: XL
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

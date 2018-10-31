@@ -1,0 +1,28 @@
+jango_shortcodes_ajax_icons_autocomplete:
+  path: 'admin_ajax/jango_shortcodes/icons_autocomplete'
+  defaults:
+    _controller: '\Drupal\jango_shortcodes\Controller\JangoShortcodesController::ajax_icons_autocomplete'
+    _title: 'Ajax Icons Autocomplete'
+  requirements:
+    _permission: 'administer nd nd_visualshortcodes'
+jango_shortcodes_ajax_custom_line_icons_autocomplete:
+  path: 'admin_ajax/jango_shortcodes/custom_line_icons_autocomplete'
+  defaults:
+    _controller: '\Drupal\jango_shortcodes\Controller\JangoShortcodesController::ajax_custom_line__icons_autocomplete'
+    _title: 'Ajax Custom Line Icons Autocomplete'
+  requirements:
+    _permission: 'administer nd nd_visualshortcodes'
+jango_shortcodes_ajax_social_icons_autocomplete:
+  path: 'admin_ajax/jango_shortcodes/social_icons_autocomplete'
+  defaults:
+    _controller: '\Drupal\jango_shortcodes\Controller\JangoShortcodesController::ajax_social_icons_autocomplete'
+    _title: 'Ajax Social Icons Autocomplete'
+  requirements:
+    _permission: 'administer nd nd_visualshortcodes'
+jango_shortcodes_ajax_node_autocomplete:
+  path: 'admin_ajax/jango_shortcodes/node_autocomplete'
+  defaults:
+    _controller: '\Drupal\jango_shortcodes\Controller\JangoShortcodesController::ajax_node_autocomplete'
+    _title: 'Ajax Node Autocomplete'
+  requirements:
+    _permission: 'administer nd nd_visualshortcodes'

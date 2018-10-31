@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.product_display
+    - field.storage.commerce_product.field_sizes
+  module:
+    - options
+id: commerce_product.product_display.field_sizes
+field_name: field_sizes
+entity_type: commerce_product
+bundle: product_display
+label: Sizes
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

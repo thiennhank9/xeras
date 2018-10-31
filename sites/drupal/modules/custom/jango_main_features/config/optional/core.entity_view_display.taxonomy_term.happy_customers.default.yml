@@ -1,0 +1,46 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.happy_customers.field_image_client_logo
+    - field.field.taxonomy_term.happy_customers.field_link
+    - taxonomy.vocabulary.happy_customers
+  module:
+    - image
+    - link
+    - text
+id: taxonomy_term.happy_customers.default
+targetEntityType: taxonomy_term
+bundle: happy_customers
+mode: default
+content:
+  description:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image_client_logo:
+    weight: 2
+    label: above
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_link:
+    weight: 1
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+hidden:
+  langcode: true

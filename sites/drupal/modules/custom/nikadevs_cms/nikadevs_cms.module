@@ -1,0 +1,154 @@
+<?php
+
+use Drupal\Core\Url;
+
+/**
+ *
+ */
+function nikadevs_cms_page_attachments(array &$attachments) {
+  $attachments['#attached']['library'][] = 'nikadevs_cms/nikadev_cms_page';
+}
+
+/**
+ *
+ */
+function nikadevs_cms_layout_builder() {
+
+  $form = array();
+
+  $form['#attached']['library'][] = 'nikadevs_cms/nikadev_cms_layout_builder';
+  $form['#attached']['library'][] = 'seven/seven.jquery.ui';
+
+  $module_dir = DRUPAL_ROOT . '/' . drupal_get_path('module', 'nikadevs_cms');
+
+  module_load_include('inc', 'nikadevs_cms', 'inc/nikadevs_cms');
+
+  // Get all regions for current theme.
+  $current_theme = \Drupal::config('system.theme')->get('default');
+  $theme_settings = $current_theme . '.settings';
+  
+  $themes = \Drupal::service('theme_handler')->listInfo();
+  $theme = $themes[$current_theme];
+  $regions = $theme->info['regions'];
+
+  $layouts_default = array(
+    'layout-default' => array(
+      'name' => 'Default',
+      'pages' => '',
+      'rows' => array(
+        'id-0' => array(
+          'name' => 'Hidden',
+          'attributes' => array(
+            'id' => 'id-0',
+            'class' => array('row', 'sortable-parent', 'sortable'),
+          ),
+        ),
+      ),
+    ),
+  );
+
+
+  $layouts = \Drupal::configFactory()->getEditable($theme_settings)->get('nikadevs_cms_layout');
+
+  if ($layouts == 'default' || empty($layouts)) {
+    \Drupal::configFactory()->getEditable($theme_settings)->set('nikadevs_cms_layout', $layouts_default)->save();
+  }
+
+  $layouts = \Drupal::configFactory()->getEditable($theme_settings)->get('nikadevs_cms_layout');
+
+  // Add new regions.
+  foreach ($regions as $key => $region) {
+
+    // Go throught every layout.
+    foreach ($layouts as $i => $layout) {
+      // Assign new region to Hidden container.
+      if (!isset($layouts[$i]['regions'][$key])) {
+        $layouts[$i]['regions'][$key] = array(
+          'row_id' => 'id-' . 0,
+          'name' => $region,
+          'attributes' => array(
+            'id' => $key,
+          ),
+        );
+      }
+      $layouts[$i]['regions'][$key]['exists'] = 1;
+    }
+  }
+
+  foreach ($layouts as $i => $layout) {
+    if (!isset($layout['rows']) || empty($layout['rows'])) {
+      unset($layouts[$i]);
+      continue;
+    }
+    // Set required for builder class.
+    foreach ($layouts[$i]['regions'] as $key => $region) {
+      // Remove deleted from Theme info regions but not added BLOCKS.
+      if (!isset($layouts[$i]['regions'][$key]['exists']) && !isset($layouts[$i]['regions'][$key]['settings']['block_id']) || (isset($layouts[$i]['regions'][$key]['settings']['block_id']) && $layouts[$i]['regions'][$key]['row_id'] == 'id-0')) {
+        unset($layouts[$i]['regions'][$key]);
+      }
+      elseif (empty($layouts[$i]['regions'][$key]['attributes']['class'])) {
+        $layouts[$i]['regions'][$key]['attributes']['class'][] = 'col-md-12';
+      }
+    }
+
+  }
+
+  $form['#attached']['drupalSettings']['nikadevs_cms']['layouts'] = $layouts;
+  $url = Url::fromRoute('nikadevs_cms.update')->toString();
+  $form['#attached']['drupalSettings']['nikadevs_cms']['update_path'] = $url;
+
+  $form['builder'] = [
+    '#theme' => 'nikadevs_cms_layout_builder',
+    '#layouts' => $layouts,
+    '#attached' => array(
+      'library' => array(
+        'nikadevs_cms/nikadev_cms_builder',
+      ),
+    ),
+  ];
+
+  return $form;
+}
+
+/**
+ * Implements hook_theme().
+ */
+function nikadevs_cms_theme() {
+  $theme['nikadevs_cms_layout_builder'] = [
+    'variables' => ['layouts' => NULL],
+    'template' => 'nikadevs-cms-layout-builder',
+  ];
+
+  $theme['nikadevs_cms_layout_page'] = [
+    'variables' => ['vars' => NULL, 'layout' => ''],
+    'template' => 'nikadevs-cms-layout-page',
+  ];
+
+  return $theme;
+}
+
+/**
+ * Not done.
+ */
+function nikadevs_cms_page_layout($vars = array()) {
+  module_load_include('inc', 'nikadevs_cms', 'inc/nikadevs_cms');
+  $layout = _nikadevs_cms_active_layout($vars);
+
+  return [
+    '#theme' => 'nikadevs_cms_layout_page',
+    '#vars' => $vars,
+    '#layout' => $layout,
+  ];
+}
+
+
+/**
+ * Implements hook_block_build_alter().
+ */
+function nikadevs_cms_block_build_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block) {
+  if (stripos($block->label(), 'menu') === FALSE) {
+    $build['#cache']['contexts'][] = 'url.path';
+  }
+  // Add the 'user' cache context to some blocks.
+  $build['#cache']['max-age'] = 0;
+}

@@ -1,0 +1,16 @@
+name: 'Jango Sub-Theme'
+type: theme
+description: 'Jango is Responsive Drupal 8 Theme.'
+core: 8.x
+base theme: jango
+regions:
+  header: Header
+  highlighted: Highlighted
+  page_top: 'Page Top'
+  content: Content
+  sidebar: Sidebar
+  content_full: 'Content Full Width'
+  page_bottom: 'Page Bottom'
+  footer: Footer
+libraries:
+  - jango_sub/global-styling

@@ -1,0 +1,28 @@
+uuid: 955f16ea-0f4c-4e92-a4cf-b2a4e2f79a6d
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: pathauto_taxonomy
+label: 'Pathauto Taxonomy'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:vocabulary]/[term:name]'
+selection_criteria:
+  cb3f13e7-a806-4d3d-b239-04a5b6943dd2:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      blog_category: blog_category
+      happy_customers: happy_customers
+      nd_clients: nd_clients
+      product_category: product_category
+      tags: tags
+      taxonomy_categories: taxonomy_categories
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: cb3f13e7-a806-4d3d-b239-04a5b6943dd2
+selection_logic: and
+weight: -5
+relationships: {  }

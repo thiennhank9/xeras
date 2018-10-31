@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.product
+    - field.storage.commerce_product_variation.field_old_price
+  module:
+    - commerce_price
+id: commerce_product_variation.product.field_old_price
+field_name: field_old_price
+entity_type: commerce_product_variation
+bundle: product
+label: 'Old Price'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  available_currencies:
+    USD: USD
+field_type: commerce_price
