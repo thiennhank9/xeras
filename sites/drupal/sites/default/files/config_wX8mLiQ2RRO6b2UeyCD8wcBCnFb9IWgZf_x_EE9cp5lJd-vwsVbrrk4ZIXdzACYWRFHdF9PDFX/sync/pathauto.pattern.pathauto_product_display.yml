@@ -1,0 +1,23 @@
+uuid: 3e69581d-36c5-474f-8875-6f7a9d484f83
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+    - ctools
+id: pathauto_product_display
+label: 'Pathauto Product Display'
+type: 'canonical_entities:commerce_product'
+pattern: 'product/[commerce_product:title]'
+selection_criteria:
+  d3148245-119c-4130-937a-9e7c22d09b43:
+    id: 'entity_bundle:commerce_product'
+    bundles:
+      product_display: product_display
+    negate: false
+    context_mapping:
+      commerce_product: commerce_product
+    uuid: d3148245-119c-4130-937a-9e7c22d09b43
+selection_logic: and
+weight: -5
+relationships: {  }

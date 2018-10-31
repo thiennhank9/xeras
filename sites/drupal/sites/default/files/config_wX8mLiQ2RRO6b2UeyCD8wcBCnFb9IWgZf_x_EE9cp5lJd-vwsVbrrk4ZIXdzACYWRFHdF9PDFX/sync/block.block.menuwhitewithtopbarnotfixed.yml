@@ -1,0 +1,31 @@
+uuid: 39e98dea-bf80-4426-a80a-9a5cc207c910
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6a77a029-906c-4f91-bbe7-6bbcce955cb7'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: menuwhitewithtopbarnotfixed
+theme: jango_sub
+region: header
+weight: -19
+provider: null
+plugin: 'block_content:6a77a029-906c-4f91-bbe7-6bbcce955cb7'
+settings:
+  id: 'block_content:6a77a029-906c-4f91-bbe7-6bbcce955cb7'
+  label: 'Menu White with Top Bar Not Fixed'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/118/inner-header/v2-extended
+    negate: false
+    context_mapping: {  }

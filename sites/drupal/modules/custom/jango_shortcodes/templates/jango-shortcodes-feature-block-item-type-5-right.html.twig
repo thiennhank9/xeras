@@ -1,0 +1,10 @@
+<div class="c-card c-font-right">
+  <i class="{{ icon }} c-font-27 c-theme-font c-float-right c-border c-border-opacity"></i>
+  <div class="c-content c-content-right">
+    {{ text|raw }}
+  </div>
+</div>
+
+{% if border == 1 %}
+  <div class="c-border-bottom c-bg-opacity-2"></div>
+{% endif %}

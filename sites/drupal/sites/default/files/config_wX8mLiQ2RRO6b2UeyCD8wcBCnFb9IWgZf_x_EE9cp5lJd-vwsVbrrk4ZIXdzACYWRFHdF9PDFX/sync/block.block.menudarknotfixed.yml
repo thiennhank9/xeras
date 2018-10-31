@@ -1,0 +1,31 @@
+uuid: 11ae1ec2-fc69-4c8a-86a3-29535be3fbbd
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:2733de6b-db9a-4195-bd26-b7167a9771d7'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: menudarknotfixed
+theme: jango_sub
+region: header
+weight: -22
+provider: null
+plugin: 'block_content:2733de6b-db9a-4195-bd26-b7167a9771d7'
+settings:
+  id: 'block_content:2733de6b-db9a-4195-bd26-b7167a9771d7'
+  label: 'Menu Dark Not Fixed'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/118/inner-header/v1\r\n/home-version-11"
+    negate: false
+    context_mapping: {  }

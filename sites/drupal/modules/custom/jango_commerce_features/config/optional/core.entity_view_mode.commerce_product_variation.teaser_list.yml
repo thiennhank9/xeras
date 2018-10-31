@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - commerce_product
+id: commerce_product_variation.teaser_list
+label: 'Teaser List'
+targetEntityType: commerce_product_variation
+cache: true

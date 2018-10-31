@@ -1,0 +1,72 @@
+{#
+/**
+ * @file
+ * Default view template to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ *
+ * @ingroup themeable
+ */
+#}
+{% set data_id = view.element['#name'] ~ '-' ~ view.element['#display_id'] ~ '-' ~ fields.nid.content|striptags|trim ~ '-' ~ fields.jango_cms_single_image_fid.content|striptags|trim %}
+{% set src = fields.jango_cms_single_image_url.content|striptags|trim %}
+{% set jango_isotope_gallery = options.jango_isotope_gallery %}
+
+{%
+  set class = [
+    'c-content-isotope-item',
+    options.tab_classes,
+    fields.jango_cms_user_access.content|striptags|trim == 'TRUE' ? 'contextual-links-region' : '',
+    jango_isotope_gallery[data_id]|number_format(0) == 2 ? 'c-item-size-double' : '',
+  ]
+%}
+
+<div{{ create_attribute().addClass(class) }}>
+
+  {% if fields.jango_cms_user_access.content|striptags|trim == 'TRUE' %}
+    <div class="contextual-links-wrapper">
+      <div class="item-list">
+        <ul class="contextual-links isotope-gallery-action" data-id="{{ data_id }}">
+          <li>
+            <a href="#" data-id="1">1 {{ 'column'|t }}</a>
+          </li>
+          <li>
+            <a href="#" data-id="2">2 {{ 'columns'|t }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="c-content-isotope-image-container">
+    {{ fields.field_images.content }}
+    <div class="c-content-isotope-overlay c-ilightbox-image-4" href="{{ src }}" data-options="thumbnail:'{{ src }}'" data-caption="<h4>{{ fields.title.content|striptags|trim }}</h4>{{ fields.body.content|striptags|trim }}">
+      <div class="c-content-isotope-overlay-icon">
+        <i class="fa fa-cog c-font-white"></i>
+      </div>
+    </div>
+  </div>
+</div>

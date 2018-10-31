@@ -1,0 +1,20 @@
+{% set local_class = link['url'] starts with '#' ? ' c-onepage-link' %}
+
+{% if item_config['caption'] %}
+  <li class="mega-caption"><h3>{{ item_config['caption'] }}</h3></li>
+{% endif %}
+
+<li {{ attributes.addClass([local_class, trail_class]) }} >
+  <a href="{{ link['url'] }}" {{ link['attributes'].addClass(depth_class) }}>
+    {% if item_config['xicon'] %}
+      <i class="{{ item_config['xicon'] }}"></i>
+    {% endif %}
+
+    {{ link.title_translate|t }}
+
+    {% if submenu and block_config['auto-arrow'] %}
+      <span class="c-arrow c-toggler"></span>
+    {% endif %}
+  </a>
+  {{ submenu }}
+</li>

@@ -1,0 +1,573 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 0
+  path: themes/custom/jango_sub/logo.png
+favicon:
+  use_default: 1
+retina: 0
+loader_image: 1
+phone: 0307-567-890
+404_bg: {  }
+maintenance_bg: {  }
+gmap_key: ''
+nikadevs_cms_layout:
+  layout-default:
+    name: Default
+    pages: ''
+    rows:
+      id-1:
+        name: Header
+        attributes:
+          id: id-1
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-2:
+        name: Content
+        attributes:
+          id: id-2
+          class:
+            - row
+        settings:
+          tag: div
+          bg_image_type: '0'
+      id-3:
+        name: 'Content Full Width'
+        attributes:
+          id: id-3
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-4:
+        name: Footer
+        attributes:
+          id: id-4
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-0:
+        name: Hidden
+        attributes:
+          id: id-0
+          class:
+            - row
+            - sortable-parent
+    regions:
+      header:
+        row_id: id-1
+        name: Header
+        attributes:
+          id: header
+          class:
+            - col-md-12
+      highlighted:
+        row_id: id-2
+        name: Highlighted
+        attributes:
+          id: highlighted
+          class:
+            - col-md-12
+      page_top:
+        row_id: id-2
+        name: 'Page Top'
+        attributes:
+          id: page_top
+          class:
+            - col-md-12
+      content:
+        row_id: id-2
+        name: Content
+        attributes:
+          id: content
+          class:
+            - col-md-12
+      sidebar:
+        row_id: id-2
+        name: Sidebar
+        attributes:
+          id: sidebar
+          class:
+            - col-md-12
+      page_bottom:
+        row_id: id-2
+        name: 'Page Bottom'
+        attributes:
+          id: page_bottom
+          class:
+            - col-md-12
+      content_full:
+        row_id: id-3
+        name: 'Content Full Width'
+        attributes:
+          id: content_full
+          class:
+            - col-md-12
+      footer:
+        row_id: id-4
+        name: Footer
+        attributes:
+          id: footer
+          class:
+            - col-md-12
+  layout-right-sidebar:
+    name: 'Right Sidebar'
+    pages: "/blog/*\n/blog-list-view\n/blog-grid-view"
+    rows:
+      id-1:
+        name: Header
+        attributes:
+          id: id-1
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-2:
+        name: Content
+        attributes:
+          id: id-2
+          class:
+            - row
+        settings:
+          tag: div
+          bg_image_type: '0'
+      id-3:
+        name: 'Content Full Width'
+        attributes:
+          id: id-3
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-4:
+        name: Footer
+        attributes:
+          id: id-4
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-0:
+        name: Hidden
+        attributes:
+          id: id-0
+          class:
+            - row
+            - sortable-parent
+    regions:
+      header:
+        row_id: id-1
+        name: Header
+        attributes:
+          id: header
+          class:
+            - col-md-12
+      highlighted:
+        row_id: id-2
+        name: Highlighted
+        attributes:
+          id: highlighted
+          class:
+            - col-md-12
+      page_top:
+        row_id: id-2
+        name: 'Page Top'
+        attributes:
+          id: page_top
+          class:
+            - col-md-12
+      content:
+        row_id: id-2
+        name: Content
+        attributes:
+          id: content
+          class:
+            - col-md-8
+        settings:
+          padding_top: '60'
+          padding_bottom: '40'
+      sidebar:
+        row_id: id-2
+        name: Sidebar
+        attributes:
+          id: sidebar
+          class:
+            - col-md-3
+            - col-md-offset-1
+        settings:
+          padding_top: '60'
+          padding_bottom: '40'
+      page_bottom:
+        row_id: id-2
+        name: 'Page Bottom'
+        attributes:
+          id: page_bottom
+          class:
+            - col-md-12
+      content_full:
+        row_id: id-3
+        name: 'Content Full Width'
+        attributes:
+          id: content_full
+          class:
+            - col-md-12
+      footer:
+        row_id: id-4
+        name: Footer
+        attributes:
+          id: footer
+          class:
+            - col-md-12
+  layout-full-width:
+    name: 'Full Width'
+    pages: "<front>\n/elements-blog\n/node/139\n/products-split\n/shop-components-1\n/shop-components-2\n/node/102\n/shop-components-5\n/shop-components-6\n/shop-components-7\n*shop-home*\n/parallax-blocks-2\n/parallax-blocks-1\n/counters\n/steps\n/pricing-tables-1\n/pricing-tables-2\n/feature-blocks\n/feature-blocks-2\n/engage-bars\n/testimonials\n/testimonials-2\n/services\n/accordion-contents\n/app-showcase\n/page-fullwidth-gallery\n/node/96\n/node/97\n/animated-progress-bars\n/product-launch\n/tabbed-contents\n/engage-bars-0\n/about-us-*\n/contact-us-*\n/team\n/blog-elements\n/tiles\n/meet-team\n/home-*\n/node/118\n/node/118/*\n/node/170/*\n/node/170\n/latest-items\n/onepage-version*"
+    rows:
+      id-1:
+        name: Header
+        attributes:
+          id: id-1
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-2:
+        name: Content
+        attributes:
+          id: id-2
+          class:
+            - row
+        settings:
+          tag: div
+          bg_image_type: '0'
+          full_width: '1'
+      id-3:
+        name: 'Content Full Width'
+        attributes:
+          id: id-3
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-4:
+        name: Footer
+        attributes:
+          id: id-4
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-0:
+        name: Hidden
+        attributes:
+          id: id-0
+          class:
+            - row
+            - sortable-parent
+    regions:
+      header:
+        row_id: id-1
+        name: Header
+        attributes:
+          id: header
+          class:
+            - col-md-12
+      highlighted:
+        row_id: id-2
+        name: Highlighted
+        attributes:
+          id: highlighted
+          class:
+            - col-md-12
+      page_top:
+        row_id: id-2
+        name: 'Page Top'
+        attributes:
+          id: page_top
+          class:
+            - col-md-12
+      content:
+        row_id: id-2
+        name: Content
+        attributes:
+          id: content
+          class:
+            - col-md-12
+      sidebar:
+        row_id: id-2
+        name: Sidebar
+        attributes:
+          id: sidebar
+          class:
+            - col-md-12
+      page_bottom:
+        row_id: id-2
+        name: 'Page Bottom'
+        attributes:
+          id: page_bottom
+          class:
+            - col-md-12
+      content_full:
+        row_id: id-3
+        name: 'Content Full Width'
+        attributes:
+          id: content_full
+          class:
+            - col-md-12
+      footer:
+        row_id: id-4
+        name: Footer
+        attributes:
+          id: footer
+          class:
+            - col-md-12
+  layout-left-sidebar:
+    name: 'Left Sidebar'
+    pages: "/*/left-sidebar\n/user/*"
+    rows:
+      id-1:
+        name: Header
+        attributes:
+          id: id-1
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-2:
+        name: Content
+        attributes:
+          id: id-2
+          class:
+            - row
+        settings:
+          tag: div
+          bg_image_type: '0'
+      id-3:
+        name: 'Content Full Width'
+        attributes:
+          id: id-3
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-4:
+        name: Footer
+        attributes:
+          id: id-4
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-0:
+        name: Hidden
+        attributes:
+          id: id-0
+          class:
+            - row
+            - sortable-parent
+    regions:
+      header:
+        row_id: id-1
+        name: Header
+        attributes:
+          id: header
+          class:
+            - col-md-12
+      highlighted:
+        row_id: id-2
+        name: Highlighted
+        attributes:
+          id: highlighted
+          class:
+            - col-md-12
+      page_top:
+        row_id: id-2
+        name: 'Page Top'
+        attributes:
+          id: page_top
+          class:
+            - col-md-12
+      sidebar:
+        row_id: id-2
+        name: Sidebar
+        attributes:
+          id: sidebar
+          class:
+            - col-md-3
+        settings:
+          padding_top: '30'
+          padding_bottom: '40'
+      content:
+        row_id: id-2
+        name: Content
+        attributes:
+          id: content
+          class:
+            - col-md-9
+        settings:
+          padding_top: '30'
+          padding_bottom: '40'
+      page_bottom:
+        row_id: id-2
+        name: 'Page Bottom'
+        attributes:
+          id: page_bottom
+          class:
+            - col-md-12
+      content_full:
+        row_id: id-3
+        name: 'Content Full Width'
+        attributes:
+          id: content_full
+          class:
+            - col-md-12
+      footer:
+        row_id: id-4
+        name: Footer
+        attributes:
+          id: footer
+          class:
+            - col-md-12
+  layout-content-paddings:
+    name: 'Content Paddings'
+    pages: "/shop-components*\n/product/*"
+    rows:
+      id-1:
+        name: Header
+        attributes:
+          id: id-1
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-2:
+        name: Content
+        attributes:
+          id: id-2
+          class:
+            - row
+        settings:
+          tag: div
+          bg_image_type: '0'
+          padding_top: '60'
+          padding_bottom: '60'
+      id-3:
+        name: 'Content Full Width'
+        attributes:
+          id: id-3
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-4:
+        name: Footer
+        attributes:
+          id: id-4
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-0:
+        name: Hidden
+        attributes:
+          id: id-0
+          class:
+            - row
+            - sortable-parent
+    regions:
+      header:
+        row_id: id-1
+        name: Header
+        attributes:
+          id: header
+          class:
+            - col-md-12
+      highlighted:
+        row_id: id-2
+        name: Highlighted
+        attributes:
+          id: highlighted
+          class:
+            - col-md-12
+      page_top:
+        row_id: id-2
+        name: 'Page Top'
+        attributes:
+          id: page_top
+          class:
+            - col-md-12
+      content:
+        row_id: id-2
+        name: Content
+        attributes:
+          id: content
+          class:
+            - col-md-12
+      sidebar:
+        row_id: id-2
+        name: Sidebar
+        attributes:
+          id: sidebar
+          class:
+            - col-md-12
+      page_bottom:
+        row_id: id-2
+        name: 'Page Bottom'
+        attributes:
+          id: page_bottom
+          class:
+            - col-md-12
+      content_full:
+        row_id: id-3
+        name: 'Content Full Width'
+        attributes:
+          id: content_full
+          class:
+            - col-md-12
+      footer:
+        row_id: id-4
+        name: Footer
+        attributes:
+          id: footer
+          class:
+            - col-md-12
+_core:
+  default_config_hash: S3jbiou5JJDwvQLD_WfeQ6ztXR9CEVOiLKrl0soDYfM
+skin: default
+pagination_type: 'pagination pagination-sm'
+mega_menu_bg_color: dark

@@ -1,0 +1,67 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_display.comment.comment.default
+    - field.field.node.nd_blog.body
+    - field.field.node.nd_blog.field_blog_category
+    - field.field.node.nd_blog.field_comments
+    - field.field.node.nd_blog.field_images
+    - field.field.node.nd_blog.field_tags
+    - field.field.node.nd_blog.field_video
+    - image.style.project__1200x900_
+    - node.type.nd_blog
+  module:
+    - comment
+    - jango_cms
+    - text
+    - user
+id: node.nd_blog.default
+targetEntityType: node
+bundle: nd_blog
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_comments:
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    type: comment_default
+    region: content
+  field_images:
+    weight: 1
+    label: hidden
+    settings:
+      image_style: project__1200x900_
+      height: '360'
+      image_link: ''
+    third_party_settings: {  }
+    type: jango_cms_images_slider
+    region: content
+  field_tags:
+    type: jango_cms_blog_tags
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_video:
+    type: jango_cms_vimeo_video
+    weight: 0
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_blog_category: true
+  langcode: true
+  links: true

@@ -1,0 +1,31 @@
+uuid: 898577c5-6a68-4469-a188-a2b9231e3046
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:b8e7040d-9409-4820-9b64-99c50b6b723e'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: footer7descriptionandredblock
+theme: jango_sub
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:b8e7040d-9409-4820-9b64-99c50b6b723e'
+settings:
+  id: 'block_content:b8e7040d-9409-4820-9b64-99c50b6b723e'
+  label: 'Footer 7: Description and red block'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/118/footer-7
+    negate: false
+    context_mapping: {  }

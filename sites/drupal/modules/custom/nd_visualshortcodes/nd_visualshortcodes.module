@@ -1,0 +1,1059 @@
+<?php
+
+/**
+ * @file
+ * This module enables basic nd_visualshortcodes functionality.
+ *
+ */
+
+
+use Drupal\Core\Database\Database;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Link;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+use Drupal\Core\Template\Attribute;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\Core\Entity\Display\EntityViewDisplayInterface;
+use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\UrlHelper;
+use Drupal\Component\Utility\Unicode;
+
+
+// define('nd_visualshortcodes_EXTRA_CSS', drupal_get_path('module', 'rhythm_shortcodes') . '/css/rhythm_shortcodes.css');
+
+function nd_visualshortcodes_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+
+  return $form;
+}
+
+/**
+ * Implementation of hook_filter_info().
+ */
+/*
+function nd_visualshortcodes_filter_info() {
+ $filters['shortcode_dynamic'] = array(
+   'title' => t('Shortcodes Dynamic'),
+   'description' => t('Alias of Shortcodes with disabled CACHE. Use for dynamic content such as VIEW.'),
+   'process callback' => '_nikadevs_cms_shortcode_process',
+   'settings callback' => '_shortcode_settings_form',
+   'cache' => FALSE,   ///  - THIS STRING DOING THE WORK, AND CACHE IS DISABLED
+ );
+ return  $filters;
+}*/
+function _nd_visualshortcodes_backend_element($attrs, $text, $el = '') {
+  $text = trim($text);
+  // $shortcodes = shortcode_list_all();
+  $shortcodeService = \Drupal::service('shortcode');
+  $shortcodes = $shortcodeService->loadShortcodePlugins();
+  if (isset($attrs['class'])) {
+    $attrs['extra_classes'] = $attrs['class'] . (isset($attrs['extra_classes']) ? ' ' . $attrs['extra_classes'] : '');
+  }
+  $attrs['class'] = 'row shortcode-processed nd-visualshortcodes-sortable nd-visualshortcodes-parent-wrap';
+  $attrs['shortcode'] = $el;
+  $title = is_array($shortcodes[$el]['title']) ? '' : $shortcodes[$el]['title'];
+  $text = is_array($text) ? '' : $text;
+  $att = new Attribute($attrs);
+  $style = "";
+  $c = "";
+  if ($el == "a_nd_saved") {
+    $style = "border-none";
+  }
+
+  if ($el == "row") //$el=="nd_container" ||
+  {
+    $c = "row";
+  }
+
+  // echo $c;
+  return '<li ' . $att . '><div class = "border-style ' . $style . ' clearfix"><h3><i class="fa fa-arrows"></i><span>' . $title . _nd_visualshortcodes_backend_description($attrs, $text) . '</span><span class = "nd-visualshortcodes-settings-links"><i class="fa fa-save nd-visualshortcodes-save"></i><i class="fa fa-copy nd-visualshortcodes-copy"></i><i class="fa fa-plus-square nd_visualshortcodes_add"></i><i class="fa fa-edit shortcode-settings"></i></span></h3><ol class = "' . $c . ' nd-visualshortcodes-parent">' . $text . '</ol></div></li>';
+}
+
+function nd_visualshortcodes_preview($el, $attrs, $text) {
+
+  $shortcodeService = \Drupal::service('shortcode');
+  $shortcodes = $shortcodeService->loadShortcodePlugins();
+  $function_preview = isset($shortcodes[$el]['process_callback']) ? ($shortcodes[$el]['process_callback'] . '_preview') : '';
+
+  $preview = '';
+  if ($el == 'a_nd_saved') {
+    $preview = nd_visualshortcodes_shortcode_saved($attrs, $text);
+  }
+  elseif ((!isset($shortcodes[$el]['preview']) || $shortcodes[$el]['preview'] !== FALSE) && !in_array($el, array(
+      'node',
+      'view',
+      'block',
+      'menu',
+      'nd_node',
+      'nd_view',
+      'nd_block',
+      'nd_menu'
+    ))
+  ) {
+    if (method_exists($shortcodes[$el]['class'], "process")) {
+      $obj = new $shortcodes[$el]['class'](array(), 0, 0);
+      $preview = $obj->process($attrs, $text);
+      //$preview = call_user_func($shortcodes[$el]['class']."::process" , $attrs, $text);
+    }
+  }
+
+  $preview = $el == 'a_nd_saved' ? $preview : str_replace(array(
+    '<ul',
+    '</ul>',
+    '<li',
+    '</li>',
+    '<ol',
+    '</ol>'
+  ), array(
+    '<div class = "ul"',
+    '</div>',
+    '<div class = "li"',
+    '</div>',
+    '<div class = "ol"',
+    '</div>'
+  ), $preview);
+  return $preview;
+}
+
+function nd_visualshortcodes_shortcode_saved($attrs, $text) {
+  $query = \Drupal::database()->select('nd_visualshortcodes_saved', 'n');
+  $query->fields('n', ['code'])->condition('id', $attrs['saved']);
+  $saved = $query->execute()->fetchField();
+  return $saved;
+}
+
+function _nd_visualshortcodes_parse_attrs($text) {
+  $attrs = array();
+  $pattern = '/(\w+)\s*=\s*"([^"]*)"(?:\s|$)|(\w+)\s*=\s*\'([^\']*)\'(?:\s|$)|(\w+)\s*=\s*([^\s\'"]+)(?:\s|$)|"([^"]*)"(?:\s|$)|(\S+)(?:\s|$)/';
+  $text = preg_replace("/[\x{00a0}\x{200b}]+/u", " ", $text);
+  $text = html_entity_decode($text);
+  if (preg_match_all($pattern, $text, $match, PREG_SET_ORDER)) {
+    foreach ($match as $m) {
+      if (!empty($m[1])) {
+        $attrs[strtolower($m[1])] = stripcslashes($m[2]);
+      }
+      elseif (!empty($m[3])) {
+        $attrs[strtolower($m[3])] = stripcslashes($m[4]);
+      }
+      elseif (!empty($m[5])) {
+        $attrs[strtolower($m[5])] = stripcslashes($m[6]);
+      }
+      elseif (isset($m[7]) and strlen($m[7])) {
+        $attrs[] = stripcslashes($m[7]);
+      }
+      elseif (isset($m[8])) {
+        $attrs[] = stripcslashes($m[8]);
+      }
+    }
+  }
+  else {
+    $attrs = ltrim($text);
+  }
+  return $attrs;
+}
+
+function _nd_visualshortcodes_backend_description($attrs, $text) {
+  $description = '';
+  $shortcodeService = \Drupal::service('shortcode');
+  $shortcodes = $shortcodeService->loadShortcodePlugins();
+  if (isset($shortcodes[$attrs['shortcode']]['description_field'])) {
+    $field = $shortcodes[$attrs['shortcode']]['description_field'];
+    if (isset($attrs[$field]) && $attrs[$field]) {
+      $description = ' <small>(' . Unicode::truncate($attrs[$field], 40, TRUE, TRUE) . ')</small>';
+    }
+  }
+  elseif (method_exists($shortcodes[$attrs['shortcode']]['class'], "description")) {
+    $obj = new $shortcodes[$attrs['shortcode']]['class'](array(), 0, 0);
+    $text = $obj->description($attrs, $text);
+    //$text = call_user_func($shortcodes[$attrs['shortcode']]['class']."::description" , $attrs, $text);
+    $description = $text ? ' <small>(' . $text . ')</small>' : '';
+  }
+  return $description;
+}
+
+/**
+ * Implementation of hook_element_info_alter().
+ */
+function nd_visualshortcodes_element_info_alter(&$types) {
+  $config = \Drupal::config('nd_visualshortcodes.settings');
+  if ($config->get("formats")) {
+    $types['text_format']['#pre_render'][] = 'nd_visualshortcodes_pre_render_text_format';
+  }
+}
+
+/**
+ * This function creates the HTML objects required for nd_visualshortcodes.
+ *
+ * @param $element
+ *   A fully populated form element to add the editor to.
+ * @return
+ *   The same $element with extra nd_visualshortcodes markup and initialization.
+ */
+function nd_visualshortcodes_pre_render_text_format($element) {
+
+  static $init = FALSE;
+  if (!isset($element['#format'])) {
+    return $element;
+  }
+// print_r($element['format']['format']);
+  if ($init === FALSE) {
+    $config = \Drupal::config('nd_visualshortcodes.settings');
+    $element['#attached']['drupalSettings']['nd_visualshortcodes'] = array(
+      "autostart" => $config->get("autostart"),
+      "formats" => $config->get("formats"),
+      "confirm_delete" => $config->get("confirm_delete"),
+      "html_default_format" => $config->get("html_default_format"),
+    );
+    $element['#attached']['library'][] = 'nd_visualshortcodes/shortcodes';
+    $init = TRUE;
+  }
+
+  if (isset($element['value'])) {
+    if (!isset($element['format'])) {
+      return $element;
+    }
+    if (isset($element['summary']) && $element['summary']['#type'] == 'textarea') {
+      $element['value'] = nd_visualshortcodes_load_field($element['value'], $element['format']['format'], TRUE, $element['summary']['#id']);
+      $element['summary'] = nd_visualshortcodes_load_field($element['summary'], $element['format']['format'], FALSE);
+    }
+    else {
+      $element['value'] = nd_visualshortcodes_load_field($element['value'], $element['format']['format']);
+    }
+  }
+  else {
+    $element = nd_visualshortcodes_load_field($element, $element['#format']);
+  }
+  return $element;
+}
+
+function nd_visualshortcodes_load_field($field, $format, $show_toggle = TRUE, $add_fields_to_toggle = FALSE) {
+  global $theme;
+  static $processed_ids = array();
+  $use_ckeditor = FALSE;
+  $format_arr = FALSE;
+
+  if (is_array($format)) {
+    $format_arr = $format;
+    $format = isset($format_arr['#value']) ? $format_arr['#value'] : $format_arr['#default_value'];
+  }
+// print_r($format);
+  if (!isset($field['#id'])) {
+    return $field;
+  }
+
+  if (isset($processed_ids[$field['#id']])) {
+    return $field;
+  }
+
+  if (key_exists('#nd_visualshortcodes', $field) && !$field['#nd_visualshortcodes']) {
+    return $field;
+  }
+
+  if (isset($field['#access']) && !$field['#access']) {
+    return $field;
+  }
+
+  if ($field['#id'] == "edit-log") {
+    return $field;
+  }
+
+  if (isset($field['#attributes']['disabled']) && $field['#attributes']['disabled'] == 'disabled') {
+    return $field;
+  }
+
+
+  if (!isset($processed_ids[$field['#id']])) {
+    $processed_ids[$field['#id']] = array();
+  }
+
+  $textarea_id = $field['#id'];
+
+  $class[] = 'ckeditor-mod';
+  $_ckeditor_ids[] = $textarea_id;
+
+  $prefix = '<div class = "nd_visualshortcodes_links_wrap"><a class="nd_visualshortcodes_links btn btn-info btn-sm" href="#" data-disable-text = "' . str_replace("'", '"', t('Disable Visual Shortcodes')) . '" data-enable-text = "' . str_replace("'", '"', t('Enable Visual Shortcodes')) . '" data-id="' . $textarea_id . '" data-format = "' . $format . '">';
+  $prefix .= t('Loading...');
+  $prefix .= '</a><i class="fa fa-spinner fa-spin"></i></div>';
+
+  $field['#prefix'] = (isset($field['#prefix']) ? $field['#prefix'] : '') . $prefix;
+// dsm($field);
+  return $field;
+}
+
+/**
+ * Return array with region ID and his HTML class name
+ */
+function nd_visualshortcodes_theme($existing, $type, $theme, $path) {
+  return array(
+    'nd_visualshortcodes' => array(
+      'variables' => array(
+        'output' => '',
+        'live_preview' => ''
+      )
+    ),
+  );
+}
+
+/**
+ * Implements hook_custom_theme().
+ */
+function nd_visualshortcodes_custom_theme() {
+  // Allow the user to login with default theme
+  $path = \Drupal::request()->getpathInfo();
+  $admin_theme = '';
+  $args = explode('/', $path);
+  if ($args[1] == 'admin_ajax') {
+    $admin_theme = \Drupal::config('system.site')->get('admin_theme');
+  }
+  return $admin_theme;
+}
+
+
+function _nd_visualshortcodes_list_animations() {
+  $animations = array(
+    'bounce',
+    'flash',
+    'pulse',
+    'rubberBand',
+    'shake',
+    'swing',
+    'tada',
+    'wobble',
+    'bounceIn',
+    'bounceInDown',
+    'bounceInLeft',
+    'bounceInRight',
+    'bounceInUp',
+    'bounceOut',
+    'bounceOutDown',
+    'bounceOutLeft',
+    'bounceOutRight',
+    'bounceOutUp',
+    'fadeIn',
+    'fadeInDown',
+    'fadeInDownBig',
+    'fadeInLeft',
+    'fadeInLeftBig',
+    'fadeInRight',
+    'fadeInRightBig',
+    'fadeInUp',
+    'fadeInUpBig',
+    'fadeOut',
+    'fadeOutDown',
+    'fadeOutDownBig',
+    'fadeOutLeft',
+    'fadeOutLeftBig',
+    'fadeOutRight',
+    'fadeOutRightBig',
+    'fadeOutUp',
+    'fadeOutUpBig',
+    'flip',
+    'flipInX',
+    'flipInY',
+    'flipOutX',
+    'flipOutY',
+    'lightSpeedIn',
+    'lightSpeedOut',
+    'rotateIn',
+    'rotateInDownLeft',
+    'rotateInDownRight',
+    'rotateInUpLeft',
+    'rotateInUpRight',
+    'rotateOut',
+    'rotateOutDownLeft',
+    'rotateOutDownRight',
+    'rotateOutUpLeft',
+    'rotateOutUpRight',
+    'hinge',
+    'rollIn',
+    'rollOut',
+    'zoomIn',
+    'zoomInDown',
+    'zoomInLeft',
+    'zoomInRight',
+    'zoomInUp',
+    'zoomOut',
+    'zoomOutDown',
+    'zoomOutLeft',
+    'zoomOutRight',
+    'zoomOutUp'
+  );
+  return array('' => t(' - None - ')) + array_combine($animations, $animations);
+}
+
+
+function nd_visualshortcodes_backend_nochilds($attrs, $text, $el = '') {
+  $text = trim($text);
+  // In old code can be stored text inside nochild element, show for this case default element
+  if (!empty($text) && $el != 'html') {
+    return _nd_visualshortcodes_backend_element($attrs, $text, $el);
+  }
+  // $shortcodes = shortcode_list_all();
+  $shortcodeService = \Drupal::service('shortcode');
+  $shortcodes = $shortcodeService->loadShortcodePlugins();
+
+  if (isset($attrs['class'])) {
+    $attrs['extra_classes'] = $attrs['class'] . (isset($attrs['extra_classes']) ? ' ' . $attrs['extra_classes'] : '');
+  }
+  $preview = nd_visualshortcodes_preview($el, $attrs, $text);
+  // $preview = $preview ? '<div class = "nd_backend_preview">' . $preview . '</div>' : '';
+  $preview = '<div class = "nd_backend_preview">' . $preview . '</div>';
+
+  $attrs['class'] = 'row shortcode-processed nd-visualshortcodes-sortable';
+  $attrs['shortcode'] = $el;
+  $tt = new Attribute($attrs);
+  return '<li ' . $tt . '><div class = "border-style border-none clearfix"><h3><i class="fa fa-arrows"></i><span>' . $shortcodes[$el]['title'] . _nd_visualshortcodes_backend_description($attrs, $text) . '</span><span class = "nd-visualshortcodes-settings-links"><i class="fa fa-copy nd-visualshortcodes-copy"></i><i class="fa fa-edit shortcode-settings"></i></span></h3><div class = "hidden">' . $text . '</div>' . $preview . '</div></li>';
+}
+
+
+function nd_visualshortcodes_shortcode_html_settings($attrs, $text) {
+  $config = \Drupal::config('nd_visualshortcodes.settings');
+  // Name should be unical because WYSIWYG editor will conflict during multi-fields upload
+  $form['text_' . time()] = array(
+    '#type' => 'text_format',
+    '#title' => t('HTML'),
+    '#default_value' => $text,
+    '#nd_visualshortcodes' => FALSE,
+    '#attributes' => array('class' => array('input-settings')),
+    '#format' => $config->get('html_default_format'),
+  );
+  return $form;
+}
+
+function nd_visualshortcodes_shortcode_col_settings($attrs, $text) {
+  $form['container'] = array(
+    '#type' => 'container',
+    '#prefix' => '<div class = "row col-settings device-icons-wrap">',
+    '#suffix' => '</div>'
+  );
+  $options = array(
+    '' => t('Auto'),
+  );
+  for ($i = 1; $i <= 12; $i++) {
+    $options[$i] = $i;
+  }
+  $form['container']['phone'] = array(
+    '#type' => 'select',
+    '#options' => $options,
+    '#default_value' => isset($attrs['phone']) ? $attrs['phone'] : 0,
+    '#prefix' => '<div class = "col-xs-3 centered"><label class="sr-only" for="col-xs"><i class="fa fa-mobile fa-5x"></i></label>',
+    '#suffix' => '</div>',
+    '#attributes' => array('class' => array('form-control'))
+  );
+  $form['container']['tablet'] = array(
+    '#type' => 'select',
+    '#options' => $options,
+    '#default_value' => isset($attrs['tablet']) ? $attrs['tablet'] : 0,
+    '#prefix' => '<div class = "col-xs-3 centered"><label class="sr-only" for="col-xs"><i class="fa fa-tablet fa-5x"></i></label>',
+    '#suffix' => '</div>',
+    '#attributes' => array('class' => array('form-control'))
+  );
+  $form['container']['desktop'] = array(
+    '#type' => 'select',
+    '#options' => $options,
+    '#default_value' => isset($attrs['desktop']) ? $attrs['desktop'] : 0,
+    '#prefix' => '<div class = "col-xs-3 centered"><label class="sr-only" for="col-xs"><i class="fa fa-laptop fa-5x"></i></label>',
+    '#suffix' => '</div>',
+    '#attributes' => array('class' => array('form-control'))
+  );
+  $form['container']['wide'] = array(
+    '#type' => 'select',
+    '#options' => $options,
+    '#default_value' => isset($attrs['wide']) ? $attrs['wide'] : 0,
+    '#prefix' => '<div class = "col-xs-3 centered"><label class="sr-only" for="col-xs"><i class="fa fa-desktop fa-5x"></i></label>',
+    '#suffix' => '</div>',
+    '#attributes' => array('class' => array('form-control'))
+  );
+  return $form;
+}
+
+function nd_visualshortcodes_fontawesome_icons() {
+  $font_awesome = array(
+    'fa fa-glass',
+    'fa fa-music',
+    'fa fa-search',
+    'fa fa-envelope-o',
+    'fa fa-heart',
+    'fa fa-star',
+    'fa fa-star-o',
+    'fa fa-user',
+    'fa fa-film',
+    'fa fa-th-large',
+    'fa fa-th',
+    'fa fa-th-list',
+    'fa fa-check',
+    'fa fa-remove',
+    'fa fa-search-plus',
+    'fa fa-search-minus',
+    'fa fa-power-off',
+    'fa fa-signal',
+    'fa fa-gear',
+    'fa fa-trash-o',
+    'fa fa-home',
+    'fa fa-file-o',
+    'fa fa-clock-o',
+    'fa fa-road',
+    'fa fa-download',
+    'fa fa-arrow-circle-o-down',
+    'fa fa-arrow-circle-o-up',
+    'fa fa-inbox',
+    'fa fa-play-circle-o',
+    'fa fa-rotate-right',
+    'fa fa-refresh',
+    'fa fa-list-alt',
+    'fa fa-lock',
+    'fa fa-flag',
+    'fa fa-headphones',
+    'fa fa-volume-off',
+    'fa fa-volume-down',
+    'fa fa-volume-up',
+    'fa fa-qrcode',
+    'fa fa-barcode',
+    'fa fa-tag',
+    'fa fa-tags',
+    'fa fa-book',
+    'fa fa-bookmark',
+    'fa fa-print',
+    'fa fa-camera',
+    'fa fa-font',
+    'fa fa-bold',
+    'fa fa-italic',
+    'fa fa-text-height',
+    'fa fa-text-width',
+    'fa fa-align-left',
+    'fa fa-align-center',
+    'fa fa-align-right',
+    'fa fa-align-justify',
+    'fa fa-list',
+    'fa fa-dedent',
+    'fa fa-indent',
+    'fa fa-video-camera',
+    'fa fa-photo',
+    'fa fa-pencil',
+    'fa fa-map-marker',
+    'fa fa-adjust',
+    'fa fa-tint',
+    'fa fa-edit',
+    'fa fa-share-square-o',
+    'fa fa-check-square-o',
+    'fa fa-arrows',
+    'fa fa-step-backward',
+    'fa fa-fast-backward',
+    'fa fa-backward',
+    'fa fa-play',
+    'fa fa-pause',
+    'fa fa-stop',
+    'fa fa-forward',
+    'fa fa-fast-forward',
+    'fa fa-step-forward',
+    'fa fa-eject',
+    'fa fa-chevron-left',
+    'fa fa-chevron-right',
+    'fa fa-plus-circle',
+    'fa fa-minus-circle',
+    'fa fa-times-circle',
+    'fa fa-check-circle',
+    'fa fa-question-circle',
+    'fa fa-info-circle',
+    'fa fa-crosshairs',
+    'fa fa-times-circle-o',
+    'fa fa-check-circle-o',
+    'fa fa-ban',
+    'fa fa-arrow-left',
+    'fa fa-arrow-right',
+    'fa fa-arrow-up',
+    'fa fa-arrow-down',
+    'fa fa-mail-forward',
+    'fa fa-expand',
+    'fa fa-compress',
+    'fa fa-plus',
+    'fa fa-minus',
+    'fa fa-asterisk',
+    'fa fa-exclamation-circle',
+    'fa fa-gift',
+    'fa fa-leaf',
+    'fa fa-fire',
+    'fa fa-eye',
+    'fa fa-eye-slash',
+    'fa fa-warning',
+    'fa fa-plane',
+    'fa fa-calendar',
+    'fa fa-random',
+    'fa fa-comment',
+    'fa fa-magnet',
+    'fa fa-chevron-up',
+    'fa fa-chevron-down',
+    'fa fa-retweet',
+    'fa fa-shopping-cart',
+    'fa fa-folder',
+    'fa fa-folder-open',
+    'fa fa-arrows-v',
+    'fa fa-arrows-h',
+    'fa fa-bar-chart-o',
+    'fa fa-twitter-square',
+    'fa fa-facebook-square',
+    'fa fa-camera-retro',
+    'fa fa-key',
+    'fa fa-gears',
+    'fa fa-comments',
+    'fa fa-thumbs-o-up',
+    'fa fa-thumbs-o-down',
+    'fa fa-star-half',
+    'fa fa-heart-o',
+    'fa fa-sign-out',
+    'fa fa-linkedin-square',
+    'fa fa-thumb-tack',
+    'fa fa-external-link',
+    'fa fa-sign-in',
+    'fa fa-trophy',
+    'fa fa-github-square',
+    'fa fa-upload',
+    'fa fa-lemon-o',
+    'fa fa-phone',
+    'fa fa-square-o',
+    'fa fa-bookmark-o',
+    'fa fa-phone-square',
+    'fa fa-twitter',
+    'fa fa-facebook-f',
+    'fa fa-github',
+    'fa fa-unlock',
+    'fa fa-credit-card',
+    'fa fa-feed',
+    'fa fa-hdd-o',
+    'fa fa-bullhorn',
+    'fa fa-bell',
+    'fa fa-certificate',
+    'fa fa-hand-o-right',
+    'fa fa-hand-o-left',
+    'fa fa-hand-o-up',
+    'fa fa-hand-o-down',
+    'fa fa-arrow-circle-left',
+    'fa fa-arrow-circle-right',
+    'fa fa-arrow-circle-up',
+    'fa fa-arrow-circle-down',
+    'fa fa-globe',
+    'fa fa-wrench',
+    'fa fa-tasks',
+    'fa fa-filter',
+    'fa fa-briefcase',
+    'fa fa-arrows-alt',
+    'fa fa-group',
+    'fa fa-chain',
+    'fa fa-cloud',
+    'fa fa-flask',
+    'fa fa-cut',
+    'fa fa-copy',
+    'fa fa-paperclip',
+    'fa fa-save',
+    'fa fa-square',
+    'fa fa-navicon',
+    'fa fa-list-ul',
+    'fa fa-list-ol',
+    'fa fa-strikethrough',
+    'fa fa-underline',
+    'fa fa-table',
+    'fa fa-magic',
+    'fa fa-truck',
+    'fa fa-pinterest',
+    'fa fa-pinterest-square',
+    'fa fa-google-plus-square',
+    'fa fa-google-plus',
+    'fa fa-money',
+    'fa fa-caret-down',
+    'fa fa-caret-up',
+    'fa fa-caret-left',
+    'fa fa-caret-right',
+    'fa fa-columns',
+    'fa fa-unsorted',
+    'fa fa-sort-down',
+    'fa fa-sort-up',
+    'fa fa-envelope',
+    'fa fa-linkedin',
+    'fa fa-rotate-left',
+    'fa fa-legal',
+    'fa fa-dashboard',
+    'fa fa-comment-o',
+    'fa fa-comments-o',
+    'fa fa-flash',
+    'fa fa-sitemap',
+    'fa fa-umbrella',
+    'fa fa-paste',
+    'fa fa-lightbulb-o',
+    'fa fa-exchange',
+    'fa fa-cloud-download',
+    'fa fa-cloud-upload',
+    'fa fa-user-md',
+    'fa fa-stethoscope',
+    'fa fa-suitcase',
+    'fa fa-bell-o',
+    'fa fa-coffee',
+    'fa fa-cutlery',
+    'fa fa-file-text-o',
+    'fa fa-building-o',
+    'fa fa-hospital-o',
+    'fa fa-ambulance',
+    'fa fa-medkit',
+    'fa fa-fighter-jet',
+    'fa fa-beer',
+    'fa fa-h-square',
+    'fa fa-plus-square',
+    'fa fa-angle-double-left',
+    'fa fa-angle-double-right',
+    'fa fa-angle-double-up',
+    'fa fa-angle-double-down',
+    'fa fa-angle-left',
+    'fa fa-angle-right',
+    'fa fa-angle-up',
+    'fa fa-angle-down',
+    'fa fa-desktop',
+    'fa fa-laptop',
+    'fa fa-tablet',
+    'fa fa-mobile-phone',
+    'fa fa-circle-o',
+    'fa fa-quote-left',
+    'fa fa-quote-right',
+    'fa fa-spinner',
+    'fa fa-circle',
+    'fa fa-mail-reply',
+    'fa fa-github-alt',
+    'fa fa-folder-o',
+    'fa fa-folder-open-o',
+    'fa fa-smile-o',
+    'fa fa-frown-o',
+    'fa fa-meh-o',
+    'fa fa-gamepad',
+    'fa fa-keyboard-o',
+    'fa fa-flag-o',
+    'fa fa-flag-checkered',
+    'fa fa-terminal',
+    'fa fa-code',
+    'fa fa-mail-reply-all',
+    'fa fa-star-half-empty',
+    'fa fa-location-arrow',
+    'fa fa-crop',
+    'fa fa-code-fork',
+    'fa fa-unlink',
+    'fa fa-question',
+    'fa fa-info',
+    'fa fa-exclamation',
+    'fa fa-superscript',
+    'fa fa-subscript',
+    'fa fa-eraser',
+    'fa fa-puzzle-piece',
+    'fa fa-microphone',
+    'fa fa-microphone-slash',
+    'fa fa-shield',
+    'fa fa-calendar-o',
+    'fa fa-fire-extinguisher',
+    'fa fa-rocket',
+    'fa fa-maxcdn',
+    'fa fa-chevron-circle-left',
+    'fa fa-chevron-circle-right',
+    'fa fa-chevron-circle-up',
+    'fa fa-chevron-circle-down',
+    'fa fa-html5',
+    'fa fa-css3',
+    'fa fa-anchor',
+    'fa fa-unlock-alt',
+    'fa fa-bullseye',
+    'fa fa-ellipsis-h',
+    'fa fa-ellipsis-v',
+    'fa fa-rss-square',
+    'fa fa-play-circle',
+    'fa fa-ticket',
+    'fa fa-minus-square',
+    'fa fa-minus-square-o',
+    'fa fa-level-up',
+    'fa fa-level-down',
+    'fa fa-check-square',
+    'fa fa-pencil-square',
+    'fa fa-external-link-square',
+    'fa fa-share-square',
+    'fa fa-compass',
+    'fa fa-toggle-down',
+    'fa fa-toggle-up',
+    'fa fa-toggle-right',
+    'fa fa-euro',
+    'fa fa-gbp',
+    'fa fa-dollar',
+    'fa fa-rupee',
+    'fa fa-cny',
+    'fa fa-ruble',
+    'fa fa-won',
+    'fa fa-bitcoin',
+    'fa fa-file',
+    'fa fa-file-text',
+    'fa fa-sort-alpha-asc',
+    'fa fa-sort-alpha-desc',
+    'fa fa-sort-amount-asc',
+    'fa fa-sort-amount-desc',
+    'fa fa-sort-numeric-asc',
+    'fa fa-sort-numeric-desc',
+    'fa fa-thumbs-up',
+    'fa fa-thumbs-down',
+    'fa fa-youtube-square',
+    'fa fa-youtube',
+    'fa fa-xing',
+    'fa fa-xing-square',
+    'fa fa-youtube-play',
+    'fa fa-dropbox',
+    'fa fa-stack-overflow',
+    'fa fa-instagram',
+    'fa fa-flickr',
+    'fa fa-adn',
+    'fa fa-bitbucket',
+    'fa fa-bitbucket-square',
+    'fa fa-tumblr',
+    'fa fa-tumblr-square',
+    'fa fa-long-arrow-down',
+    'fa fa-long-arrow-up',
+    'fa fa-long-arrow-left',
+    'fa fa-long-arrow-right',
+    'fa fa-apple',
+    'fa fa-windows',
+    'fa fa-android',
+    'fa fa-linux',
+    'fa fa-dribbble',
+    'fa fa-skype',
+    'fa fa-foursquare',
+    'fa fa-trello',
+    'fa fa-female',
+    'fa fa-male',
+    'fa fa-gittip',
+    'fa fa-sun-o',
+    'fa fa-moon-o',
+    'fa fa-archive',
+    'fa fa-bug',
+    'fa fa-vk',
+    'fa fa-weibo',
+    'fa fa-renren',
+    'fa fa-pagelines',
+    'fa fa-stack-exchange',
+    'fa fa-arrow-circle-o-right',
+    'fa fa-arrow-circle-o-left',
+    'fa fa-toggle-left',
+    'fa fa-dot-circle-o',
+    'fa fa-wheelchair',
+    'fa fa-vimeo-square',
+    'fa fa-turkish-lira',
+    'fa fa-plus-square-o',
+    'fa fa-space-shuttle',
+    'fa fa-slack',
+    'fa fa-envelope-square',
+    'fa fa-wordpress',
+    'fa fa-openid',
+    'fa fa-institution',
+    'fa fa-mortar-board',
+    'fa fa-yahoo',
+    'fa fa-google',
+    'fa fa-reddit',
+    'fa fa-reddit-square',
+    'fa fa-stumbleupon-circle',
+    'fa fa-stumbleupon',
+    'fa fa-delicious',
+    'fa fa-digg',
+    'fa fa-pied-piper',
+    'fa fa-pied-piper-alt',
+    'fa fa-drupal',
+    'fa fa-joomla',
+    'fa fa-language',
+    'fa fa-fax',
+    'fa fa-building',
+    'fa fa-child',
+    'fa fa-paw',
+    'fa fa-spoon',
+    'fa fa-cube',
+    'fa fa-cubes',
+    'fa fa-behance',
+    'fa fa-behance-square',
+    'fa fa-steam',
+    'fa fa-steam-square',
+    'fa fa-recycle',
+    'fa fa-automobile',
+    'fa fa-cab',
+    'fa fa-tree',
+    'fa fa-spotify',
+    'fa fa-deviantart',
+    'fa fa-soundcloud',
+    'fa fa-database',
+    'fa fa-file-pdf-o',
+    'fa fa-file-word-o',
+    'fa fa-file-excel-o',
+    'fa fa-file-powerpoint-o',
+    'fa fa-file-photo-o',
+    'fa fa-file-zip-o',
+    'fa fa-file-sound-o',
+    'fa fa-file-movie-o',
+    'fa fa-file-code-o',
+    'fa fa-vine',
+    'fa fa-codepen',
+    'fa fa-jsfiddle',
+    'fa fa-life-bouy',
+    'fa fa-circle-o-notch',
+    'fa fa-ra',
+    'fa fa-ge',
+    'fa fa-git-square',
+    'fa fa-git',
+    'fa fa-y-combinator-square',
+    'fa fa-tencent-weibo',
+    'fa fa-qq',
+    'fa fa-wechat',
+    'fa fa-send',
+    'fa fa-send-o',
+    'fa fa-history',
+    'fa fa-circle-thin',
+    'fa fa-header',
+    'fa fa-paragraph',
+    'fa fa-sliders',
+    'fa fa-share-alt',
+    'fa fa-share-alt-square',
+    'fa fa-bomb',
+    'fa fa-soccer-ball-o',
+    'fa fa-tty',
+    'fa fa-binoculars',
+    'fa fa-plug',
+    'fa fa-slideshare',
+    'fa fa-twitch',
+    'fa fa-yelp',
+    'fa fa-newspaper-o',
+    'fa fa-wifi',
+    'fa fa-calculator',
+    'fa fa-paypal',
+    'fa fa-google-wallet',
+    'fa fa-cc-visa',
+    'fa fa-cc-mastercard',
+    'fa fa-cc-discover',
+    'fa fa-cc-amex',
+    'fa fa-cc-paypal',
+    'fa fa-cc-stripe',
+    'fa fa-bell-slash',
+    'fa fa-bell-slash-o',
+    'fa fa-trash',
+    'fa fa-copyright',
+    'fa fa-at',
+    'fa fa-eyedropper',
+    'fa fa-paint-brush',
+    'fa fa-birthday-cake',
+    'fa fa-area-chart',
+    'fa fa-pie-chart',
+    'fa fa-line-chart',
+    'fa fa-lastfm',
+    'fa fa-lastfm-square',
+    'fa fa-toggle-off',
+    'fa fa-toggle-on',
+    'fa fa-bicycle',
+    'fa fa-bus',
+    'fa fa-ioxhost',
+    'fa fa-angellist',
+    'fa fa-cc',
+    'fa fa-shekel',
+    'fa fa-meanpath',
+    'fa fa-buysellads',
+    'fa fa-connectdevelop',
+    'fa fa-dashcube',
+    'fa fa-forumbee',
+    'fa fa-leanpub',
+    'fa fa-sellsy',
+    'fa fa-shirtsinbulk',
+    'fa fa-simplybuilt',
+    'fa fa-skyatlas',
+    'fa fa-cart-plus',
+    'fa fa-cart-arrow-down',
+    'fa fa-diamond',
+    'fa fa-ship',
+    'fa fa-user-secret',
+    'fa fa-motorcycle',
+    'fa fa-street-view',
+    'fa fa-heartbeat',
+    'fa fa-venus',
+    'fa fa-mars',
+    'fa fa-mercury',
+    'fa fa-intersex',
+    'fa fa-transgender-alt',
+    'fa fa-venus-double',
+    'fa fa-mars-double',
+    'fa fa-venus-mars',
+    'fa fa-mars-stroke',
+    'fa fa-mars-stroke-v',
+    'fa fa-mars-stroke-h',
+    'fa fa-neuter',
+    'fa fa-genderless',
+    'fa fa-facebook-official',
+    'fa fa-pinterest-p',
+    'fa fa-whatsapp',
+    'fa fa-server',
+    'fa fa-user-plus',
+    'fa fa-user-times',
+    'fa fa-hotel',
+    'fa fa-viacoin',
+    'fa fa-train',
+    'fa fa-subway',
+    'fa fa-medium',
+    'fa fa-yc',
+    'fa fa-optin-monster',
+    'fa fa-opencart',
+    'fa fa-expeditedssl',
+    'fa fa-battery-4',
+    'fa fa-battery-3',
+    'fa fa-battery-2',
+    'fa fa-battery-1',
+    'fa fa-battery-0',
+    'fa fa-mouse-pointer',
+    'fa fa-i-cursor',
+    'fa fa-object-group',
+    'fa fa-object-ungroup',
+    'fa fa-sticky-note',
+    'fa fa-sticky-note-o',
+    'fa fa-cc-jcb',
+    'fa fa-cc-diners-club',
+    'fa fa-clone',
+    'fa fa-balance-scale',
+    'fa fa-hourglass-o',
+    'fa fa-hourglass-1',
+    'fa fa-hourglass-2',
+    'fa fa-hourglass-3',
+    'fa fa-hourglass',
+    'fa fa-hand-grab-o',
+    'fa fa-hand-stop-o',
+    'fa fa-hand-scissors-o',
+    'fa fa-hand-lizard-o',
+    'fa fa-hand-spock-o',
+    'fa fa-hand-pointer-o',
+    'fa fa-hand-peace-o',
+    'fa fa-trademark',
+    'fa fa-registered',
+    'fa fa-creative-commons',
+    'fa fa-gg',
+    'fa fa-gg-circle',
+    'fa fa-tripadvisor',
+    'fa fa-odnoklassniki',
+    'fa fa-odnoklassniki-square',
+    'fa fa-get-pocket',
+    'fa fa-wikipedia-w',
+    'fa fa-safari',
+    'fa fa-chrome',
+    'fa fa-firefox',
+    'fa fa-opera',
+    'fa fa-internet-explorer',
+    'fa fa-tv',
+    'fa fa-contao',
+    'fa fa-500px',
+    'fa fa-amazon',
+    'fa fa-calendar-plus-o',
+    'fa fa-calendar-minus-o',
+    'fa fa-calendar-times-o',
+    'fa fa-calendar-check-o',
+    'fa fa-industry',
+    'fa fa-map-pin',
+    'fa fa-map-signs',
+    'fa fa-map-o',
+    'fa fa-map',
+    'fa fa-commenting',
+    'fa fa-commenting-o',
+    'fa fa-houzz',
+    'fa fa-vimeo',
+    'fa fa-black-tie',
+    'fa fa-fonticons'
+  );
+  return $font_awesome;
+}

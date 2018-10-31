@@ -1,0 +1,20 @@
+<div class="c-body">
+  <div class="c-section">
+    <h3>{{ label }}</h3>
+  </div>
+  <div class="c-section">
+    <div class="c-content-label c-font-uppercase c-font-bold c-theme-bg">{{ 'Address'|t }}</div>
+    <p>{{ address|raw }}</p>
+  </div>
+  <div class="c-section">
+    <div class="c-content-label c-font-uppercase c-font-bold c-theme-bg">{{ 'Contacts'|t }}</div>
+    <p>{{ contacts|raw }}</p>
+  </div>
+  <div class="c-section">
+    <div class="c-content-label c-font-uppercase c-font-bold c-theme-bg">{{ 'Social'|t }}</div>
+    <br/>
+    <ul class="c-content-iconlist-1 c-theme">
+      {{ text|raw }}
+    </ul>
+  </div>
+</div>

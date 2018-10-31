@@ -1,0 +1,88 @@
+nd_visualshortcodes.settings:
+  path: '/admin/config/content/nd_visualshortcodes'
+  defaults:
+    _form: '\Drupal\nd_visualshortcodes\Form\nd_visualshortcodesSettingsForm'
+    _title: 'Visual shortcodes'
+  requirements:
+    _permission: 'administer nd nd_visualshortcodes'
+
+nd_visualshortcodes_ajax_backend_layout:
+  path: 'ajax/nd_visualshortcodes/ajax_backend_layout'
+  defaults:
+    _controller: '\Drupal\nd_visualshortcodes\Controller\nd_visualshortcodesController::nd_visualshortcodes_ajax_backend_layout'
+  requirements:
+    _permission: 'use nd nd_visualshortcodes'
+
+
+nd_visualshortcodes_ajax_backend_shortcode_preview:
+  path: 'ajax/nd_visualshortcodes/ajax_backend_shortcode_preview'
+  defaults:
+    _controller: '\Drupal\nd_visualshortcodes\Controller\nd_visualshortcodesController::nd_visualshortcodes_ajax_backend_shortcode_preview'
+  requirements:
+    _permission: 'use nd nd_visualshortcodes'
+
+nd_visualshortcodes_ajax_backend_shortcode:
+  path: 'admin_ajax/nd_visualshortcodes/ajax_backend_shortcode'
+  defaults:
+    _controller: '\Drupal\nd_visualshortcodes\Controller\nd_visualshortcodesController::nd_visualshortcodes_ajax_backend_shortcode'
+  requirements:
+    _permission: 'use nd nd_visualshortcodes'
+#'delivery callback' => 'ajax_deliver',
+
+nd_visualshortcodes_ajax_shortcodes_list_add:
+  path: 'ajax/nd_visualshortcodes/shortcodes_list_add'
+  defaults:
+    _controller: '\Drupal\nd_visualshortcodes\Controller\nd_visualshortcodesController::nd_visualshortcodes_ajax_shortcodes_list_add'
+  requirements:
+    _permission: 'use nd nd_visualshortcodes'
+
+nd_visualshortcodes_ajax_shortcodes_list:
+  path: 'ajax/nd_visualshortcodes/shortcodes_list'
+  defaults:
+    _controller: '\Drupal\nd_visualshortcodes\Controller\nd_visualshortcodesController::nd_visualshortcodes_ajax_shortcodes_list'
+  requirements:
+    _permission: 'use nd nd_visualshortcodes'
+
+nd_visualshortcodes_ajax_shortcodes_save:
+  path: 'ajax/nd_visualshortcodes/shortcodes_save'
+  defaults:
+    _controller: '\Drupal\nd_visualshortcodes\Controller\nd_visualshortcodesController::nd_visualshortcodes_ajax_shortcodes_save'
+  requirements:
+    _permission: 'use nd nd_visualshortcodes'
+
+nd_visualshortcodes_ajax_shortcodes_delete:
+  path: 'ajax/nd_visualshortcodes/ajax_backend_delete_saved'
+  defaults:
+    _controller: '\Drupal\nd_visualshortcodes\Controller\nd_visualshortcodesController::nd_visualshortcodes_ajax_shortcodes_delete_saved'
+  requirements:
+    _permission: 'use nd nd_visualshortcodes'
+
+nd_visualshortcodes_ajax_icons_autocomplete:
+  path: 'admin/ajax/nd_visualshortcodes/icons_autocomplete'
+  defaults:
+    _controller: '\Drupal\nd_visualshortcodes\Controller\nd_visualshortcodesController::nd_visualshortcodes_ajax_icons_autocomplete'
+  requirements:
+    _permission: 'use nd nd_visualshortcodes'
+
+nd_visualshortcodes_ajax_node_autocomplete:
+  path: 'admin/ajax/nd_visualshortcodes/node_autocomplete'
+  defaults:
+    _controller: '\Drupal\nd_visualshortcodes\Controller\nd_visualshortcodesController::nd_visualshortcodes_ajax_node_autocomplete'
+  methods:  [POST]  
+  requirements:
+    _permission: 'use nd nd_visualshortcodes'
+
+nd_visualshortcodes_ajax_upload_img:
+  path: 'ajax/nd_visualshortcodes/upload_img'
+  defaults:
+    _controller: '\Drupal\nd_visualshortcodes\Controller\nd_visualshortcodesController::nd_visualshortcodes_ajax_upload_img'
+  methods:  [POST]  
+  requirements:
+    _permission: 'use nd nd_visualshortcodes'
+
+nd_visualshortcodes_media_upload_image:
+  path: 'ajax/nd_visualshortcodes/media_upload_image'
+  defaults:
+    _controller: '\Drupal\nd_visualshortcodes\Controller\nd_visualshortcodesController::nd_visualshortcodes_media_upload_image'
+  requirements:
+    _permission: 'use nd nd_visualshortcodes'

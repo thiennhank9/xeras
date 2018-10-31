@@ -1,0 +1,31 @@
+uuid: 49d9b0c4-33e6-4747-947d-24b77bb74ecd
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:956b0c90-dedf-4f8b-9971-040ca9241918'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: breadcrumbsbgimagev4
+theme: jango_sub
+region: header
+weight: 14
+provider: null
+plugin: 'block_content:956b0c90-dedf-4f8b-9971-040ca9241918'
+settings:
+  id: 'block_content:956b0c90-dedf-4f8b-9971-040ca9241918'
+  label: 'Breadcrumbs - BG Image V4'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/117/6
+    negate: false
+    context_mapping: {  }

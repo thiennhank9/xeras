@@ -1,0 +1,31 @@
+uuid: 84ae7466-8dff-42c4-b2b1-6cb7d4797fc7
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:40811571-a5c7-419b-8beb-99c1f776add8'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: menubottompositionfluid
+theme: jango_sub
+region: header
+weight: -23
+provider: null
+plugin: 'block_content:40811571-a5c7-419b-8beb-99c1f776add8'
+settings:
+  id: 'block_content:40811571-a5c7-419b-8beb-99c1f776add8'
+  label: 'Menu Bottom Position Fluid'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/170/header/v8\r\n/home-version-10"
+    negate: false
+    context_mapping: {  }

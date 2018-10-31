@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.taxonomy_term.happy_customers.field_image_client_logo
+    - field.field.taxonomy_term.happy_customers.field_link
+    - image.style.thumbnail
+    - taxonomy.vocabulary.happy_customers
+  module:
+    - image
+    - link
+    - path
+    - text
+id: taxonomy_term.happy_customers.default
+targetEntityType: taxonomy_term
+bundle: happy_customers
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 3
+    settings:
+      placeholder: ''
+      rows: 5
+    third_party_settings: {  }
+    region: content
+  field_image_client_logo:
+    weight: 1
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+    region: content
+  field_link:
+    weight: 2
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  langcode:
+    type: language_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  name:
+    type: string_textfield
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  path:
+    type: path
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+hidden: {  }

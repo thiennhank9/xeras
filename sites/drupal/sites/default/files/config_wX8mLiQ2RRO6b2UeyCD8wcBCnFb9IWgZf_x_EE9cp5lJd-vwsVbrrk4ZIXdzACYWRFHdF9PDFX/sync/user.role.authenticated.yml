@@ -1,0 +1,35 @@
+uuid: 5bc79fa5-97f6-4696-b49d-ff013bdb3585
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
+id: authenticated
+label: 'Authenticated user'
+weight: 1
+is_admin: false
+permissions:
+  - 'access cart'
+  - 'access checkout'
+  - 'access comments'
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'access user profiles'
+  - 'flag compare'
+  - 'flag compare_prodvar'
+  - 'flag wishlist'
+  - 'post comments'
+  - 'search content'
+  - 'skip comment approval'
+  - 'unflag compare'
+  - 'unflag compare_prodvar'
+  - 'unflag wishlist'
+  - 'use text format basic_html'
+  - 'use text format shortcode_dynamic'
+  - 'view any commerce_product'
+  - 'view commerce_product'
+  - 'view commerce_product_attribute'
+  - 'view files'
+  - 'view own commerce_order'
+  - 'view own commerce_product'

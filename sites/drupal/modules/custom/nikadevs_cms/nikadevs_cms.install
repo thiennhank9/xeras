@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * Fix devel error missed module
+ */
+function nikadevs_cms_update_8005() {
+  $query = \Drupal::database()->delete('key_value')
+    ->condition('collection', 'system.schema')
+    ->condition('name', 'devel')
+    ->execute();
+  $query = \Drupal::database()->delete('key_value')
+    ->condition('collection', 'system.schema')
+    ->condition('name', 'default_content')
+    ->execute();
+  $query = \Drupal::database()->delete('key_value')
+    ->condition('collection', 'system.schema')
+    ->condition('name', 'features')
+    ->execute();
+  $query = \Drupal::database()->delete('key_value')
+    ->condition('collection', 'system.schema')
+    ->condition('name', 'features_ui')
+    ->execute();
+  $query = \Drupal::database()->delete('key_value')
+    ->condition('collection', 'system.schema')
+    ->condition('name', 'kint')
+    ->execute();
+  $query = \Drupal::database()->delete('config')
+    ->condition('name', 'devel.settings')
+    ->execute();
+  $query = \Drupal::database()->delete('config')
+    ->condition('name', 'devel.toolbar.settings')
+    ->execute();
+  $query = \Drupal::database()->delete('config')
+    ->condition('name', 'system.menu.devel')
+    ->execute();
+  $query = \Drupal::database()->delete('key_value')
+    ->condition('collection', 'system.schema')
+    ->condition('name', 'module_name')
+    ->execute();
+}

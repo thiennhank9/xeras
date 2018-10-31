@@ -1,0 +1,5 @@
+services:
+  jango_shortcodes.route_subscriber:
+    class: Drupal\jango_shortcodes\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }

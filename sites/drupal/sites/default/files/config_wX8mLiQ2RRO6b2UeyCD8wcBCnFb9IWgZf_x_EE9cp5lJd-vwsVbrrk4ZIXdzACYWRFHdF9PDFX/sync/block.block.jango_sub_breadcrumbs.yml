@@ -1,0 +1,22 @@
+uuid: d6d6eea3-ddec-4842-8a1e-531239f355b1
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - jango_sub
+_core:
+  default_config_hash: oXUb3JZR2WW5VOdw4HrhRicCsq51mCgLfRyvheG68ck
+id: jango_sub_breadcrumbs
+theme: jango_sub
+region: header
+weight: 21
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  provider: system
+  label_display: '0'
+visibility: {  }

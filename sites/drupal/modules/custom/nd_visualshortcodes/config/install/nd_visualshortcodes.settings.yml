@@ -1,0 +1,10 @@
+autostart: 1
+formats:
+  shortcodes: shortcode_dynamic
+  ckeditor: 0
+  basic_html: 0
+  restricted_html: 0
+  full_html: 0
+  plain_text: 0
+confirm_delete: 0
+html_default_format: full_html

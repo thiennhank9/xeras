@@ -1,0 +1,16 @@
+<div class="item">
+  <div class="c-content-testimonial-2">
+    <div class="c-testimonial c-font-uppercase c-font-bold">{{ text|raw }}</div>
+
+    {% if author != FALSE %}
+
+      <div class="c-author">
+        <div class="c-portrait" style="background-image: url({{ url }});"></div>
+        <div class="c-name c-font-uppercase">{{ name }}</div>
+        <p class="c-position c-theme c-font-uppercase">{{ position }}</p>
+      </div>
+
+    {% endif %}
+
+  </div>
+</div>

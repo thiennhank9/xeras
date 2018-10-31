@@ -1,0 +1,31 @@
+uuid: a71e841e-5e3e-47c2-af66-d22689b88813
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:9c0983c8-5da1-4623-8a23-29b0c0c5010f'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: breadcrumbswhite
+theme: jango_sub
+region: header
+weight: 9
+provider: null
+plugin: 'block_content:9c0983c8-5da1-4623-8a23-29b0c0c5010f'
+settings:
+  id: 'block_content:9c0983c8-5da1-4623-8a23-29b0c0c5010f'
+  label: 'Breadcrumbs - White'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "*home*\r\n/node/117/*\r\n<front>\r\n/about-us-*\r\n/meet-team\r\n/contact-us-2\r\n/faq-*\r\n/product-launch\r\n/onepage-version*"
+    negate: true
+    context_mapping: {  }

@@ -1,0 +1,134 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.product_display
+    - field.field.commerce_product.product_display.body
+    - field.field.commerce_product.product_display.field_colors
+    - field.field.commerce_product.product_display.field_new_label
+    - field.field.commerce_product.product_display.field_product_category
+    - field.field.commerce_product.product_display.field_rating
+    - field.field.commerce_product.product_display.field_sale_label
+    - field.field.commerce_product.product_display.field_short_description
+    - field.field.commerce_product.product_display.field_sizes
+    - field.field.commerce_product.product_display.stores
+    - field.field.commerce_product.product_display.variations
+  module:
+    - commerce
+    - inline_entity_form
+    - path
+    - text
+id: commerce_product.product_display.default
+targetEntityType: commerce_product
+bundle: product_display
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 4
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  created:
+    type: datetime_timestamp
+    weight: 12
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_colors:
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  field_new_label:
+    weight: 9
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_product_category:
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_sale_label:
+    weight: 10
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    type: boolean_checkbox
+    region: content
+  field_short_description:
+    weight: 3
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+    region: content
+  field_sizes:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+    region: content
+  langcode:
+    type: language_select
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  path:
+    type: path
+    weight: 13
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  stores:
+    type: commerce_entity_select
+    weight: 8
+    settings:
+      autocomplete_threshold: 7
+      autocomplete_size: 60
+      autocomplete_placeholder: ''
+    third_party_settings: {  }
+    region: content
+  title:
+    type: string_textfield
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  uid:
+    type: entity_reference_autocomplete
+    weight: 11
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  variations:
+    type: inline_entity_form_complex
+    weight: 2
+    settings:
+      override_labels: true
+      label_singular: variation
+      label_plural: variations
+      form_mode: default
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+    third_party_settings: {  }
+    region: content
+hidden:
+  field_rating: true
+  status: true

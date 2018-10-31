@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.nd_service.body
+    - field.field.node.nd_service.field_arrow
+    - field.field.node.nd_service.field_background_and_arrow_color
+    - field.field.node.nd_service.field_service_image
+    - field.field.node.nd_service.field_text_color
+    - node.type.nd_service
+  module:
+    - text
+    - user
+id: node.nd_service.teaser
+targetEntityType: node
+bundle: nd_service
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    weight: 0
+    region: content
+    label: above
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+hidden:
+  field_arrow: true
+  field_background_and_arrow_color: true
+  field_service_image: true
+  field_text_color: true
+  langcode: true
+  links: true

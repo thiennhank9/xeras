@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * @file
+ * Installation functions for nd_visualshortcodes module.
+ */
+
+use Drupal\Core\Database\Database;
+use Drupal\filter\Entity\FilterFormat;
+/**
+ * Implements hook_schema().
+ */
+
+ 
+function nd_visualshortcodes_schema() {
+
+  $schema['nd_visualshortcodes_saved'] = array(
+    'description' => 'Saved shortcodes.',
+    'fields' => array(
+      'id' => array(
+        'description' => 'The unique ID for this particular shortcode.',
+        'type' => 'serial',
+        'size' => 'small',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'name' => array(
+        'type' => 'varchar',
+        'length' => '128',
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'code' => array(
+        'type' => 'text',
+        'not null' => FALSE,
+      ),
+    ),
+    'primary key' => array('id'),
+    'unique keys' => array(
+      'name' => array('name'),
+    ),
+  );
+  return $schema;
+}
+
+function nd_visualshortcodes_install() {
+	$shortcode_dynamic_format_exit = FilterFormat::load('shortcode_dynamic');
+	if(!empty($shortcode_dynamic_format_exit))
+		$shortcode_dynamic_format_exit->delete();
+	
+  $shortcode_dynamic_format = FilterFormat::create(array(
+      'format' => 'shortcode_dynamic',
+      'name' => 'Shortcodes Dynamic',
+      'weight' => "-10",
+      'filters' => array( 'shortcode' => array(
+          'status' => TRUE
+        )),
+    ));
+    $shortcode_dynamic_format->save();
+}
+function nd_visualshortcodes_uninstall() {
+	$shortcode_dynamic_format = FilterFormat::load('shortcode_dynamic');
+	if(!empty($shortcode_dynamic_format))
+		$shortcode_dynamic_format->delete();
+}

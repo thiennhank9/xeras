@@ -1,0 +1,256 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      assets/plugins/socicon/socicon.css: {}
+      assets/plugins/bootstrap-social/bootstrap-social.css: {}
+      assets/plugins/font-awesome/css/font-awesome.min.css: {}
+      assets/plugins/simple-line-icons/simple-line-icons.min.css: {}
+      assets/plugins/animate/animate.min.css: {}
+      assets/plugins/cubeportfolio/css/cubeportfolio.min.css: {}
+      assets/plugins/owl-carousel/assets/owl.carousel.css: {}
+      assets/plugins/fancybox/jquery.fancybox.css: {}
+      assets/plugins/slider-for-bootstrap/css/slider.css: {}
+      assets/plugins/ilightbox/css/ilightbox.css: {}
+globagetJsAssets()l-scripts:
+  version: 1.x
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+  js:
+    assets/plugins/jquery-migrate.min.js: {}
+    assets/plugins/bootstrap/js/bootstrap.min.js: {}
+    assets/plugins/jquery.easing.min.js: {}
+    assets/plugins/reveal-animate/wow.js: {}
+    assets/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js: {}
+    assets/plugins/owl-carousel/owl.carousel.min.js: {}
+    assets/plugins/counterup/jquery.waypoints.min.js: {}
+    assets/plugins/counterup/jquery.counterup.min.js: {}
+    assets/plugins/fancybox/jquery.fancybox.pack.js: {}
+    assets/plugins/slider-for-bootstrap/js/bootstrap-slider.js: {}
+    assets/plugins/zoom-master/jquery.zoom.min.js: {}
+    assets/plugins/isotope/isotope.pkgd.min.js: {}
+    assets/plugins/isotope/imagesloaded.pkgd.min.js: {}
+    assets/plugins/isotope/packery-mode.pkgd.min.js: {}
+    assets/plugins/ilightbox/js/jquery.requestAnimationFrame.js: {}
+    assets/plugins/ilightbox/js/jquery.mousewheel.js: {}
+    assets/plugins/ilightbox/js/ilightbox.packed.js: {}
+    assets/plugins/progress-bar/progressbar.js: {}
+    assets/base/js/scripts/reveal-animate/reveal-animate.js: {}
+    assets/base/js/app.js: {}
+    assets/base/js/components.js: {}
+    assets/base/js/components-shop.js: {}
+    assets/plugins/gmaps/gmaps.js: {}
+    assets/plugins/gmaps/api.js: {}
+    js/drupal.js: {}
+
+retina:
+  js:
+    js/jquery.retina.js: {}
+
+theme-settings-styling:
+  version: 1.x
+  css:
+    theme:
+      css/theme-settings.css: {}
+
+google-font:
+  css:
+    theme:
+      //fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700&amp;subset=all: { type: external, cache: FALSE }
+
+language-dir-ltr:
+  css:
+    theme:
+      assets/plugins/bootstrap/css/bootstrap.css: {}
+      assets/base/css/plugins.css: {}
+      assets/base/css/components.css: {}
+      assets/base/css/custom.css: {}
+      css/drupal.css: {}
+
+language-dir-rtl:
+  css:
+    theme:
+      assets/plugins/bootstrap/css/bootstrap-rtl.css: {}
+      assets/base/css/plugins-rtl.css: {}
+      assets/base/css/components-rtl.css: {}
+      assets/base/css/custom-rtl.css: {}
+      css/drupal.css: {}
+
+# Skins.
+default-ltr:
+  css:
+    theme:
+      assets/base/css/themes/default.css: {}
+default-rtl:
+  css:
+    theme:
+      assets/base/css/themes/default-rtl.css: {}
+green1-ltr:
+  css:
+    theme:
+      assets/base/css/themes/green1.css: {}
+green1-rtl:
+  css:
+    theme:
+      assets/base/css/themes/green1-rtl.css: {}
+green2-ltr:
+  css:
+    theme:
+      assets/base/css/themes/green2.css: {}
+green2-rtl:
+  css:
+    theme:
+      assets/base/css/themes/green2-rtl.css: {}
+green3-ltr:
+  css:
+    theme:
+      assets/base/css/themes/green3.css: {}
+green3-rtl:
+  css:
+    theme:
+      assets/base/css/themes/green3-rtl.css: {}
+yellow1-ltr:
+  css:
+    theme:
+      assets/base/css/themes/yellow1.css: {}
+yellow1-rtl:
+  css:
+    theme:
+      assets/base/css/themes/yellow1-rtl.css: {}
+yellow2-ltr:
+  css:
+    theme:
+      assets/base/css/themes/yellow2.css: {}
+yellow2-rtl:
+  css:
+    theme:
+      assets/base/css/themes/yellow2-rtl.css: {}
+yellow3-ltr:
+  css:
+    theme:
+      assets/base/css/themes/yellow3.css: {}
+yellow3-rtl:
+  css:
+    theme:
+      assets/base/css/themes/yellow3-rtl.css: {}
+red1-ltr:
+  css:
+    theme:
+      assets/base/css/themes/red1.css: {}
+red1-rtl:
+  css:
+    theme:
+      assets/base/css/themes/red1-rtl.css: {}
+red2-ltr:
+  css:
+    theme:
+      assets/base/css/themes/red2.css: {}
+red2-rtl:
+  css:
+    theme:
+      assets/base/css/themes/red2-rtl.css: {}
+red3-ltr:
+  css:
+    theme:
+      assets/base/css/themes/red3.css: {}
+red3-rtl:
+  css:
+    theme:
+      assets/base/css/themes/red3-rtl.css: {}
+purple1-ltr:
+  css:
+    theme:
+      assets/base/css/themes/purple1.css: {}
+purple1-rtl:
+  css:
+    theme:
+      assets/base/css/themes/purple1-rtl.css: {}
+purple2-ltr:
+  css:
+    theme:
+      assets/base/css/themes/purple2.css: {}
+purple2-rtl:
+  css:
+    theme:
+      assets/base/css/themes/purple2-rtl.css: {}
+purple3-ltr:
+  css:
+    theme:
+      assets/base/css/themes/purple3.css: {}
+purple3-rtl:
+  css:
+    theme:
+      assets/base/css/themes/purple3-rtl.css: {}
+blue1-ltr:
+  css:
+    theme:
+      assets/base/css/themes/blue1.css: {}
+blue1-rtl:
+  css:
+    theme:
+      assets/base/css/themes/blue1-rtl.css: {}
+blue2-ltr:
+  css:
+    theme:
+      assets/base/css/themes/blue2.css: {}
+blue2-rtl:
+  css:
+    theme:
+      assets/base/css/themes/blue2-rtl.css: {}
+blue3-ltr:
+  css:
+    theme:
+      assets/base/css/themes/blue3.css: {}
+blue3-rtl:
+  css:
+    theme:
+      assets/base/css/themes/blue3-rtl.css: {}
+brown1-ltr:
+  css:
+    theme:
+      assets/base/css/themes/brown1.css: {}
+brown1-rtl:
+  css:
+    theme:
+      assets/base/css/themes/brown1-rtl.css: {}
+brown2-ltr:
+  css:
+    theme:
+      assets/base/css/themes/brown2.css: {}
+brown2-rtl:
+  css:
+    theme:
+      assets/base/css/themes/brown2-rtl.css: {}
+brown3-ltr:
+  css:
+    theme:
+      assets/base/css/themes/brown3.css: {}
+brown3-rtl:
+  css:
+    theme:
+      assets/base/css/themes/brown3-rtl.css: {}
+dark1-ltr:
+  css:
+    theme:
+      assets/base/css/themes/dark1.css: {}
+dark1-rtl:
+  css:
+    theme:
+      assets/base/css/themes/dark1-rtl.css: {}
+dark2-ltr:
+  css:
+    theme:
+      assets/base/css/themes/dark2.css: {}
+dark2-rtl:
+  css:
+    theme:
+      assets/base/css/themes/dark2-rtl.css: {}
+dark3-ltr:
+  css:
+    theme:
+      assets/base/css/themes/dark3.css: {}
+dark3-rtl:
+  css:
+    theme:
+      assets/base/css/themes/dark3-rtl.css: {}

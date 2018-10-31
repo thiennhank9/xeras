@@ -1,0 +1,31 @@
+uuid: 57f0990e-1459-4a25-9411-57ff4ec3fedc
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:3c20642e-5146-44ce-bfdb-01138e3bba2d'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: cartinfo
+theme: jango_sub
+region: content_full
+weight: 0
+provider: null
+plugin: 'block_content:3c20642e-5146-44ce-bfdb-01138e3bba2d'
+settings:
+  id: 'block_content:3c20642e-5146-44ce-bfdb-01138e3bba2d'
+  label: 'Cart Info'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '/cart*'
+    negate: false
+    context_mapping: {  }

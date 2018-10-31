@@ -1,0 +1,9 @@
+uuid: 837d2dff-ec75-4a23-94e1-0076495a8e94
+langcode: en
+status: true
+dependencies: {  }
+name: 'Taxonomy Categories'
+vid: taxonomy_categories
+description: ''
+hierarchy: 0
+weight: 0

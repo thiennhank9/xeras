@@ -1,0 +1,43 @@
+nikadev_cms_page:
+  js:
+    support/js/html2canvas.js: {}
+    support/js/feedback.js: {}
+  css:
+    component:
+      support/css/feedback.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+
+nikadev_cms_layout_builder:
+  js:
+    js/switchery.js: {}
+    js/jquery-sortable.js: {}
+  css:
+    base:
+      '//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css': { external: true }
+      '//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery.ui.dialog.min.css': { external: true }
+      '//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.9.2/themes/base/jquery.ui.theme.css': { external: true, weight: 100 }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once
+    - core/jquery.ui.dialog
+    - core/jquery.ui.theme
+
+nikadev_cms_builder:
+  js:
+    layout_builder/nikadevs-cms-layout-builder.js: {}
+  css:
+    component:
+      layout_builder/nikadevs-cms-layout-builder.css: {}
+      layout_builder/nikadevs-cms-layout-builder-min-bootstrap.css: {}
+
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.once

@@ -1,0 +1,105 @@
+{#
+/**
+ * @file
+ * Default view template to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="col-md-3 col-sm-12">
+  <div class="c-content-overlay">
+    <div class="c-overlay-wrapper">
+      <div class="c-overlay-content">
+        <a href="{{ fields.jango_cms_entity_path.content|striptags }}" class="btn btn-md c-btn-grey-1 c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">
+          {{ 'Explore'|t }}
+        </a>
+      </div>
+    </div>
+    <div class="c-bg-img-top-center c-overlay-object" data-height="height">
+      {{ fields.field_images.content }}
+    </div>
+  </div>
+</div>
+<div class="col-md-5 col-sm-8">
+  <ul class="c-list list-unstyled">
+    <li class="c-margin-b-25">
+      <a href="{{ fields.jango_cms_entity_path.content|striptags }}" class="c-font-bold c-font-22 c-theme-link">
+        {{ fields.title.content }}
+      </a>
+    </li>
+
+    {% for field in fields|without('jango_cms_entity_path', 'field_images', 'title', 'rendered_entity', 'link_flag', 'price__number', 'field_stock_amount') -%}
+      <li>
+        {{ field.separator }}
+        {%- if field.wrapper_element -%}
+          <{{ field.wrapper_element }}{{ field.wrapper_attributes }}>
+        {%- endif %}
+        {%- if field.label -%}
+          {%- if field.label_element -%}
+            <{{ field.label_element }}{{ field.label_attributes }}>{{ field.label }}{{ field.label_suffix }}</{{ field.label_element }}>
+          {%- else -%}
+            {{ field.label }}{{ field.label_suffix }}
+          {%- endif %}
+        {%- endif %}
+        {%- if field.element_type -%}
+          <{{ field.element_type }}{{ field.element_attributes }}>{{ field.content }}</{{ field.element_type }}>
+        {%- else -%}
+          {{ field.content }}
+        {%- endif %}
+        {%- if field.wrapper_element -%}
+          </{{ field.wrapper_element }}>
+        {%- endif %}
+      </li>
+    {%- endfor %}
+
+    <li class="c-margin-t-30 add-cart-flag">
+      <span class="field-content commerce-cart-add-to-cart extra-components">
+        {{ fields.rendered_entity.content }}
+      </span>
+      <span class="field-content">
+        <span class="flag-wrapper flag-wishlist">
+          {{ fields.link_flag.content }}
+        </span>
+      </span>
+    </li>
+  </ul>
+</div>
+<div class="col-md-2 col-sm-2 center">
+  <p class="visible-xs-block c-theme-font c-font-uppercase c-font-bold">{{ 'Stock'|t }}</p>
+  <p class="c-font-sbold c-font-18">
+    {% if fields.field_stock_amount.content|striptags|trim != '' %}
+      {{ fields.field_stock_amount.content|striptags|trim }}
+    {% else %}
+      {{ 'Out of Stock'|t }}
+    {% endif %}
+  </p>
+</div>
+<div class="col-md-2 col-sm-2">
+  <p class="visible-xs-block c-theme-font c-font-uppercase c-font-bold">{{ 'Unit Price'|t }}</p>
+  <p class="c-font-sbold c-font-uppercase c-font-18">{{ fields.price__number.content }}</p>
+</div>

@@ -1,0 +1,31 @@
+uuid: 29dbad96-fee0-42e4-8d8c-edf6218b9492
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:7dcbd0c5-92d8-4353-a7c3-8bf747aec445'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: footer22columnsbgcontactusform
+theme: jango_sub
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:7dcbd0c5-92d8-4353-a7c3-8bf747aec445'
+settings:
+  id: 'block_content:7dcbd0c5-92d8-4353-a7c3-8bf747aec445'
+  label: 'Footer 2 - 2 Columns, BG, Contact Us form'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/118/footer-2\r\n/home-version-6\r\n/home-version-7\r\n/onepage-version-4\r\n/onepage-version-12"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,31 @@
+uuid: 9fd2c428-afac-4ee0-aa6b-ed6909f6865d
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:f14df9e9-1fe7-4a2b-8bb6-548429e7c767'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: footer1dark4columnstwitter
+theme: jango_sub
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:f14df9e9-1fe7-4a2b-8bb6-548429e7c767'
+settings:
+  id: 'block_content:f14df9e9-1fe7-4a2b-8bb6-548429e7c767'
+  label: 'Footer 1 - Dark, 4 Columns, Twitter'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/118/footer-1\r\n/shop-home-6\r\n/home-version-4"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,18 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+skin: default
+retina: 0
+phone: ''
+loader_image: 0
+pagination_type: 'pagination pagination-sm'
+mega_menu_bg_color: dark
+404_bg: {  }
+maintenance_bg: {  }
+gmap_key: ''

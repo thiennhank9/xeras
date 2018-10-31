@@ -1,0 +1,87 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.product
+    - field.field.commerce_product_variation.product.attribute_color
+    - field.field.commerce_product_variation.product.attribute_size
+    - field.field.commerce_product_variation.product.field_images
+    - field.field.commerce_product_variation.product.field_old_price
+    - field.field.commerce_product_variation.product.field_stock_amount
+    - image.style.product_700x900
+  module:
+    - commerce_price
+    - commerce_variation_cart_form
+    - jango_cms
+third_party_settings:
+  commerce_variation_cart_form:
+    combine: 0
+id: commerce_product_variation.product.default
+targetEntityType: commerce_product_variation
+bundle: product
+mode: default
+content:
+  commerce_variation_cart_form:
+    weight: 6
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_images:
+    weight: 4
+    label: hidden
+    settings:
+      image_style: product_700x900
+      image_style_small: product_250x400
+      col: '3'
+      image_link: ''
+    third_party_settings: {  }
+    type: jango_cms_images_one_main
+    region: content
+  field_old_price:
+    weight: 3
+    label: hidden
+    settings:
+      strip_trailing_zeroes: false
+      display_currency_code: false
+    third_party_settings: {  }
+    type: commerce_price_default
+    region: content
+  field_stock_amount:
+    weight: 5
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+    region: content
+  price:
+    label: hidden
+    type: commerce_price_default
+    weight: 2
+    settings:
+      strip_trailing_zeroes: false
+      display_currency_code: false
+    third_party_settings: {  }
+    region: content
+  sku:
+    label: inline
+    type: string
+    weight: 0
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+  title:
+    label: hidden
+    type: string
+    weight: 1
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    region: content
+hidden:
+  attribute_color: true
+  attribute_size: true
+  langcode: true
+  product_id: true

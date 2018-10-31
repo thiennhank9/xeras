@@ -1,0 +1,26 @@
+uuid: f59bff68-d1eb-4752-9a4d-fa70f8a8995c
+langcode: en
+status: true
+dependencies:
+  module:
+    - md_slider
+    - system
+  theme:
+    - jango_sub
+id: onepagev11
+theme: jango_sub
+region: header
+weight: 8
+provider: null
+plugin: 'md_slider_block:onepage_v11'
+settings:
+  id: 'md_slider_block:onepage_v11'
+  label: 'MD Slider: OnePage V11'
+  provider: md_slider
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: /onepage-version-11
+    negate: false
+    context_mapping: {  }

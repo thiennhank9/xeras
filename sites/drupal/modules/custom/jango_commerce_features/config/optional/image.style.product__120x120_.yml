@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: product__120x120_
+label: 'Product (120x120)'
+effects:
+  640b5f11-6341-4a97-9072-98b8735f2827:
+    uuid: 640b5f11-6341-4a97-9072-98b8735f2827
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 120
+      height: 120

@@ -1,0 +1,135 @@
+<header class="c-layout-header {{ type }}" data-minimize-offset="80">
+  <input type="hidden" id="body-classes" value="{{ body_classes }}"/>
+  <div class="c-topbar">
+    <div class="container">
+      <nav class="c-top-menu">
+        <ul class="c-links c-theme-ul c-font-uppercase c-font-bold">
+          {% set items = simplify_menu(header_top_menu) %}
+          {% for menu_item in items.menu_tree %}
+            {% if loop.last %}
+              <li class="last">
+                <a href="{{ menu_item.url }}">{{ menu_item.text }}</a>
+              </li>
+            {% else %}
+              <li>
+                <a href="{{ menu_item.url }}">{{ menu_item.text }}</a>
+              </li>
+              <li class="c-divider"></li>
+            {% endif %}
+          {% endfor %}
+
+          {% if login %}
+            <li>
+              {% if is_authenticated %}
+                {% set user_menu_title = 'Account' %}
+              {% else %}
+                {% set user_menu_title = 'Sign In' %}
+              {% endif %}
+              <a href="{{ url('user.page') }}"
+                 class="btn c-theme-btn c-btn-square c-btn-uppercase c-btn-bold">
+                {{ user_menu_title|t }}
+              </a>
+            </li>
+          {% endif %}
+        </ul>
+
+        {% if language != FALSE %}
+          {% if lang_code %}
+            <ul class="c-ext c-theme-ul">
+              <li class="c-lang dropdown c-last">
+                <a href="#">{{ lang_code }}</a>
+                <!-- Language list menu -->
+                {{ language }}
+              </li>
+              <li class="c-search">
+                {{ search_block }}
+              </li>
+            </ul>
+          {% endif %}
+        {% endif %}
+      </nav>
+
+      <div class="c-brand">
+        <a href="{{ url('<front>') }}" class="c-logo">
+          <img src="{{ logo }}" alt="{{ site_name }}" class="c-desktop-logo">
+          <img src="{{ logo }}" alt="{{ site_name }}" class="c-desktop-logo-inverse">
+          <img src="{{ logo }}" alt="{{ site_name }}" class="c-mobile-logo">
+        </a>
+        {% if header_top_social_menu != FALSE %}
+          <ul class="c-icons c-theme-ul">
+            {% for htsm_li in header_top_social_menu %}
+              <li><a href="{{ htsm_li[0] }}" target="_blank"><i class="icon-social-{{ htsm_li[1] }}"></i></a></li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        <button class="c-topbar-toggler" type="button">
+          <i class="fa fa-ellipsis-v"></i>
+        </button>
+        <button class="c-hor-nav-toggler" type="button" data-target=".c-mega-menu">
+          <span class="c-line"></span>
+          <span class="c-line"></span>
+          <span class="c-line"></span>
+        </button>
+        <button class="c-search-toggler" type="button">
+          <i class="fa fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="c-navbar">
+    <div class="container">
+      <div class="c-navbar-wrapper clearfix">
+
+        {% if (search and search_block != FALSE) %}
+          {{ search_block }}
+        {% endif %}
+
+        <nav
+          class="c-mega-menu c-pull-right c-mega-menu-dark c-mega-menu-dark-mobile c-mega-menu-onepage c-fonts-uppercase c-fonts-bold"
+          data-onepage-animation-speed="700">
+          <ul class="nav navbar-nav c-theme-nav">
+            {{ menu }}
+
+            {% if search %}
+              <li class="c-search-toggler-wrapper">
+                <a href="#" class="c-btn-icon c-search-toggler">
+                  <i class="fa fa-search"></i>
+                </a>
+              </li>
+            {% endif %}
+
+            {% if cart %}
+              <li class="c-cart-toggler-wrapper">
+                <a href="{{ url('commerce_cart.page') }}" class="c-btn-icon c-cart-toggler">
+                  <i class="icon-handbag c-cart-icon"></i>
+                  <span class="c-cart-number c-theme-bg">{{ cart_count }}</span>
+                </a>
+              </li>
+            {% endif %}
+
+            {% if is_dev_host %}
+              <li class="c-quick-sidebar-toggler-wrapper">
+                <a href="#" class="c-quick-sidebar-toggler">
+                  <span class="c-line"></span>
+                  <span class="c-line"></span>
+                  <span class="c-line"></span>
+                </a>
+              </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </div>
+
+      {% if cart_block != FALSE %}
+        <div{{ attributes.addClass(['c-cart-menu']) }}>
+          <div class="c-cart-menu-title">
+            <p class="c-cart-menu-float-l c-font-sbold">{{ count_text }}</p>
+            <p class="c-cart-menu-float-r c-theme-font c-font-sbold">{{ cart_total_price }}</p>
+          </div>
+          {{ cart_block }}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</header>

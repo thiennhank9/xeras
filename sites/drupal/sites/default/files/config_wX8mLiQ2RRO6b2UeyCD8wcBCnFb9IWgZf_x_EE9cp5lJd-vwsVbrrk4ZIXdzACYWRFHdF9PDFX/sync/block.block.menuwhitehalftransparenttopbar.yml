@@ -1,0 +1,31 @@
+uuid: c02f0efc-c2f0-4888-8e85-82c463922945
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:c1f50545-c6d6-460b-b29c-66da24efcdab'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: menuwhitehalftransparenttopbar
+theme: jango_sub
+region: header
+weight: -28
+provider: null
+plugin: 'block_content:c1f50545-c6d6-460b-b29c-66da24efcdab'
+settings:
+  id: 'block_content:c1f50545-c6d6-460b-b29c-66da24efcdab'
+  label: 'Menu White Half Transparent TopBar'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: /node/170/header/v2-extended
+    negate: false
+    context_mapping: {  }

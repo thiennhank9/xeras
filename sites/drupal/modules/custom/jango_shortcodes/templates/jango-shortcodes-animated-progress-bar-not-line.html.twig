@@ -1,0 +1,16 @@
+<div class="c-progress-bar">
+  <div class="col-md-3">
+    <div class="c-progress-bar-container">
+      <div class="c-progress-bar-line c-border-{{ bg_type }} {{ font_color }}" data-progress-bar="{{ type_bar }}"
+           data-stroke-width="{{ stroke_width }}" data-duration="1000" data-trail-width="{{ stroke_width }}"
+           data-progress="{{ percent }}" data-display-value="{{ data }}" data-animation="{{ animation_stroke }}">
+        {{ icon|raw }}
+      </div>
+    </div>
+    <div class="c-progress-bar-desc-container">
+      <p class="c-progress-bar-desc c-center">
+        {{ description }}
+      </p>
+    </div>
+  </div>
+</div>

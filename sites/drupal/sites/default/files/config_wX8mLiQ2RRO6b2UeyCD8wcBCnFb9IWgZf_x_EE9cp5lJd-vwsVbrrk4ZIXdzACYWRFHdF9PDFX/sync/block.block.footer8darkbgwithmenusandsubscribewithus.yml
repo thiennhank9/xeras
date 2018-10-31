@@ -1,0 +1,31 @@
+uuid: 16c6c480-e0a8-41c7-b59b-7c3a41f9c9a2
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a4f03a86-afb9-4607-9e22-7eff9985915e'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: footer8darkbgwithmenusandsubscribewithus
+theme: jango_sub
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:a4f03a86-afb9-4607-9e22-7eff9985915e'
+settings:
+  id: 'block_content:a4f03a86-afb9-4607-9e22-7eff9985915e'
+  label: 'Footer 8: Dark BG with Menus and Subscribe with Us'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/118/footer-8\r\n/onepage-version-7\r\n/onepage-version-8"
+    negate: false
+    context_mapping: {  }

@@ -1,0 +1,25 @@
+uuid: c441f2fe-7f1c-4f4f-87c6-14a3f554dc16
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - jango
+_core:
+  default_config_hash: NDwadleLD3YVSbDUaakxyYZyINYtkFtOVGShfq4kWy8
+id: jango_branding
+theme: jango
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  provider: system
+  label_display: '0'
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

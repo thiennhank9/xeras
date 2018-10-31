@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Default theme implementation for an 'input' #type form element.
+ *
+ * Available variables:
+ * - attributes: A list of HTML attributes for the input element.
+ * - children: Optional additional rendered elements.
+ *
+ * @see template_preprocess_input()
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'form-group',
+    'has-feedback',
+    element['#type'] == 'search' ? 'c-quick-search',
+  ]
+%}
+<div{{ create_attribute({'class': classes}) }}>
+  <input{{ attributes }} />{{ nd_icon|raw }}{{ children }}
+</div>

@@ -1,0 +1,69 @@
+{#
+/**
+ * @file
+ * Default view template to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ *
+ * @ingroup themeable
+ */
+#}
+<h2 class="c-font-uppercase c-font-bold c-theme-bg c-font-white c-cart-item-title c-cart-item-first">
+  {{ fields.title.content }}
+</h2>
+<div class="col-md-2 col-sm-3 col-xs-5 c-cart-image">
+  {{ fields.field_images.content }}
+</div>
+<div class="col-md-4 col-sm-9 col-xs-7 c-cart-desc">
+  <h3>
+    <a href="{{ path('entity.commerce_product.canonical', {'commerce_product': fields.product_id.content|striptags|trim }) }}" class="c-font-bold c-theme-link c-font-22 c-font-dark">
+      {{ fields.title.content }}
+    </a>
+  </h3>
+</div>
+<div class="col-md-1 col-sm-3 col-xs-6 c-cart-ref">
+  <p class="c-cart-sub-title c-theme-font c-font-uppercase c-font-bold">{{ 'SKU'|t }}</p>
+  <p>{{ fields.sku.content }}</p>
+</div>
+<div class="col-md-1 col-sm-3 col-xs-6 c-cart-qty">
+  <p class="c-cart-sub-title c-theme-font c-font-uppercase c-font-bold">{{ 'QTY'|t }}</p>
+  {{ fields.edit_quantity.content }}
+</div>
+<div class="col-md-2 col-sm-3 col-xs-6 c-cart-price">
+  <p class="c-cart-sub-title c-theme-font c-font-uppercase c-font-bold">{{ 'Unit Price'|t }}</p>
+  <p class="c-cart-price c-font-bold">{{ fields.unit_price__number.content }}</p>
+</div>
+<div class="col-md-1 col-sm-3 col-xs-6 c-cart-total">
+  <p class="c-cart-sub-title c-theme-font c-font-uppercase c-font-bold">{{ 'Total'|t }}</p>
+  <p class="c-cart-price c-font-bold">{{ fields.total_price__number.content }}</p>
+</div>
+<div class="col-md-1 col-sm-12 c-cart-remove">
+  <a href="#" class="c-theme-link c-cart-remove-desktop">×</a>
+  <a href="#" class="c-cart-remove-mobile btn c-btn c-btn-md c-btn-square c-btn-red c-btn-border-1x c-font-uppercase">
+    {{ 'Remove item from Cart'|t }}
+  </a>
+  {{ fields.remove_button.content }}
+</div>

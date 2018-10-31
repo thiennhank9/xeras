@@ -1,0 +1,624 @@
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+retina: 0
+loader_image: 1
+phone: 0307-567-890
+404_bg: {  }
+maintenance_bg: {  }
+gmap_key: ''
+nikadevs_cms_layout:
+  layout-default:
+    name: Default
+    pages: ''
+    rows:
+      id-1:
+        name: 'Header FullWidth'
+        attributes:
+          id: id-1
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+          padding_bottom: '140'
+      id-2:
+        name: Content
+        attributes:
+          id: id-2
+          class:
+            - row
+        settings:
+          tag: div
+          bg_image_type: '0'
+      id-3:
+        name: 'Content Full Width'
+        attributes:
+          id: id-3
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-4:
+        name: Footer
+        attributes:
+          id: id-4
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-0:
+        name: Hidden
+        attributes:
+          id: id-0
+          class:
+            - row
+            - sortable-parent
+    regions:
+      header:
+        row_id: id-1
+        name: Header
+        attributes:
+          id: header
+          class:
+            - col-md-12
+      page_top:
+        row_id: id-2
+        name: 'Page Top'
+        attributes:
+          id: page_top
+          class:
+            - col-md-12
+      content:
+        row_id: id-2
+        name: Content
+        attributes:
+          id: content
+          class:
+            - col-md-12
+      sidebar:
+        row_id: id-2
+        name: Sidebar
+        attributes:
+          id: sidebar
+          class:
+            - col-md-12
+      page_bottom:
+        row_id: id-2
+        name: 'Page Bottom'
+        attributes:
+          id: page_bottom
+          class:
+            - col-md-12
+      content_full:
+        row_id: id-3
+        name: 'Content Full Width'
+        attributes:
+          id: content_full
+          class:
+            - col-md-12
+      footer:
+        row_id: id-4
+        name: Footer
+        attributes:
+          id: footer
+          class:
+            - col-md-12
+  layout-right-sidebar:
+    name: 'Right Sidebar'
+    pages: blog-2-columns
+    rows:
+      id-1:
+        name: Header
+        attributes:
+          id: id-1
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-2:
+        name: Content
+        attributes:
+          id: id-2
+          class:
+            - row
+        settings:
+          tag: div
+          bg_image_type: '0'
+      id-3:
+        name: 'Content Full Width'
+        attributes:
+          id: id-3
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-4:
+        name: Footer
+        attributes:
+          id: id-4
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-0:
+        name: Hidden
+        attributes:
+          id: id-0
+          class:
+            - row
+            - sortable-parent
+    regions:
+      header:
+        row_id: id-1
+        name: Header
+        attributes:
+          id: header
+          class:
+            - col-md-12
+      page_top:
+        row_id: id-2
+        name: 'Page Top'
+        attributes:
+          id: page_top
+          class:
+            - col-md-12
+      content:
+        row_id: id-2
+        name: Content
+        attributes:
+          id: content
+          class:
+            2: col-md-8
+      sidebar:
+        row_id: id-2
+        name: Sidebar
+        attributes:
+          id: sidebar
+          class:
+            2: col-md-3
+            3: col-md-offset-1
+      page_bottom:
+        row_id: id-2
+        name: 'Page Bottom'
+        attributes:
+          id: page_bottom
+          class:
+            - col-md-12
+      content_full:
+        row_id: id-3
+        name: 'Content Full Width'
+        attributes:
+          id: content_full
+          class:
+            - col-md-12
+      footer:
+        row_id: id-4
+        name: Footer
+        attributes:
+          id: footer
+          class:
+            - col-md-12
+
+  layout-content-8-columns-width:
+    name: 'Content 8 Columns Width'
+    pages: cart
+    rows:
+      id-1:
+        name: Header
+        attributes:
+          id: id-1
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-2:
+        name: Content
+        attributes:
+          id: id-2
+          class:
+            - row
+        settings:
+          tag: div
+          bg_image_type: '0'
+      id-3:
+        name: 'Content Full Width'
+        attributes:
+          id: id-3
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-4:
+        name: Footer
+        attributes:
+          id: id-4
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-0:
+        name: Hidden
+        attributes:
+          id: id-0
+          class:
+            - row
+            - sortable-parent
+    regions:
+      header:
+        row_id: id-1
+        name: Header
+        attributes:
+          id: header
+          class:
+            - col-md-12
+      page_top:
+        row_id: id-2
+        name: 'Page Top'
+        attributes:
+          id: page_top
+          class:
+            - col-md-12
+      content:
+        row_id: id-2
+        name: Content
+        attributes:
+          id: content
+          class:
+            2: col-md-8
+            3: col-md-offset-2
+      sidebar:
+        row_id: id-2
+        name: Sidebar
+        attributes:
+          id: sidebar
+          class:
+            - col-md-12
+      page_bottom:
+        row_id: id-2
+        name: 'Page Bottom'
+        attributes:
+          id: page_bottom
+          class:
+            - col-md-12
+      content_full:
+        row_id: id-3
+        name: 'Content Full Width'
+        attributes:
+          id: content_full
+          class:
+            - col-md-12
+      footer:
+        row_id: id-4
+        name: Footer
+        attributes:
+          id: footer
+          class:
+            - col-md-12
+  layout-content-10-columns-width:
+    name: 'Content 10 Columns Width'
+    pages: blog-fullwidth
+    rows:
+      id-1:
+        name: Header
+        attributes:
+          id: id-1
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-2:
+        name: Content
+        attributes:
+          id: id-2
+          class:
+            - row
+        settings:
+          tag: div
+          bg_image_type: '0'
+      id-3:
+        name: 'Content Full Width'
+        attributes:
+          id: id-3
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-4:
+        name: Footer
+        attributes:
+          id: id-4
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-0:
+        name: Hidden
+        attributes:
+          id: id-0
+          class:
+            - row
+            - sortable-parent
+    regions:
+      header:
+        row_id: id-1
+        name: Header
+        attributes:
+          id: header
+          class:
+            - col-md-12
+      page_top:
+        row_id: id-2
+        name: 'Page Top'
+        attributes:
+          id: page_top
+          class:
+            - col-md-12
+      content:
+        row_id: id-2
+        name: Content
+        attributes:
+          id: content
+          class:
+            2: col-md-10
+            3: col-md-offset-1
+      sidebar:
+        row_id: id-2
+        name: Sidebar
+        attributes:
+          id: sidebar
+          class:
+            - col-md-12
+      page_bottom:
+        row_id: id-2
+        name: 'Page Bottom'
+        attributes:
+          id: page_bottom
+          class:
+            - col-md-12
+      content_full:
+        row_id: id-3
+        name: 'Content Full Width'
+        attributes:
+          id: content_full
+          class:
+            - col-md-12
+      footer:
+        row_id: id-4
+        name: Footer
+        attributes:
+          id: footer
+          class:
+            - col-md-12
+  layout-full-width:
+    name: 'Full Width'
+    pages: "portfolio-promo\nportfolio-parallax\n*wide\n<front>\n/node/102\n/onepage/*\n/home/*\n/node/66"
+    rows:
+      id-1:
+        name: Header
+        attributes:
+          id: id-1
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+          padding_bottom: '140'
+      id-2:
+        name: Content
+        attributes:
+          id: id-2
+          class:
+            - row
+        settings:
+          tag: div
+          bg_image_type: '0'
+          full_width: '1'
+      id-3:
+        name: 'Content Full Width'
+        attributes:
+          id: id-3
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-4:
+        name: Footer
+        attributes:
+          id: id-4
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-0:
+        name: Hidden
+        attributes:
+          id: id-0
+          class:
+            - row
+            - sortable-parent
+    regions:
+      header:
+        row_id: id-1
+        name: Header
+        attributes:
+          id: header
+          class:
+            - col-md-12
+      page_top:
+        row_id: id-2
+        name: 'Page Top'
+        attributes:
+          id: page_top
+          class:
+            - col-md-12
+      content:
+        row_id: id-2
+        name: Content
+        attributes:
+          id: content
+          class:
+            - col-md-12
+      sidebar:
+        row_id: id-2
+        name: Sidebar
+        attributes:
+          id: sidebar
+          class:
+            - col-md-12
+      page_bottom:
+        row_id: id-2
+        name: 'Page Bottom'
+        attributes:
+          id: page_bottom
+          class:
+            - col-md-12
+      content_full:
+        row_id: id-3
+        name: 'Content Full Width'
+        attributes:
+          id: content_full
+          class:
+            - col-md-12
+      footer:
+        row_id: id-4
+        name: Footer
+        attributes:
+          id: footer
+          class:
+            - col-md-12
+  layout-full-width-paddingtop0:
+    name: 'Full Width Padding-Top-0'
+    pages: 'gallery-images/*'
+    rows:
+      id-1:
+        name: Header
+        attributes:
+          id: id-1
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-2:
+        name: Content
+        attributes:
+          id: id-2
+          class:
+            - row
+        settings:
+          tag: div
+          bg_image_type: '0'
+          full_width: '1'
+      id-3:
+        name: 'Content Full Width'
+        attributes:
+          id: id-3
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-4:
+        name: Footer
+        attributes:
+          id: id-4
+          class:
+            - row
+        settings:
+          tag: div
+          full_width: '1'
+          bg_image_type: '0'
+      id-0:
+        name: Hidden
+        attributes:
+          id: id-0
+          class:
+            - row
+            - sortable-parent
+    regions:
+      header:
+        row_id: id-1
+        name: Header
+        attributes:
+          id: header
+          class:
+            - col-md-12
+      page_top:
+        row_id: id-2
+        name: 'Page Top'
+        attributes:
+          id: page_top
+          class:
+            - col-md-12
+      content:
+        row_id: id-2
+        name: Content
+        attributes:
+          id: content
+          class:
+            - col-md-12
+      sidebar:
+        row_id: id-2
+        name: Sidebar
+        attributes:
+          id: sidebar
+          class:
+            - col-md-12
+      page_bottom:
+        row_id: id-2
+        name: 'Page Bottom'
+        attributes:
+          id: page_bottom
+          class:
+            - col-md-12
+      content_full:
+        row_id: id-3
+        name: 'Content Full Width'
+        attributes:
+          id: content_full
+          class:
+            - col-md-12
+      footer:
+        row_id: id-4
+        name: Footer
+        attributes:
+          id: footer
+          class:
+            - col-md-12

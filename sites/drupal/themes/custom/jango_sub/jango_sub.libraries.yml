@@ -1,0 +1,12 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/custom.css: {weight:2000}
+  js:
+      js/talk-action.js
+  dependencies:
+  - core/drupal.dialog.ajax
+  - core/jquery.form
+  - core/jquery
+  - core/drupalSettings

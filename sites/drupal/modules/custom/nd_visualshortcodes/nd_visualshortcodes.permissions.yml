@@ -1,0 +1,9 @@
+administer nd nd_visualshortcodes:
+  title: 'Customize ND Visual Shortcodes appearance'
+  description: 'Allow users to customize ND Visual Shortcodes appearance.'
+  restrict access: TRUE
+  
+use nd nd_visualshortcodes:
+  title: 'Use ND Visual Shortcodes'
+  description: 'Allow users to use ND Visual Shortcodes.'
+  restrict access: TRUE

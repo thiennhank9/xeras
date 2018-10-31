@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d6afcbd3-5a77-49b2-9fc8-c35d74e0f8cf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/.gitattributes" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/.gitattributes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/.travis.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Docs/Functions/FunctionCallArgumentSpacingStandard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Docs/Functions/FunctionCallArgumentSpacingStandard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Docs/Functions/FunctionCallSignatureStandard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Docs/Functions/FunctionCallSignatureStandard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Docs/Functions/ValidDefaultValueStandard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Docs/Functions/ValidDefaultValueStandard.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Array/ArraySniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Array/ArraySniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Array/DisallowLongArraySyntaxSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Array/DisallowLongArraySyntaxSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/CSS/ClassDefinitionNameSpacingSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/CSS/ClassDefinitionNameSpacingSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/CSS/ColourDefinitionSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/CSS/ColourDefinitionSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Classes/ClassCreateInstanceSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Classes/ClassCreateInstanceSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Classes/ClassDeclarationSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Classes/ClassDeclarationSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Classes/FullyQualifiedNamespaceSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Classes/FullyQualifiedNamespaceSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Classes/InterfaceNameSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Classes/InterfaceNameSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Classes/PropertyDeclarationSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Classes/PropertyDeclarationSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Classes/UnusedUseStatementSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Classes/UnusedUseStatementSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Classes/UseLeadingBackslashSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Classes/UseLeadingBackslashSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/ClassCommentSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/ClassCommentSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/DataTypeNamespaceSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/DataTypeNamespaceSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/DocCommentAlignmentSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/DocCommentAlignmentSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/DocCommentSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/DocCommentSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/DocCommentStarSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/DocCommentStarSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/FileCommentSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/FileCommentSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/FunctionCommentSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/FunctionCommentSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/HookCommentSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/HookCommentSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/InlineCommentSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/InlineCommentSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/PostStatementCommentSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/PostStatementCommentSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/VariableCommentSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Commenting/VariableCommentSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/ControlStructures/ControlSignatureSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/ControlStructures/ControlSignatureSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/ControlStructures/ElseIfSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/ControlStructures/ElseIfSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/ControlStructures/InlineControlStructureSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/ControlStructures/InlineControlStructureSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Files/EndFileNewlineSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Files/EndFileNewlineSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Files/FileEncodingSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Files/FileEncodingSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Files/LineLengthSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Files/LineLengthSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Files/TxtFileLineLengthSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Files/TxtFileLineLengthSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Formatting/MultiLineAssignmentSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Formatting/MultiLineAssignmentSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Formatting/MultipleStatementAlignmentSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Formatting/MultipleStatementAlignmentSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Formatting/SpaceInlineIfSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Formatting/SpaceInlineIfSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Formatting/SpaceUnaryOperatorSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Formatting/SpaceUnaryOperatorSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Functions/DiscouragedFunctionsSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Functions/DiscouragedFunctionsSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Functions/FunctionDeclarationSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Functions/FunctionDeclarationSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/InfoFiles/AutoAddedKeysSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/InfoFiles/AutoAddedKeysSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/InfoFiles/ClassFilesSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/InfoFiles/ClassFilesSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/InfoFiles/DuplicateEntrySniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/InfoFiles/DuplicateEntrySniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/InfoFiles/RequiredSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/InfoFiles/RequiredSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Methods/MethodDeclarationSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Methods/MethodDeclarationSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/NamingConventions/ValidClassNameSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/NamingConventions/ValidClassNameSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/NamingConventions/ValidFunctionNameSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/NamingConventions/ValidFunctionNameSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/NamingConventions/ValidGlobalSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/NamingConventions/ValidGlobalSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/NamingConventions/ValidVariableNameSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/NamingConventions/ValidVariableNameSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Scope/MethodScopeSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Scope/MethodScopeSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/ConstantNameSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/ConstantNameSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/EmptyInstallSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/EmptyInstallSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/FunctionAliasSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/FunctionAliasSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/FunctionCall.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/FunctionCall.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/FunctionDefinition.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/FunctionDefinition.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/FunctionTSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/FunctionTSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/FunctionWatchdogSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/FunctionWatchdogSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/InstallHooksSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/InstallHooksSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/LStringTranslatableSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/LStringTranslatableSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/PregSecuritySniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/PregSecuritySniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/RemoteAddressSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/RemoteAddressSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/TInHookMenuSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/TInHookMenuSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/TInHookSchemaSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Semantics/TInHookSchemaSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Strings/UnnecessaryStringConcatSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/Strings/UnnecessaryStringConcatSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/CloseBracketSpacingSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/CloseBracketSpacingSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/CommaSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/CommaSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/EmptyLinesSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/EmptyLinesSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/NamespaceSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/NamespaceSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/ObjectOperatorIndentSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/ObjectOperatorIndentSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/ObjectOperatorSpacingSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/ObjectOperatorSpacingSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/OpenBracketSpacingSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/OpenBracketSpacingSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/OpenTagNewlineSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/OpenTagNewlineSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/OperatorSpacingSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/OperatorSpacingSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/ScopeClosingBraceSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/ScopeClosingBraceSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/ScopeIndentSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Sniffs/WhiteSpace/ScopeIndentSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Array/ArrayUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Array/ArrayUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Array/ArrayUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Array/DisallowLongArraySyntaxUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Array/disallow_long_array_d7/DisallowLongArraySyntaxUnitTest.1.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Array/disallow_long_array_d7/disallow_long_array_d7.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Array/disallow_long_array_d8/DisallowLongArraySyntaxUnitTest.2.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Array/disallow_long_array_d8/DisallowLongArraySyntaxUnitTest.2.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Array/disallow_long_array_d8/disallow_long_array_d8.info.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/ClassCreateInstanceUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/ClassCreateInstanceUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/ClassCreateInstanceUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/ClassDeclarationUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/ClassDeclarationUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/ClassDeclarationUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/FullyQualifiedNamespaceUnitTest.api.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/FullyQualifiedNamespaceUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/FullyQualifiedNamespaceUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/FullyQualifiedNamespaceUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/PropertyDeclarationUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/PropertyDeclarationUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/PropertyDeclarationUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/UnusedUseStatementUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/UnusedUseStatementUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/UnusedUseStatementUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/UseLeadingBackslashUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/UseLeadingBackslashUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Classes/UseLeadingBackslashUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/CoderSniffUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/ClassCommentUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/ClassCommentUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/ClassCommentUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DataTypeNamespaceUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DataTypeNamespaceUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DataTypeNamespaceUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DocCommentAlignmentUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DocCommentAlignmentUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DocCommentAlignmentUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DocCommentStarUnitTest.1.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DocCommentStarUnitTest.1.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DocCommentStarUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DocCommentStarUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DocCommentStarUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DocCommentUnitTest.1.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DocCommentUnitTest.1.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DocCommentUnitTest.2.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DocCommentUnitTest.2.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DocCommentUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DocCommentUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/DocCommentUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.1.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.1.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.10.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.10.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.11.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.11.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.12.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.12.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.2.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.2.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.3.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.3.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.4.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.4.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.5.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.5.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.6.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.6.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.7.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.7.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.8.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.8.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.9.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.9.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FileCommentUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FunctionCommentUnitTest.1.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FunctionCommentUnitTest.1.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FunctionCommentUnitTest.2.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FunctionCommentUnitTest.2.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FunctionCommentUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FunctionCommentUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/FunctionCommentUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/InlineCommentUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/InlineCommentUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/InlineCommentUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/PostStatementCommentUnitTest.1.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/PostStatementCommentUnitTest.1.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/PostStatementCommentUnitTest.2.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/PostStatementCommentUnitTest.2.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/PostStatementCommentUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/PostStatementCommentUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/PostStatementCommentUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/VariableCommentUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/VariableCommentUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Commenting/VariableCommentUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/ControlStructures/ControlSignatureUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/ControlStructures/ControlSignatureUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/ControlStructures/ControlSignatureUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/ControlStructures/ElseIfUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/ControlStructures/ElseIfUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/ControlStructures/ElseIfUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Files/EndFileNewlineUnitTest.good.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Files/EndFileNewlineUnitTest.good.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Files/EndFileNewlineUnitTest.none.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Files/EndFileNewlineUnitTest.none.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Files/EndFileNewlineUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Files/EndFileNewlineUnitTest.two.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Files/EndFileNewlineUnitTest.two.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Files/FileEncodingUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Files/FileEncodingUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Files/LineLengthUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Files/LineLengthUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Formatting/MultipleStatementAlignmentUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Formatting/MultipleStatementAlignmentUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Formatting/MultipleStatementAlignmentUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Formatting/SpaceUnaryOperatorUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Formatting/SpaceUnaryOperatorUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Formatting/SpaceUnaryOperatorUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/InfoFiles/AutoAddedKeysUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/InfoFiles/ClassFilesUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/InfoFiles/DuplicateEntryUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/InfoFiles/class_files.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/InfoFiles/test.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/InfoFiles/test.info.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/InfoFiles/trait.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/NamingConventions/ValidFunctionNameUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/NamingConventions/ValidFunctionNameUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/NamingConventions/ValidVariableNameUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/NamingConventions/ValidVariableNameUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Scope/MethodScopeUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Scope/MethodScopeUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Scope/MethodScopeUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Semantics/ConstantNameUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Semantics/FunctionTUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Semantics/FunctionTUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Semantics/FunctionWatchdogUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Semantics/FunctionWatchdogUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Semantics/constant_test.install" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/Semantics/constant_test.module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/CloseBracketSpacingUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/CloseBracketSpacingUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/CloseBracketSpacingUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/CommaUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/CommaUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/NamespaceUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/NamespaceUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/NamespaceUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/ObjectOperatorIndentUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/ObjectOperatorIndentUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/ObjectOperatorIndentUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/ObjectOperatorSpacingUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/ObjectOperatorSpacingUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/ObjectOperatorSpacingUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/OpenBracketSpacingUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/OpenBracketSpacingUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/OpenBracketSpacingUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/OpenTagNewlineUnitTest.1.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/OpenTagNewlineUnitTest.1.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/OpenTagNewlineUnitTest.2.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/OpenTagNewlineUnitTest.2.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/OpenTagNewlineUnitTest.3.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/OpenTagNewlineUnitTest.3.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/OpenTagNewlineUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/ScopeIndentUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/ScopeIndentUnitTest.inc.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/WhiteSpace/ScopeIndentUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/bad/BadUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/bad/bad.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/bad/bad.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/bad/bad.install" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/bad/bad.module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/bad/bad.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/bad/bad.php.fixed" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/bad2.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/good/GoodUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/good/LongNamespace.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/good/good.api.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/good/good.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/good/good.features.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/good/good.install" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/good/good.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/good/good.tpl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/good/good.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/Test/phpunit-bootstrap.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/drupalcs.info" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/drupalcs.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/ruleset.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/Drupal/ruleset.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Project.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/CodeAnalysis/VariableAnalysisSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/CodeAnalysis/VariableAnalysisSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Commenting/AuthorTagSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Commenting/AuthorTagSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Commenting/CommentEmptyLineSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Commenting/CommentEmptyLineSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Commenting/ExpectedExceptionSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Commenting/ExpectedExceptionSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Constants/GlobalConstantSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Constants/GlobalConstantSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Constants/GlobalDefineSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Constants/GlobalDefineSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/CheckPlainSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/CheckPlainSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/CurlSslVerifierSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/CurlSslVerifierSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/DbQuerySniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/DbQuerySniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/DbSelectBracesSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/DbSelectBracesSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/DefaultValueSanitizeSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/DefaultValueSanitizeSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/FormErrorTSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/FormErrorTSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/LCheckPlainSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/LCheckPlainSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/MessageTSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/MessageTSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/TCheckPlainSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/TCheckPlainSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/ThemeSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/ThemeSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/VariableSetSanitizeSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionCalls/VariableSetSanitizeSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionDefinitions/AccessHookMenuSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionDefinitions/AccessHookMenuSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionDefinitions/FormAlterDocSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionDefinitions/FormAlterDocSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionDefinitions/HookInitCssSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionDefinitions/HookInitCssSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionDefinitions/InstallTSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/FunctionDefinitions/InstallTSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/General/AccessAdminPagesSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/General/AccessAdminPagesSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/General/ClassNameSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/General/ClassNameSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/General/DescriptionTSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/General/DescriptionTSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/General/FormStateInputSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/General/FormStateInputSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/General/LanguageNoneSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/General/LanguageNoneSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/General/OptionsTSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/General/OptionsTSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/General/VariableNameSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/General/VariableNameSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/InfoFiles/NamespacedDependencySniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/InfoFiles/NamespacedDependencySniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Objects/GlobalClassSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Objects/GlobalClassSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Objects/GlobalDrupalSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Objects/GlobalDrupalSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Objects/GlobalFunctionSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Objects/GlobalFunctionSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Objects/UnusedPrivateMethodSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Objects/UnusedPrivateMethodSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Yaml/RoutingAccessSniff.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Sniffs/Yaml/RoutingAccessSniff.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/CodeAnalysis/VariableAnalysisUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/CodeAnalysis/VariableAnalysisUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Commenting/AuthorTagUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Commenting/AuthorTagUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Commenting/CommentEmptyLineUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Commenting/CommentEmptyLineUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Commenting/ExpectedExceptionUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Commenting/ExpectedExceptionUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Constants/GlobalConstantUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Constants/GlobalConstantUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Constants/GlobalDefineUnitTest.module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Constants/GlobalDefineUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Constants/test.info.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionCalls/CheckPlainUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionCalls/CheckPlainUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionCalls/CurlSslVerifierUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionCalls/CurlSslVerifierUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionCalls/DbQueryUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionCalls/DbQueryUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionCalls/DbSelectBracesUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionCalls/DbSelectBracesUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionCalls/DefaultValueSanitizeUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionCalls/DefaultValueSanitizeUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionCalls/TCheckPlainUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionCalls/TCheckPlainUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionCalls/VariableSetSanitizeUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionCalls/VariableSetSanitizeUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionCalls/dbquerytest.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionDefinitions/AccessHookMenuUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionDefinitions/FormAlterDocUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionDefinitions/HookInitCssUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionDefinitions/InstallTSniffUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionDefinitions/test.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionDefinitions/test.install" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/FunctionDefinitions/test.module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/General/OptionsTUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/General/OptionsTUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/General/VariableNameUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/General/VariableNameUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/General/test.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/InfoFiles/NamespacedDependencyUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/InfoFiles/dependencies_test.info.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Objects/GlobalClassUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Objects/GlobalClassUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Objects/GlobalDrupalUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Objects/GlobalDrupalUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Objects/GlobalFunctionUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Objects/GlobalFunctionUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Objects/UnusedPrivateMethodUnitTest.inc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Objects/UnusedPrivateMethodUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Objects/src/ExampleService.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Objects/testmodule.services.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/ProjectDetection/ProjectUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/ProjectDetection/modules/drupal6/nested/test.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/ProjectDetection/modules/drupal6/testmodule.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/ProjectDetection/modules/drupal7/testmodule.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/ProjectDetection/modules/drupal8/testmodule.info.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Yaml/RoutingAccessUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/Yaml/routing_access_test.routing.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/good/GoodUnitTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/Test/good/good.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/ruleset.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/coder_sniffer/DrupalPractice/ruleset.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/phpcs.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/phpcs.xml.dist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/drupal/coder/phpunit.xml.dist" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/drupal/coder/phpunit.xml.dist" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1677609777">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="js" value="234" />
+          <entry key="php" value="75" />
+          <entry key="yml" value="41" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JavaScript" value="234" />
+          <entry key="PHP" value="75" />
+          <entry key="YAML" value="41" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="htaccess" value="1" />
+          <entry key="js" value="1" />
+          <entry key="php" value="2" />
+          <entry key="yml" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JavaScript" value="1" />
+          <entry key="PHP" value="2" />
+          <entry key="YAML" value="2" />
+          <entry key="htaccess" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/autoload.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/update.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/default/settings.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3495">
+              <caret line="287" column="3" selection-start-line="287" selection-start-column="3" selection-end-line="287" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/default/settings.local-development.php">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/default/files/.htaccess">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sites/default/settings.example.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10290">
+              <caret line="740" selection-start-line="740" selection-end-line="740" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/custom/jango_sub/jango_sub.libraries.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/custom/jango_sub/js/talk-action.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/themes/custom/jango/jango.libraries.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/lib/Drupal/Core/Asset/AssetResolver.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="118" column="12" selection-start-line="118" selection-start-column="12" selection-end-line="118" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>$settings</find>
+      <find>setting</find>
+      <find>foreach</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/vendor/drupal/coder" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/sites/default/settings.php" />
+        <option value="$PROJECT_DIR$/themes/custom/jango_sub/jango_sub.libraries.yml" />
+        <option value="$PROJECT_DIR$/themes/custom/jango_sub/js/talk-action.js" />
+        <option value="$PROJECT_DIR$/themes/custom/jango/jango.libraries.yml" />
+        <option value="$PROJECT_DIR$/core/lib/Drupal/Core/Asset/AssetResolver.php" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/core/assets/vendor/jquery.ui/package.json" />
+      <path value="$PROJECT_DIR$/core/package.json" />
+      <path value="$PROJECT_DIR$/libraries/dropzone/package.json" />
+      <path value="$PROJECT_DIR$/libraries/imagesloaded/package.json" />
+      <path value="$PROJECT_DIR$/libraries/masonry/package.json" />
+      <path value="$PROJECT_DIR$/modules/contrib/fivestar/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/path-util" />
+      <path value="$PROJECT_DIR$/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/vendor/webflo/drupal-finder" />
+      <path value="$PROJECT_DIR$/vendor/dflydev/dot-access-data" />
+      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/vendor/consolidation/config" />
+      <path value="$PROJECT_DIR$/vendor/consolidation/annotated-command" />
+      <path value="$PROJECT_DIR$/vendor/consolidation/output-formatters" />
+      <path value="$PROJECT_DIR$/vendor/consolidation/log" />
+      <path value="$PROJECT_DIR$/vendor/mikey179/vfsStream" />
+      <path value="$PROJECT_DIR$/vendor/consolidation/robo" />
+      <path value="$PROJECT_DIR$/vendor/wikimedia/composer-merge-plugin" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/vendor/symfony-cmf/routing" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/container-interop/container-interop" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/easyrdf/easyrdf" />
+      <path value="$PROJECT_DIR$/vendor/stack/builder" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/drupal/coder" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/behat/mink-goutte-driver" />
+      <path value="$PROJECT_DIR$/vendor/behat/mink-selenium2-driver" />
+      <path value="$PROJECT_DIR$/vendor/behat/mink-browserkit-driver" />
+      <path value="$PROJECT_DIR$/vendor/behat/mink" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/commerceguys/addressing" />
+      <path value="$PROJECT_DIR$/vendor/commerceguys/intl" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/instaclick/php-webdriver" />
+      <path value="$PROJECT_DIR$/vendor/drush/drush" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-stdlib" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-diactoros" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-escaper" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/zendframework/zend-feed" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dependency-injection" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/symfony/serializer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/jcalderonzumba/mink-phantomjs-driver" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/jcalderonzumba/gastonjs" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/fabpot/goutte" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/symfony/phpunit-bridge" />
+      <path value="$PROJECT_DIR$/vendor/chi-teck/drupal-code-generator" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/symfony/class-loader" />
+      <path value="$PROJECT_DIR$/vendor/symfony/config" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/symfony/psr-http-message-bridge" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/league/container" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/masterminds/html5" />
+      <path value="$PROJECT_DIR$/vendor/twig/twig" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/grasmash/yaml-expander" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/grasmash/expander" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit-mock-objects" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="width" value="718" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="drupal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drupal" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drupal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drupal" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drupal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drupal" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="custom" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="drupal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="drupal" type="462c0819:PsiDirectoryNode" />
+              <item name="themes" type="462c0819:PsiDirectoryNode" />
+              <item name="custom" type="462c0819:PsiDirectoryNode" />
+              <item name="jango" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="getJsAssets&#9;null&#9;null" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d6afcbd3-5a77-49b2-9fc8-c35d74e0f8cf" name="Default Changelist" comment="" />
+      <created>1540959199733</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1540959199733</updated>
+      <workItem from="1540959200830" duration="640000" />
+      <workItem from="1540961718347" duration="1215000" />
+      <workItem from="1540975400121" duration="1299000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="3154000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="747" height="900" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.36312056" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/default/settings.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3495">
+          <caret line="287" column="3" selection-start-line="287" selection-start-column="3" selection-end-line="287" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/default/settings.local-development.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/default/files/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sites/default/settings.example.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10290">
+          <caret line="740" selection-start-line="740" selection-end-line="740" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/custom/jango_sub/jango_sub.libraries.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="5" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/custom/jango_sub/js/talk-action.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/themes/custom/jango/jango.libraries.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/lib/Drupal/Core/Asset/AssetResolver.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="118" column="12" selection-start-line="118" selection-start-column="12" selection-end-line="118" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

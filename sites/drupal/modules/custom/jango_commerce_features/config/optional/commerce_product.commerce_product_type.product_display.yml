@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: product_display
+label: 'Product Display'
+description: ''
+variationType: product
+injectVariationFields: true
+traits: {  }

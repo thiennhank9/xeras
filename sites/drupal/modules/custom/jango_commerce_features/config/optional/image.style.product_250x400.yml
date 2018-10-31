@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: product_250x400
+label: 'Product (250x400)'
+effects:
+  d5b1bd15-8b5d-4753-b7b4-d84b5a451fb4:
+    uuid: d5b1bd15-8b5d-4753-b7b4-d84b5a451fb4
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 250
+      height: 400

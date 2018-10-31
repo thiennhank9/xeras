@@ -1,0 +1,11 @@
+uuid: 23e28433-dc96-4d0a-b88f-6d810638af05
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.nd_service
+id: node.nd_service
+target_entity_type_id: node
+target_bundle: nd_service
+default_langcode: site_default
+language_alterable: true

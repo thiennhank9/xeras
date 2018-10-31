@@ -1,0 +1,18 @@
+<div class="c-progress-bar">
+  <div class="c-progress-bar-container">
+
+    {% if icon != FALSE %}
+      <div class="c-progress-bar-icon-line {{ font_color }}"><i class="{{ icon }}"></i></div>
+    {% endif %}
+
+    <div class="c-progress-bar-line c-progress-bar-line-with-icon c-border-{{ bg_type }}" data-progress-bar="line"
+         data-stroke-width="{{ line_width }}" data-duration="1000" data-trail-width="{{ line_width }}"
+         data-progress="{{ percent }}" data-display-value="{{ data }}" data-animation="{{ animation_stroke }}">
+
+      {% if icon == FALSE %}
+        <label class="c-progress-bar-label">{{ description }}</label>
+      {% endif %}
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+uuid: b7b2ee42-4f17-4a90-b6a4-efbfe312df0e
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:fab0a263-9d82-48ad-b1bb-edb432930e74'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: menuwhitehalftransparentwide
+theme: jango_sub
+region: header
+weight: -29
+provider: null
+plugin: 'block_content:fab0a263-9d82-48ad-b1bb-edb432930e74'
+settings:
+  id: 'block_content:fab0a263-9d82-48ad-b1bb-edb432930e74'
+  label: 'Menu White Half Transparent Wide'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/170/header/v6\r\n/home-version-6\r\n/home-version-12"
+    negate: false
+    context_mapping: {  }

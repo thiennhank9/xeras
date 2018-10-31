@@ -1,0 +1,31 @@
+uuid: ae1c8121-60f9-419f-9364-19a7698ad2de
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:a9f16dda-bf94-434c-84f6-643654bd9806'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: footershortdark
+theme: jango_sub
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:a9f16dda-bf94-434c-84f6-643654bd9806'
+settings:
+  id: 'block_content:a9f16dda-bf94-434c-84f6-643654bd9806'
+  label: 'Footer: Short Dark'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/onepage-version-1\r\n/onepage-version-2\r\n/onepage-version-3\r\n/onepage-version-5\r\n/onepage-version-6\r\n/onepage-version-9\r\n/onepage-version-10\r\n/onepage-version-11\r\n/node/118/footer-7\r\n/node/118/footer-9"
+    negate: false
+    context_mapping: {  }

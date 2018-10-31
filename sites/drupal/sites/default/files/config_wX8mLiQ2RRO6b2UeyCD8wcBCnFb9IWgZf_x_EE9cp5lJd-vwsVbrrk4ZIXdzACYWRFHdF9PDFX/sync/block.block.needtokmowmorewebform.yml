@@ -1,0 +1,25 @@
+uuid: f8ed2e16-8ce9-4e48-9a15-a7fe9f0413ff
+langcode: en
+status: false
+dependencies:
+  content:
+    - 'block_content:basic:f4d8a287-830f-44a8-b3a4-098c9df39560'
+  module:
+    - block_content
+  theme:
+    - jango_sub
+id: needtokmowmorewebform
+theme: jango_sub
+region: footer
+weight: 0
+provider: null
+plugin: 'block_content:f4d8a287-830f-44a8-b3a4-098c9df39560'
+settings:
+  id: 'block_content:f4d8a287-830f-44a8-b3a4-098c9df39560'
+  label: 'Need to kmow more? WebForm'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

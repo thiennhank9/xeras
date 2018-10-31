@@ -1,0 +1,31 @@
+uuid: 332df22b-4d51-42d7-9391-6ee2eb8fe92f
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:6140f6da-fe42-4900-b5b8-5861dd0800ae'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: productsfilters
+theme: jango_sub
+region: sidebar
+weight: -36
+provider: null
+plugin: 'block_content:6140f6da-fe42-4900-b5b8-5861dd0800ae'
+settings:
+  id: 'block_content:6140f6da-fe42-4900-b5b8-5861dd0800ae'
+  label: 'Products Filters'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: '*shop/left-sidebar'
+    negate: false
+    context_mapping: {  }

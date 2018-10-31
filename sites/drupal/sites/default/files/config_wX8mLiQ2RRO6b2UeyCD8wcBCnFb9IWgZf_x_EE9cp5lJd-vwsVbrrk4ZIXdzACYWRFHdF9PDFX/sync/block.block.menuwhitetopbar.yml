@@ -1,0 +1,31 @@
+uuid: 8c0bf6d2-69ed-4ed8-865e-e32daa849af1
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:3985382f-79d5-4bdf-819b-4277c3ecf54d'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: menuwhitetopbar
+theme: jango_sub
+region: header
+weight: -35
+provider: null
+plugin: 'block_content:3985382f-79d5-4bdf-819b-4277c3ecf54d'
+settings:
+  id: 'block_content:3985382f-79d5-4bdf-819b-4277c3ecf54d'
+  label: 'Menu White Top Bar'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/170/header/v4-extended\r\n/node/118/footer*"
+    negate: false
+    context_mapping: {  }

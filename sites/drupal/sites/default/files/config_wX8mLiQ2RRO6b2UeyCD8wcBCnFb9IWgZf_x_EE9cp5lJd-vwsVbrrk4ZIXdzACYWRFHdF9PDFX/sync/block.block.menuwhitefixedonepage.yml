@@ -1,0 +1,31 @@
+uuid: f37050fe-44f2-41fb-afcd-2cdb29a7ae91
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:cca1fab3-ff0b-4854-b58a-a5a08d848aa0'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: menuwhitefixedonepage
+theme: jango_sub
+region: header
+weight: -12
+provider: null
+plugin: 'block_content:cca1fab3-ff0b-4854-b58a-a5a08d848aa0'
+settings:
+  id: 'block_content:cca1fab3-ff0b-4854-b58a-a5a08d848aa0'
+  label: 'Menu White Fixed - OnePage'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/onepage-version-4\r\n/onepage-version-6"
+    negate: false
+    context_mapping: {  }

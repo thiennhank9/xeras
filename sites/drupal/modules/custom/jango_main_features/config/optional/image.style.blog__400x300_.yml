@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: blog__400x300_
+label: 'Blog (400x300)'
+effects:
+  7e669fbc-4f35-48c7-92ff-2234ee7ef20d:
+    uuid: 7e669fbc-4f35-48c7-92ff-2234ee7ef20d
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 400
+      height: 300

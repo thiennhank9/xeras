@@ -1,0 +1,22 @@
+uuid: ebfcfff6-408a-47f6-9b10-554cf356e5b2
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - jango_sub
+_core:
+  default_config_hash: 9EoWV2Lot6FVSr50t4hoKgiz1LIXYWNG-IIPYsWxBqo
+id: jango_sub_content
+theme: jango_sub
+region: content
+weight: -1
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  provider: system
+  label_display: '0'
+visibility: {  }

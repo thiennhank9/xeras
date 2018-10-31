@@ -1,0 +1,112 @@
+{#
+/**
+ * @file
+ * Default view template to display all the fields in a row.
+ *
+ * Available variables:
+ * - view: The view in use.
+ * - fields: A list of fields, each one contains:
+ *   - content: The output of the field.
+ *   - raw: The raw data for the field, if it exists. This is NOT output safe.
+ *   - class: The safe class ID to use.
+ *   - handler: The Views field handler controlling this field.
+ *   - inline: Whether or not the field should be inline.
+ *   - wrapper_element: An HTML element for a wrapper.
+ *   - wrapper_attributes: List of attributes for wrapper element.
+ *   - separator: An optional separator that may appear before a field.
+ *   - label: The field's label text.
+ *   - label_element: An HTML element for a label wrapper.
+ *   - label_attributes: List of attributes for label wrapper.
+ *   - label_suffix: Colon after the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ *   - has_label_colon: A boolean indicating whether to display a colon after
+ *     the label.
+ *   - element_type: An HTML element for the field content.
+ *   - element_attributes: List of attributes for HTML element for field content.
+ * - row: The raw result from the query, with all data it fetched.
+ *
+ * @see template_preprocess_views_view_fields()
+ *
+ * @ingroup themeable
+ */
+#}
+
+{% set bg = row.index % 2 == 0 ? 'c-theme-bg' : 'c-bg-red' %}
+
+{%
+  set image_split = [
+    '<div class="col-md-8 col-sm-6">',
+    '<div class="c-content-overlay">',
+    '<div class="c-overlay-wrapper">',
+    '<div class="c-overlay-content">',
+    '<a href="',
+    fields.jango_cms_entity_path.content|striptags,
+    '" class="btn btn-md c-btn-grey-1 c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">',
+    'Explore'|t,
+    '</a>',
+    '</div>',
+    '</div>',
+    '<div class="c-bg-img-center c-overlay-object" data-height="height" style="height: 550px; background-image: url(',
+    fields.jango_cms_single_image_url.content|striptags,
+    ');">',
+    '</div>',
+    '</div>',
+    '</div>',
+  ]
+%}
+
+{%
+  set body_split = [
+    '<div class="col-md-4 col-sm-6">',
+    '<div class="c-wrapper ',
+    bg,
+    '" style="height: 550px;">',
+    '<div class="c-content c-border c-border-padding c-border-padding-right">',
+    '<h3 class="c-title c-font-25 c-font-white c-font-uppercase c-font-bold">',
+    fields.title.content,
+    '</h3>',
+    '<div class="c-description c-font-17 c-font-white">',
+    fields.body.content,
+    '</div>',
+    '<p class="c-price c-font-55 c-font-white c-font-thin">',
+    fields.price__number.content,
+    '</p>',
+    '<div class = "form-split-button">',
+    '<a href="#" class="btn btn-lg c-btn-white c-font-uppercase c-btn-square c-btn-border-1x">',
+    'BUY NOW'|t,
+    '</a>',
+    '<div class="commerce-cart-add-to-cart extra-components">',
+    fields.rendered_entity.content,
+    '</div>',
+    '</div>',
+    fields|without('counter', 'jango_cms_entity_path', 'title', 'body', 'price__number', 'rendered_entity', 'jango_cms_single_image_url'),
+    '</div>',
+    '</div>',
+    '</div>',
+  ]
+%}
+
+<div class="c-content-product-3 c-bs-grid-reset-space">
+  <div class="row">
+    {% if row.index % 2 != 0 %}
+
+      {% for imgspl in image_split %}
+        {{ imgspl|raw }}
+      {% endfor %}
+      {% for bdspl in body_split %}
+        {{ bdspl|raw }}
+      {% endfor %}
+
+    {% else %}
+
+      {% for bdspl in body_split %}
+        {{ bdspl|raw }}
+      {% endfor %}
+      {% for imgspl in image_split %}
+        {{ imgspl|raw }}
+      {% endfor %}
+
+    {% endif %}
+  </div>
+</div>

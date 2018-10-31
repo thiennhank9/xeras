@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: product__80x128_
+label: 'Product (80x128)'
+effects:
+  39f1c43b-3f97-44fc-beaa-2d12723c0794:
+    uuid: 39f1c43b-3f97-44fc-beaa-2d12723c0794
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 80
+      height: 128

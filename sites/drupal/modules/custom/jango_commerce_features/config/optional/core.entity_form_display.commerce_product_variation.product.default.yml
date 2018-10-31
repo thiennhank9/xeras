@@ -1,0 +1,87 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_variation_type.product
+    - entity_browser.browser.browse_files
+    - field.field.commerce_product_variation.product.attribute_color
+    - field.field.commerce_product_variation.product.attribute_size
+    - field.field.commerce_product_variation.product.field_images
+    - field.field.commerce_product_variation.product.field_old_price
+    - field.field.commerce_product_variation.product.field_stock_amount
+  module:
+    - commerce_price
+    - entity_browser
+id: commerce_product_variation.product.default
+targetEntityType: commerce_product_variation
+bundle: product
+mode: default
+content:
+  attribute_color:
+    type: options_select
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  attribute_size:
+    type: options_select
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_images:
+    weight: 4
+    settings:
+      entity_browser: browse_files
+      field_widget_edit: true
+      field_widget_remove: true
+      selection_mode: selection_append
+      view_mode: thumbnail
+      open: false
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: entity_browser_file
+    region: content
+  field_old_price:
+    weight: 6
+    settings: {  }
+    third_party_settings: {  }
+    type: commerce_price_default
+    region: content
+  field_stock_amount:
+    weight: 7
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  langcode:
+    type: language_select
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  price:
+    type: commerce_price_default
+    weight: 5
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  sku:
+    type: string_textfield
+    weight: 3
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    region: content
+  status:
+    type: boolean_checkbox
+    weight: 8
+    settings:
+      display_label: true
+    third_party_settings: {  }
+    region: content
+hidden:
+  created: true
+  uid: true

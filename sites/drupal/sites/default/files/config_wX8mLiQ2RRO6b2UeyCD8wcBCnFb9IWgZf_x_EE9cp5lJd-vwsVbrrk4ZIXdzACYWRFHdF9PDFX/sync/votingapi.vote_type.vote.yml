@@ -1,0 +1,10 @@
+uuid: 8356e21c-0d30-4aa7-a67b-06244b99b5ee
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: aXZ2sOR-jVF6_oScPSJTjXCo333arzczomYQMnsJ8wU
+id: vote
+label: 'Normal vote'
+value_type: points
+description: 'The default tag for votes on content. If multiple votes with different tags are being cast on a piece of content, consider casting a "summary" vote with this tag as well.'

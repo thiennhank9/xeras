@@ -1,0 +1,39 @@
+uuid: 8333bc31-6b5f-4064-96eb-539be9e95db5
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:48480c0a-cdc4-4c66-b3d4-a26688efc574'
+  module:
+    - block_content
+    - system
+    - user
+  theme:
+    - jango_sub
+id: myprofilemenudropdown
+theme: jango_sub
+region: sidebar
+weight: -39
+provider: null
+plugin: 'block_content:48480c0a-cdc4-4c66-b3d4-a26688efc574'
+settings:
+  id: 'block_content:48480c0a-cdc4-4c66-b3d4-a26688efc574'
+  label: 'My Profile Menu - DropDown'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/wishlist/left-sidebar\r\n/user/1/left-sidebar\r\n/user/*"
+    negate: false
+    context_mapping: {  }
+  user_role:
+    id: user_role
+    roles:
+      authenticated: authenticated
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'

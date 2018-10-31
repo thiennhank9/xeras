@@ -1,0 +1,88 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\commerce_product\Entity\Product;
+
+/**
+ * Implements hook_ENTITY_TYPE_insert() for commerce_product entities.
+ */
+function commerce_ext_commerce_product_insert(EntityInterface $commerce_product) {
+  // Add taxonomy index entries for the commerce_product.
+  taxonomy_build_commerce_product_index($commerce_product);
+}
+
+/**
+ * Builds and inserts taxonomy index entries for a given commerce_product.
+ *
+ * The index lists all terms that are related to a given commerce_product entity, and is
+ * therefore maintained at the entity level.
+ */
+function taxonomy_build_commerce_product_index($commerce_product) {
+  // Collect a unique list of all the term IDs from all commerce_product fields.
+  $tid_all = array();
+
+  $entityManager = \Drupal::service('entity_field.manager');
+  $entity_type = 'commerce_product';
+  $bundle = $commerce_product -> bundle();
+  $fields = $entityManager->getFieldDefinitions($entity_type, $bundle);
+
+  $entity_reference_class = 'Drupal\Core\Field\Plugin\Field\FieldType\EntityReferenceItem';
+
+  foreach ($fields as $field) {
+    $field_name = $field->getName();
+    $class = $field->getItemDefinition()->getClass();
+    $is_entity_reference_class = ($class === $entity_reference_class) || is_subclass_of($class, $entity_reference_class);
+    if ($is_entity_reference_class && $field->getSetting('target_type') == 'taxonomy_term') {
+      foreach ($commerce_product->getTranslationLanguages() as $language) {
+        foreach ($commerce_product->getTranslation($language->getId())->$field_name as $item) {
+          if (!$item->isEmpty()) {
+            $tid_all[$item->target_id] = $item->target_id;
+          }
+        }
+      }
+    }
+  }
+
+  // Insert index entries for all the commerce_product's terms.
+  if (!empty($tid_all)) {
+    foreach ($tid_all as $tid) {
+      db_merge('taxonomy_index_commerce_product')
+        ->key(array('product_id' => $commerce_product->id(), 'tid' => $tid))
+        ->fields(array('created' => $commerce_product->getCreatedTime(), 'tid' => $tid))
+        ->execute();
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update() for commerce_product entities.
+ */
+function commerce_ext_commerce_product_update(EntityInterface $commerce_product) {
+  //
+  taxonomy_delete_commerce_product_index($commerce_product);
+  taxonomy_build_commerce_product_index($commerce_product);
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_predelete() for commerce_product entities.
+ */
+function commerce_ext_commerce_product_predelete(EntityInterface $commerce_product) {
+  // Clean up the {taxonomy_index} table when commerce_product are deleted.
+  taxonomy_delete_commerce_product_index($commerce_product);
+}
+
+/**
+ * Deletes taxonomy index entries for a given commerce_product.
+ */
+function taxonomy_delete_commerce_product_index(EntityInterface $commerce_product) {
+  db_delete('taxonomy_index_commerce_product')->condition('product_id', $commerce_product->id())->execute();
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_delete() for taxonomy_term entities.
+ */
+function commerce_ext_taxonomy_term_delete(Term $term) {
+  // Clean up the {taxonomy_index} table when terms are deleted.
+  db_delete('taxonomy_index_commerce_product')->condition('tid', $term->id())->execute();
+}
+

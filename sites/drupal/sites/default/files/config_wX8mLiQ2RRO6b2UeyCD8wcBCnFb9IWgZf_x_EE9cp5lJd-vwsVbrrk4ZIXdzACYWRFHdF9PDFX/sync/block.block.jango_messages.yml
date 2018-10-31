@@ -1,0 +1,22 @@
+uuid: 60f409a2-2d98-4dd5-a2c9-945e72d73b33
+langcode: en
+status: false
+dependencies:
+  module:
+    - system
+  theme:
+    - jango
+_core:
+  default_config_hash: KHQIJ7Vfl25lTjzIc7qIvnuistt-Mw2O0kG4jCofmkI
+id: jango_messages
+theme: jango
+region: header
+weight: 0
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  provider: system
+  label_display: '0'
+visibility: {  }

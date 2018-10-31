@@ -1,0 +1,490 @@
+<div id="nd_layout_builder">
+
+    <div class="row paddings-fix">
+        <div class="col-md-12 layouts-list">
+      
+    	    <span class="layouts-links">
+          {% for layout_id, layout in layouts %}
+
+              {% if layout_id == 'layout-default' %}
+                  {% set layout_class = 'active' %}
+              {% else %}
+                  {% set layout_class = '' %}
+              {% endif %}
+
+              <a href="#{{ layout_id }}" class="btn btn-sm btn-default {{ layout_class }}">{{ layout.name }}</a>
+
+          {% endfor %}
+          </span>
+
+
+            <a href="#" id="nd_layout" class="btn btn-primary btn-xs">Clone Layout</a>
+            <i class="fa fa-cog fa-2x" id="layout-settings"></i>
+        </div>
+    </div>
+
+    <div class="layouts">
+        {% for layout_id, layout in layouts %}
+
+            {% if layout_id == 'layout-default' %}
+                {% set layout_class = 'active' %}
+            {% else %}
+                {% set layout_class = '' %}
+            {% endif %}
+
+            <ol id="{{ layout_id }}" class="layout {{ layout_class }}">
+
+
+                {% for row in layout.rows %}
+
+                    {% set rowattr = row.attributes.class|merge(['sortable'])  %}
+
+                    <li id="{{ row.attributes.id}}" class="{{ rowattr|join(' ') }}">
+                        <h2 title="{{ row.name }}"><i class="fa fa-arrows"></i><span>{{ row.name }}</span><i
+                                    class="fa fa-cog settings-row"></i></h2>
+                        <ol class="sortable-parent">
+                            {% for region_key, region in layout.regions %}
+                                {% if row.attributes.id == region.row_id %}
+                                    {% set attr = region.attributes.class|merge(['col','sortable'])  %}
+                                    {#{% set region.attributes.class = region.attributes.class|merge(['col', 'sortable']) %}#}
+                                    <li id="{{ region.attributes.id }}" class="{{ attr|join(' ') }}">
+                                    <h3><i class="fa fa-arrows"></i><span>{{ region.name }}</span><i
+                                                class="fa fa-cog settings-col"></i></h3>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ol>
+                    </li>
+
+                {% endfor %}
+
+            </ol>
+        {% endfor %}
+    </div>
+
+
+</div>
+
+<div id="nd_layout_bottom">
+    <button id="nd_row" class="btn btn-primary add-element-action">{{ 'Add Row'|t }}</button>
+</div>
+
+<!-- Layout Add form -->
+<div id="layout-add" title="Add new Layout">
+ {% set layout_form ='
+  <div class="form-group">
+    <input type="text" class="form-control name" placeholder="Name">
+</div>
+<div class="form-group">
+    <label for="layout_pages">Show on specific pages:</label>
+    <textarea class="form-control layout-visible" name="layout_pages" rows="5" placeholder="Pages"></textarea>
+    <div>Specify pages by using their paths. Enter one path per line. The "*" character is a wildcard. Example paths are
+        blog for the blog page and blog/* for every personal blog. &lt;front&gt; is the front page.
+    </div>
+</div>'
+
+%}
+  {{ layout_form|raw }}
+</div>
+
+<!-- Layout Edit form -->
+<div id = "layout-settings-form" title = "Layout settings">
+    {{ layout_form|raw }}
+</div>
+
+<!-- Row Add form -->
+<div id = "row-add" title = "Add new Row">
+{% set row_form = '
+  <input type="text" class="form-control name" placeholder="Name">
+    <div class="settings-tabs">
+        <a href="#tag_class_row_tab" class="btn btn-info btn-md">Tag &amp; Class</a>
+        <a href="#paddings_row_tab" class="btn btn-info btn-md">Paddings</a>
+        <a href="#dropdown_menu_lins_tab" class="btn btn-info btn-md one-page-option">DropDown Menu Links</a>
+    </div>
+
+    <div id = "tag_class_row_tab" class = "settings-tab-form">
+        <div class = "row">
+            <div class = "col-md-6 form-group">
+                <label for="layout_pages">Extra Classes</label>
+                <input type = "text" class = "form-control input-setting" name = "class" placeholder = "Class">
+            </div>
+            <div class = "col-md-6">
+                <label for="layout_pages">Tag Type</label>
+                <select class = "form-control input-setting" name = "tag">
+                    <option value="div">div</option>
+                    <option value="section">section</option>
+                    <option value="aside">aside</option>
+                    <option value="footer">footer</option>
+                    <option value="none">none</option>
+                </select>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-xs-6 form-group checkbox">
+                <input type="checkbox" class="input-setting" name="full_width"> <label for="full_width">Full Width</label>
+            </div>
+            <div class = "col-xs-6 form-group checkbox">
+                <input type="checkbox" class="input-setting" name="use_default"> <label for="use_default" title = "In Default Layout will be searched row with the same name and used instead of the current one.">Use row from <i>Default</i> Layout</label>
+            </div>
+        </div>
+    </div>
+
+    <div id = "dropdown_menu_lins_tab" class = "settings-tab-form">
+        <div class = "row">
+            <div class = "col-md-6 form-group checkbox">
+                <input type="checkbox" class ="input-setting" name = "dropdown_links"> <label for="dropdown_links">Dropdown Menu Links</label>
+            </div>
+            <div class = "col-md-6 form-group checkbox">
+                <input type="checkbox" class ="input-setting" name = "hide_menu"> <label for="hide_menu">Hide title from Menu</label>
+            </div>
+            <div class = "col-md-12">
+                <p class = "available_id">Sections anchors: <span></span></p>
+            </div>
+        </div>
+
+        <div class = "dropdown-menu-links-wrap">
+            <div class = "row">
+                <div class = "col-md-6 form-group">
+                    Dropdown Menu link
+                </div>
+                <div class = "col-md-6 form-group">
+                    URL
+                </div>
+            </div>
+            <div class = "dropdown_menu">
+                <div class = "row">
+                    <div class = "col-md-6 form-group">
+                        <input type = "text" class = "form-control input-setting menu_link" name = "menu_link_1" placeholder = "Menu title">
+                    </div>
+                    <div class = "col-md-6 form-group">
+                        <input type = "text" class = "form-control input-setting menu_link_url" name = "menu_link_url_1" placeholder = "Menu URL">
+                    </div>
+                </div>
+            </div>
+            <a href="#" id="add_dropdown_menu" class="btn btn-primary btn-xs">Add dropdown menu</a>
+        </div>
+    </div>
+
+    <div id = "background_row_tab" class="settings-tab-form">
+        <div class = "row bg-tabs">
+            <div class = "col-xs-6">
+                <select class = "form-control background-selector input-setting" name="bg_image_type">
+                    <option value = "0">None</option>
+                    <option value = "image">Image</option>
+                    <option value = "video">Video</option>
+                </select>
+                <div class = "form-group image-tab settings-tab-form checkbox">
+                    <div class = "spacer"></div>
+                    <input type="checkbox" class =  "input-setting" id = "bg_image_parallax" name = "bg_image_parallax"> <label for="bg_image_parallax">Parallax</label>
+                    <div class = "spacer"></div>
+                    <input type="checkbox" class = "input-setting" id = "bg_image_overlay" name = "bg_image_overlay"> <label for="bg_image_overlay">Overlay</label>
+                </div>
+                <div class = "form-group video-tab settings-tab-form checkbox">
+                    <div class = "spacer"></div>
+                    <input type="checkbox" class = "input-setting" id = "bg_video_overlay" name = "bg_video_overlay"> <label for="bg_video_overlay">Overlay</label>
+                </div>
+            </div>
+            <div class = "col-xs-6">
+                <div class = "spacer"></div>
+                <div class = "image-tab settings-tab-form">
+                    <input type="hidden" name="bg_image_fid" class = "input-setting">
+                    <input type="hidden" name="bg_image_preview" class = "input-setting">
+                    <div class = "bg-image-preview">
+                    </div>
+                    <a class="button remove_bg_image" style = "display:none" href = "#">Remove Image</a>
+                    <a class="button upload_bg_image" href = "#">Select Image</a>
+                </div>
+                <div class = "video-tab settings-tab-form">
+                    <input type = "text" class = "form-control input-setting" name = "bg_video" placeholder = "Video URL">
+                </div>
+            </div>
+        </div>
+        <div class = "spacer"></div>
+    </div>
+
+    <div id = "paddings_row_tab" class="settings-tab-form">
+        <div class = "row paddings">
+            <div class = "col-xs-3 form-group centered">
+                <label for="padding_left">Left</label>
+                <input type = "text" class = "form-control input-setting" size = 2 name = "padding_left">
+            </div>
+            <div class = "col-xs-3 form-group centered">
+                <label for="padding_right">Right</label>
+                <input type = "text" class = "form-control input-setting" size = 2 name = "padding_right">
+            </div>
+            <div class = "col-xs-3 form-group centered">
+                <label for="padding_top">Top</label>
+                <input type = "text" class = "form-control input-setting" size = 2 name = "padding_top">
+            </div>
+            <div class = "col-xs-3 form-group centered">
+                <label for="padding_bottom">Bottom</label>
+                <input type = "text" class = "form-control input-setting" size = 2 name = "padding_bottom">
+            </div>
+        </div>
+    </div>'
+%}
+    {{ row_form|raw }}
+</div>
+
+<!-- Row form -->
+<div id = "row-settings" title = "Row Settings">
+    {{ row_form|raw }}
+</div>
+
+{#<!-- Row Add form -->#}
+{#<div id = "add-block-form" title = "Add new Block">#}
+    {#<select class = "form-control input-setting name" name = "block_id">#}
+        {#<?php foreach($blocks as $block): ?>#}
+        {#<option value="<?php print $block['module'] . '|' . $block['delta']; ?>" ><?php print $block['info']; ?></option>#}
+        {#<?php endforeach; ?>#}
+    {#</select>#}
+{#</div>#}
+
+
+<!-- Column Settings -->
+<div id = "col-settings" title = "Region Settings">
+
+    <div class="settings-tabs">
+        <a href="#region_size_tab" class="btn btn-info btn-md show-devices">Region size</a>
+        <a href="#left_push_tab" class="btn btn-info btn-md show-devices">Left Push</a>
+        <a href="#right_pull_tab" class="btn btn-info btn-md show-devices">Right Pull</a>
+        <a href="#left_offset_tab" class="btn btn-info btn-md show-devices">Left Offset</a>
+        <a href="#visibility_tab" class="btn btn-info btn-md show-devices">Visibility</a>
+        <a href="#paddings_tab" class="btn btn-info btn-md">Paddings</a>
+        <a href="#tag_class_tab" class="btn btn-info btn-md">Tag &amp; Class</a>
+    </div>
+
+    <div class="row col-settings device-icons-wrap">
+        <div class="col-xs-3 centered">
+            <label class="sr-only" for="col-xs"><i class = "fa fa-mobile fa-5x"></i></label>
+        </div>
+
+        <div class="col-xs-3 centered">
+            <label class="sr-only" for="col-sm"><i class="fa fa-tablet fa-5x"></i></label>
+        </div>
+
+        <div class="col-xs-3 centered">
+            <label class="sr-only" for="col-md"><i class = "fa fa-laptop fa-5x"></i></label>
+        </div>
+
+        <div class="col-xs-3 centered">
+            <label class="sr-only" for="col-lg"><i class = "fa fa-desktop fa-5x"></i></label>
+        </div>
+
+    </div>
+
+
+    <div id = "region_size_tab" class="settings-tab-form">
+        <div class="row col-settings">
+            <div class="col-xs-3 centered">
+                <select name = "col-xs" class = "form-control numeric-select">
+                    {% set options = '
+                    <option value = "0">Auto</option>
+                    <option value = "1">1</option>
+                    <option value = "2">2</option>
+                    <option value = "3">3</option>
+                    <option value = "4">4</option>
+                    <option value = "5">5</option>
+                    <option value = "6">6</option>
+                    <option value = "7">7</option>
+                    <option value = "8">8</option>
+                    <option value = "9">9</option>
+                    <option value = "10">10</option>
+                    <option value = "11">11</option>
+                    <option value = "12">12</option>'
+                    %}
+                    {{ options|raw }}
+                </select>
+            </div>
+
+            <div class="col-xs-3 centered">
+                <select name = "col-sm" class = "form-control numeric-select">
+                    {{ options|raw }}
+                </select>
+            </div>
+
+            <div class="col-xs-3 centered">
+                <select name = "col-md" class = "form-control numeric-select">
+                    {{ options|raw }}
+                </select>
+            </div>
+
+            <div class="col-xs-3 centered">
+                <select name = "col-lg" class = "form-control numeric-select">
+                    {{ options|raw }}
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div id = "left_push_tab" class="settings-tab-form">
+        <div class="row col-settings">
+            <div class="col-xs-3 centered">
+                <select name = "col-xs-push" class = "form-control numeric-select">
+                    {{ options|raw }}
+                </select>
+            </div>
+
+            <div class="col-xs-3 centered">
+                <select name = "col-sm-push" class = "form-control numeric-select">
+                    {{ options|raw }}
+                </select>
+            </div>
+
+            <div class="col-xs-3 centered">
+                <select name = "col-md-push" class = "form-control numeric-select">
+                    {{ options|raw }}
+                </select>
+            </div>
+
+            <div class="col-xs-3 centered">
+                <select name = "col-lg-push" class = "form-control numeric-select">
+                    {{ options|raw }}
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div id = "right_pull_tab" class="settings-tab-form">
+        <div class="row col-settings">
+            <div class="col-xs-3 centered">
+                <select name = "col-xs-pull" class = "form-control numeric-select">
+                    {{ options|raw }}
+                </select>
+            </div>
+
+            <div class="col-xs-3 centered">
+                <select name = "col-sm-pull" class = "form-control numeric-select">
+                    {{ options|raw }}
+                </select>
+            </div>
+
+            <div class="col-xs-3 centered">
+                <select name = "col-md-pull" class = "form-control numeric-select">
+                    {{ options|raw }}
+                </select>
+            </div>
+
+            <div class="col-xs-3 centered">
+                <select name = "col-lg-pull" class = "form-control numeric-select">
+                    {{ options|raw }}
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div id = "left_offset_tab" class="settings-tab-form">
+        <div class="row col-settings">
+            <div class="col-xs-3 centered">
+                <select name = "col-xs-offset" class = "form-control numeric-select">
+                    {{ options|raw }}
+                </select>
+            </div>
+
+            <div class="col-xs-3 centered">
+                <select name = "col-sm-offset" class = "form-control numeric-select">
+                    {{ options|raw }}
+                </select>
+            </div>
+
+            <div class="col-xs-3 centered">
+                <select name = "col-md-offset" class = "form-control numeric-select">
+                    {{ options|raw }}
+                </select>
+            </div>
+
+            <div class="col-xs-3 centered">
+                <select name = "col-lg-offset" class = "form-control numeric-select">
+                    {{ options|raw }}
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div id = "visibility_tab" class="settings-tab-form">
+        <div class="row vissible-settings">
+            <div class = "eye-icons">
+                <i class="fa fa-eye fa-lg"></i>
+                <i class="fa fa-eye-slash text-danger fa-lg"></i>
+            </div>
+
+            <div class = "col-xs-3 centered form-group">
+                <div class = "radio-custom">
+                    <input type="radio" name="showing-xs" value="visible-xs" class="form-radio">
+                </div>
+                <div class = "radio-custom">
+                    <input type="radio" name="showing-xs" value="hidden-xs" class="form-radio">
+                </div>
+            </div>
+
+            <div class = "col-xs-3 centered form-group">
+                <div class = "radio-custom">
+                    <input type="radio" name="showing-sm" value="visible-sm" class="form-radio">
+                </div>
+                <div class = "radio-custom">
+                    <input type="radio" name="showing-sm" value="hidden-sm" class="form-radio">
+                </div>
+            </div>
+
+            <div class = "col-xs-3 centered form-group">
+                <div class = "radio-custom">
+                    <input type="radio" name="showing-md" value="visible-md" class="form-radio">
+                </div>
+                <div class = "radio-custom">
+                    <input type="radio" name="showing-md" value="hidden-md" class="form-radio">
+                </div>
+            </div>
+
+            <div class = "col-xs-3 centered form-group">
+                <div class = "radio-custom">
+                    <input type="radio" name="showing-lg" value="visible-lg" class="form-radio">
+                </div>
+                <div class = "radio-custom">
+                    <input type="radio" name="showing-lg" value="hidden-lg" class="form-radio">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id = "paddings_tab" class="settings-tab-form">
+        <div class = "row paddings">
+            <div class = "col-xs-3 form-group centered">
+                <label for="padding_left">Left</label>
+                <input type = "text" class = "form-control input-setting" size = 2 name = "padding_left">
+            </div>
+            <div class = "col-xs-3 form-group centered">
+                <label for="padding_right">Right</label>
+                <input type = "text" class = "form-control input-setting" size = 2 name = "padding_right">
+            </div>
+            <div class = "col-xs-3 form-group centered">
+                <label for="padding_top">Top</label>
+                <input type = "text" class = "form-control input-setting" size = 2 name = "padding_top">
+            </div>
+            <div class = "col-xs-3 form-group centered">
+                <label for="padding_bottom">Bottom</label>
+                <input type = "text" class = "form-control input-setting" size = 2 name = "padding_bottom">
+            </div>
+        </div>
+    </div>
+
+    <div id = "tag_class_tab" class="settings-tab-form">
+        <div class = "row">
+            <div class = "col-xs-6 form-group">
+                <label for="layout_pages">Extra Classes</label>
+                <input type = "text" class = "form-control input-setting" name = "class" placeholder = "Class">
+            </div>
+            <div class = "col-xs-6">
+                <label for="layout_pages">Tag Type</label>
+                <select class = "form-control input-setting" name = "tag">
+                    <option value="div">div</option>
+                    <option value="section">section</option>
+                    <option value="aside">aside</option>
+                    <option value="footer">footer</option>
+                    <option value="none">none</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,26 @@
+uuid: 14cdae78-056e-407a-86ad-c846d992e692
+langcode: en
+status: false
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - jango_sub
+_core:
+  default_config_hash: NeHSoqm4XFqA7_0bDmR429ZZQt3LRbZMNRJTMsFyOfI
+id: jango_sub_tools
+theme: jango_sub
+region: header
+weight: 25
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+visibility: {  }

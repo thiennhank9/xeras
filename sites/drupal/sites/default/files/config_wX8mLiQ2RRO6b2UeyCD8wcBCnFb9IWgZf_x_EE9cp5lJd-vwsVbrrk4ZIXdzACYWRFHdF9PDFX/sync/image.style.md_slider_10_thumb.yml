@@ -1,0 +1,14 @@
+uuid: b4e5253c-ae86-4807-98b1-a24ebe4799e5
+langcode: en
+status: true
+dependencies: {  }
+name: md_slider_10_thumb
+label: md_slider_10_thumb
+effects:
+  4d5fe0bc-db18-4553-93d8-ba24958d0508:
+    uuid: 4d5fe0bc-db18-4553-93d8-ba24958d0508
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 100
+      height: 75

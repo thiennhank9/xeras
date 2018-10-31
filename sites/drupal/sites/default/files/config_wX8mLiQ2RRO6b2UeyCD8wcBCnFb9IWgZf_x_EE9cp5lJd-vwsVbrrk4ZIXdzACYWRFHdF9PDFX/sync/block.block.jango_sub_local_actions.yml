@@ -1,0 +1,20 @@
+uuid: d713223d-e956-4a4b-8839-e1e0f9329aed
+langcode: en
+status: true
+dependencies:
+  theme:
+    - jango_sub
+_core:
+  default_config_hash: 13GQpeITIJsp1kyPniXtWZfyFH87vb1xxJCHifL4UeE
+id: jango_sub_local_actions
+theme: jango_sub
+region: content
+weight: -3
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

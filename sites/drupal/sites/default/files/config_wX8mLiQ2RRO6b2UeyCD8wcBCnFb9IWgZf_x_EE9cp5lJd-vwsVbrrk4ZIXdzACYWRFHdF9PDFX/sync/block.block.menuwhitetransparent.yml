@@ -1,0 +1,31 @@
+uuid: fba12e83-e3bd-4893-95b3-97a8aac48482
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:5d3f6a57-1760-4f3c-ace3-9ab2706e4c8f'
+  module:
+    - block_content
+    - system
+  theme:
+    - jango_sub
+id: menuwhitetransparent
+theme: jango_sub
+region: header
+weight: -33
+provider: null
+plugin: 'block_content:5d3f6a57-1760-4f3c-ace3-9ab2706e4c8f'
+settings:
+  id: 'block_content:5d3f6a57-1760-4f3c-ace3-9ab2706e4c8f'
+  label: 'Menu White Transparent'
+  provider: block_content
+  label_display: '0'
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    pages: "/node/87\r\n/node/117/8\r\n/node/117/11\r\n/node/117/12\r\n/node/170/header/v1\r\n/meet-team\r\n/contact-us-2\r\n/home-version-5\r\n/home-version-7\r\n/home-version-9"
+    negate: false
+    context_mapping: {  }
