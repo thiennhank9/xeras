@@ -11,7 +11,9 @@ Notes: You should create in PHP admin
 Example: You installed XAMPP in C:/xampp
 Then you should copy folder thiennhan then place it under C:/xampp/htdocs
 
-3. Open in browser: localhost/thiennhan to view site.
+3. Import database into phpAdmin - phonestore from file phonestore.sql
+
+4. Open in browser: localhost/thiennhan to view site.
 
 -----------------
 
