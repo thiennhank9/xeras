@@ -27,7 +27,6 @@
     "e2e": "./scripts/e2e.js",
     "e2e:ci": "./scripts/e2e-ci.sh",
     "heroku-postbuild": "npm-run-all plugins:reconcile build",
-    "precommit": "npm-run-all lint-staged",
     "lint-staged": "lint-staged"
   },
   "talk": {
