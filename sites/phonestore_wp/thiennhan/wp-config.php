@@ -23,7 +23,7 @@
 define('DB_NAME', 'phonestore');
 
 /** MySQL database username */
-define('DB_USER', 'congtran');
+define('DB_USER', 'CongTran');
 
 /** MySQL database password */
 define('DB_PASSWORD', '1231231231');
