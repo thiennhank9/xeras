@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class City(models.Model):
     cityId = models.TextField(primary_key=True)
     cityName = models.TextField()

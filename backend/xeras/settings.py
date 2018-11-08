@@ -25,7 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'reply.apps.ReplyConfig'
+    # 'reply.apps.ReplyConfig',
+    'xeras.site1'
 ]
 
 MIDDLEWARE = [
@@ -65,7 +66,7 @@ WSGI_APPLICATION = 'xeras.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'PhoneStore',
+        'NAME': 'phonestore',
         'USER': 'xeras',
         'PASSWORD': 'xeras123',
         'HOST': 'localhost',
