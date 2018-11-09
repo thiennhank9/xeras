@@ -9,6 +9,8 @@ class Store(models.Model):
     City = models.TextField()
     district = models.TextField()
     street = models.TextField()
+    province = models.TextField()
+    storePayment = models.TextField()
 
     class Meta:
         managed = True
@@ -65,6 +67,38 @@ class Product(models.Model):
         db_table = 'Product'
 
 
+class LanguageSupport(models.Model):
+    languageId = models.TextField(primary_key=True)
+    languageName = models.TextField()
+
+    class Meta:
+        managed = True
+        db_table = 'LanguageSupport'
+
+
+class PhoneCode(models.Model):
+    phoneCodeId = models.TextField(primary_key=True)
+    code = models.TextField()
+
+    class Meta:
+        managed = True
+        db_table = 'PhoneCode'
+
+
+class PhoneFeature(models.Model):
+    phoneFeatureId = models.TextField(primary_key=True)
+    game = models.TextField()
+    music = models.TextField()
+    photo = models.TextField()
+    video = models.TextField()
+    videoCall = models.TextField()
+    featureTimeUsing = models.TextField() # thoi gian su dung tung loai
+
+    class Meta:
+        managed = True
+        db_table = 'PhoneFeature'
+
+
 class PhoneInfo(models.Model):
     phoneInfoId = models.TextField(primary_key=True)
     phoneProductId = models.ForeignKey(
@@ -84,9 +118,19 @@ class PhoneInfo(models.Model):
     osType = models.TextField()
     osVersion = models.TextField()
     chipset = models.TextField()
+    version = models.TextField(default=None)
     GPU = models.TextField()
     RAM = models.IntegerField(blank=True)
     ROM = models.IntegerField(blank=True)
+    phoneLanguage = models.ManyToManyField(LanguageSupport)
+    fromCountry = models.TextField(default=None) # San xuat tai quoc gia
+    phoneFeature = models.ForeignKey(
+        'PhoneFeature', on_delete=models.CASCADE, db_column='phoneFeature', blank=True, default=None)
+    fromType = models.TextField(default=None) # Quoc Te, Nhap khau
+    status = models.TextField(default=None) # brand new hoac like new
+    phoneCode = models.ForeignKey(
+        'PhoneCode', on_delete=models.CASCADE, db_column='phoneCode', blank=True, default=None)
+    phoneInfoType = models.TextField(default=None)
     memoryCardSlot = models.TextField()
     cameraBack = models.FloatField(blank=True)
     cameraFront = models.FloatField(blank=True)
@@ -96,6 +140,7 @@ class PhoneInfo(models.Model):
     GPS = models.TextField()
     NFC = models.TextField()
     Pin = models.TextField()
+    color = models.TextField()
     price1 = models.FloatField(blank=True)
     price2 = models.FloatField(blank=True)
 
@@ -107,20 +152,11 @@ class PhoneInfo(models.Model):
 class Guarantee(models.Model):
     guaranteeId = models.TextField()
     Note = models.TextField()
+    productId = models.ManyToManyField(Product)
 
     class Meta:
         managed = True
         db_table = 'Guarantee'
-
-
-class GuaranteeAndProduct(models.Model):
-    id = models.TextField(primary_key=True)
-    installmentId = models.ForeignKey('Installment', on_delete=models.CASCADE, db_column='installmentId')
-    productId = models.ForeignKey('Product', on_delete=models.CASCADE, db_column='productId')
-
-    class Meta:
-        managed = True
-        db_table = 'GuaranteeAndProduct'
 
 
 class Installment(models.Model):
@@ -129,20 +165,11 @@ class Installment(models.Model):
     credit = models.TextField()
     note = models.TextField()
     requiredInformation = models.TextField()
+    productId = models.ManyToManyField(Product)
 
     class Meta:
         managed = True
         db_table = 'Installment'
-
-
-class InstallmentAndProduct(models.Model):
-    id = models.TextField(primary_key=True)
-    installmentId = models.ForeignKey('Installment', on_delete=models.CASCADE, db_column='installmentId')
-    productId = models.ForeignKey('Product', on_delete=models.CASCADE, db_column='productId')
-
-    class Meta:
-        managed = True
-        db_table = 'InstallmentAndProduct'
 
 
 class SaleOff(models.Model):
@@ -151,7 +178,7 @@ class SaleOff(models.Model):
     productId = models.ForeignKey('Product', on_delete=models.CASCADE, db_column='productId')
     dateStart = models.DateField(blank=True)
     dateEnd = models.DateField(blank=True)
-    other = models.TextField()
+    other = models.TextField() # is this giff or other content
 
     class Meta:
         managed = True
