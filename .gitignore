@@ -71,7 +71,6 @@ coral/plugins/*
 coral/**/node_modules/*
 coral/yarn-error.log
 
-backend/xeras/__pycache__
-backend/xeras/*/__pycache__
+backend/xeras/**/__pycache__/*
 backend/.idea/*
-**/migrations/*
+backend/**/migrations/*

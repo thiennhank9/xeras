@@ -1,4 +1,3 @@
 from django.shortcuts import render
 
-def getReply(comment):
-    
+# Create your views here.

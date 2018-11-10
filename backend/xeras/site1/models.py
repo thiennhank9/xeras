@@ -1,198 +1,156 @@
 from django.db import models
 
 
+class City(models.Model):
+    cityId = models.TextField(primary_key=True)
+    cityName = models.TextField()
+    cityOtherNames = models.TextField(blank=True)
+
+    class Meta:
+        managed = True
+        db_table = 'City'
+
+
+class District(models.Model):
+    districtId = models.TextField(primary_key=True)
+    districtName = models.TextField()
+    districtOthernames = models.TextField(blank=True)
+
+    class Meta:
+        managed = True
+        db_table = 'District'
+
+
+class Province(models.Model):
+    provinceId = models.TextField(primary_key=True)
+    provinceName = models.TextField()
+    provinceOtherNames = models.TextField(blank=True)
+
+    class Meta:
+        managed = True
+        db_table = 'Province'
+
+
 class Store(models.Model):
     storeId = models.TextField(primary_key=True)
     storeName = models.TextField()
-    address1 = models.TextField()
-    address2 = models.TextField()
-    City = models.TextField()
-    district = models.TextField()
-    street = models.TextField()
-    province = models.TextField()
-    storePayment = models.TextField()
+    storeProvinceId = models.ForeignKey(
+        'Province', on_delete=models.CASCADE, db_column='storeProvinceId')
+    storeCityId = models.ForeignKey(
+        'City', on_delete=models.CASCADE, db_column='storeCityId')
+    storeDistrictId = models.ForeignKey(
+        'District', on_delete=models.CASCADE, db_column='storeDistrictId')
+    storeAddress = models.TextField(blank=True)
+    storeNote = models.TextField(blank=True)
 
     class Meta:
         managed = True
         db_table = 'Store'
 
 
-class Category(models.Model):
-    categoryId = models.TextField(primary_key=True)
-    categoryName = models.TextField()
+class Producer(models.Model):
+    producerId = models.TextField(primary_key=True)
+    producerName = models.TextField(blank=True)
+    producerOtherNames = models.TextField(blank=True)
 
     class Meta:
         managed = True
-        db_table = 'Category'
-
-
-class Manufacturer(models.Model):
-    manufacturerId = models.TextField(primary_key=True)
-    manufacturerName = models.TextField()
-    address1 = models.TextField()
-    address2 = models.TextField()
-    City = models.TextField()
-    district = models.TextField()
-    street = models.TextField()
-
-    class Meta:
-        managed = True
-        db_table = 'Manufacturer'
-
-
-class Post(models.Model):
-    postId = models.TextField(primary_key=True)
-    postTitle = models.TextField()
-    postContent = models.TextField()
-    postLink = models.TextField()
-
-    class Meta:
-        managed = True
-        db_table = 'Post'
-
-
-class Product(models.Model):
-    productId = models.TextField(primary_key=True)
-    productCategoryId = models.ForeignKey(
-        'Category', on_delete=models.CASCADE, db_column='productCategoryId', blank=True)
-    productName = models.TextField()
-    productOtherNames = models.TextField(blank=True)
-    productManufacturerId = models.ForeignKey(
-        'Manufacturer', on_delete=models.CASCADE, db_column='productManufacturerId', blank=True)
-    productPostId = models.ForeignKey(
-        'Post', on_delete=models.CASCADE, db_column='productPostId', blank=True)
-
-    class Meta:
-        managed = True
-        db_table = 'Product'
-
-
-class LanguageSupport(models.Model):
-    languageId = models.TextField(primary_key=True)
-    languageName = models.TextField()
-
-    class Meta:
-        managed = True
-        db_table = 'LanguageSupport'
-
-
-class PhoneCode(models.Model):
-    phoneCodeId = models.TextField(primary_key=True)
-    code = models.TextField()
-
-    class Meta:
-        managed = True
-        db_table = 'PhoneCode'
-
-
-class PhoneFeature(models.Model):
-    phoneFeatureId = models.TextField(primary_key=True)
-    game = models.TextField()
-    music = models.TextField()
-    photo = models.TextField()
-    video = models.TextField()
-    videoCall = models.TextField()
-    featureTimeUsing = models.TextField() # thoi gian su dung tung loai
-
-    class Meta:
-        managed = True
-        db_table = 'PhoneFeature'
-
-
-class PhoneInfo(models.Model):
-    phoneInfoId = models.TextField(primary_key=True)
-    phoneProductId = models.ForeignKey(
-        'Product', on_delete=models.CASCADE, db_column='phoneProductId', blank=True)
-    phone3G = models.TextField()
-    phone4G = models.TextField()
-    dateStartSell = models.DateField(blank=True)
-    width = models.FloatField(blank=True)
-    height = models.FloatField(blank=True)
-    thickness = models.FloatField(blank=True)
-    inch = models.FloatField(blank=True)
-    weight = models.FloatField(blank=True)
-    resolution = models.TextField()
-    screenType = models.TextField()
-    simType = models.TextField()
-    simNumber = models.IntegerField(blank=True)
-    osType = models.TextField()
-    osVersion = models.TextField()
-    chipset = models.TextField()
-    version = models.TextField(default=None)
-    GPU = models.TextField()
-    RAM = models.IntegerField(blank=True)
-    ROM = models.IntegerField(blank=True)
-    phoneLanguage = models.ManyToManyField(LanguageSupport)
-    fromCountry = models.TextField(default=None) # San xuat tai quoc gia
-    phoneFeature = models.ForeignKey(
-        'PhoneFeature', on_delete=models.CASCADE, db_column='phoneFeature', blank=True, default=None)
-    fromType = models.TextField(default=None) # Quoc Te, Nhap khau
-    status = models.TextField(default=None) # brand new hoac like new
-    phoneCode = models.ForeignKey(
-        'PhoneCode', on_delete=models.CASCADE, db_column='phoneCode', blank=True, default=None)
-    phoneInfoType = models.TextField(default=None)
-    memoryCardSlot = models.TextField()
-    cameraBack = models.FloatField(blank=True)
-    cameraFront = models.FloatField(blank=True)
-    video = models.TextField()
-    WLAN = models.TextField()
-    bluetooth = models.TextField()
-    GPS = models.TextField()
-    NFC = models.TextField()
-    Pin = models.TextField()
-    color = models.TextField()
-    price1 = models.FloatField(blank=True)
-    price2 = models.FloatField(blank=True)
-
-    class Meta:
-        managed = True
-        db_table = 'PhoneInfo'
-
-
-class Guarantee(models.Model):
-    guaranteeId = models.TextField()
-    Note = models.TextField()
-    productId = models.ManyToManyField(Product)
-
-    class Meta:
-        managed = True
-        db_table = 'Guarantee'
+        db_table = 'Producer'
 
 
 class Installment(models.Model):
     installmentId = models.TextField(primary_key=True)
-    companyName = models.TextField()
-    credit = models.TextField()
-    note = models.TextField()
-    requiredInformation = models.TextField()
-    productId = models.ManyToManyField(Product)
+    installmentRate = models.FloatField(blank=True)
+    installmentCompanyName = models.TextField(blank=True)
+    installmentNote = models.TextField(blank=True)
 
     class Meta:
         managed = True
         db_table = 'Installment'
 
 
-class SaleOff(models.Model):
-    saleOffId = models.TextField(primary_key=True)
-    saleOffPrice = models.FloatField(blank=True)
-    productId = models.ForeignKey('Product', on_delete=models.CASCADE, db_column='productId')
-    dateStart = models.DateField(blank=True)
-    dateEnd = models.DateField(blank=True)
-    other = models.TextField() # is this giff or other content
+class OsType(models.Model):
+    osTypeId = models.TextField(primary_key=True)
+    osTypeName = models.TextField()
+    osTypeOtherNames = models.TextField(blank=True)
 
     class Meta:
         managed = True
-        db_table = 'SaleOff'
+        db_table = 'OsType'
 
 
-class StoreInventory(models.Model):
-    storeInventoryId = models.TextField(primary_key=True)
+class Warranty(models.Model):
+    warrantyId = models.TextField(primary_key=True)
+    warrantyType = models.TextField(blank=True)
+    warrantyDuration = models.FloatField(blank=True)
+    warrantyTerms = models.TextField(blank=True)
+    warrantyNote = models.TextField(blank=True)
+
+    class Meta:
+        managed = True
+        db_table = 'Warranty'
+
+
+class Phone(models.Model):
+    phoneId = models.TextField(primary_key=True)
+    phoneName = models.TextField()
+    phoneOtherNames = models.TextField(blank=True)
+    phonePrice = models.FloatField(blank=True)
+    phoneEdition = models.TextField(blank=True)
+    phoneColor = models.TextField(blank=True)
+    phoneInstallmentId = models.ForeignKey(
+        'Installment', on_delete=models.CASCADE, db_column='phoneInstallmentId', blank=True)
+    phoneWarrantyId = models.ForeignKey(
+        'Warranty', on_delete=models.CASCADE, db_column='phoneWarrantyId', blank=True)
+    phoneProducerId = models.ForeignKey(
+        'Producer', on_delete=models.CASCADE, db_column='phoneProducerId', blank=True)
+    phoneOsIypeId = models.ForeignKey(
+        'OsType', on_delete=models.CASCADE, db_column='phoneOsTypeId', blank=True)
+    phoneScreenWidth = models.FloatField(blank=True)
+    phoneScreenHeight = models.FloatField(blank=True)
+    phoneInch = models.FloatField(blank=True)
+    phonePin = models.IntegerField(blank=True)
+    phoneNumberOfSim = models.IntegerField(blank=True)
+    phoneMemory = models.FloatField(blank=True)
+    phoneFrontCamera = models.FloatField(blank=True)
+    phoneBackCamera = models.FloatField(blank=True)
+    phoneCameraNote = models.TextField(blank=True)
+    phoneInternetNote = models.TextField(blank=True)
+    phoneTypeNote = models.TextField(blank=True)
+    phoneDemandNote = models.TextField(blank=True)
+    phoneRating = models.FloatField(blank=True)
+    phoneTopSeller = models.FloatField(blank=True)
+    phoneTags = models.TextField(blank=True)
+    phoneNote = models.TextField(blank=True)
+
+    class Meta:
+        managed = True
+        db_table = 'Phone'
+
+
+class AmountPhoneByStore(models.Model):
+    amountId = models.TextField(primary_key=True)
     storeId = models.ForeignKey('Store', on_delete=models.CASCADE, db_column='storeId')
-    productId = models.ForeignKey('Product', on_delete=models.CASCADE, db_column='productId')
+    phoneId = models.ForeignKey('Phone', on_delete=models.CASCADE, db_column='phoneId')
     amount = models.IntegerField(blank=True)
 
     class Meta:
         managed = True
-        db_table = 'StoreInventory'
+        db_table = 'AmountPhoneByStore'
+        unique_together = (('storeId', 'phoneId'),)
 
 
+class SaleOff(models.Model):
+    saleOffId = models.TextField(primary_key=True)
+    saleOffName = models.TextField(blank=True)
+    saleOffPhoneId = models.ForeignKey(
+        'Phone', on_delete=models.CASCADE, db_column='saleOffPhoneId')
+    saleOffDateStart = models.DateField(blank=True)
+    saleOffDateEnd = models.DateField(blank=True)
+    saleOffPricePercentage = models.FloatField(blank=True)
+    saleOffPriceReduce = models.FloatField(blank=True)
+    saleOffNote = models.TextField(blank=True)
+
+    class Meta:
+        managed = True
+        db_table = 'SaleOff'

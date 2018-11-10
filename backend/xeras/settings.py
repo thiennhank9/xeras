@@ -25,8 +25,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'reply.apps.ReplyConfig',
-    'xeras.site1'
+    # 'xeras.site1',
+    'xeras.site2'
 ]
 
 MIDDLEWARE = [
