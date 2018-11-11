@@ -152,6 +152,7 @@ class PhoneInfo(models.Model):
 class Guarantee(models.Model):
     guaranteeId = models.TextField()
     Note = models.TextField()
+    duration = models.IntegerField()
     productId = models.ManyToManyField(Product)
 
     class Meta:

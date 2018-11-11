@@ -1,13 +1,13 @@
-from xeras.site1.models import Store
-from xeras.site1.models import Category
-from xeras.site1.models import Manufacturer
-from xeras.site1.models import Post
-from xeras.site1.models import Product
-from xeras.site1.models import Guarantee
-from xeras.site1.models import PhoneInfo
-from xeras.site1.models import Installment
-from xeras.site1.models import SaleOff
-from xeras.site1.models import StoreInventory
+from xeras.site2.models import Store
+from xeras.site2.models import Category
+from xeras.site2.models import Manufacturer
+from xeras.site2.models import Post
+from xeras.site2.models import Product
+from xeras.site2.models import Guarantee
+from xeras.site2.models import PhoneInfo
+from xeras.site2.models import Installment
+from xeras.site2.models import SaleOff
+from xeras.site2.models import StoreInventory
 
 import datetime
 
@@ -53,7 +53,7 @@ def get_list_store_inverter_by_phone_name(phone_name):
 
 
 def get_store_inverter(phone_name):
-    return get_list_store_inverter(phone_name)[0]
+    return get_list_store_inverter_by_phone_name(phone_name)[0]
 
 
 def get_store_by_location(phone_name, *location):
@@ -71,6 +71,10 @@ def get_store_by_location(phone_name, *location):
 
 def get_info_installment_by_phone_name(phone_name):
     return Installment.objects.filter(productId__productName=phone_name)[0]
+
+
+def get_warranty_info(phone_name):
+    return Guarantee.objects.filter(productId__productName=phone_name)[0]
 
 # Price
 
@@ -320,7 +324,7 @@ def is_stocking_phone_by_name(phone_name):
 
 
 def is_stocking_phone_by_color(phone_name, *option):
-    list_store_inverter = get_list_store_inverter(phone_name).\
+    list_store_inverter = get_list_store_inverter_by_phone_name(phone_name).\
         filter(productId__in=Product.objects.filter(productName=phone_name).filter(phoneinfo__color=option.color))
     if list_store_inverter is not None:
         return list_store_inverter[0].amount > 0
@@ -346,7 +350,7 @@ def is_stocking_phone_by_store(phone_name, *option):
 
 
 def is_stocking_phone_by_code(phone_name, *option):
-    list_store_inverter = get_list_store_inverter(phone_name). \
+    list_store_inverter = get_list_store_inverter_by_phone_name(phone_name). \
         filter(productId__in=Product.objects.filter(productName=phone_name).filter(phoneinfo__phoneCode=option.code))
     if list_store_inverter is not None:
         return list_store_inverter[0].amount > 0
@@ -355,7 +359,7 @@ def is_stocking_phone_by_code(phone_name, *option):
 
 
 def is_stocking_phone_by_RAM(phone_name, *option):
-    list_store_inverter = get_list_store_inverter(phone_name). \
+    list_store_inverter = get_list_store_inverter_by_phone_name(phone_name). \
         filter(productId__in=Product.objects.filter(productName=phone_name).filter(phoneinfo__RAM=option.RAM))
     if list_store_inverter is not None:
         return list_store_inverter[0].amount > 0
@@ -364,7 +368,7 @@ def is_stocking_phone_by_RAM(phone_name, *option):
 
 
 def is_stocking_phone_by_ROM(phone_name, *option):
-    list_store_inverter = get_list_store_inverter(phone_name). \
+    list_store_inverter = get_list_store_inverter_by_phone_name(phone_name). \
         filter(productId__in=Product.objects.filter(productName=phone_name).filter(phoneinfo__ROM=option.ROM))
     if list_store_inverter is not None:
         return list_store_inverter[0].amount > 0
@@ -401,3 +405,13 @@ def get_installment_payment(phone_name):
 
 def get_installment_paper_needed(phone_name):
     return get_info_installment_by_phone_name(phone_name).note
+
+
+# Guarantee
+
+def get_warranty_duration(phone_name):
+    return get_warranty_duration(phone_name).duration
+
+
+def get_warranty_note(phone_name):
+    return get_warranty_info(phone_name).note
