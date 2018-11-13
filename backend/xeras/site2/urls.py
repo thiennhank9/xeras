@@ -1,0 +1,32 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('get-name/', views.get_price_by_phone_name),
+    path('get_price_by_sale_off/', views.get_price_by_sale_off),
+    path('get_price_by_store/', views.get_price_by_store),
+    path('get_price_from_country/', views.get_price_from_country),
+    path('get_compare_price/', views.get_compare_price),
+    path('get_sale_off_giff/', views.get_sale_off_giff),
+    path('is_sale_off_now/', views.is_sale_off_now),
+    path('get_when_end_sale_off/', views.get_when_end_sale_off),
+    path('get_phone_charger_type_info/', views.get_phone_charger_type_info),
+    path('get_phone_charge_time/', views.get_phone_charge_time),
+    path('get_phone_battery_time_use/', views.get_phone_battery_time_use),
+    path('get_phone_os_info/', views.get_phone_os_info),
+    path('is_phone_support_in_language/', views.is_phone_support_in_language),
+    path('get_phone_code/', views.get_phone_code),
+    path('get_from_type/', views.get_from_type),
+    path('is_like_new/', views.is_like_new),
+    path('get_feature_playing_game/', views.get_feature_playing_game),
+    path('get_time_can_play_feature/', views.get_time_can_play_feature),
+    path('is_stocking_phone_by_name/', views.is_stocking_phone_by_name),
+    path('is_stocking_phone_by_color/', views.is_stocking_phone_by_color),
+    path('get_phone_color/', views.get_phone_color),
+    path('is_stocking_phone_by_store/', views.is_stocking_phone_by_store),
+    path('is_stocking_phone_by_code/', views.is_stocking_phone_by_code),
+    path('is_stocking_phone_by_RAM/', views.is_stocking_phone_by_RAM),
+    path('get_store_by_location/', views.get_store_by_location),
+    path('get_list_store_have_phone/', views.get_list_store_have_phone),
+    path('get_require_installment/', views.get_require_installment),
+]

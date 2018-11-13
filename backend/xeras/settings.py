@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # 'xeras.site1',
+    'rest_framework',
     'xeras.site2'
 ]
 

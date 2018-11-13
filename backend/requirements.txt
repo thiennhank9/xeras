@@ -1,0 +1,1 @@
+pip i djangorestframework=3.9.0
