@@ -2,7 +2,6 @@ from django.db import models
 
 
 class Store(models.Model):
-    storeId = models.TextField(primary_key=True)
     storeName = models.TextField()
     address1 = models.TextField()
     address2 = models.TextField()
@@ -12,14 +11,19 @@ class Store(models.Model):
     province = models.TextField()
     storePayment = models.TextField()
 
+    def __str__(self):
+        return '%s' % self.storeName
+
     class Meta:
         managed = True
-        db_table = 'Store'
+        db_table = 'Store_CT'
 
 
 class Category(models.Model):
-    categoryId = models.TextField(primary_key=True)
     categoryName = models.TextField()
+
+    def __str__(self):
+        return '%s' % self.categoryName
 
     class Meta:
         managed = True
@@ -27,7 +31,6 @@ class Category(models.Model):
 
 
 class Manufacturer(models.Model):
-    manufacturerId = models.TextField(primary_key=True)
     manufacturerName = models.TextField()
     address1 = models.TextField()
     address2 = models.TextField()
@@ -35,16 +38,21 @@ class Manufacturer(models.Model):
     district = models.TextField()
     street = models.TextField()
 
+    def __str__(self):
+        return '%s' % self.manufacturerName
+
     class Meta:
         managed = True
         db_table = 'Manufacturer'
 
 
 class Post(models.Model):
-    postId = models.TextField(primary_key=True)
     postTitle = models.TextField()
     postContent = models.TextField()
     postLink = models.TextField()
+
+    def __str__(self):
+        return '%s' % self.postTitle
 
     class Meta:
         managed = True
@@ -52,7 +60,6 @@ class Post(models.Model):
 
 
 class Product(models.Model):
-    productId = models.TextField(primary_key=True)
     productCategoryId = models.ForeignKey(
         'Category', on_delete=models.CASCADE, db_column='productCategoryId', blank=True)
     productName = models.TextField()
@@ -62,14 +69,19 @@ class Product(models.Model):
     productPostId = models.ForeignKey(
         'Post', on_delete=models.CASCADE, db_column='productPostId', blank=True)
 
+    def __str__(self):
+        return '%s' % self.productName
+
     class Meta:
         managed = True
         db_table = 'Product'
 
 
 class LanguageSupport(models.Model):
-    languageId = models.TextField(primary_key=True)
     languageName = models.TextField()
+
+    def __str__(self):
+        return '%s' % self.languageName
 
     class Meta:
         managed = True
@@ -77,30 +89,17 @@ class LanguageSupport(models.Model):
 
 
 class PhoneCode(models.Model):
-    phoneCodeId = models.TextField(primary_key=True)
     code = models.TextField()
+
+    def __str__(self):
+        return '%s' % self.code
 
     class Meta:
         managed = True
         db_table = 'PhoneCode'
 
 
-class PhoneFeature(models.Model):
-    phoneFeatureId = models.TextField(primary_key=True)
-    game = models.TextField()
-    music = models.TextField()
-    photo = models.TextField()
-    video = models.TextField()
-    videoCall = models.TextField()
-    featureTimeUsing = models.TextField() # thoi gian su dung tung loai
-
-    class Meta:
-        managed = True
-        db_table = 'PhoneFeature'
-
-
 class PhoneInfo(models.Model):
-    phoneInfoId = models.TextField(primary_key=True)
     phoneProductId = models.ForeignKey(
         'Product', on_delete=models.CASCADE, db_column='phoneProductId', blank=True)
     phone3G = models.TextField()
@@ -131,9 +130,13 @@ class PhoneInfo(models.Model):
     phoneCode = models.ForeignKey(
         'PhoneCode', on_delete=models.CASCADE, db_column='phoneCode', blank=True)
     phoneInfoType = models.TextField()
-    memoryCardSlot = models.TextField()
+    memoryCardSlot = models.TextField(default=1)
+    chargerType = models.TextField(default="sạc 2 chấu")
+    chargerTime = models.FloatField(default=2)
+    phoneTimeUsing = models.TextField(default="6-8 tiếng")
     cameraBack = models.FloatField(blank=True)
     cameraFront = models.FloatField(blank=True)
+    phoneCase = models.TextField(default='Vỏ nhôm')
     video = models.TextField()
     WLAN = models.TextField()
     bluetooth = models.TextField()
@@ -143,16 +146,47 @@ class PhoneInfo(models.Model):
     color = models.TextField()
     price1 = models.FloatField(blank=True)
     price2 = models.FloatField(blank=True)
+    other = models.TextField(default="Chống nước")
+
+    def __str__(self):
+        product = self.phoneProductId
+        product_info = self
+        return '%s - %s GB - %s' % (product.productName, product_info.ROM, product_info.color)
 
     class Meta:
         managed = True
         db_table = 'PhoneInfo'
 
 
+class PhoneFeature(models.Model):
+    game = models.TextField()
+    music = models.TextField()
+    photo = models.TextField()
+    video = models.TextField()
+    videoCall = models.TextField()
+    featureTimeUsing = models.TextField() # thoi gian su dung tung loai
+    phoneInfo = models.OneToOneField(
+        PhoneInfo,
+        on_delete=models.CASCADE,
+        default=5,
+    )
+
+    def __str__(self):
+        return '%s feature' % self.phoneInfo.phoneProductId.productName
+
+    class Meta:
+        managed = True
+        db_table = 'PhoneFeature'
+
+
 class Guarantee(models.Model):
-    guaranteeId = models.TextField()
-    Note = models.TextField()
+    guaranteeName = models.TextField(default=None)
+    duration = models.IntegerField()
     productId = models.ManyToManyField(Product)
+    Note = models.TextField()
+
+    def __str__(self):
+        return '%s' % self.guaranteeName
 
     class Meta:
         managed = True
@@ -160,12 +194,14 @@ class Guarantee(models.Model):
 
 
 class Installment(models.Model):
-    installmentId = models.TextField(primary_key=True)
     companyName = models.TextField()
     credit = models.TextField()
     note = models.TextField()
     requiredInformation = models.TextField()
     productId = models.ManyToManyField(Product)
+
+    def __str__(self):
+        return '%s' % self.companyName
 
     class Meta:
         managed = True
@@ -173,12 +209,16 @@ class Installment(models.Model):
 
 
 class SaleOff(models.Model):
-    saleOffId = models.TextField(primary_key=True)
+    saleOffName = models.TextField(default=None)
     saleOffPrice = models.FloatField(blank=True)
     productId = models.ForeignKey('Product', on_delete=models.CASCADE, db_column='productId')
     dateStart = models.DateField(blank=True)
     dateEnd = models.DateField(blank=True)
     other = models.TextField() # is this giff or other content
+
+    def __str__(self):
+        return '%s - discount:%s - duration: %s - %s ' % (self.saleOffName, self.saleOffPrice, self.dateStart,
+                                                          self.dateEnd)
 
     class Meta:
         managed = True
@@ -186,13 +226,13 @@ class SaleOff(models.Model):
 
 
 class StoreInventory(models.Model):
-    storeInventoryId = models.TextField(primary_key=True)
     storeId = models.ForeignKey('Store', on_delete=models.CASCADE, db_column='storeId')
     productId = models.ForeignKey('Product', on_delete=models.CASCADE, db_column='productId')
     amount = models.IntegerField(blank=True)
 
+    def __str__(self):
+        return 'StoreInventory: %s - amount: %s' % (self.productId.productName, self.amount)
+
     class Meta:
         managed = True
         db_table = 'StoreInventory'
-
-
