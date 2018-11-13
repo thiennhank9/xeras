@@ -95,7 +95,6 @@ def get_store_inverter(phone_name):
 #     return [store.address1 for store in list_store]
 
 def get_store_by_location(where):
-    print(where)
     list_store = Store.objects
     if list_store.filter(province=where).exists():
         list_store = list_store.filter(province=where)
@@ -105,7 +104,6 @@ def get_store_by_location(where):
         list_store = list_store.filter(district=where)
     elif 'street' in list_store.filter(street=where):
         list_store = list_store.filter(street=where)
-    print(list(list_store))
     return [store.address1 for store in list_store]
 
 
@@ -120,7 +118,6 @@ def get_warranty_info(phone_name):
 
 
 def get_price_by_phone_name(phone_name, *option, **options):
-    print('options:', options)
     list_phone_info = get_list_phone_info_by_name(phone_name)
     phone_info = {}
     if options['ROM'] is not None and options['color'] is not None:
@@ -416,7 +413,6 @@ def is_stocking_phone_by_store(phone_name, *option, **options):
 
 
 def is_stocking_phone_by_code(phone_name, *option, **options):
-    print("is_stocking_phone_by_code")
     list_store_inverter = get_list_store_inverter_by_phone_name(phone_name). \
         filter(productId__in=Product.objects.filter(productName=phone_name).filter(phoneinfo__phoneCode__code=options['code']))
     if list_store_inverter.exists():
