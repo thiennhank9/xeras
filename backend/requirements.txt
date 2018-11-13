@@ -1,1 +1,2 @@
-pip i djangorestframework=3.9.0
+Django==2.1.3
+djangorestframework==3.9.0
