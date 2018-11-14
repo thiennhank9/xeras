@@ -183,7 +183,7 @@ class Guarantee(models.Model):
     guaranteeName = models.TextField(default=None)
     duration = models.IntegerField()
     productId = models.ManyToManyField(Product)
-    Note = models.TextField()
+    note = models.TextField()
 
     def __str__(self):
         return '%s' % self.guaranteeName

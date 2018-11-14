@@ -108,11 +108,26 @@ def get_store_by_location(where):
 
 
 def get_info_installment_by_phone_name(phone_name):
-    return Installment.objects.filter(productId__productName=phone_name)[0]
+    list_installment = Installment.objects.filter(productId__productName=phone_name)
+    if list_installment.exists():
+        return list_installment[0]
+    else:
+        return None
 
 
-def get_warranty_info(phone_name):
-    return Guarantee.objects.filter(productId__productName=phone_name)[0]
+def get_info_installment_by_field_name(phone_name, field):
+    installment_info = get_info_installment_by_phone_name(phone_name)
+    if installment_info is not None:
+        return installment_info.__dict__[field]
+    else:
+        return None
+
+
+def get_warranty_info_by_field_name(phone_name, field):
+    if Guarantee.objects.filter(productId__productName=phone_name).exists():
+        return Guarantee.objects.filter(productId__productName=phone_name)[0].__dict__[field]
+    else:
+        return None
 
 # Price
 
@@ -456,26 +471,29 @@ def get_list_store_have_phone(phone_name, *option, **options):
 
 
 def get_require_installment(phone_name):
-    return get_info_installment_by_phone_name(phone_name).requiredInformation
+    return get_info_installment_by_field_name(phone_name, 'requiredInformation')
 
 
 def get_store_payment(store_name):
-    return Store.objects.filter(storeName=store_name)[0].storePayment
+    if Store.objects.filter(storeName=store_name).exists():
+        return Store.objects.filter(storeName=store_name)[0].storePayment
+    else:
+        return None
 
 
 def get_installment_payment(phone_name):
-    return get_info_installment_by_phone_name(phone_name).credit
+    return get_info_installment_by_field_name(phone_name, 'credit')
 
 
 def get_installment_paper_needed(phone_name):
-    return get_info_installment_by_phone_name(phone_name).note
+    return get_info_installment_by_field_name(phone_name, 'note')
 
 
 # Guarantee
 
 def get_warranty_duration(phone_name):
-    return get_warranty_duration(phone_name).duration
+    return get_warranty_info_by_field_name(phone_name, 'duration')
 
 
 def get_warranty_note(phone_name):
-    return get_warranty_info(phone_name).note
+    return get_warranty_info_by_field_name(phone_name, 'note')

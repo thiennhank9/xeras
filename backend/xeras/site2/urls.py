@@ -29,4 +29,7 @@ urlpatterns = [
     path('get_store_by_location/', views.get_store_by_location),
     path('get_list_store_have_phone/', views.get_list_store_have_phone),
     path('get_require_installment/', views.get_require_installment),
+    path('get_installment_paper_needed/', views.get_installment_paper_needed),
+    path('get_store_payment/', views.get_store_payment),
+    path('get_warranty_note/', views.get_warranty_note),
 ]

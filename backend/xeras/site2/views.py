@@ -439,3 +439,42 @@ def get_require_installment(request):
             return JsonResponse({'result': result}, status=201)
         except ValueError:
             return JsonResponse({'error': ValueError}, status=400)
+
+
+@csrf_exempt
+def get_installment_paper_needed(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        phone_name = data['phone_name']
+
+        try:
+            result = api.get_installment_paper_needed(phone_name=phone_name)
+            return JsonResponse({'result': result}, status=201)
+        except ValueError:
+            return JsonResponse({'error': ValueError}, status=400)
+
+
+@csrf_exempt
+def get_store_payment(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        store_name = data['store_name']
+
+        try:
+            result = api.get_store_payment(store_name=store_name)
+            return JsonResponse({'result': result}, status=201)
+        except ValueError:
+            return JsonResponse({'error': ValueError}, status=400)
+
+
+@csrf_exempt
+def get_warranty_note(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        phone_name = data['phone_name']
+
+        try:
+            result = api.get_warranty_note(phone_name=phone_name)
+            return JsonResponse({'result': result}, status=201)
+        except ValueError:
+            return JsonResponse({'error': ValueError}, status=400)
