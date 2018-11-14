@@ -1,6 +1,7 @@
 import pandas as pd
 from .libs import SVMModel
 
+
 class TextClassificationPredict(object):
     train_data_df = []
     model_predict = {}
@@ -43,14 +44,6 @@ class TextClassificationPredict(object):
 
         return predict_result
 
-    def get_model(self):
-        if TextClassificationPredict.model is not None:
-            return TextClassificationPredict.model
-        else:
-            tcp = TextClassificationPredict()
-            tcp.setup()
-            TextClassificationPredict.model = tcp
-            return tcp
 
 if __name__ == '__main__':
     tcp = TextClassificationPredict()
