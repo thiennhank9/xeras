@@ -12,7 +12,7 @@ class TextClassificationPredict(object):
     def pre_train(self):
         train_data = []
 
-        print('train data')
+        print('--- Training data ---')
         # Read data train from file train.csv
         csv_file_pd = pd.read_csv('xeras/nlp/text_classification/data/train_data.csv', sep=';')
         for index, row in csv_file_pd.iterrows():
@@ -31,6 +31,7 @@ class TextClassificationPredict(object):
     def setup(self):
         self.pre_train()
         self.build_model()
+        print("--- Text classification Setuped ---")
 
     # Pass the input sentence to predict
     def get_predict(self, input_sentence):
@@ -41,7 +42,7 @@ class TextClassificationPredict(object):
         # Get predict result of input
         predict_result = self.model_predict.predict(to_predict.feature)
 
-        return predict_result
+        return predict_result[0]
 
     def get_model(self):
         if TextClassificationPredict.model is not None:

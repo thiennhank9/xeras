@@ -12,11 +12,23 @@ from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
+from xeras.nlp.text_classification.main import TextClassificationPredict
 # 
 import xeras.site2.api as api
 # 
 from .adapter import adapter 
 from xeras.nlp.text_classification.main import TextClassificationPredict
+
+global tcp
+tcp = TextClassificationPredict()
+tcp.setup()
+
+@csrf_exempt
+def test_api(request):
+    global tcp
+    result = tcp.get_predict("cái này còn tặng hàng kèm ko")
+    
+    return JsonResponse({"result_test": result}, status=201)
 
 @csrf_exempt
 def get_price_by_phone_name(request):
