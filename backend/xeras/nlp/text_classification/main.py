@@ -1,9 +1,10 @@
 import pandas as pd
-from libs import SVMModel
+from .libs import SVMModel
 
 class TextClassificationPredict(object):
     train_data_df = []
     model_predict = {}
+    model = None
 
     def __init__(self):
         self.test = None
@@ -11,8 +12,9 @@ class TextClassificationPredict(object):
     def pre_train(self):
         train_data = []
 
+        print('train data')
         # Read data train from file train.csv
-        csv_file_pd = pd.read_csv('data/train_data.csv', sep=';')
+        csv_file_pd = pd.read_csv('xeras/nlp/text_classification/data/train_data.csv', sep=';')
         for index, row in csv_file_pd.iterrows():
             train_data.append(
                 {"feature": row["sentence"], "target": row["type"]})
@@ -40,6 +42,15 @@ class TextClassificationPredict(object):
         predict_result = self.model_predict.predict(to_predict.feature)
 
         return predict_result
+
+    def get_model(self):
+        if TextClassificationPredict.model is not None:
+            return TextClassificationPredict.model
+        else:
+            tcp = TextClassificationPredict()
+            tcp.setup()
+            TextClassificationPredict.model = tcp
+            return tcp
 
 if __name__ == '__main__':
     tcp = TextClassificationPredict()

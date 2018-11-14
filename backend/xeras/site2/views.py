@@ -15,6 +15,8 @@ from rest_framework.parsers import JSONParser
 # 
 import xeras.site2.api as api
 # 
+from .adapter import adapter 
+from xeras.nlp.text_classification.main import TextClassificationPredict
 
 @csrf_exempt
 def get_price_by_phone_name(request):
@@ -476,5 +478,22 @@ def get_warranty_note(request):
         try:
             result = api.get_warranty_note(phone_name=phone_name)
             return JsonResponse({'result': result}, status=201)
+        except ValueError:
+            return JsonResponse({'error': ValueError}, status=400)
+
+
+@csrf_exempt
+def get_answer_by_question(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        question = data['question']
+        
+        # init and setup tc model
+        tcp = TextClassificationPredict().get_model()
+        questionType = tcp.get_predict(question)
+        answer = adapter(questionType, "iPhone XS Max")
+
+        try:
+            return JsonResponse({'answer': answer}, status=201)
         except ValueError:
             return JsonResponse({'error': ValueError}, status=400)
