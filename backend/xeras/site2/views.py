@@ -28,7 +28,7 @@ tcp.setup()
 @csrf_exempt
 def test_api(request):
     global tcp
-    result = get_answer(question="Iphone X bản 64gb vàng đốm giờ giá nhiêu vậy?, hả bà xã", site='site2')
+    result = get_answer(question="Cho xin địa chỉ ở Tiền Giang bạn ơi", site='site2')
     
     return JsonResponse({"result_test": result}, status=201)
 

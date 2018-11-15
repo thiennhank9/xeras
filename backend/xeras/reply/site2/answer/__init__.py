@@ -4,6 +4,7 @@ from . import hardware as hardware
 from . import installment as installment
 from . import phone_source as phone_source
 from . import price as price
+from . import received_time as received_time
 from . import resell as resell
 from . import sale_off as sale_off
 from . import software as software

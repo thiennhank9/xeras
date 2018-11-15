@@ -1,6 +1,5 @@
 import xeras.site2.api as api
 
-import xeras.reply.get_type_question as get_type_question
 import xeras.reply.site2.answer_list as answer_list
 
 
@@ -13,22 +12,18 @@ def get_price_by_phone_name(argument, *arguments, **keywords):
 
 
 def get_price_by_sale_off(argument, *arguments, **keywords):
-    type_question = get_type_question.price.type_question(argument, *arguments, **keywords)
     pass
 
 
 def get_price_by_store(argument, *arguments, **keywords):
-    type_question = get_type_question.price.type_question(argument, *arguments, **keywords)
     pass
 
 
 def get_price_from_country(argument, *arguments, **keywords):
-    type_question = get_type_question.price.type_question(argument, *arguments, **keywords)
     pass
 
 
 def get_compare_price(argument, *arguments, **keywords):
-    type_question = get_type_question.price.type_question(argument, *arguments, **keywords)
     pass
 
 

@@ -94,7 +94,7 @@ def get_store_inverter(phone_name):
 #         list_store = list_store.filter(street=options['street'])
 #     return [store.address1 for store in list_store]
 
-def get_store_by_location(where):
+def get_store_by_location(where, *option, **options):
     list_store = Store.objects
     if list_store.filter(province=where).exists():
         list_store = list_store.filter(province=where)
@@ -237,7 +237,7 @@ def get_when_end_sale_off(phone_name):
 # Hardware
 
 
-def get_phone_charger_type_info(phone_name):
+def get_phone_charger_type_info(phone_name, *option, **options):
     return get_field_phone_info(phone_name, 'chargerType')
 
 
@@ -303,7 +303,7 @@ def is_phone_has_water_protected(phone_name):
 
 # Software
 
-def get_phone_os_info(phone_name):
+def get_phone_os_info(phone_name, *option, **options):
     phone_info = get_phone_info(phone_name)
     if phone_info is not None:
         return phone_info.osType + " " + phone_info.osVersion
@@ -328,7 +328,7 @@ def is_phone_support_in_language(phone_name, *option, **options):
 # from country, phone version
 
 
-def get_from_country_by_phone_name(phone_name):
+def get_from_country_by_phone_name(phone_name, *option, **options):
     return get_field_phone_info(phone_name, 'fromCountry')
 
 
@@ -394,7 +394,7 @@ def get_time_can_play_feature(phone_name, *option, **options):
 # stocking
 
 
-def is_stocking_phone_by_name(phone_name):
+def is_stocking_phone_by_name(phone_name, *option, **options):
     if get_store_inverter(phone_name) is not None:
         return get_store_inverter(phone_name).amount > 0
     else:
@@ -485,7 +485,7 @@ def get_installment_payment(phone_name):
     return get_info_installment_by_field_name(phone_name, 'credit')
 
 
-def get_installment_paper_needed(phone_name):
+def get_installment_paper_needed(phone_name, *option, **options):
     return get_info_installment_by_field_name(phone_name, 'note')
 
 
@@ -495,5 +495,5 @@ def get_warranty_duration(phone_name):
     return get_warranty_info_by_field_name(phone_name, 'duration')
 
 
-def get_warranty_note(phone_name):
+def get_warranty_note(phone_name, *option, **options):
     return get_warranty_info_by_field_name(phone_name, 'note')
