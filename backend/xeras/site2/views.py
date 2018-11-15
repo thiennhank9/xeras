@@ -18,17 +18,20 @@ import xeras.site2.api as api
 # 
 from .adapter import adapter 
 from xeras.nlp.text_classification.main import TextClassificationPredict
+from xeras.reply.adapter import get_answer
 
 global tcp
 tcp = TextClassificationPredict()
 tcp.setup()
 
+
 @csrf_exempt
 def test_api(request):
     global tcp
-    result = tcp.get_predict("cái này còn tặng hàng kèm ko")
+    result = get_answer(question="Iphone X bản 64gb vàng đốm giờ giá nhiêu vậy?, hả bà xã", site='site2')
     
     return JsonResponse({"result_test": result}, status=201)
+
 
 @csrf_exempt
 def get_price_by_phone_name(request):
