@@ -75,5 +75,3 @@ backend/xeras/**/__pycache__/*
 backend/.idea/*
 backend/**/migrations/*
 !backend/**/migrations/__init__.py
-
-sites/drupal/*

@@ -43,7 +43,7 @@ SV thực hiện:
     TALK_FACEBOOK_APP_SECRET=89842dbbeec064c064c78cc312decf61
 
     # NLP Server
-    NLP_URL_SERVER=http://127.0.0.1:3000/
+    NLP_URL_SERVER=http://127.0.0.1:8000/reply/test_api/
 ```
 
 * Cài đặt thư viện
