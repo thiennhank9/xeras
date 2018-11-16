@@ -4,9 +4,12 @@ import xeras.reply.get_type_question as get_type_question
 
 
 def get_answer_store_by_location(argument, *arguments, **keywords):
+    where = keywords['where']
     list_store = keywords['list_store']
-    return 'bạn tham khảo danh sách cửa hàng sau: %s' % '\n* '.join(map(str, list_store))
-    pass
+    if list_store is not None:
+        return 'bạn tham khảo danh sách cửa hàng sau: %s' % '\n* '.join(map(str, list_store))
+    else:
+        return 'hiện tại hệ thống không có cửa hàng tại %s' % where
 
 
 def get_answer_list_store_have_phone(argument, *arguments, **keywords):

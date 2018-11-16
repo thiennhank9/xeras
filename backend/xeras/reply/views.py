@@ -28,7 +28,17 @@ tcp.setup()
 def test_api(request):
     global tcp
     
-    data = JSONParser().parse(request)
-    result = get_answer(question=data['comment'], site=data['site'])
+    data = {}
+    data['phone_name'] = 'iPhone XS Max'
+    data['site'] = 'site2'
+    data['ROM'] = '64'
+    data['color'] = 'Vàng'
+    data['game'] = 'Liên quân'
+    data['where'] = 'Hồ Chí Minh'
+
+    request_ojbect = JSONParser().parse(request)
+    data.update(request_ojbect)
+    data['question'] = data['comment']
+    result = get_answer('', **data)
     
     return JsonResponse({"result_test": result}, status=201)

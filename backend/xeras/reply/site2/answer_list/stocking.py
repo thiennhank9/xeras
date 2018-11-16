@@ -4,9 +4,9 @@ import xeras.site2.api as api
 def get_answer_is_stocking_phone_by_name(argument, *arguments, **keywords):
     is_stocking = keywords['is_stocking']
     if is_stocking:
-        answer = 'máy hiện không có hàng'
-    else:
         answer = 'vẫn còn hàng bạn nhé'
+    else:
+        answer = 'máy hiện không có hàng'
     return answer
 
 

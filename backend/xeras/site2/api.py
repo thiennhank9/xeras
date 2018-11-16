@@ -95,16 +95,24 @@ def get_store_inverter(phone_name):
 #     return [store.address1 for store in list_store]
 
 def get_store_by_location(where, *option, **options):
-    list_store = Store.objects
-    if list_store.filter(province=where).exists():
-        list_store = list_store.filter(province=where)
-    elif list_store.filter(City=where).exists():
-        list_store = list_store.filter(City=where)
-    elif 'district' in list_store.filter(district=where):
-        list_store = list_store.filter(district=where)
-    elif 'street' in list_store.filter(street=where):
-        list_store = list_store.filter(street=where)
-    return [store.address1 for store in list_store]
+    store_manage = Store.objects
+    
+    # default
+    list_store = store_manage.filter(province=where)
+
+    if store_manage.filter(province=where).exists():
+        list_store = store_manage.filter(province=where)
+    elif store_manage.filter(City=where).exists():
+        list_store = store_manage.filter(City=where)
+    elif 'district' in store_manage.filter(district=where):
+        list_store = store_manage.filter(district=where)
+    elif 'street' in store_manage.filter(street=where):
+        list_store = store_manage.filter(street=where)
+
+    if list_store:
+        return [store.address1 for store in list_store]
+    else:
+        return None
 
 
 def get_info_installment_by_phone_name(phone_name):

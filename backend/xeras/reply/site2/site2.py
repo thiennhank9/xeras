@@ -24,7 +24,7 @@ def get_answer_by_sale_of_question(argument, *arguments, **keywords):
 def get_answer_by_hardware_question(argument, *arguments, **keywords):
     question_type = get_type_question.hardware.type_question(argument, *arguments, **keywords)
     keywords['question_type'] = question_type
-    return answer.phone_source.get_answer(argument, *arguments, **keywords)
+    return answer.hardware.get_answer(argument, *arguments, **keywords)
 
 
 def get_answer_by_software_question(argument, *arguments, **keywords):
@@ -79,7 +79,6 @@ def get_answer_by_resell_question(argument, *arguments, **keywords):
     question_type = get_type_question.resell.type_question(argument, *arguments, **keywords)
     keywords['question_type'] = question_type
     return answer.resell.get_answer(argument, *arguments, **keywords)
-    pass
 
 
 switcher_site2 = {
@@ -104,12 +103,10 @@ def get_answer(argument, *arguments, **keywords):
     # get question category by cl
     question = keywords['question']
     question_category = tcp.get_predict(question)
+    print('question_category:',question_category)
 
     # add phone_name in keyword, after this will handle by ner
     keywords['phone_name'] = 'iPhone XS Max'
-    keywords['color'] = None
-    keywords['ROM'] = None
-    keywords['where'] = 'Hồ Chí Minh'
 
     # print('argument:', argument)
     # print('arguments:', arguments)
