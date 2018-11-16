@@ -1,2 +1,2 @@
 def type_question(argument, *arguments, **keywords):
-    'hoi_ve_he_dieu_hanh'
+    return 'hoi_ve_he_dieu_hanh'

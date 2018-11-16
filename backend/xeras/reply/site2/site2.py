@@ -16,6 +16,7 @@ def get_answer_by_price_question(argument, *arguments, **keywords):
 
 def get_answer_by_sale_of_question(argument, *arguments, **keywords):
     question_type = get_type_question.sale_off.type_question(argument, *arguments, **keywords)
+    print('question_type in a:', question_type)
     keywords['question_type'] = question_type
     return answer.sale_off.get_answer(argument, *arguments, **keywords)
 

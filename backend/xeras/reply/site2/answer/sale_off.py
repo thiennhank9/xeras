@@ -19,6 +19,8 @@ def get_answer(argument, *arguments, **keywords):
     # get question type from keywords
     question_type = keywords['question_type']
 
+    print("question_type:", question_type)
+
     func = switcher_site2.get(question_type, "nothing")
     # Execute the function
     return func(argument, *arguments, **keywords)

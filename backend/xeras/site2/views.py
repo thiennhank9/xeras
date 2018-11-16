@@ -20,18 +20,6 @@ from .adapter import adapter
 from xeras.nlp.text_classification.main import TextClassificationPredict
 from xeras.reply.adapter import get_answer
 
-global tcp
-tcp = TextClassificationPredict()
-tcp.setup()
-
-
-@csrf_exempt
-def test_api(request):
-    global tcp
-    result = get_answer(question="Cho xin địa chỉ ở Tiền Giang bạn ơi", site='site2')
-    
-    return JsonResponse({"result_test": result}, status=201)
-
 
 @csrf_exempt
 def get_price_by_phone_name(request):

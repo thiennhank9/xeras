@@ -8,18 +8,22 @@ module.exports = {
     console.log('comment content: ', comment);
     console.log('NLP Server: ', config.NLP_URL_SERVER);
   },
-  sendCommentToNLP: async comment => {
+  sendCommentToNLP: async (comment, site) => {
+    let response = {};
     try {
-      await axios.post(config.NLP_URL_SERVER, comment, {
+      response['answer'] = await axios.post(config.NLP_URL_SERVER, {
+        comment: comment, 
+        site: site
+      }, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
-      comment.status = 'send comment successed';
+      response.status = 'send comment successed';
     } catch (error) {
-      comment.status = 'send comment failed';
+      response.status = 'send comment failed';
     }
-    return comment;
+    return response;
   },
   sendReplyComment: async comment => {
     var createMessageMutation = {

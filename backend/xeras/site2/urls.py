@@ -3,7 +3,6 @@ from . import views
 
 urlpatterns = [
     path('get_price_by_phone_name/', views.get_price_by_phone_name),
-    path('test_api/', views.test_api),
     path('get_price_by_sale_off/', views.get_price_by_sale_off),
     path('get_price_by_store/', views.get_price_by_store),
     path('get_price_from_country/', views.get_price_from_country),
