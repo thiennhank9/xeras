@@ -18,7 +18,6 @@ import xeras.site2.api as api
 # 
 from .adapter import adapter 
 from xeras.nlp.text_classification.main import TextClassificationPredict
-from xeras.reply.adapter import get_answer
 
 
 @csrf_exempt

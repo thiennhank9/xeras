@@ -17,17 +17,10 @@ from xeras.nlp.text_classification.main import TextClassificationPredict
 import xeras.site2.api as api
 # 
 from xeras.nlp.text_classification.main import TextClassificationPredict
-from xeras.reply.adapter import get_answer
-
-global tcp
-tcp = TextClassificationPredict()
-tcp.setup()
-
+from xeras.reply.framework.main import get_answer_by_question_type
 
 @csrf_exempt
-def test_api(request):
-    global tcp
-    
+def test_api(request):    
     data = {}
     data['phone_name'] = 'iPhone XS Max'
     data['site'] = 'site2'
@@ -39,6 +32,6 @@ def test_api(request):
     request_ojbect = JSONParser().parse(request)
     data.update(request_ojbect)
     data['question'] = data['comment']
-    result = get_answer('', **data)
+    result = get_answer_by_question_type(**data)
     
     return JsonResponse({"result_test": result}, status=201)
