@@ -1,5 +1,5 @@
-from text_classification.main import TextClassificationPredict as TC
-from ner.get_name_entites import GetNameEntities as NER
+from .text_classification.main import TextClassificationPredict as TC
+from .ner.get_name_entites import GetNameEntities as NER
 
 class NLP:
     tc = None

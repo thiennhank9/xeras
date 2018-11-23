@@ -15,8 +15,8 @@ class TextClassificationPredict(object):
 
         # print('--- Training data ---')
         # Read data train from file train.csv
-        # csv_file_pd = pd.read_csv('xeras/nlp/text_classification/data/train_data.csv', sep=';')
-        csv_file_pd = pd.read_csv('text_classification/data/train_data.csv', sep=';')
+        csv_file_pd = pd.read_csv('xeras/nlp/text_classification/data/train_data.csv', sep=';')
+        # csv_file_pd = pd.read_csv('text_classification/data/train_data.csv', sep=';')
         
         for index, row in csv_file_pd.iterrows():
             train_data.append(

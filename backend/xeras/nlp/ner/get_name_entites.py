@@ -9,7 +9,8 @@ class GetNameEntities:
 
     def load_train_data(self):
         self.TRAIN_DATA = []
-        csv_file_pd = pd.read_csv('ner/data/spacy_ner_train.csv', sep=';')
+        # csv_file_pd = pd.read_csv('ner/data/spacy_ner_train.csv', sep=';')
+        csv_file_pd = pd.read_csv('xeras/nlp/ner/data/spacy_ner_train.csv', sep=';')
 
         for index, row in csv_file_pd.iterrows():
             sentence = row["sentence"]

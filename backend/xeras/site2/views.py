@@ -482,20 +482,3 @@ def get_warranty_note(request):
             return JsonResponse({'result': result}, status=201)
         except ValueError:
             return JsonResponse({'error': ValueError}, status=400)
-
-
-@csrf_exempt
-def get_answer_by_question(request):
-    if request.method == 'POST':
-        data = JSONParser().parse(request)
-        question = data['question']
-        
-        # init and setup tc model
-        tcp = TextClassificationPredict().get_model()
-        questionType = tcp.get_predict(question)
-        answer = adapter(questionType, "iPhone XS Max")
-
-        try:
-            return JsonResponse({'answer': answer}, status=201)
-        except ValueError:
-            return JsonResponse({'error': ValueError}, status=400)

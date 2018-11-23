@@ -32,5 +32,4 @@ urlpatterns = [
     path('get_installment_paper_needed/', views.get_installment_paper_needed),
     path('get_store_payment/', views.get_store_payment),
     path('get_warranty_note/', views.get_warranty_note),
-    path('get_answer_by_question/', views.get_answer_by_question),
 ]
