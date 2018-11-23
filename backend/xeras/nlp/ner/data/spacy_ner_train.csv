@@ -1,0 +1,4 @@
+sentence;entities
+cái nơ màu vàng và thanh ram;COLOR:màu vàng|RAM:ram
+nhà ở Q9 TPHCM nè;LOCATION:Q9 TPHCM
+Bản màu vàng còn hàng ở Q9 TPHCM ko shop;COLOR:màu vàng|LOCATION:Q9 TPHCM

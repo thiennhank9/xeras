@@ -13,9 +13,11 @@ class TextClassificationPredict(object):
     def pre_train(self):
         train_data = []
 
-        print('--- Training data ---')
+        # print('--- Training data ---')
         # Read data train from file train.csv
-        csv_file_pd = pd.read_csv('xeras/nlp/text_classification/data/train_data.csv', sep=';')
+        # csv_file_pd = pd.read_csv('xeras/nlp/text_classification/data/train_data.csv', sep=';')
+        csv_file_pd = pd.read_csv('text_classification/data/train_data.csv', sep=';')
+        
         for index, row in csv_file_pd.iterrows():
             train_data.append(
                 {"feature": row["sentence"], "target": row["type"]})
@@ -32,10 +34,10 @@ class TextClassificationPredict(object):
     def setup(self):
         self.pre_train()
         self.build_model()
-        print("--- Text classification Setuped ---")
+        # print("--- Text classification Setuped ---")
 
     # Pass the input sentence to predict
-    def get_predict(self, input_sentence):
+    def get_predict(self, input_sentence='Bản màu vàng còn hàng ở Q9 TPHCM ko shop'):
         predict_data = []
         predict_data.append({"feature": input_sentence, "target": ""})
         to_predict = pd.DataFrame(predict_data)
@@ -50,4 +52,4 @@ if __name__ == '__main__':
     tcp = TextClassificationPredict()
     tcp.setup()
 
-    print(tcp.get_predict("Còn khuyến mãi ko shop ơi"))
+    print(tcp.get_predict("Bản màu vàng còn hàng ở Q9 TPHCM ko shop"))
