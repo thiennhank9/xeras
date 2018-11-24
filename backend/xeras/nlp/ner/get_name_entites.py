@@ -17,7 +17,7 @@ class GetNameEntities:
             temp_entities = row["entities"]
 
             temp_entities = temp_entities.split("|")
-
+            temp_entities[1] = temp_entities[1].strip()
             entities = []
             for entity in temp_entities:
                 two_str = entity.split(":")

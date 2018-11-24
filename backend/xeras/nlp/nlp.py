@@ -12,7 +12,7 @@ class NLP:
         self.tc.setup()
         self.ner.setup()
     
-    def predict(self, sentence='Bản màu vàng còn hàng ở Q9 TPHCM ko shop'):
+    def get_predict(self, sentence='Bản màu vàng còn hàng ở Q9 TPHCM ko shop'):
         type_ask = self.tc.get_predict(sentence)
         entities = self.ner.get_predict(sentence)
         return {'type_ask': type_ask, 'entities': entities}
@@ -20,4 +20,4 @@ class NLP:
 if __name__ == '__main__':
     nlp = NLP()
     nlp.setup()
-    print(nlp.predict('Bản màu vàng còn hàng ở Q9 TPHCM ko shop'))
+    print(nlp.get_predict('Bản màu vàng còn hàng ở Q9 TPHCM ko shop'))
