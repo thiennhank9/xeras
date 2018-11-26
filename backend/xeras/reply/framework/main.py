@@ -42,7 +42,7 @@ def get_cl_of_question(*arguments, **keywords):
 def get_predict_of_question(*arguments, **keywords):
     # get question category by cl
     question = keywords['question']
-    return tcp.predict(question)
+    return tcp.get_predict(question)
 
 
 def get_general_question_type(**predict_object):

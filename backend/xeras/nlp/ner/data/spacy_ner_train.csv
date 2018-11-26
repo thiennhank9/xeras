@@ -3,3 +3,62 @@ cái nơ màu vàng và thanh ram;COLOR:màu vàng|RAM:ram
 nhà ở Q9 TPHCM nè;LOCATION:Q9 TPHCM
 Bản màu vàng còn hàng ở Q9 TPHCM ko shop;COLOR:màu vàng|LOCATION:Q9 TPHCM
 Còn đang giảm giá không shop ơi;IS_SALE_OFF:Còn đang giảm giá
+Iphone X bản 64gb vàng đốm giờ giá nhiêu vậy?;PHONE:Iphone X|ROM:64|COLOR:vàng
+Giảm giá 1tr4 là còn 3tr6 phải không bạn;IS_PRICE_AFTER_SALE_OFF_PRICE:Giảm giá 1tr4 là còn 3tr6 phải không|MONEY:1tr4|MONEY:3tr6
+Ở Thái Nguyên giá SS8+ giờ nhiêu;LOCATION:Thái Nguyên|PHONE:SS8+
+Mình muốn mua Iphone X hàng nhập khẩu từ Mỹ giá nhiêu;PHONE:Iphone X|LOCATION:Mỹ
+Bản 64gb mắc hơn 32gb nhiêu;IS_COMPARE:mắc hơn|ROM:64|ROM:32
+Giá 22tr2 là tính thuế VAT 10% chưa shop;MONEY:22tr2|TAX:10%|IS_INCLUDE_TAX:thuế VAT
+Tính thuế nữa là giá nhiêu vậy bạn;IF_INCLUDE_TAX:Tính thuế nữa
+Mua SS9+ có được tặng kèm gì ko shop;PHONE:SS9+|SALE_OFF_GIFF:tặng kèm
+Ủa giờ còn giảm giá 1tr không;IS_SALE_OFF_NOW:giảm giá 1tr không
+Mình mua trả góp vậy có được giảm 2tr không;IS_SALE_OFF_INSTALLMENT:giảm 2tr không
+Khi nào hết chương trình giảm giá sốc với đồ tặng kèm cho con này vậy bạn;WHEN_END_SALE_OFF:Khi nào hết chương trình
+Máy này sử dụng cục sạc mấy chấu thế;WHAT_CHARGER:cục sạc mấy chấu
+Sạc thường mấy tiếng mới đầy pin vậy;HOW_LONG_CHARGER:Sạc thường mấy tiếng mới đầy
+Pin xài bao lâu tiếng vậy;HOW_LONG_PIN:Pin xài bao lâu
+Xài chip gì vậy shop;WHAT_CHIP:Xài chip gì
+Camera trước nhiêu chấm vậy;WHAT_FRONT_CAMERA:Camera trước nhiêu chấm
+Xiaomi này là vỏ nhôm hay nhựa vậy;MANUFACTURER:Xiaomi|WHAT_PHONE_CASE:vỏ nhôm hay nhựa
+Máy này ram nhiêu?;WHAT_RAM:ram nhiêu
+Máy này dung lượng rom là 32 hay 64?;WHAT_ROM:dung lượng rom là 32 hay 64|ROM:32|ROM:64
+Có tai thỏ ko shop?;IS_EAR_RABBIT:Có tai thỏ ko
+Có tràn màn hình không?;IS_OVER_FLOW_SCREEN:Có tràn màn hình
+SS7+ có màn hình tràn không?;PHONE:SS7+|IS_OVER_FLOW_SCREEN:có màn hình tràn
+Con này có hỗ trợ 4g được không nhỉ?;IS_4G:có hỗ trợ 4g
+SS7+ có hỗ trợ 4g được không nhỉ?;PHONE:SS7+|IS_4G:có hỗ trợ 4g
+Này dùng 1 sim hay 2 sim;HOW_NUMBER_SIM:dùng 1 sim hay 2 sim
+Dùng sim ghép hay thường vậy bạn;WHAT_SIM:sim ghép hay thường
+Có chống nước không;IS_WATER_PROTECTED:Có chống nước không
+Iphone 7 chống nước không?;PHONE:Iphone 7|IS_WATER_PROTECTED:chống nước không
+Ủa máy cài android 6 hay 7;OS:android 6|OS:android 6 hay 7|WHAT_OS:cài android 6 hay 7
+Mua về có update lên 8 được không;CAN_UPDATE:Mua về có update lên|VERSION_TO_UPDATE:8
+Xiaomi này có cài sẵn tiếng Việt không, shop có hỗ trợ cài miễn phí hay phải tự cài;IS_VIETNAMESE_INSTALLED:có cài sẵn tiếng Việt không|MANUFACTURER:Xiaomi
+Iphone XS Max có hỗ trợ tiếng Việt không?;PHONE:Iphone XS Max|IS_SUPPORT_INSTALLED:có hỗ trợ tiếng Việt không
+Ủa này hàng từ Mỹ hay Đài Loan bạn;LOCATION:Mỹ|LOCATION:Đài Loan
+Bản Iphone XS này là quốc tế hả;PHONE:Iphone XS|IS_GLOBAL:Iphone XS này là quốc tế hả
+Phải mã hàng LL/A không;WHAT_CODE:Phải mã hàng LL/A không
+Ủa này là hàng nhập khẩu xách tay hay chính hãng vậy shop;WHAT_FROM_TYPE:hàng nhập khẩu xách tay hay chính hãng
+Này là mới đập hộp hay like new;IS_BRAND_NEW_OR_LIKE_NEW:mới đập hộp hay like new
+Chơi liên quân max setting được không;GAME:liên quân
+Chơi game liên tục 3h được không;HOW_LONG_PIN_PLAYING_GAME:Chơi game liên tục 3h được không
+Không biết con này chơi alpha 8 có lag không ae nhỉ;GAME:alpha 8|IS_FINE_WHILE_PLAYING:có lag không
+Ủa SS9 note còn ko vậy;PHONE:SS9 note
+Iphone XS xám bạc còn không;PHONE:Iphone XS|COLOR:xám bạc
+Còn màu nào khác không;WHAT_ELSE_COLOR:Còn màu nào khác không
+Ở Thái Nguyên còn Xiaomi red mi 4 không vậy;LOCATION:Thái Nguyên|PHONE:Xiaomi red mi 4
+Còn mã LL/A không shop;CODE:LL/A
+Còn bản ram 3gb không;RAM:3
+Còn bản 32gb không;ROM:32
+Cho xin địa chỉ ở Tiền Giang bạn ơi;LOCATION:Tiền Giang
+Ở Cần Thơ chỗ nào còn Iphone 8 plus đỏ vậy bạn;LOCATION:Cần Thơ|PHONE:Iphone 8 plus|COLOR:đỏ
+Hỏi tư vấn về trả góp;IS_NEEDED:Hỏi tư vấn về trả góp
+Em năm nay 18t, có bằng lái xe trả góp được không;YEAR_OLD:18|GIAY_TO:bằng lái xe
+Trả trước 30% là nhiêu tiền, rồi trả còn lại hết nhiều;HOW_MUCH_FIRST_PAY:30%|HOW_MUCH_LEFT:rồi trả còn lại hết nhiều
+Có hỗ trợ thanh toán qua thẻ tín dụng không;IS_SUPPORTED_BUYING_THROUGH_CREDIT:Có hỗ trợ thanh toán qua thẻ tín dụng không
+Có thanh toán qua thẻ tín dụng không;IS_SUPPORTED_BUYING_THROUGH_CREDIT:Có thanh toán qua thẻ tín dụng không
+Có hỗ trợ trả góp qua thẻ ngân hàng hay tín dụng không;IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT:Có hỗ trợ trả góp qua thẻ ngân hàng hay tín dụng
+Có trả góp qua thẻ ngân hàng hay tín dụng không;IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT:Có trả góp qua thẻ ngân hàng hay tín dụng không
+Cần giấy tờ gì để mang ra làm thủ tục trả góp được nhỉ;WHAT_NEEDED_PAPERS:Cần giấy tờ gì để mang ra làm thủ tục
+Kính cường lực bị vỡ có bảo hành không vậy;IS_BROKEN_GLASS:Kính cường lực bị vỡ có bảo hành không
+Vừa mua mà hư loa rồi, cứ rè rè mai ra đổi;IS_BROKEN_VOLUME:Vừa mua mà hư loa rồi
