@@ -1,14 +1,12 @@
 import requests
-import json
 
-from urls_to_crawl.cellphones_urls import CELLPHONES_URLS
-
-def get_crawl_cellphones():
+def get_crawl_cellphones(cellphones_urls = []):
     with open('crawl_results/comments_cellphones.csv', 'w', encoding="utf-8-sig") as file:
         print('*** START - Crawling from CellphoneS ***')
+        limit_comments = 50
 
-        for cellphones_url in CELLPHONES_URLS:
-            cellphones_true_api = "https://cellphones.izicomment.com/api/comments?url=https%3A%2F%2Fcellphones.com.vn%2F" + cellphones_url[26:] + "&sort_col=time_stamp&sort_order=desc&limit=100"
+        for cellphones_url in cellphones_urls:
+            cellphones_true_api = "https://cellphones.izicomment.com/api/comments?url=https%3A%2F%2Fcellphones.com.vn%2F" + cellphones_url[26:] + "&sort_col=time_stamp&sort_order=desc&limit=" + str(limit_comments)
             cellphones_comments = requests.get(cellphones_true_api).json()
 
             for comment_object in cellphones_comments["comments"]:
@@ -21,5 +19,5 @@ def get_crawl_cellphones():
 
                 file.write(comment)
                 file.write("\n")
-        
-        print('*** FINISHED - Crawling from CellphoneS ***')
+
+        print('*** FINISHED - Crawled from CellphoneS ***')
