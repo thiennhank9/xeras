@@ -231,7 +231,7 @@ class StoreInventory(models.Model):
     amount = models.IntegerField(blank=True)
 
     def __str__(self):
-        return 'StoreInventory: %s - amount: %s' % (self.productId.productName, self.amount)
+        return '%s - %s - amount: %s' % (self.storeId.storeName ,self.productId.productName, self.amount)
 
     class Meta:
         managed = True

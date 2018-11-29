@@ -8,10 +8,10 @@ from xeras.site2.models import PhoneInfo
 from xeras.site2.models import Installment
 from xeras.site2.models import SaleOff
 from xeras.site2.models import StoreInventory
+from django.db.models import Q
 
 import datetime
-
-from django.db.models import Q
+import re
 
 # high function
 
@@ -43,7 +43,7 @@ def get_field_phone_info(phone_name, field):
 
 
 def get_sale_off_by_phone_name(phone_name):
-    return SaleOff.objects.filter(productId__productName=phone_name).\
+    return SaleOff.objects.filter(Q(productId__productName__icontains=phone_name) | Q(productId__productOtherNames__icontains=phone_name)).\
         filter(dateStart__lte=datetime.date.today()).filter(dateEnd__gte=datetime.date.today())
 
 
@@ -56,7 +56,7 @@ def is_phone_sale_off(phone_name):
 
 
 def get_phone_from_country(phone_name, country):
-    list_phone_info_by_country = get_list_phone_info_by_name(phone_name).filter(fromCountry=country)
+    list_phone_info_by_country = get_list_phone_info_by_name(phone_name).filter(fromCountry__icontains=country)
     if list_phone_info_by_country.exists():
         return list_phone_info_by_country[0]
     else:
@@ -72,7 +72,7 @@ def get_phone_feature(phone_name):
 
 
 def get_list_store_inverter_by_phone_name(phone_name):
-    return StoreInventory.objects.filter(productId__productName=phone_name)
+    return StoreInventory.objects.filter(Q(productId__productName__icontains=phone_name) | Q(productId__productOtherNames__icontains=phone_name))
 
 
 def get_store_inverter(phone_name):
@@ -100,23 +100,23 @@ def get_store_by_location(where, *option, **options):
     # default
     list_store = store_manage.filter(province=where)
 
-    if store_manage.filter(province=where).exists():
-        list_store = store_manage.filter(province=where)
-    elif store_manage.filter(City=where).exists():
-        list_store = store_manage.filter(City=where)
-    elif 'district' in store_manage.filter(district=where):
-        list_store = store_manage.filter(district=where)
-    elif 'street' in store_manage.filter(street=where):
-        list_store = store_manage.filter(street=where)
+    if store_manage.filter(province__icontains=where).exists():
+        list_store = store_manage.filter(province__icontains=where)
+    elif store_manage.filter(City__icontains=where).exists():
+        list_store = store_manage.filter(City__icontains=where)
+    elif store_manage.filter(district__icontains=where).exists():
+        list_store = store_manage.filter(district__icontains=where)
+    elif store_manage.filter(street__icontains=where).exists():
+        list_store = store_manage.filter(street__icontains=where)
 
-    if list_store:
+    if list_store.exists():
         return [store.address1 for store in list_store]
     else:
         return None
 
 
 def get_info_installment_by_phone_name(phone_name):
-    list_installment = Installment.objects.filter(productId__productName=phone_name)
+    list_installment = Installment.objects.filter(Q(productId__productName__icontains=phone_name) | Q(productId__productOtherNames__icontains=phone_name))
     if list_installment.exists():
         return list_installment[0]
     else:
@@ -132,8 +132,8 @@ def get_info_installment_by_field_name(phone_name, field):
 
 
 def get_warranty_info_by_field_name(phone_name, field):
-    if Guarantee.objects.filter(productId__productName=phone_name).exists():
-        return Guarantee.objects.filter(productId__productName=phone_name)[0].__dict__[field]
+    if Guarantee.objects.filter(Q(productId__productName__icontains=phone_name) | Q(productId__productOtherNames__icontains=phone_name)).exists():
+        return Guarantee.objects.filter(Q(productId__productName__icontains=phone_name) | Q(productId__productOtherNames__icontains=phone_name))[0].__dict__[field]
     else:
         return None
 
@@ -332,7 +332,7 @@ def is_phone_can_update_os(phone_name, *option):
 
 def is_phone_support_in_language(phone_name, *option, **options):
     list_phone_info = get_list_phone_info_by_name(phone_name)
-    language_support = list_phone_info.filter(phoneLanguage__languageName=options['languageName'])
+    language_support = list_phone_info.filter(phoneLanguage__languageName__icontains=options['language_name'])
     if language_support.exists():
         return True
     else:
@@ -350,7 +350,7 @@ def get_phone_version(phone_name):
     return get_field_phone_info(phone_name, 'version')
 
 
-def get_phone_code(phone_name):
+def get_phone_code(phone_name, **options):
     phone_info = get_phone_info(phone_name)
     if phone_info is not None:
         return phone_info.phoneCode.code
@@ -366,7 +366,7 @@ def is_like_new(phone_name):
     phone_info = get_phone_info(phone_name)
     print(f'{phone_info.phoneProductId.productName} - {phone_info.ROM} GB - {phone_info.color}')
     if phone_info is not None:
-        if phone_info.status == 'like new':
+        if 'like new' in phone_info.status:
             return True
         else:
             return False
@@ -384,7 +384,7 @@ def get_feature_playing_game(phone_name, *option, **options):
         for game_info in list_game_info:
             game_info = game_info.split(",")
             game_name = game_info[0]
-            if game_name == options['game']:
+            if re.search(options['game'], game_name, re.IGNORECASE):
                 return game_info[1]
         return None
     else:
@@ -398,8 +398,8 @@ def get_time_can_play_feature(phone_name, *option, **options):
         for feature_time_using in list_feature_time_using:
             feature_time_using = feature_time_using.split(",")
             feature_name = feature_time_using[0]
-            if feature_name == options['feature']:
-                return feature_time_using[1]
+            if re.search(options['feature'], feature_name, re.IGNORECASE):
+                return feature_time_using[1].strip()
         return None
     else:
         return None
@@ -417,7 +417,7 @@ def is_stocking_phone_by_name(phone_name, *option, **options):
 
 def is_stocking_phone_by_color(phone_name, *option, **options):
     list_store_inverter = get_list_store_inverter_by_phone_name(phone_name).\
-        filter(productId__in=Product.objects.filter(productName=phone_name).filter(phoneinfo__color=options['color']))
+        filter(productId__in=Product.objects.filter(Q(productName__icontains=phone_name) | Q(productOtherNames__icontains=phone_name)).filter(phoneinfo__color__icontains=options['color']))
     if list_store_inverter.exists():
         return list_store_inverter[0].amount > 0
     else:
@@ -428,13 +428,13 @@ def get_phone_color(phone_name):
     list_phone_info = get_list_phone_info_by_name(phone_name)
     color = []
     for phone in list_phone_info:
-        color.append(phone.color)
+        color.append(phone.color.lower())
     return list(set(color))
 
 
 def is_stocking_phone_by_store(phone_name, *option, **options):
     list_store_inverter = get_list_store_inverter_by_phone_name(phone_name).\
-        filter(Q(storeId__City=options['where']) | Q(storeId__district=options['where']) | Q(storeId__City=options['where']))
+        filter(Q(storeId__City__icontains=options['where']) | Q(storeId__district__icontains=options['where']) | Q(storeId__City__icontains=options['where']))
     if list_store_inverter.exists():
         return list_store_inverter[0].amount > 0
     else:
@@ -443,7 +443,7 @@ def is_stocking_phone_by_store(phone_name, *option, **options):
 
 def is_stocking_phone_by_code(phone_name, *option, **options):
     list_store_inverter = get_list_store_inverter_by_phone_name(phone_name). \
-        filter(productId__in=Product.objects.filter(productName=phone_name).filter(phoneinfo__phoneCode__code=options['code']))
+        filter(productId__in=Product.objects.filter(Q(productName__icontains=phone_name) | Q(productOtherNames__icontains=phone_name)).filter(phoneinfo__phoneCode__code__icontains=options['code']))
     if list_store_inverter.exists():
         return list_store_inverter[0].amount > 0
     else:
@@ -452,7 +452,7 @@ def is_stocking_phone_by_code(phone_name, *option, **options):
 
 def is_stocking_phone_by_RAM(phone_name, *option, **options):
     list_store_inverter = get_list_store_inverter_by_phone_name(phone_name). \
-        filter(productId__in=Product.objects.filter(productName=phone_name).filter(phoneinfo__RAM=options['RAM']))
+        filter(productId__in=Product.objects.filter(Q(productName=phone_name) | Q(productOtherNames__icontains=phone_name)).filter(phoneinfo__RAM=options['RAM']))
     if list_store_inverter.exists():
         return list_store_inverter[0].amount > 0
     else:
@@ -461,7 +461,7 @@ def is_stocking_phone_by_RAM(phone_name, *option, **options):
 
 def is_stocking_phone_by_ROM(phone_name,  *option, **options):
     list_store_inverter = get_list_store_inverter_by_phone_name(phone_name). \
-        filter(productId__in=Product.objects.filter(productName=phone_name).filter(phoneinfo__ROM=options['ROM']))
+        filter(productId__in=Product.objects.filter(Q(productName=phone_name) | Q(productOtherNames__icontains=phone_name)).filter(phoneinfo__ROM=options['ROM']))
     if list_store_inverter.exists():
         return list_store_inverter[0].amount > 0
     else:
@@ -473,10 +473,12 @@ def is_stocking_phone_by_ROM(phone_name,  *option, **options):
 
 def get_list_store_have_phone(phone_name, *option, **options):
     list_store_inverter_in_location = get_store_by_location(where=options['where'])
-    list_store_inverter = StoreInventory.objects.filter(Q(storeId__address1__in=list_store_inverter_in_location)
-                                                                              | Q(amount__gte=0))
-    if list_store_inverter.exists():
-        return [store_inverter.storeId.address1 for store_inverter in list_store_inverter]
+    if list_store_inverter_in_location is not None:
+        list_store_inverter = StoreInventory.objects.filter(Q(storeId__address1__in=list_store_inverter_in_location), Q(productId__productName__icontains=phone_name) | Q(productId__productOtherNames__icontains=phone_name), Q(amount__gt=0))
+        if list_store_inverter.exists():
+            return [store_inverter.storeId.address1 for store_inverter in list_store_inverter]
+        else:
+            return None
     else:
         return None
 
@@ -489,8 +491,8 @@ def get_require_installment(phone_name):
 
 
 def get_store_payment(store_name):
-    if Store.objects.filter(storeName=store_name).exists():
-        return Store.objects.filter(storeName=store_name)[0].storePayment
+    if Store.objects.filter(storeName__icontains=store_name).exists():
+        return Store.objects.filter(storeName__icontains=store_name)[0].storePayment
     else:
         return None
 
