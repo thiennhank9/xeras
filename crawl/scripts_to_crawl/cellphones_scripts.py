@@ -1,7 +1,7 @@
 import requests
 
 def get_crawl_cellphones(cellphones_urls = []):
-    with open('crawl_results/comments_cellphones.csv', 'w', encoding="utf-8-sig") as file:
+    with open('crawl_results/cellphones_comments.csv', 'w', encoding="utf-8-sig") as file:
         print('*** START - Crawling from CellphoneS ***')
         limit_comments = 50
 

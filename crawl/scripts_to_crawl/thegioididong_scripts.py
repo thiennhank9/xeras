@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 def get_crawl_thegioididong(tgdd_urls = []):
-    with open('crawl_results/comments_thegioididong.csv', 'w', encoding="utf-8-sig") as file:
+    with open('crawl_results/thegioididong_comments.csv', 'w', encoding="utf-8-sig") as file:
         print('*** START - Crawling from TheGioiDiDong ***')
 
         for tgdd_url in tgdd_urls:
