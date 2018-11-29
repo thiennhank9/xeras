@@ -3,25 +3,29 @@ import pandas as pd
 from scripts_to_crawl.cellphones_scripts import get_crawl_cellphones
 from scripts_to_crawl.thegioididong_scripts import get_crawl_thegioididong
 from scripts_to_crawl.hoangha_scripts import get_crawl_hoangha
+from scripts_to_crawl.fpt_scripts import get_crawl_fpt
 
 # List sites to crawl, if you don't want to crawl, just comment that line
 SITES_TO_CRAWL = [
     # 'tgdd',
     # 'cellphones',
-    'hoangha'
+    # 'hoangha',
+    'fpt'
 ]
 
 FILES_ROOT_PATH = 'urls_to_crawl/'
 FILES_AND_PATHS = [
     ('tgdd', 'thegioididong_urls.csv'),
     ('cellphones', 'cellphones_urls.csv'),
-    ('hoangha', 'hoangha_urls.csv')
+    ('hoangha', 'hoangha_urls.csv'),
+    ('fpt', 'fpt_urls.csv')
 ]
 
 class CrawlAll:
     tgdd_urls = []
     cellphones_urls = []
     hoangha_urls = []
+    fpt_urls = []
 
     def load_urls_to_crawl(self):
         print("*** START - loading urls from files ***")
@@ -48,6 +52,8 @@ class CrawlAll:
                 self.cellphones_urls = site_urls
             if site == 'hoangha':
                 self.hoangha_urls = site_urls
+            if site == 'fpt':
+                self.fpt_urls = site_urls
 
         print("*** FINISHED - loaded urls from files ***")
 
@@ -60,6 +66,8 @@ class CrawlAll:
                 get_crawl_cellphones(self.cellphones_urls)
             if site == 'hoangha':
                 get_crawl_hoangha(self.hoangha_urls)
+            if site == 'fpt':
+                get_crawl_fpt(self.fpt_urls)
 
     def do_job_crawl(self):
         self.load_urls_to_crawl()

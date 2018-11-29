@@ -29,9 +29,9 @@ def get_crawl_hoangha(hoangha_urls = []):
                 comments_in_tags = soup.find_all("div", {"class": "comment-details"})
 
                 for comment in comments_in_tags:
-                    # Skip staff's comment
                     comment = str(comment)
-
+                    
+                    # Skip staff's comment
                     if ("<br/>") in comment:
                         continue
                     
