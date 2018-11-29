@@ -8,6 +8,7 @@ def type_question(*arguments, **keywords):
     if 'isSupportedInstallmentThroughCredit' in keywords:
         return 'hoi_yeu_cau_khi_tra_gop'
     if 'paper' in keywords:
+        # WHAT_NEEDED_PAPERS
         return 'hoi_tu_van_tra_gop'
     return 'hoi_tu_van_tra_gop'
     

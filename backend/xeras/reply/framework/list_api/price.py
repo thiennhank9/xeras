@@ -54,12 +54,12 @@ price_api = {
     'hoi_gia_theo_nguon_hang': {
         'positive_answer': [
             '''Chào bạn,
-            giá của sản phẩm {phone_name} xuất sứ từ {fromCountry} là {phone_price}. Hãy nhanh chân đến cửa hàng bạn nhé.
+            giá của sản phẩm {phone_name} xuất sứ từ {where} là {phone_price}. Hãy nhanh chân đến cửa hàng bạn nhé.
             Mong sớm nhận được phản hồi của bạn.'''
         ],
         'negative_answer': [
             '''Chào bạn,
-            hiện tại bên mình chưa có thông tin về sản phẩm {phone_name} từ {fromCountry}, bạn vui lòng để lại thông tin để nhận được thông báo sớm nhất nhé.
+            hiện tại bên mình chưa có thông tin về sản phẩm {phone_name} từ {where}, bạn vui lòng để lại thông tin để nhận được thông báo sớm nhất nhé.
             Mong sớm nhận được phản hồi của bạn.'''
         ],
         'answer_key': 'phone_price'

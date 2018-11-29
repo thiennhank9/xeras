@@ -24,7 +24,7 @@ def get_first_item_of_list(query_list):
 
 
 def get_list_phone_info_by_name(phone_name):
-    return PhoneInfo.objects.filter(phoneProductId__productName=phone_name)
+    return PhoneInfo.objects.filter(Q(phoneProductId__productName__icontains=phone_name) | Q(phoneProductId__productOtherNames__icontains=phone_name))
 
 
 def get_phone_info(phone_name):
@@ -143,20 +143,26 @@ def get_warranty_info_by_field_name(phone_name, field):
 def get_price_by_phone_name(phone_name, *option, **options):
     list_phone_info = get_list_phone_info_by_name(phone_name)
     phone_info = {}
-    if options['ROM'] is not None and options['color'] is not None:
-        phone_info = list_phone_info.filter(ROM=options['ROM']).filter(color=options['color'])[0]
-    elif options['ROM'] is not None:
-        phone_info = list_phone_info.filter(ROM=options['ROM'])[0]
-    elif options['color'] is not None:
-        phone_info = list_phone_info.filter(color=options['color'])[0]
+
+    if 'ROM' in options and 'color' in options:
+        phone_info = list_phone_info.filter(ROM=options['ROM']).filter(color__icontains=options['color'])
+    elif 'ROM' in options:
+        phone_info = list_phone_info.filter(ROM=options['ROM'])
+    elif 'color' in options:
+        phone_info = list_phone_info.filter(Q(color__icontains=options['color']))
     else:
-        # get the first phone
-        phone_info = PhoneInfo.objects.filter(phoneProductId__productName=phone_name)[0]
+        phone_info = list_phone_info
+    
+    if phone_info.exists():
+        phone_info = phone_info[0]
+    else:
+        return None
+
     return phone_info.price1
 
 
-def get_price_by_sale_off(phone_name, *option):
-    list_sale_off = SaleOff.objects.filter(productId__productName=phone_name).\
+def get_price_by_sale_off(phone_name, **option):
+    list_sale_off = SaleOff.objects.filter(Q(productId__productName__icontains=phone_name) | Q(productId__productOtherNames__icontains=phone_name)).\
         filter(dateStart__lte=datetime.date.today()).filter(dateEnd__gte=datetime.date.today())
     sale_off = get_first_item_of_list(list_sale_off)
     if sale_off is not None:
@@ -172,8 +178,8 @@ def get_price_for_old(phone_name, *option):
 
 
 def get_price_by_store(phone_name,  *option, **options):
-    list_store_inventory = StoreInventory.objects.filter(storeId__City=options['where']).\
-        filter(productId__productName=phone_name)
+    list_store_inventory = StoreInventory.objects.filter(Q(storeId__City__icontains=options['where']) | Q(storeId__province__icontains=options['where']) | Q(storeId__street__icontains=options['where']) | Q(storeId__district__icontains=options['where'])).\
+        filter(Q(productId__productName__icontains=phone_name) | Q(productId__productOtherNames__icontains=phone_name))
     store_inventory = get_first_item_of_list(list_store_inventory)
     if store_inventory is not None:
         phone_info = get_list_phone_info_by_name(store_inventory.productId.productName)[0]
@@ -183,7 +189,7 @@ def get_price_by_store(phone_name,  *option, **options):
 
 
 def get_price_from_country(phone_name, *option, **options):
-    phone_info = get_phone_from_country(phone_name, options['fromCountry'])
+    phone_info = get_phone_from_country(phone_name, options['where'])
     if phone_info is not None:
         return phone_info.price1
     else:
