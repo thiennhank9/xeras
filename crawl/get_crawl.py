@@ -2,22 +2,26 @@ import pandas as pd
 
 from scripts_to_crawl.cellphones_scripts import get_crawl_cellphones
 from scripts_to_crawl.thegioididong_scripts import get_crawl_thegioididong
+from scripts_to_crawl.hoangha_scripts import get_crawl_hoangha
 
 # List sites to crawl, if you don't want to crawl, just comment that line
 SITES_TO_CRAWL = [
-    'tgdd',
-    'cellphones'
+    # 'tgdd',
+    # 'cellphones',
+    'hoangha'
 ]
 
 FILES_ROOT_PATH = 'urls_to_crawl/'
 FILES_AND_PATHS = [
     ('tgdd', 'thegioididong_urls.csv'),
-    ('cellphones', 'cellphones_urls.csv')
+    ('cellphones', 'cellphones_urls.csv'),
+    ('hoangha', 'hoangha_urls.csv')
 ]
 
 class CrawlAll:
     tgdd_urls = []
     cellphones_urls = []
+    hoangha_urls = []
 
     def load_urls_to_crawl(self):
         print("*** START - loading urls from files ***")
@@ -42,6 +46,8 @@ class CrawlAll:
                 self.tgdd_urls = site_urls
             if site == 'cellphones':
                 self.cellphones_urls = site_urls
+            if site == 'hoangha':
+                self.hoangha_urls = site_urls
 
         print("*** FINISHED - loaded urls from files ***")
 
@@ -52,6 +58,8 @@ class CrawlAll:
                 get_crawl_thegioididong(self.tgdd_urls)
             if site == 'cellphones':
                 get_crawl_cellphones(self.cellphones_urls)
+            if site == 'hoangha':
+                get_crawl_hoangha(self.hoangha_urls)
 
     def do_job_crawl(self):
         self.load_urls_to_crawl()
