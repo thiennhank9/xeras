@@ -3,6 +3,12 @@ import pandas as pd
 from scripts_to_crawl.cellphones_scripts import get_crawl_cellphones
 from scripts_to_crawl.thegioididong_scripts import get_crawl_thegioididong
 
+# List sites to crawl, if you don't want to crawl, just comment that line
+SITES_TO_CRAWL = [
+    'tgdd',
+    'cellphones'
+]
+
 FILES_ROOT_PATH = 'urls_to_crawl/'
 FILES_AND_PATHS = [
     ('tgdd', 'thegioididong_urls.csv'),
@@ -17,6 +23,10 @@ class CrawlAll:
         print("*** START - loading urls from files ***")
 
         for site, path in FILES_AND_PATHS:
+            # Doesn't do crawl job if site is not in Sites to crawl
+            if site not in SITES_TO_CRAWL:
+                continue
+            
             true_path = FILES_ROOT_PATH + path
             csv_file_pd = pd.read_csv(true_path, sep=';')
 
@@ -36,8 +46,12 @@ class CrawlAll:
         print("*** FINISHED - loaded urls from files ***")
 
     def start_crawl(self):
-        # get_crawl_thegioididong(self.tgdd_urls)
-        get_crawl_cellphones(self.cellphones_urls)
+        # Doesn't do crawl job if site is not in Sites to crawl
+        for site in SITES_TO_CRAWL:
+            if site == 'tgdd':
+                get_crawl_thegioididong(self.tgdd_urls)
+            if site == 'cellphones':
+                get_crawl_cellphones(self.cellphones_urls)
 
     def do_job_crawl(self):
         self.load_urls_to_crawl()
