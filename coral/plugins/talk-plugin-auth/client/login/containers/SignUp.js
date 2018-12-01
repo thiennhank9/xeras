@@ -11,6 +11,7 @@ import { t } from 'plugin-api/beta/client/services';
 class SignUpContainer extends Component {
   state = {
     username: '',
+    gender: '',
     passwordRepeat: '',
     usernameError: null,
     emailError: null,
@@ -55,6 +56,7 @@ class SignUpContainer extends Component {
     const data = {
       username: this.state.username,
       email: this.props.email,
+      gender: this.state.gender,
       password: this.props.password,
       passwordRepeat: this.state.passwordRepeat,
     };
@@ -66,6 +68,8 @@ class SignUpContainer extends Component {
 
   setUsername = username => this.setState({ username });
   setPasswordRepeat = passwordRepeat => this.setState({ passwordRepeat });
+
+  setGender = gender => this.setState({ gender });
 
   handleForgotPasswordLink = () => {
     this.props.setView(views.FORGOT_PASSWORD);
@@ -97,7 +101,9 @@ class SignUpContainer extends Component {
         onPasswordRepeatChange={this.setPasswordRepeat}
         onForgotPasswordLink={this.handleForgotPasswordLink}
         onSignInLink={this.handleSignInLink}
+        onGenderChange={this.setGender}
         username={this.state.username}
+        gender={this.state.gender}
         email={this.props.email}
         password={this.props.password}
         passwordRepeat={this.state.passwordRepeat}

@@ -9,7 +9,7 @@ module.exports = {
     hooks: {
         RootMutation: {
           createComment: {
-            post: async (obj, args, moduleArgs, info, comment) => {
+            post: async (obj, args, {user}, info, comment) => {
                 // adapter.excute(obj, args, moduleArgs, info, comment);
                 let assert = await AssetsService.findById(comment['comment'].asset_id);
                 let assertUrl = assert.url;
@@ -17,6 +17,9 @@ module.exports = {
                 let response = {};
 
                 console.log("---------- run mobilephone-site plugin ----------");
+
+                const useremail = user['profiles'][0]['id'];
+                cloneUser = {...user['_doc'], useremail};
 
                 if (_.includes(assertUrl, site1)) {    
                     site = 'site1';
@@ -30,7 +33,8 @@ module.exports = {
                 const dataToNLP = {
                     'comment': comment['comment'].body,
                     'site': site,
-                    'phone_name': 'iphone xs max'
+                    'phone_name': 'iphone xs max',
+                    'user': cloneUser
                 }
 
                 

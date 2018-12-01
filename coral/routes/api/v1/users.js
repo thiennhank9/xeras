@@ -8,7 +8,7 @@ const Limit = require('../../../services/limit');
 
 // create a local user.
 router.post('/', async (req, res, next) => {
-  const { email, password, username } = req.body;
+  const { email, password, username, gender } = req.body;
   const redirectUri = getRedirectUri(req);
 
   try {
@@ -17,8 +17,11 @@ router.post('/', async (req, res, next) => {
       req.context,
       email,
       password,
-      username
+      username,
+      gender
     );
+
+    console.log("gener:", gender);
 
     // Send an email confirmation. The Front end will know about the
     // requireEmailConfirmation as it's included in the settings get endpoint.

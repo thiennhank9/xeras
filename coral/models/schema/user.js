@@ -68,6 +68,13 @@ const User = new Schema(
       required: true,
     },
 
+    // This is user gender
+    gender: {
+      type: String,
+      required: true,
+      default: "Nữ"
+    },
+
     // TODO: find a way that we can instead utilize MongoDB 3.4's collation
     // options to build the index in a case insenstive manner:
     // https://docs.mongodb.com/manual/reference/collation/

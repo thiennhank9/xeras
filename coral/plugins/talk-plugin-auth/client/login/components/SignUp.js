@@ -21,6 +21,7 @@ class SignUp extends React.Component {
   handleUsernameChange = e => this.props.onUsernameChange(e.target.value);
   handleEmailChange = e => this.props.onEmailChange(e.target.value);
   handlePasswordChange = e => this.props.onPasswordChange(e.target.value);
+  handleGenderChange = e => this.props.onGenderChange(e.target.value);
   handlePasswordRepeatChange = e =>
     this.props.onPasswordRepeatChange(e.target.value);
 
@@ -53,6 +54,7 @@ class SignUp extends React.Component {
       requireEmailConfirmation,
       success,
       blocked,
+      gender
     } = this.props;
 
     return (
@@ -86,6 +88,16 @@ class SignUp extends React.Component {
                 showErrors={!!usernameError}
                 errorMsg={usernameError}
                 onChange={this.handleUsernameChange}
+                autoComplete="off"
+                autoCapitalize="none"
+              />
+              <TextField
+                id="gender"
+                type="text"
+                label={t('gender')}
+                value={gender}
+                onChange={this.handleGenderChange}
+                style={{ fontSize: 16 }}
                 autoComplete="off"
                 autoCapitalize="none"
               />
