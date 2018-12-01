@@ -13,7 +13,7 @@ class GetNameEntities:
         csv_file_pd = pd.read_csv('xeras/nlp/ner/data/spacy_ner_train.csv', sep=';')
 
         for index, row in csv_file_pd.iterrows():
-            sentence = row["sentence"]
+            sentence = row["sentence"].lower()
             temp_entities = row["entities"]
 
             temp_entities = temp_entities.split("|")
@@ -21,7 +21,7 @@ class GetNameEntities:
             entities = []
             for entity in temp_entities:
                 two_str = entity.split(":")
-                two_str[1] = two_str[1].strip()
+                two_str[1] = two_str[1].strip().lower()
                 index_start = sentence.find(two_str[1])
                 index_end = index_start + len(two_str[1])
                 entities.append((index_start, index_end, two_str[0]))
