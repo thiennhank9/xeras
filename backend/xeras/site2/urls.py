@@ -32,4 +32,9 @@ urlpatterns = [
     path('get_installment_paper_needed/', views.get_installment_paper_needed),
     path('get_store_payment/', views.get_store_payment),
     path('get_warranty_note/', views.get_warranty_note),
+    path('get_phone_chip_info/', views.get_phone_chip_info),
+    path('get_phone_front_camera_info/', views.get_phone_front_camera_info),
+    path('is_phone_has_4G/', views.is_phone_has_4G),
+    path('is_phone_has_water_protected/', views.is_phone_has_water_protected),
+    path('is_stocking_phone_by_ROM/', views.is_stocking_phone_by_ROM),
 ]

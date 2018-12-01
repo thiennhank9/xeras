@@ -28,7 +28,7 @@ stocking_api = {
     'hoi_con_mau_khac_khong': {
         'positive_answer': [
             '''Chào bạn, 
-            hiện tại điện thoại {phone_name} có các màu {','.join(list_phone_color)}, bạn hãy nhanh chân đến cửa hàng gần nhất nhé,
+            hiện tại điện thoại {phone_name} có các màu {list_phone_color}, bạn hãy nhanh chân đến cửa hàng gần nhất nhé,
             mong sớm nhận được phản hồi của bạn.'''
         ],
         'negative_answer': [
@@ -67,7 +67,7 @@ stocking_api = {
     'hoi_con_hang_theo_ram': {
         'positive_answer': [
             '''Chào bạn, 
-            điện thoại {phone_name} {RAM} vẫn còn hàng ạ, bạn hãy nhanh chân đến cửa hàng gần nhất nhé,
+            điện thoại {phone_name} {RAM}GB vẫn còn hàng ạ, bạn hãy nhanh chân đến cửa hàng gần nhất nhé,
             mong sớm nhận được phản hồi của bạn.'''
         ],
         'negative_answer': [
@@ -80,7 +80,7 @@ stocking_api = {
     'hoi_con_hang_theo_rom': {
         'positive_answer': [
             '''Chào bạn, 
-            điện thoại {phone_name} {ROM} vẫn còn hàng ạ, bạn hãy nhanh chân đến cửa hàng gần nhất nhé,
+            điện thoại {phone_name} {ROM}GB vẫn còn hàng ạ, bạn hãy nhanh chân đến cửa hàng gần nhất nhé,
             mong sớm nhận được phản hồi của bạn.'''
         ],
         'negative_answer': [

@@ -80,7 +80,7 @@ hardware_api = {
     'hoi_ve_ram': {
         'positive_answer': [
             '''Chào bạn, 
-            sản phẩm sử dụng ram {ram_info} bạn nhé,
+            sản phẩm sử dụng ram {ram_info}GB bạn nhé,
             mong sớm nhận được phản hồi của bạn.'''
         ],
         'negative_answer': [
@@ -93,7 +93,7 @@ hardware_api = {
     'hoi_ve_rom': {
         'positive_answer': [
             '''Chào bạn, 
-            sản phẩm sử dụng rom {rom_info} bạn nhé,
+            sản phẩm sử dụng rom {rom_info}GB bạn nhé,
             mong sớm nhận được phản hồi của bạn.'''
         ],
         'negative_answer': [

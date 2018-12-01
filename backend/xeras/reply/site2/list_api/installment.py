@@ -9,5 +9,8 @@ installment_api = {
     },
     'hoi_ho_tro_thanh_toan_the_dua_tren_cua_hang': {
         'api': api.get_store_payment
+    },
+    'hoi_ho_tro_thanh_toan_the': {
+        'api': api.get_installment_payment
     }
 }

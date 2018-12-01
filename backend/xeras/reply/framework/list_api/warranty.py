@@ -2,7 +2,7 @@ warranty_api = {
     'hoi_thong_tin_bao_hanh': {
         'positive_answer': [
             '''Chào bạn, 
-            bạn tham khảo thông tin bảo hành sau nhé: {warranty_note},
+            đây là các yêu cầu của bên mình khi tiếp nhận bảo hành: {warranty_note},
             mong sớm nhận được phản hồi của bạn.'''
         ],
         'negative_answer': [

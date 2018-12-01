@@ -2,7 +2,7 @@ price_api = {
     'hoi_gia_mau_rom': {
         'positive_answer': [
             '''Chào bạn, 
-            giá của sản phẩm {phone_name} hiện tại là {phone_price}
+            giá của sản phẩm {phone_name} hiện tại là {phone_price}00.000 triệu đồng
             mong sớm nhận được phản hồi của bạn.'''
         ],
         'negative_answer': [
@@ -15,7 +15,7 @@ price_api = {
     'hoi_gia_khuyen_mai': {
         'positive_answer': [
             '''Chào bạn,
-            giá của sản phẩm {phone_name} sau khuyến mãi là {phone_price}. Hãy nhanh chân đến cửa hàng bạn nhé.
+            giá của sản phẩm {phone_name} sau khuyến mãi là {phone_price}00.000 triệu đồng. Hãy nhanh chân đến cửa hàng bạn nhé.
             Mong sớm nhận được phản hồi của bạn.'''
         ],
         'negative_answer': [
@@ -28,7 +28,7 @@ price_api = {
     'hoi_gia_theo_dia_diem': {
         'positive_answer': [
             '''Chào bạn,
-            giá của sản phẩm {phone_name} ở {where} là {phone_price}. Hãy nhanh chân đến cửa hàng bạn nhé.
+            giá của sản phẩm {phone_name} ở {where} là {phone_price}00.000 triệu đồng. Hãy nhanh chân đến cửa hàng bạn nhé.
             Mong sớm nhận được phản hồi của bạn.'''
         ],
         'negative_answer': [
@@ -41,7 +41,7 @@ price_api = {
     'hoi_gia_so_sanh': {
         'positive_answer': [
             '''Chào bạn,
-            giá của sản phẩm {phone_name} {firstPhone['ROM']} và {phone_name} {secondPhone['ROM']} chênh nhau {phone_price}. Hãy nhanh chân đến cửa hàng bạn nhé.
+            giá của sản phẩm {phone_name} {firstPhone[ROM]} và {phone_name} {secondPhone[ROM]} chênh nhau {phone_price}00.000 triệu đồng. Hãy nhanh chân đến cửa hàng bạn nhé.
             Mong sớm nhận được phản hồi của bạn.'''
         ],
         'negative_answer': [
@@ -54,7 +54,7 @@ price_api = {
     'hoi_gia_theo_nguon_hang': {
         'positive_answer': [
             '''Chào bạn,
-            giá của sản phẩm {phone_name} xuất sứ từ {where} là {phone_price}. Hãy nhanh chân đến cửa hàng bạn nhé.
+            giá của sản phẩm {phone_name} xuất sứ từ {where} là {phone_price}00.000 triệu đồng. Hãy nhanh chân đến cửa hàng bạn nhé.
             Mong sớm nhận được phản hồi của bạn.'''
         ],
         'negative_answer': [

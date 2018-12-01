@@ -2,7 +2,7 @@ sale_off_api = {
     'hoi_do_tang_kem_khuyen_mai': {
         'positive_answer': [
             '''Chào bạn, 
-            hiện tại bên mình có chương trình khuyến mãi, khi mua {phone_name} sẽ có tặng kèm {','.join(list_giff)}.
+            hiện tại bên mình có chương trình khuyến mãi, khi mua {phone_name} sẽ có tặng kèm {list_giff}.
             Bạn hãy nhanh chóng tới cửa hàng nhé.
             mong sớm nhận được phản hồi của bạn.'''
         ],

@@ -6,7 +6,7 @@ Còn đang giảm giá không shop ơi;IS_SALE_OFF:đang giảm giá
 Iphone X bản 64gb vàng đốm giờ giá nhiêu vậy?;PHONE:Iphone X|ROM:64|COLOR:vàng
 Giảm giá 1tr4 là còn 3tr6 phải không bạn;IS_PRICE_AFTER_SALE_OFF_PRICE:Giảm giá 1tr4 là còn 3tr6
 Ở Thái Nguyên giá SS8+ giờ nhiêu;LOCATION:Thái Nguyên|PHONE:SS8+
-Mình muốn mua Iphone X hàng nhập khẩu từ Mỹ giá nhiêu;PHONE:Iphone X|LOCATION:Mỹ
+Mình muốn mua Iphone X hàng nhập khẩu từ Mỹ giá nhiêu;PHONE:Iphone X|LOCATION:Mỹ|IS_PHONE_FROM:hàng nhập khẩu
 Bản 64gb mắc hơn 32gb nhiêu;IS_COMPARE:mắc hơn|ROM:64|ROM:32
 Giá 22tr2 là tính thuế VAT 10% chưa shop;MONEY:22tr2|TAX:10%|IS_INCLUDE_TAX:thuế VAT
 Tính thuế nữa là giá nhiêu vậy bạn;IF_INCLUDE_TAX:Tính thuế nữa
@@ -26,6 +26,7 @@ Camera trước nhiêu chấm vậy;WHAT_FRONT_CAMERA:Camera trước
 Xiaomi này là vỏ nhôm hay nhựa vậy;MANUFACTURER:Xiaomi|WHAT_PHONE_CASE:vỏ nhôm hay nhựa
 Máy này ram nhiêu?;WHAT_RAM:ram nhiêu
 Máy này dung lượng rom là 32 hay 64?;WHAT_ROM:dung lượng rom là|ROM:32|ROM:64
+Màn hình con SS9+ nhiêu inch nhỉ;PHONE:SS9+|WHAT_INCH:nhiêu inch nhỉ
 Có tai thỏ ko shop?;IS_EAR_RABBIT:tai thỏ
 Có tràn màn hình không?;IS_OVER_FLOW_SCREEN:tràn màn hình
 SS7+ có màn hình tràn không?;PHONE:SS7+|IS_OVER_FLOW_SCREEN:màn hình tràn
@@ -63,6 +64,6 @@ Có hỗ trợ thanh toán qua thẻ tín dụng không;IS_SUPPORTED_BUYING_THRO
 Có thanh toán qua thẻ tín dụng không;IS_SUPPORTED_BUYING_THROUGH_CREDIT:thanh toán qua thẻ tín dụng
 Có hỗ trợ trả góp qua thẻ ngân hàng hay tín dụng không;IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT:trả góp qua thẻ ngân hàng
 Có trả góp qua thẻ ngân hàng hay tín dụng không;IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT:trả góp qua thẻ ngân hàng
-Cần giấy tờ gì để mang ra làm thủ tục trả góp được nhỉ;WHAT_NEEDED_PAPERS:Cần giấy tờ gì
+Cần giấy tờ gì để mang ra làm thủ tục trả góp được nhỉ;WHAT_NEEDED_PAPERS:Cần giấy tờ gì
 Kính cường lực bị vỡ có bảo hành không vậy;IS_BROKEN_GLASS:Kính cường lực bị vỡ
 Vừa mua mà hư loa rồi, cứ rè rè mai ra đổi;IS_BROKEN_VOLUME:hư loa

@@ -23,11 +23,6 @@ from xeras.reply.framework.main import get_answer_by_question_type
 from xeras.nlp.nlp import NLP
 
 
-global tcp
-tcp = NLP()
-tcp.setup()
-
-
 @csrf_exempt
 def test_api(request):    
     data = {}

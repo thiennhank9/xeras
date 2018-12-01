@@ -3,18 +3,20 @@ from xeras.reply.framework.call_api import save_response_answer_by_api
 from xeras.reply.framework.detect_answer import get_answer
 from xeras.reply.framework.factory_api_by_site import concat_api_from_site
 from xeras.nlp.nlp import NLP
+from xeras.reply.framework.factory_entity_from_ner.price import get_entity_for_compare_price
 
 
-# global tcp
-# tcp = NLP()
-# tcp.setup()
+global tcp
+tcp = NLP()
+tcp.setup()
 
 
 # special key from ner to normal key for query database
 mapping_key = {
     'PHONE': 'phone_name',
     'LOCATION': 'where',
-    'ROM': 'ROM'
+    'ROM': 'ROM',
+    'RAM': 'RAM'
 }
 
 
@@ -31,12 +33,12 @@ def get_answer_by_question_type(*arguments, **keywords):
     keywords['detail_question_type'] = detail_question_type
     combine_api = concat_api_from_site(*arguments, **keywords)
     print('nlp_predict_object:', nlp_predict_object)
-    print('entities:', entities)
+    # print('entities:', entities)
 
     # predict answer
     keywords = save_response_answer_by_api(combine_api, *arguments, **keywords)
     answer = get_answer(combine_api, *arguments, **keywords)
-    print('keywords:', keywords)
+    # print('keywords:', keywords)
     return answer
     # return call_api_and_get_answer(*arguments, **keywords)
 
@@ -53,6 +55,11 @@ def get_general_question_type(**predict_object):
 
 def get_entities_from_predict_object(**predict_object):
     entities = predict_object['entities']
+    
+    list_key = [entity[0] for entity in entities]
+    if 'IS_COMPARE' in list_key:
+        return get_entity_for_compare_price(mapping_key, **predict_object)
+
     object_entities = {}
     for entity in entities:
         entity_key = entity[0]

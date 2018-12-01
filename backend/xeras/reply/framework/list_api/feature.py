@@ -15,7 +15,7 @@ feature_api = {
     'hoi_thoi_gian_choi_game': {
         'positive_answer': [
             '''Chào bạn, 
-            điện thoại có thể chơi game {game} tầm {game_time} tiếng bạn nhé,
+            điện thoại có thể chơi game tầm {game_time} tiếng bạn nhé,
             mong sớm nhận được phản hồi của bạn.'''
         ],
         'negative_answer': [

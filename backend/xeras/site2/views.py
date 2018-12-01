@@ -24,20 +24,9 @@ from xeras.nlp.text_classification.main import TextClassificationPredict
 def get_price_by_phone_name(request):
     if request.method == 'POST':
         data = JSONParser().parse(request)
-        phone_name = data['phone_name']
-
-        if 'ROM' in data:
-            ROM = data['ROM']
-        else:
-            ROM = None
-
-        if 'color' in data:
-            color = data['color']
-        else:
-            color = None
 
         try:
-            result = api.get_price_by_phone_name(phone_name=phone_name, ROM=ROM, color=color)
+            result = api.get_price_by_phone_name(**data)
             return JsonResponse({'result': result}, status=201)
         except ValueError:
             return JsonResponse({'error': ValueError}, status=400)
@@ -78,15 +67,9 @@ def get_price_by_store(request):
 def get_price_from_country(request):
     if request.method == 'POST':
         data = JSONParser().parse(request)
-        phone_name = data['phone_name']
-
-        if 'fromCountry' in data:
-            fromCountry = data['fromCountry']
-        else:
-            fromCountry = None
 
         try:
-            result = api.get_price_from_country(phone_name=phone_name, fromCountry=fromCountry)
+            result = api.get_price_from_country(**data)
             return JsonResponse({'result': result}, status=201)
         except ValueError:
             return JsonResponse({'error': ValueError}, status=400)
@@ -109,7 +92,7 @@ def get_compare_price(request):
             secondPhone = None
 
         try:
-            result = api.get_compare_price(phone_name=phone_name, firstPhone=firstPhone, secondPhone=secondPhone)
+            result = api.get_compare_price(**data)
             return JsonResponse({'result': result}, status=201)
         except ValueError:
             return JsonResponse({'error': ValueError}, status=400)
@@ -194,6 +177,54 @@ def get_phone_battery_time_use(request):
 
 
 @csrf_exempt
+def get_phone_chip_info(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+
+    try:
+        result = api.get_phone_chip_info(**data)
+        return JsonResponse({'result': result}, status=201)
+    except ValueError:
+        return JsonResponse({'error': ValueError}, status=400)
+
+
+@csrf_exempt
+def get_phone_front_camera_info(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+
+    try:
+        result = api.get_phone_front_camera_info(**data)
+        return JsonResponse({'result': result}, status=201)
+    except ValueError:
+        return JsonResponse({'error': ValueError}, status=400)
+
+
+@csrf_exempt
+def is_phone_has_water_protected(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+
+    try:
+        result = api.is_phone_has_water_protected(**data)
+        return JsonResponse({'result': result}, status=201)
+    except ValueError:
+        return JsonResponse({'error': ValueError}, status=400)
+
+
+@csrf_exempt
+def is_phone_has_4G(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+
+    try:
+        result = api.is_phone_has_4G(**data)
+        return JsonResponse({'result': result}, status=201)
+    except ValueError:
+        return JsonResponse({'error': ValueError}, status=400)
+
+
+@csrf_exempt
 def get_phone_os_info(request):
     if request.method == 'POST':
         data = JSONParser().parse(request)
@@ -210,15 +241,9 @@ def get_phone_os_info(request):
 def is_phone_support_in_language(request):
     if request.method == 'POST':
         data = JSONParser().parse(request)
-        phone_name = data['phone_name']
-
-        if 'languageName' in data:
-            languageName = data['languageName']
-        else:
-            languageName = None
-
+        
         try:
-            result = api.is_phone_support_in_language(phone_name=phone_name, languageName=languageName)
+            result = api.is_phone_support_in_language(**data)
             return JsonResponse({'result': result}, status=201)
         except ValueError:
             return JsonResponse({'error': ValueError}, status=400)
@@ -231,7 +256,7 @@ def get_phone_code(request):
         phone_name = data['phone_name']
 
         try:
-            result = api.get_phone_code(phone_name=phone_name)
+            result = api.get_phone_code(**data)
             return JsonResponse({'result': result}, status=201)
         except ValueError:
             return JsonResponse({'error': ValueError}, status=400)
@@ -275,7 +300,7 @@ def get_feature_playing_game(request):
             game = None
 
         try:
-            result = api.get_feature_playing_game(phone_name=phone_name,game=game)
+            result = api.get_feature_playing_game(**data)
             return JsonResponse({'result': result}, status=201)
         except ValueError:
             return JsonResponse({'error': ValueError}, status=400)
@@ -374,6 +399,19 @@ def is_stocking_phone_by_code(request):
 
         try:
             result = api.is_stocking_phone_by_code(phone_name=phone_name, code=code)
+            return JsonResponse({'result': result}, status=201)
+        except ValueError:
+            return JsonResponse({'error': ValueError}, status=400)
+
+
+@csrf_exempt
+def is_stocking_phone_by_ROM(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        phone_name = data['phone_name']
+
+        try:
+            result = api.is_stocking_phone_by_ROM(**data)
             return JsonResponse({'result': result}, status=201)
         except ValueError:
             return JsonResponse({'error': ValueError}, status=400)

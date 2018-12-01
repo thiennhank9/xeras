@@ -77,3 +77,5 @@ backend/**/migrations/*
 !backend/**/migrations/__init__.py
 
 .vscode/*
+
+sites/drupal/sites/default/files/php/twig

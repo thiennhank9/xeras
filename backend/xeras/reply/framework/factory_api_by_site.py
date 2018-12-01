@@ -13,7 +13,7 @@ def concat_api_from_site(*arguments, **keywords):
         current_api = site2_list_api
 
     for detail_question_type in default_api:
-        replace_api_from_site(detail_question_type, default_api, current_api)    
+        replace_api_from_site(detail_question_type, default_api, current_api)
         concat_answer_from_site(detail_question_type, default_api, current_api)
     return default_api
 
