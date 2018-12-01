@@ -33,7 +33,6 @@ def get_answer_by_question_type(*arguments, **keywords):
     keywords['detail_question_type'] = detail_question_type
     combine_api = concat_api_from_site(*arguments, **keywords)
     print('nlp_predict_object:', nlp_predict_object)
-    # print('entities:', entities)
 
     # predict answer
     keywords = save_response_answer_by_api(combine_api, *arguments, **keywords)

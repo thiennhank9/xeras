@@ -11,3 +11,4 @@ def type_question(*arguments, **keywords):
         return 'hoi_gia_theo_nguon_hang'
     if 'where' in keywords:
         return 'hoi_gia_theo_dia_diem'
+    return 'hoi_gia_mau_rom'
