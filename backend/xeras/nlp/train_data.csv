@@ -1,0 +1,3 @@
+sentence;type;entities
+Bản màu vàng còn hàng ở Q9 TPHCM ko shop;hoi_gia;COLOR:màu vàng|LOCATION:Q9 TPHCM
+Còn đang giảm giá không shop ơi;hoi_giam_gia;IS_SALE_OFF:đang giảm giá

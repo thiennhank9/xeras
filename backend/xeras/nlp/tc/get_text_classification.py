@@ -1,8 +1,7 @@
 import pandas as pd
 from .libs import SVMModel
 
-
-class TextClassificationPredict(object):
+class GetTextClassification(object):
     train_data_df = []
     model_predict = {}
     model = None
@@ -10,29 +9,20 @@ class TextClassificationPredict(object):
     def __init__(self):
         self.test = None
 
-    def pre_train(self):
-        train_data = []
-
-        # print('--- Training data ---')
-        # Read data train from file train.csv
-        csv_file_pd = pd.read_csv('xeras/nlp/text_classification/data/train_data.csv', sep=';')
-        # csv_file_pd = pd.read_csv('text_classification/data/train_data.csv', sep=';')
-        
-        for index, row in csv_file_pd.iterrows():
-            train_data.append(
-                {"feature": row["sentence"], "target": row["type"]})
-        
+    def pre_train(self, tc_train_data = []):
         # Add train data to data frame
-        self.train_data_df = pd.DataFrame(train_data)
+        print("--- TC: Loading train data ---")
+        self.train_data_df = pd.DataFrame(tc_train_data)
 
     def build_model(self):
+        print("--- TC: Building model ---")
         # Build model from train data
         model = SVMModel()
         self.model_predict = model.clf.fit(
             self.train_data_df.feature, self.train_data_df.target)
 
-    def setup(self):
-        self.pre_train()
+    def setup(self, tc_train_data = []):
+        self.pre_train(tc_train_data)
         self.build_model()
         # print("--- Text classification Setuped ---")
 
@@ -42,6 +32,7 @@ class TextClassificationPredict(object):
         predict_data.append({"feature": input_sentence, "target": ""})
         to_predict = pd.DataFrame(predict_data)
 
+        print("--- TC: Predicting ---")
         # Get predict result of input
         predict_result = self.model_predict.predict(to_predict.feature)
 
@@ -49,7 +40,7 @@ class TextClassificationPredict(object):
 
 
 if __name__ == '__main__':
-    tcp = TextClassificationPredict()
+    tcp = GetTextClassification()
     tcp.setup()
 
     print(tcp.get_predict("Bản màu vàng còn hàng ở Q9 TPHCM ko shop"))

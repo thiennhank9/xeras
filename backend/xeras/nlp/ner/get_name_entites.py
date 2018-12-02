@@ -7,28 +7,12 @@ class GetNameEntities:
     TRAIN_DATA = []
     nlp = None
 
-    def load_train_data(self):
-        self.TRAIN_DATA = []
-        # csv_file_pd = pd.read_csv('ner/data/spacy_ner_train.csv', sep=';')
-        csv_file_pd = pd.read_csv('xeras/nlp/ner/data/spacy_ner_train.csv', sep=';')
-
-        for index, row in csv_file_pd.iterrows():
-            sentence = row["sentence"].lower()
-            temp_entities = row["entities"]
-
-            temp_entities = temp_entities.split("|")
-
-            entities = []
-            for entity in temp_entities:
-                two_str = entity.split(":")
-                two_str[1] = two_str[1].strip().lower()
-                index_start = sentence.find(two_str[1])
-                index_end = index_start + len(two_str[1])
-                entities.append((index_start, index_end, two_str[0]))
-
-            self.TRAIN_DATA.append((sentence, {'entities': entities}))
+    def load_train_data(self, ner_train_data = []):
+        print("--- NER: Loading file train ---")
+        self.TRAIN_DATA = ner_train_data
 
     def train_model(self, n_iter=100):
+        print("--- NER: Building model ---")
         """Load the model, set up the pipeline and train the entity recognizer."""
         self.nlp = spacy.blank('en')  # Just leave en, not vi
 
@@ -65,11 +49,12 @@ class GetNameEntities:
                         sgd=optimizer,  # callable to update weights
                         losses=losses)
 
-    def setup(self):
-        self.load_train_data()
+    def setup(self, ner_train_data = []):
+        self.load_train_data(ner_train_data)
         self.train_model()
 
     def get_predict(self, sentence='Bản màu vàng còn hàng ở Q9 TPHCM ko shop'):
+        print("--- NER: Predicting ---")
         doc = self.nlp(sentence)
         return [(ent.label_, ent.text) for ent in doc.ents]
 
