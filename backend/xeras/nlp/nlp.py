@@ -19,6 +19,10 @@ class NLP:
     tc_train_data = []
     ner_train_data = []
     same_words = {}
+    is_used_model = False
+
+    def set_is_used_model(self, is_used_model=False):
+        self.is_used_model = is_used_model
 
     def load_train(self):
         csv_file_pd = pd.read_csv(PATH_FILE_TRAIN, sep=';')
@@ -58,7 +62,8 @@ class NLP:
         self.load_train()
 
         self.tc.setup(self.tc_train_data)
-        self.ner.setup(self.ner_train_data)
+        self.ner.setup(self.ner_train_data, self.is_used_model)
+
     
     def get_predict(self, sentence=SAMPLE_SENTENCE):
         sentence = self.replace_same_word(sentence.lower().strip())
@@ -91,8 +96,8 @@ class NLP:
         return sentence
 
 
-
 if __name__ == '__main__':
     nlp = NLP()
+    nlp.set_is_used_model(True)
     nlp.setup()
     print(nlp.get_predict(SAMPLE_SENTENCE))
