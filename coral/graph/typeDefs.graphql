@@ -208,6 +208,9 @@ type User {
   # Username of a user.
   username: String!
 
+  # User gender
+  gender: String!
+
   # creation date of user
   created_at: Date!
 

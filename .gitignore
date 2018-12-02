@@ -25,6 +25,7 @@ coral/browserstack.err
 coral/plugins.json
 
 coral/plugins/*
+!coral/plugins/mobilephone-site
 !coral/plugins/talk-plugin-akismet
 !coral/plugins/talk-plugin-auth
 !coral/plugins/talk-plugin-author-menu

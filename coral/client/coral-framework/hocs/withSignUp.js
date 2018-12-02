@@ -65,7 +65,7 @@ const withSignUp = hoistStatics(WrappedComponent => {
       return null;
     };
 
-    signUp = ({ username, email, password }, redirectUri) => {
+    signUp = ({ username, email, password, gender }, redirectUri) => {
       if (!redirectUri) {
         redirectUri = this.context.pym.parentUrl || location.href;
       }
@@ -77,6 +77,7 @@ const withSignUp = hoistStatics(WrappedComponent => {
           username,
           email,
           password,
+          gender
         },
         headers: { 'X-Pym-Url': redirectUri },
       };

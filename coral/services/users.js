@@ -678,7 +678,7 @@ class Users {
    * @param  {String}   password    plaintext password of the new user
    * @param  {String}   username    name of the display user
    */
-  static async createLocalUser(ctx, email, password, username) {
+  static async createLocalUser(ctx, email, password, username, gender) {
     if (!email) {
       throw new ErrMissingEmail();
     }
@@ -695,6 +695,7 @@ class Users {
 
     let user = new User({
       username,
+      gender,
       lowercaseUsername: username.toLowerCase(),
       password: hashedPassword,
       profiles: [
