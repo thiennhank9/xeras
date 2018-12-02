@@ -3,7 +3,7 @@ import pandas as pd
 import spacy
 from spacy.util import minibatch, compounding
 
-PATH_MODEL_NER = 'ner/model'
+PATH_MODEL_NER = 'xeras/nlp/ner/model'
 
 class GetNameEntities:
     TRAIN_DATA = []
