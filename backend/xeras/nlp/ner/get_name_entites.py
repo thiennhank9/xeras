@@ -70,7 +70,7 @@ class GetNameEntities:
 
     def get_predict(self, sentence='Bản màu vàng còn hàng ở Q9 TPHCM ko shop'):
         print("--- NER: Predicting ---")
-        # self.nlp.to_disk(PATH_MODEL_NER)
+
         doc = self.nlp(sentence)
         return [(ent.label_, ent.text) for ent in doc.ents]
 
