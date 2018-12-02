@@ -8,6 +8,7 @@ PATH_MODEL_NER = 'ner/model'
 class GetNameEntities:
     TRAIN_DATA = []
     nlp = None
+    is_used_model = False
 
     def load_train_data(self, ner_train_data = []):
         print("--- NER: Loading file train ---")
@@ -15,6 +16,9 @@ class GetNameEntities:
 
     def load_model(self):
         self.nlp = spacy.load(PATH_MODEL_NER)
+
+    def save_model(self):
+        self.nlp.to_disk(PATH_MODEL_NER)
 
     def train_model(self, n_iter=100):
         print("--- NER: Building model ---")
@@ -55,11 +59,14 @@ class GetNameEntities:
                         losses=losses)
 
     def setup(self, ner_train_data = [], is_used_model=False):
+        self.is_used_model = is_used_model
+
         self.load_train_data(ner_train_data)
         if is_used_model:
             self.load_model()
         else:
             self.train_model()
+            self.save_model()
 
     def get_predict(self, sentence='Bản màu vàng còn hàng ở Q9 TPHCM ko shop'):
         print("--- NER: Predicting ---")
