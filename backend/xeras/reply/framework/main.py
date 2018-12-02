@@ -6,9 +6,10 @@ from xeras.nlp.nlp import NLP
 from xeras.reply.framework.factory_entity_from_ner.price import get_entity_for_compare_price
 
 
-global tcp
-tcp = NLP()
-tcp.setup()
+global nlp
+nlp = NLP()
+nlp.set_is_used_model(True)
+nlp.setup()
 
 
 # special key from ner to normal key for query database
@@ -45,7 +46,7 @@ def get_answer_by_question_type(*arguments, **keywords):
 def get_predict_of_question(*arguments, **keywords):
     # get question category by cl
     question = keywords['question']
-    return tcp.get_predict(question)
+    return nlp.get_predict(question)
 
 
 def get_general_question_type(**predict_object):
