@@ -1,15 +1,16 @@
 # Comment these two lines below when run python main
-from .tc.main import TextClassificationPredict as TC
-from .ner.get_name_entites import GetNameEntities as NER
+# from .tc.main import TextClassificationPredict as TC
+# from .ner.get_name_entites import GetNameEntities as NER
 
 # Un-comment these two line below when run python main
-# from tc.get_text_classification import GetTextClassification as TC
-# from ner.get_name_entites import GetNameEntities as NER
+from tc.get_text_classification import GetTextClassification as TC
+from ner.get_name_entites import GetNameEntities as NER
 
 import pandas as pd
 
 PATH_FILE_TRAIN = 'train_data.csv'
-SAMPLE_SENTENCE = 'Bản màu vàng còn hàng ở Q9 TPHCM ko shop'
+SAMPLE_SENTENCE = 'Ipx giá nhiêu nhỉ'
+PATH_FILE_SAME_WORDS = 'same_words.csv'
 
 
 class NLP:
@@ -17,11 +18,15 @@ class NLP:
     ner = None
     tc_train_data = []
     ner_train_data = []
+    same_words = {}
 
     def load_train(self):
         csv_file_pd = pd.read_csv(PATH_FILE_TRAIN, sep=';')
 
         for index, row in csv_file_pd.iterrows():
+            # First, convert other word to be the true word
+            row['sentence'] = self.replace_same_word(row['sentence'].lower())
+
             # Load train data for TC
             self.tc_train_data.append(
                 {"feature": row["sentence"], "target": row["type"]})
@@ -35,7 +40,10 @@ class NLP:
             entities = []
             for entity in temp_entities:
                 two_str = entity.split(":")
-                two_str[1] = two_str[1].strip().lower()
+
+                # Convert the enity to be true word
+                two_str[1] = self.replace_same_word(two_str[1].strip().lower())
+
                 index_start = sentence.find(two_str[1])
                 index_end = index_start + len(two_str[1])
                 entities.append((index_start, index_end, two_str[0]))
@@ -46,15 +54,42 @@ class NLP:
         self.tc = TC()
         self.ner = NER()
 
+        self.load_same_words()
         self.load_train()
 
         self.tc.setup(self.tc_train_data)
         self.ner.setup(self.ner_train_data)
     
     def get_predict(self, sentence=SAMPLE_SENTENCE):
+        sentence = self.replace_same_word(sentence.lower().strip())
+
         type_ask = self.tc.get_predict(sentence)
         entities = self.ner.get_predict(sentence)
         return {'type_ask': type_ask, 'entities': entities}
+    
+    def load_same_words(self):
+        csv_file_pd = pd.read_csv(PATH_FILE_SAME_WORDS, sep=';')
+
+        for index, row in csv_file_pd.iterrows():
+            true_word = row["true_word"].lower().strip()
+            other_words_array = row["other_words"].split(',')
+
+            for other_word in other_words_array:
+                # Lower and remove front and back spaces
+                other_word = other_word.lower().strip()
+
+                # Add to dictionary. EX: same_words['ip X'] = Iphone X
+                self.same_words[other_word] = true_word
+    
+    def replace_same_word(self, sentence=SAMPLE_SENTENCE):
+        sentence = sentence.lower().strip()
+        for other_word, true_word in self.same_words.items():
+            # Replace other word with the true word defined
+            if other_word in sentence:
+                sentence = sentence.replace(other_word, true_word)
+
+        return sentence
+
 
 
 if __name__ == '__main__':

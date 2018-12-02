@@ -24,7 +24,6 @@ class GetTextClassification(object):
     def setup(self, tc_train_data = []):
         self.pre_train(tc_train_data)
         self.build_model()
-        # print("--- Text classification Setuped ---")
 
     # Pass the input sentence to predict
     def get_predict(self, input_sentence='Bản màu vàng còn hàng ở Q9 TPHCM ko shop'):
