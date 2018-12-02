@@ -21,8 +21,6 @@ router.post('/', async (req, res, next) => {
       gender
     );
 
-    console.log("gener:", gender);
-
     // Send an email confirmation. The Front end will know about the
     // requireEmailConfirmation as it's included in the settings get endpoint.
     await UsersService.sendEmailConfirmation(user, email, redirectUri);

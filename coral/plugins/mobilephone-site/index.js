@@ -44,7 +44,7 @@ module.exports = {
                 if (comment['comment'].author_id != '6e40f4dc-afe2-4895-b095-5b18cc3c6ecf') {
                     response = await autoRelyComment.sendCommentToNLP(dataToNLP);
                     comment['comment'].content = response.answer.data.result_test;
-                    await autoRelyComment.sendReplyComment(comment['comment']);
+                    autoRelyComment.sendReplyComment(comment['comment']);
                 }
 
                 comment['comment'].content = null;
