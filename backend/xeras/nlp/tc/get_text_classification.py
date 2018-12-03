@@ -9,12 +9,12 @@ class GetTextClassification(object):
     def __init__(self):
         self.test = None
 
-    def pre_train(self, tc_train_data = []):
+    def load_train_data(self, tc_train_data = []):
         # Add train data to data frame
         print("--- TC: Loading train data ---")
         self.train_data_df = pd.DataFrame(tc_train_data)
 
-    def build_model(self):
+    def train_model(self):
         print("--- TC: Building model ---")
         # Build model from train data
         model = SVMModel()
@@ -22,8 +22,8 @@ class GetTextClassification(object):
             self.train_data_df.feature, self.train_data_df.target)
 
     def setup(self, tc_train_data = []):
-        self.pre_train(tc_train_data)
-        self.build_model()
+        self.load_train_data(tc_train_data)
+        self.train_model()
 
     # Pass the input sentence to predict
     def get_predict(self, input_sentence='Bản màu vàng còn hàng ở Q9 TPHCM ko shop'):
