@@ -1,102 +1,54 @@
-Å´transitions⁄≠[
+Å´transitions⁄∆[
   {
     "clas":0,
     "move":1,
-    "label":"COLOR",
-    "name":"B-COLOR"
+    "label":"IS_SALE",
+    "name":"B-IS_SALE"
   },
   {
     "clas":1,
     "move":2,
-    "label":"COLOR",
-    "name":"I-COLOR"
+    "label":"IS_SALE",
+    "name":"I-IS_SALE"
   },
   {
     "clas":2,
     "move":3,
-    "label":"COLOR",
-    "name":"L-COLOR"
+    "label":"IS_SALE",
+    "name":"L-IS_SALE"
   },
   {
     "clas":3,
     "move":4,
-    "label":"COLOR",
-    "name":"U-COLOR"
+    "label":"IS_SALE",
+    "name":"U-IS_SALE"
   },
   {
     "clas":4,
     "move":1,
-    "label":"LOCATION",
-    "name":"B-LOCATION"
+    "label":"CHAO",
+    "name":"B-CHAO"
   },
   {
     "clas":5,
     "move":2,
-    "label":"LOCATION",
-    "name":"I-LOCATION"
+    "label":"CHAO",
+    "name":"I-CHAO"
   },
   {
     "clas":6,
     "move":3,
-    "label":"LOCATION",
-    "name":"L-LOCATION"
+    "label":"CHAO",
+    "name":"L-CHAO"
   },
   {
     "clas":7,
     "move":4,
-    "label":"LOCATION",
-    "name":"U-LOCATION"
+    "label":"CHAO",
+    "name":"U-CHAO"
   },
   {
     "clas":8,
-    "move":1,
-    "label":"IS_SALE_OFF",
-    "name":"B-IS_SALE_OFF"
-  },
-  {
-    "clas":9,
-    "move":2,
-    "label":"IS_SALE_OFF",
-    "name":"I-IS_SALE_OFF"
-  },
-  {
-    "clas":10,
-    "move":3,
-    "label":"IS_SALE_OFF",
-    "name":"L-IS_SALE_OFF"
-  },
-  {
-    "clas":11,
-    "move":4,
-    "label":"IS_SALE_OFF",
-    "name":"U-IS_SALE_OFF"
-  },
-  {
-    "clas":12,
-    "move":1,
-    "label":"PHONE_NAME",
-    "name":"B-PHONE_NAME"
-  },
-  {
-    "clas":13,
-    "move":2,
-    "label":"PHONE_NAME",
-    "name":"I-PHONE_NAME"
-  },
-  {
-    "clas":14,
-    "move":3,
-    "label":"PHONE_NAME",
-    "name":"L-PHONE_NAME"
-  },
-  {
-    "clas":15,
-    "move":4,
-    "label":"PHONE_NAME",
-    "name":"U-PHONE_NAME"
-  },
-  {
-    "clas":16,
     "move":5,
     "label":"",
     "name":"O"

@@ -1,16 +1,20 @@
 # Comment these two lines below when run python main
-# from .tc.main import TextClassificationPredict as TC
-# from .ner.get_name_entites import GetNameEntities as NER
+# from xeras.nlp.tc.get_text_classification import GetTextClassification as TC
+# from xeras.nlp.ner.get_name_entites import GetNameEntities as NER
 
 # Un-comment these two line below when run python main
-from xeras.nlp.tc.get_text_classification import GetTextClassification as TC
-from xeras.nlp.ner.get_name_entites import GetNameEntities as NER
+from tc.get_text_classification import GetTextClassification as TC
+from ner.get_name_entites import GetNameEntities as NER
 
 import pandas as pd
 
-PATH_FILE_TRAIN = 'xeras/nlp/train_data.csv'
-SAMPLE_SENTENCE = 'Ipx giá nhiêu nhỉ'
-PATH_FILE_SAME_WORDS = 'xeras/nlp/same_words.csv'
+# PATH_FILE_TRAIN = 'xeras/nlp/train_data.csv'
+# SAMPLE_SENTENCE = 'Ipx giá nhiêu nhỉ'
+# PATH_FILE_SAME_WORDS = 'xeras/nlp/same_words.csv'
+
+PATH_FILE_TRAIN = 'train_data.csv'
+SAMPLE_SENTENCE = 'Ko lấy quà được giảm bao nhiêu v ạ'
+PATH_FILE_SAME_WORDS = 'same_words.csv'
 
 
 class NLP:
@@ -44,15 +48,16 @@ class NLP:
             entities = []
             for entity in temp_entities:
                 two_str = entity.split(":")
-
                 # Convert the enity to be true word
                 two_str[1] = self.replace_same_word(two_str[1].strip().lower())
-
                 index_start = sentence.find(two_str[1])
                 index_end = index_start + len(two_str[1])
-                entities.append((index_start, index_end, two_str[0]))
 
-            self.ner_train_data.append((sentence, {'entities': entities}))
+                if index_start != -1:
+                    entities.append((index_start, index_end, two_str[0]))
+
+            if (entities):
+                self.ner_train_data.append((sentence, {'entities': entities}))
 
     def setup(self):
         self.tc = TC()
@@ -98,6 +103,6 @@ class NLP:
 
 if __name__ == '__main__':
     nlp = NLP()
-    nlp.set_is_used_model(True)
+    # nlp.set_is_used_model(False)
     nlp.setup()
     print(nlp.get_predict(SAMPLE_SENTENCE))

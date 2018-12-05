@@ -3,7 +3,10 @@ import pandas as pd
 import spacy
 from spacy.util import minibatch, compounding
 
-PATH_MODEL_NER = 'xeras/nlp/ner/model'
+# PATH_MODEL_NER = 'xeras/nlp/ner/model'
+
+PATH_MODEL_NER = 'ner/model'
+PATH_LOGS_NER = 'ner/logs/ner_logs.csv'
 
 class GetNameEntities:
     TRAIN_DATA = []
@@ -14,7 +17,17 @@ class GetNameEntities:
         print("--- NER: Loading file train ---")
         self.TRAIN_DATA = ner_train_data
 
+        self.print_log_file_df()
+
+    def print_log_file_df(self):
+        print("--- NER: Print file log ---")
+        with open(PATH_LOGS_NER, 'w', encoding="utf-8-sig") as file:
+            for train_data in self.TRAIN_DATA:
+                file.write(str(train_data))
+                file.write("\n")
+
     def load_model(self):
+        print("--- NER: Saving model ---")
         self.nlp = spacy.load(PATH_MODEL_NER)
 
     def save_model(self):

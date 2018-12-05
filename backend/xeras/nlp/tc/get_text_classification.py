@@ -11,7 +11,7 @@ class GetTextClassification(object):
 
     def load_train_data(self, tc_train_data = []):
         # Add train data to data frame
-        print("--- TC: Loading train data ---")
+        print("--- TC: Loading file train ---")
         self.train_data_df = pd.DataFrame(tc_train_data)
 
     def train_model(self):
