@@ -1,5 +1,6 @@
 import pandas as pd
 from .libs import SVMModel
+import datetime
 
 class GetTextClassification(object):
     train_data_df = []
@@ -13,13 +14,20 @@ class GetTextClassification(object):
         # Add train data to data frame
         print("--- TC: Loading file train ---")
         self.train_data_df = pd.DataFrame(tc_train_data)
+        print("--- TC: Processed " + str(len(self.train_data_df)) + " sentences train ---")
 
     def train_model(self):
         print("--- TC: Building model ---")
         # Build model from train data
+        time_start = datetime.datetime.now()
+        print("--- TC: Start building model at " + str(time_start) + " ---")
         model = SVMModel()
         self.model_predict = model.clf.fit(
             self.train_data_df.feature, self.train_data_df.target)
+        time_end = datetime.datetime.now()
+        print("--- TC: End building model at " + str(time_end) + " ---")
+        time_amount = time_end - time_start
+        print("--- TC: Amount time is " + str(time_amount) + " ---")
 
     def setup(self, tc_train_data = []):
         self.load_train_data(tc_train_data)

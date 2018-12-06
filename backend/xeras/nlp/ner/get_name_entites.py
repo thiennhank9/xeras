@@ -2,8 +2,10 @@ import random
 import pandas as pd
 import spacy
 from spacy.util import minibatch, compounding
+import datetime
 
 # PATH_MODEL_NER = 'xeras/nlp/ner/model'
+# PATH_LOGS_NER = 'xeras/logs/ner_logs.csv'
 
 PATH_MODEL_NER = 'ner/model'
 PATH_LOGS_NER = 'ner/logs/ner_logs.csv'
@@ -25,6 +27,7 @@ class GetNameEntities:
             for train_data in self.TRAIN_DATA:
                 file.write(str(train_data))
                 file.write("\n")
+        print("--- NER: Processed " + str(len(self.TRAIN_DATA)) + " sentences train ---")
 
     def load_model(self):
         print("--- NER: Saving model ---")
@@ -33,8 +36,10 @@ class GetNameEntities:
     def save_model(self):
         self.nlp.to_disk(PATH_MODEL_NER)
 
-    def train_model(self, n_iter=100):
+    def train_model(self, n_iter=10):
         print("--- NER: Building model ---")
+        time_start = datetime.datetime.now()
+        print("--- NER: Start building model at " + str(time_start) + " ---")
         """Load the model, set up the pipeline and train the entity recognizer."""
         self.nlp = spacy.blank('en')  # Just leave en, not vi
 
@@ -70,6 +75,12 @@ class GetNameEntities:
                         drop=0.5,  # dropout - make it harder to memorise data
                         sgd=optimizer,  # callable to update weights
                         losses=losses)
+        
+        time_end = datetime.datetime.now()
+        print("--- NER: End building model at " + str(time_end) + " ---")
+
+        time_amount = time_end - time_start
+        print("--- NER: Amount time is " + str(time_amount) + " ---")
 
     def setup(self, ner_train_data = [], is_used_model=False):
         self.is_used_model = is_used_model

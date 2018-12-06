@@ -30,18 +30,24 @@ class NLP:
 
     def load_train(self):
         csv_file_pd = pd.read_csv(PATH_FILE_TRAIN, sep=';')
-
+        print("--- NLP: Get " + str(len(csv_file_pd)) + " sentences from file train ---")
         for index, row in csv_file_pd.iterrows():
             # First, convert other word to be the true word
             row['sentence'] = self.replace_same_word(row['sentence'].lower())
 
-            # Load train data for TC
-            self.tc_train_data.append(
-                {"feature": row["sentence"], "target": row["type"]})
+            # Load train data for TC, check if having type or not
+            if row["type"]:
+                self.tc_train_data.append(
+                    {"feature": row["sentence"], "target": row["type"]})
             
             # Load train data for NER
             sentence = row["sentence"].lower()
+
             temp_entities = row["entities"]
+            
+            # Check if there is no entities, just skip
+            if not temp_entities:
+                continue
 
             temp_entities = temp_entities.split("|")
 
@@ -52,10 +58,12 @@ class NLP:
                 two_str[1] = self.replace_same_word(two_str[1].strip().lower())
                 index_start = sentence.find(two_str[1])
                 index_end = index_start + len(two_str[1])
-
+                
+                # Only append train data if entity is in sentence
                 if index_start != -1:
                     entities.append((index_start, index_end, two_str[0]))
 
+            # Only append train data if there is at lease an entity
             if (entities):
                 self.ner_train_data.append((sentence, {'entities': entities}))
 
