@@ -4,11 +4,10 @@ import spacy
 from spacy.util import minibatch, compounding
 import datetime
 
-# PATH_MODEL_NER = 'xeras/nlp/ner/model'
-# PATH_LOGS_NER = 'xeras/logs/ner_logs.csv'
 
-PATH_MODEL_NER = 'ner/model'
-PATH_LOGS_NER = 'ner/logs/ner_logs.csv'
+PATH_MODEL_NER = 'xeras/nlp/ner/model'
+PATH_LOGS_NER = 'xeras/nlp/ner/logs/ner_logs.csv'
+
 
 class GetNameEntities:
     TRAIN_DATA = []
