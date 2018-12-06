@@ -1,5 +1,9 @@
 from django.db import models
+import random
 
+
+def random_int():
+    return random.randint(1,15)
 
 class Store(models.Model):
     storeName = models.TextField()
@@ -12,7 +16,7 @@ class Store(models.Model):
     storePayment = models.TextField()
 
     def __str__(self):
-        return '%s' % self.storeName
+        return '%s - %s' % (self.City, self.storeName)
 
     class Meta:
         managed = True
@@ -102,25 +106,37 @@ class PhoneCode(models.Model):
 class PhoneInfo(models.Model):
     phoneProductId = models.ForeignKey(
         'Product', on_delete=models.CASCADE, db_column='phoneProductId', blank=True)
+    color = models.TextField()
+    price1 = models.FloatField(blank=True)
+    price2 = models.FloatField(blank=True)
     phone3G = models.TextField()
     phone4G = models.TextField()
-    dateStartSell = models.DateField(blank=True)
-    width = models.FloatField(blank=True)
-    height = models.FloatField(blank=True)
-    thickness = models.FloatField(blank=True)
-    inch = models.FloatField(blank=True)
-    weight = models.FloatField(blank=True)
-    resolution = models.TextField()
-    screenType = models.TextField()
-    simType = models.TextField()
+    dateStartSell = models.DateField(blank=True, null=True)
+    width = models.FloatField(blank=True, null=True)
+    height = models.FloatField(blank=True, null=True)
+    thickness = models.FloatField(blank=True, null=True)
+    weight = models.FloatField(blank=True, null=True)
     simNumber = models.IntegerField(blank=True)
+    simType = models.TextField()
+    screenType = models.TextField()
+    inch = models.FloatField(blank=True)
+    resolution = models.TextField()
     osType = models.TextField()
     osVersion = models.TextField()
     chipset = models.TextField()
-    version = models.TextField()
     GPU = models.TextField()
+    memoryCardSlot = models.TextField(default=1)
     RAM = models.IntegerField(blank=True)
     ROM = models.IntegerField(blank=True)
+    cameraBack = models.FloatField(blank=True)
+    cameraFront = models.FloatField(blank=True)
+    video = models.TextField()
+    WLAN = models.TextField()
+    bluetooth = models.TextField()
+    GPS = models.TextField()
+    NFC = models.TextField()
+    Pin = models.TextField()
+    version = models.TextField()
     phoneLanguage = models.ManyToManyField(LanguageSupport)
     fromCountry = models.TextField() # San xuat tai quoc gia
     phoneFeature = models.ForeignKey(
@@ -130,22 +146,10 @@ class PhoneInfo(models.Model):
     phoneCode = models.ForeignKey(
         'PhoneCode', on_delete=models.CASCADE, db_column='phoneCode', blank=True)
     phoneInfoType = models.TextField()
-    memoryCardSlot = models.TextField(default=1)
     chargerType = models.TextField(default="sạc 2 chấu")
     chargerTime = models.FloatField(default=2)
     phoneTimeUsing = models.TextField(default="6-8 tiếng")
-    cameraBack = models.FloatField(blank=True)
-    cameraFront = models.FloatField(blank=True)
     phoneCase = models.TextField(default='Vỏ nhôm')
-    video = models.TextField()
-    WLAN = models.TextField()
-    bluetooth = models.TextField()
-    GPS = models.TextField()
-    NFC = models.TextField()
-    Pin = models.TextField()
-    color = models.TextField()
-    price1 = models.FloatField(blank=True)
-    price2 = models.FloatField(blank=True)
     other = models.TextField(default="Chống nước")
 
     def __str__(self):
@@ -165,14 +169,10 @@ class PhoneFeature(models.Model):
     video = models.TextField()
     videoCall = models.TextField()
     featureTimeUsing = models.TextField() # thoi gian su dung tung loai
-    phoneInfo = models.OneToOneField(
-        PhoneInfo,
-        on_delete=models.CASCADE,
-        default=5,
-    )
+    phoneCategoryType = models.TextField(default='')
 
     def __str__(self):
-        return '%s feature' % self.phoneInfo.phoneProductId.productName
+        return '%s feature' % self.phoneCategoryType
 
     class Meta:
         managed = True
@@ -228,10 +228,10 @@ class SaleOff(models.Model):
 class StoreInventory(models.Model):
     storeId = models.ForeignKey('Store', on_delete=models.CASCADE, db_column='storeId')
     productId = models.ForeignKey('Product', on_delete=models.CASCADE, db_column='productId')
-    amount = models.IntegerField(blank=True)
+    amount = models.IntegerField(blank=True, default=random_int)
 
     def __str__(self):
-        return '%s - %s - amount: %s' % (self.storeId.storeName ,self.productId.productName, self.amount)
+        return '%s - %s - amount: %s' % (self.productId.productName, self.storeId.storeName, self.amount)
 
     class Meta:
         managed = True
