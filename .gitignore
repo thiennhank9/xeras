@@ -79,4 +79,7 @@ backend/**/migrations/*
 
 .vscode/*
 
+# ignore code auto generate by wordpress and drupal
 sites/drupal/sites/default/files/php/twig
+coral/docs/themes/coral/source/css/*
+sites
