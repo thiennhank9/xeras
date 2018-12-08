@@ -81,5 +81,11 @@ backend/**/migrations/*
 
 # ignore code auto generate by wordpress and drupal
 sites/drupal/sites/default/files/php/twig
-coral/docs/themes/coral/source/css/*
-sites
+sites/drupal/themes/custom/jango/sass/themes/*
+sites/phonestore_wp/thiennhan/wp-admin/*
+sites/phonestore_wp/thiennhan/wp-content/*
+sites/drupal/themes/*
+coral/docs/themes/*
+sites/drupal/libraries/*
+sites/drupal/modules/custom/*
+backend/xeras/nlp/ner/logs/*
