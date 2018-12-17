@@ -72,6 +72,7 @@ coral/plugins/*
 coral/**/node_modules/*
 coral/yarn-error.log
 
+# ignore pycache backend
 backend/xeras/**/__pycache__/*
 backend/.idea/*
 backend/**/migrations/*
@@ -89,3 +90,10 @@ coral/docs/themes/*
 sites/drupal/libraries/*
 sites/drupal/modules/custom/*
 backend/xeras/nlp/ner/logs/*
+backend/xeras/nlp/ner/model/*
+
+# ignore pycache site1 and site2
+sites_backend/**/__pycache__/*
+sites_backend/.idea/*
+sites_backend/**/migrations/*
+!sites_backend/**/migrations/__init__.py

@@ -21,8 +21,14 @@ from xeras.reply.framework.main import get_answer_by_question_type
 from xeras.nlp.nlp import NLP
 
 
+global nlp
+nlp = NLP()
+nlp.set_is_used_model(True)
+nlp.setup()
+
+
 @csrf_exempt
-def test_api(request):    
+def get_reply_comment(request):    
     data = {}
 
     request_ojbect = JSONParser().parse(request)
@@ -39,7 +45,7 @@ def test_ner(request):
     request_ojbect = JSONParser().parse(request)
     data.update(request_ojbect)
     question = data['comment']
-    result = tcp.get_predict(question)
+    result = nlp.get_predict(question)
 
     for entity in result['entities']:
         entity[0].lower()

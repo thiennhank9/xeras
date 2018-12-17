@@ -33,14 +33,15 @@ def get_answer_by_question_type(*arguments, **keywords):
     keywords['general_question_type'] = general_question_type
     keywords['detail_question_type'] = detail_question_type
     combine_api = concat_api_from_site(*arguments, **keywords)
-    print('nlp_predict_object:', nlp_predict_object)
+    # print('nlp_predict_object:', nlp_predict_object)
 
     # predict answer
-    keywords = save_response_answer_by_api(combine_api, *arguments, **keywords)
-    answer = get_answer(combine_api, *arguments, **keywords)
-    # print('keywords:', keywords)
+    try:
+        keywords = save_response_answer_by_api(combine_api, *arguments, **keywords)
+        answer = get_answer(combine_api, *arguments, **keywords)
+    except:
+        answer = "Xin lỗi, hiện tại câu hỏi vẫn chưa, chúng tôi sẽ cố gắng khắc phục trong thời gian sớm nhất, mong bạn thông cảm!"
     return answer
-    # return call_api_and_get_answer(*arguments, **keywords)
 
 
 def get_predict_of_question(*arguments, **keywords):

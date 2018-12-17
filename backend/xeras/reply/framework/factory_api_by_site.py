@@ -12,8 +12,11 @@ def concat_api_from_site(*arguments, **keywords):
     if site == 'site2':
         current_api = site2_list_api
 
+    replace_api_from_site(default_api, current_api)
+
     for detail_question_type in default_api:
-        replace_api_from_site(detail_question_type, default_api, current_api)
+        if detail_question_type == 'config':
+            continue
         concat_answer_from_site(detail_question_type, default_api, current_api)
     return default_api
 
@@ -34,7 +37,7 @@ def concat_answer_from_site(detail_question_type, default_api, current_api):
     default_api[detail_question_type]['negative_answer'] = list(set(defaut_negative_answer + site_negative_answer))
 
 
-def replace_api_from_site(detail_question_type, default_api, current_api):
-    site_api = (detail_question_type in current_api and current_api[detail_question_type]['api'] or None)
+def replace_api_from_site(default_api, current_api):
+    site_api = ('api_url' in current_api['config'] and current_api['config']['api_url'] or None)
     if site_api is not None:
-        default_api[detail_question_type]['api'] = site_api
+        default_api['config']= {'api_url': site_api}

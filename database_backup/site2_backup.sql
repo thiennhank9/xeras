@@ -1181,7 +1181,7 @@ ALTER TABLE ONLY public.django_migrations ALTER COLUMN id SET DEFAULT nextval('p
 --
 
 COPY public."Category" (id, "categoryName") FROM stdin;
-1	Iphone
+1   Iphone
 2	SamSung Galaxy
 4	Xiaomi Mi
 5	Xiaomi Redmi

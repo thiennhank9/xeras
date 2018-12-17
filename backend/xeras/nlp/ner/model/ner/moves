@@ -1,4 +1,4 @@
-Å´transitions⁄`Ú[
+Å´transitions⁄g¶[
   {
     "clas":0,
     "move":1,
@@ -338,50 +338,50 @@
   {
     "clas":56,
     "move":1,
-    "label":"IS_SALE_OFF_INSTALLMENT",
-    "name":"B-IS_SALE_OFF_INSTALLMENT"
-  },
-  {
-    "clas":57,
-    "move":2,
-    "label":"IS_SALE_OFF_INSTALLMENT",
-    "name":"I-IS_SALE_OFF_INSTALLMENT"
-  },
-  {
-    "clas":58,
-    "move":3,
-    "label":"IS_SALE_OFF_INSTALLMENT",
-    "name":"L-IS_SALE_OFF_INSTALLMENT"
-  },
-  {
-    "clas":59,
-    "move":4,
-    "label":"IS_SALE_OFF_INSTALLMENT",
-    "name":"U-IS_SALE_OFF_INSTALLMENT"
-  },
-  {
-    "clas":60,
-    "move":1,
     "label":"IS_SALE_OFF_NOW",
     "name":"B-IS_SALE_OFF_NOW"
   },
   {
-    "clas":61,
+    "clas":57,
     "move":2,
     "label":"IS_SALE_OFF_NOW",
     "name":"I-IS_SALE_OFF_NOW"
   },
   {
-    "clas":62,
+    "clas":58,
     "move":3,
     "label":"IS_SALE_OFF_NOW",
     "name":"L-IS_SALE_OFF_NOW"
   },
   {
-    "clas":63,
+    "clas":59,
     "move":4,
     "label":"IS_SALE_OFF_NOW",
     "name":"U-IS_SALE_OFF_NOW"
+  },
+  {
+    "clas":60,
+    "move":1,
+    "label":"IS_SALE_OFF_INSTALLMENT",
+    "name":"B-IS_SALE_OFF_INSTALLMENT"
+  },
+  {
+    "clas":61,
+    "move":2,
+    "label":"IS_SALE_OFF_INSTALLMENT",
+    "name":"I-IS_SALE_OFF_INSTALLMENT"
+  },
+  {
+    "clas":62,
+    "move":3,
+    "label":"IS_SALE_OFF_INSTALLMENT",
+    "name":"L-IS_SALE_OFF_INSTALLMENT"
+  },
+  {
+    "clas":63,
+    "move":4,
+    "label":"IS_SALE_OFF_INSTALLMENT",
+    "name":"U-IS_SALE_OFF_INSTALLMENT"
   },
   {
     "clas":64,
@@ -1537,6 +1537,126 @@
   },
   {
     "clas":256,
+    "move":1,
+    "label":"PHONE_TYPE",
+    "name":"B-PHONE_TYPE"
+  },
+  {
+    "clas":257,
+    "move":2,
+    "label":"PHONE_TYPE",
+    "name":"I-PHONE_TYPE"
+  },
+  {
+    "clas":258,
+    "move":3,
+    "label":"PHONE_TYPE",
+    "name":"L-PHONE_TYPE"
+  },
+  {
+    "clas":259,
+    "move":4,
+    "label":"PHONE_TYPE",
+    "name":"U-PHONE_TYPE"
+  },
+  {
+    "clas":260,
+    "move":1,
+    "label":"Phone",
+    "name":"B-Phone"
+  },
+  {
+    "clas":261,
+    "move":2,
+    "label":"Phone",
+    "name":"I-Phone"
+  },
+  {
+    "clas":262,
+    "move":3,
+    "label":"Phone",
+    "name":"L-Phone"
+  },
+  {
+    "clas":263,
+    "move":4,
+    "label":"Phone",
+    "name":"U-Phone"
+  },
+  {
+    "clas":264,
+    "move":1,
+    "label":"PHOTO",
+    "name":"B-PHOTO"
+  },
+  {
+    "clas":265,
+    "move":2,
+    "label":"PHOTO",
+    "name":"I-PHOTO"
+  },
+  {
+    "clas":266,
+    "move":3,
+    "label":"PHOTO",
+    "name":"L-PHOTO"
+  },
+  {
+    "clas":267,
+    "move":4,
+    "label":"PHOTO",
+    "name":"U-PHOTO"
+  },
+  {
+    "clas":268,
+    "move":1,
+    "label":"ASK_OLD_PHONE",
+    "name":"B-ASK_OLD_PHONE"
+  },
+  {
+    "clas":269,
+    "move":2,
+    "label":"ASK_OLD_PHONE",
+    "name":"I-ASK_OLD_PHONE"
+  },
+  {
+    "clas":270,
+    "move":3,
+    "label":"ASK_OLD_PHONE",
+    "name":"L-ASK_OLD_PHONE"
+  },
+  {
+    "clas":271,
+    "move":4,
+    "label":"ASK_OLD_PHONE",
+    "name":"U-ASK_OLD_PHONE"
+  },
+  {
+    "clas":272,
+    "move":1,
+    "label":"CHIP",
+    "name":"B-CHIP"
+  },
+  {
+    "clas":273,
+    "move":2,
+    "label":"CHIP",
+    "name":"I-CHIP"
+  },
+  {
+    "clas":274,
+    "move":3,
+    "label":"CHIP",
+    "name":"L-CHIP"
+  },
+  {
+    "clas":275,
+    "move":4,
+    "label":"CHIP",
+    "name":"U-CHIP"
+  },
+  {
+    "clas":276,
     "move":5,
     "label":"",
     "name":"O"

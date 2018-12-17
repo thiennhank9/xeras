@@ -2,8 +2,8 @@ let _ = require('lodash');
 const autoRelyComment = require('../../services/auto_reply_comment');
 let AssetsService = require('../../services/assets');
 
-let site1 = "http://localhost/thiennhan";
-let site2 = "http://smartcellphone.drupal";
+let site1 = "http://smartcellphone.drupal";
+let site2 = "http://localhost/thiennhan";
 
 module.exports = {
     hooks: {
@@ -42,9 +42,12 @@ module.exports = {
                 
                 // send reply comment
                 if (comment['comment'].author_id != '6e40f4dc-afe2-4895-b095-5b18cc3c6ecf') {
-                    response = await autoRelyComment.sendCommentToNLP(dataToNLP);
-                    comment['comment'].content = response.answer.data.result_test;
-                    autoRelyComment.sendReplyComment(comment['comment']);
+                    setTimeout(async () => {
+                        response = await autoRelyComment.sendCommentToNLP(dataToNLP);
+                        comment['comment'].content = response.answer.data.result_test;
+                        autoRelyComment.sendReplyComment(comment['comment'])
+                    }, 3000);
+                    // autoRelyComment.sendReplyComment(comment['comment']);
                 }
 
                 comment['comment'].content = null;
