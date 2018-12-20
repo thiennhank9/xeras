@@ -2,6 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('test_api/', views.test_api),
+    path('get_reply_comment/', views.get_reply_comment),
     path('test_ner/', views.test_ner),
 ]

@@ -83,6 +83,7 @@ backend/**/migrations/*
 # ignore code auto generate by wordpress and drupal
 sites/drupal/sites/default/files/php/twig
 sites/drupal/themes/custom/jango/sass/themes/*
+sites/drupal/sites/default/files/styles/*
 sites/phonestore_wp/thiennhan/wp-admin/*
 sites/phonestore_wp/thiennhan/wp-content/*
 sites/drupal/themes/*

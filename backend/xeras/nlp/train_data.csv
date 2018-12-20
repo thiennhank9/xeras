@@ -132,7 +132,7 @@ Máy sao mà giảm giá sâu vậy?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:sao m
 Tư vấn giùm mình trả góp 0% cần trả trước bao nhiêu và của công ty tài chính nào vậy?;hoi_tra_gop;IS_NEEDED:trả góp 0%
 E ở hcm. Không biết note 9 512gb suất 20,9tr còn không ạ;hoi_con_hang;PHONE:note 9|ROM:512|MONEY:20,9tr|LOCATION:hcm
 Làm thế nào để mua được ở Hà Nội Note 9 Hot sale 20.990 k;hoi_con_hang;LOCATION:Hà Nội|PHONE:Note 9|MONEY:20.990
-Not9 512gb o hcm con mau dong ko shop. Gia tra gop ntn a;hoi_con_hang;LOCATION:hcm|PHONE:Not9|ROM:512|COLOR:dong
+Note9 512gb o hcm con mau dong ko shop. Gia tra gop ntn a;hoi_con_hang;LOCATION:hcm|PHONE:Note9|ROM:512|COLOR:dong
 Chào ad.. cho m hỏi.. giá note 9 512gb 20.990.000d là còn khuyến mãi, tặng kèm gì không ạ.. m mua online ntn ạ..;hoi_khuyen_mai;PHONE:note 9|ROM:512|MONEY:20.990.000d|SALE_OFF_GIFF:tặng kèm gì không
 note 9 chính hãng 512gb ram 8gb có màu đồng không ạ;hoi_con_hang;PHONE:note 9|ROM:512|RAM:8|COLOR:đồng
 Cho mình hỏi shop còn note 9 512 gb màu đen ko ??;hoi_con_hang;PHONE:note 9|ROM:512|COLOR:đen
@@ -427,7 +427,7 @@ cho mình hỏi trả góp iphone x 64gb thì mình thanh toán trước bao nhi
 283 Hồ Tùng Mậu - Nam Từ Liêm còn hàng không ạ;hoi_con_hang;LOCATION:Hồ Tùng Mậu|LOCATION:Nam Từ Liêm
 trả góp yêu cầu những gì và bn tuổi ?;hoi_tra_gop;IS_NEEDED:yêu cầu những gì
 Bao h shop ở Thái Hà có hàng vậy ad ?;hoi_khi_nao;LOCATION:Thái Hà
-mình có ip 7 plus 128GB, muốn đổi sang ipX 256GB thì phải bù thêm bao nhiêu nữa?;hoi_doi_cu_lay_moi;PHONE:ip 7 plus|ROM:128|PHONE:ip|ROM:256
+mình có ip 7 plus 128GB, muốn đổi sang ipX 256GB thì phải bù thêm bao nhiêu nữa?;hoi_doi_cu_lay_moi;PHONE:ip 7 plus|ROM:128|PHONE:ipX|ROM:256
 E muốn mua ipx trả góp 0% a tư vấn vs ạ;hoi_tra_gop;PHONE:ipx|IS_NEEDED:trả góp 0%
 Cho hỏi HCM còn ip X mã LL/A bản 64GB màu xám ko ạ. Hôm trước mình ghé cửa hàng ở xô quyết nghệ tĩnh có đặt rồi, k biết khi nào có vậy. Chủ nhật này có hàng k ạ. ;hoi_con_hang;PHONE:ip X|CODE:LL/A|ROM:64|COLOR:xám|LOCATION:HCM
 Cho hỏi HCM còn ip X mã LL/A bản 64GB ko ạ;hoi_dia_chi;PHONE:ip X|CODE:LL/A|ROM:64|LOCATION:HCM
@@ -1078,7 +1078,7 @@ Hiện tại còn thu cũ lên đời k ạ?;hoi_doi_cu_lay_moi;OTHER:thu cũ l�
 Giá hiện tại là bao nhiêu s9+;hoi_gia;PHONE:s9+
 Giá hiện giờ bao nhiêu add, mình mua trả góp trả trước bao nhiêu;hoi_gia;OTHER:Giá hiện giờ bao nhiêu
 Giá hien tại bao nhiu zay ad8;hoi_gia;OTHER:Giá hien tại bao nhiu
-trả góp 0% với home credit có được giảm giá không ad?;hoi_gia;IS_SALE_OFF_INSTALLMENT:trả góp 0% với home credit có được giảm giá
+trả góp 0% với home credit có được giảm giá không ad?;hoi_giam_gia;IS_SALE_OFF_INSTALLMENT:trả góp 0% với home credit có được giảm giá
 Mình đang xài s7 edge thì có chtrinh đổi dth k shop;hoi_doi_cu_lay_moi;PHONE:s7 edge
 Hàng mỹ hay là vna vậy shop;hoi_nguon_hang;LOCATION:mỹ
 Giá hotsale là 17.990.000đ rồi có được giảm thêm 4.400.000đ của CellphoneS nữa không Ad?;hoi_khuyen_mai;IS_SALE_OFF_NOW:có được giảm thêm
