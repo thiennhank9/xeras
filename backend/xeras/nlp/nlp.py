@@ -1,7 +1,7 @@
 from xeras.nlp.tc.get_text_classification import GetTextClassification as TC
 from xeras.nlp.ner.get_name_entites import GetNameEntities as NER
 import pandas as pd
-
+import re
 
 PATH_FILE_TRAIN = 'xeras/nlp/train_data.csv'
 SAMPLE_SENTENCE = 'Ipx giá nhiêu nhỉ'
@@ -68,7 +68,6 @@ class NLP:
         self.tc.setup(self.tc_train_data)
         self.ner.setup(self.ner_train_data, self.is_used_model)
 
-    
     def get_predict(self, sentence=SAMPLE_SENTENCE):
         sentence = self.replace_same_word(sentence.lower().strip())
 
@@ -95,7 +94,7 @@ class NLP:
         for other_word, true_word in self.same_words.items():
             # Replace other word with the true word defined
             if other_word in sentence:
-                sentence = sentence.replace(other_word, true_word)
+                sentence = re.sub(r'\b{0}\b'.format(other_word), true_word, sentence)
 
         return sentence
 
