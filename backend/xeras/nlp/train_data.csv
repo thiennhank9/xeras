@@ -1,5 +1,5 @@
 sentence;type;entities
-Bản màu vàng còn hàng ở Q9 TPHCM ko shop;hoi_con_hang;COLOR:màu vàng|LOCATION:Q9 TPHCM
+Bản màu vàng còn hàng ở Q9 TPHCM ko shop;hoi_con_hang;COLOR:màu vàng|LOCATION:Q9|LOCATION:TPHCM
 Còn đang giảm giá không shop ơi;hoi_giam_gia;IS_SALE_OFF:đang giảm giá
 Ipx giá nhiêu nhỉ?;hoi_gia;PHONE_NAME:Ipx
 Iphone X bản 64gb vàng đốm giờ giá nhiêu vậy?;hoi_gia;PHONE:Iphone X|ROM:64|COLOR:vàng
@@ -715,14 +715,14 @@ Có màu xám ko;hoi_con_hang;COLOR:xám
 Đây là bản vna ak ad ;hoi_nguon_hang;WHAT_FROM_TYPE:bản vna
 shop cho mình hỏi bên mình còn iphone X vna màu bạc không ạ;hoi_con_hang;PHONE:iphone X|COLOR:bạc
 Cho mình hỏi hà nội còn màu bạc không nhỉ;hoi_con_hang;LOCATION:hà nội|COLOR:bạc
-cho mình hỏi có con IpX 64GB mới màu bạc ko ạ??? Mình ở tphcm;hoi_con_hang;PHONE:IpX|ROM:64|COLOR:bạc|LOCATION:tphcm
+cho mình hỏi có con IpX 64GB mới màu bạc ko ạ??? Mình ở tphcm;hoi_con_hang;PHONE:|ROM:64|COLOR:bạc|LOCATION:tphcm
 Đag xai 7+ muôn lên X thj bu thêm khoag bao nkjêu vây shop?;hoi_doi_cu_lay_moi;PHONE:7+|PHONE:X
 Shop cho e hỏi là máy đang thảm khảo là máy mới chính hãng nguyên seal hay máy CPO?;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:nguyên seal
 Shop oi iphone x chinh hang duoc nhap tu dau ve a co nhap tu my ko ma phai la chinh hang;hoi_nguon_hang;LOCATION:my
 có thanh toán bằng thẻ đc ko ad;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:thanh toán bằng thẻ
 Giá cả khuyến mãi có gì khác ko;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:Giá cả khuyến mãi có gì khác
 Máy có nguyen seal ko ạ, chưa bóc lớp ni lông ngoài hop chứ ạ?;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:nguyen seal
-bản VN/A có 256gb không ạ? ;hoi_con_hang;LOCATION:256|CODE:VN/A
+bản VN/A có 256gb không ạ? ;hoi_con_hang;ROM:256|CODE:VN/A
 Chi Có cccd có mua trả góp đc ko shop;hoi_tra_gop;IS_NEEDED:mua trả góp
 chào Bạn mk muốn mua trả góp IPX phải trả trước tối thiểu bao nhiêu phần trăm vs nếu muộn lãi suất 0% cần những gì;hoi_tra_gop;IS_NEEDED:mua trả góp|PHONE:IPX
 Chào bạn ,mình ở hcm q3 bên bạn còn cây này không? ở chi nhánh nào vậy bạn?;hoi_dia_chi;LOCATION:hcm|LOCATION:q3
@@ -1058,7 +1058,7 @@ Có bảng LL/A lh mình nhé;hoi_khi_nao;CODE:LL/A
 Có mã LL/A chưa shop;hoi_khi_nao;CODE:LL/A
 Đã có hàng LL/A chưa ad;hoi_khi_nao;CODE:LL/A
 mình trả trước 10tr vậy gớp ntn;hoi_tra_gop;IS_NEEDED:trả trước
-Iphone 7plus rose gold 32gb đổi 8plus 64gb thì bù bao nhiêu vậy shop?? ;hoi_doi_cu_lay_moi;PHONE:Iphone 7plus|COLOR:rose gold|ROM:32|PHONE:8plus|ROM:64
+Iphone 7plus rose gold 32gb đổi 8plus 64gb thì bù bao nhiêu vậy shop?? ;hoi_doi_cu_lay_moi;PHONE:Iphone 8 plus|COLOR:rose gold|ROM:32|PHONE:8plus|ROM:64
 Iphone 7plus đen nhám 128gb thì đổi 8plus 64 ghi thì bù bao nhiêu ạ;hoi_doi_cu_lay_moi;PHONE:Iphone 7plus|COLOR:đen nhám|ROM:32|PHONE:8plus|ROM:64
 Ip6s+ 16g đổi củ lấy mới ip8+ 64g bù khoảg bao nhiu tiền v shop?;hoi_doi_cu_lay_moi;PHONE:Ip6s+|ROM:16|PHONE:ip8+|ROM:64
 Đã có hàng VN/A chưa?;hoi_khi_nao;CODE:VN/A
