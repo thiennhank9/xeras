@@ -9,7 +9,7 @@ class TestAccuracy:
         print("--- Test Accuracy: Doing ---")
         with open("test_accuracy.txt", "w", encoding="utf-8") as test_accuracy:
             for index, row in csv_file_pd.iterrows():
-                row['sentence'] = nlp.replace_same_word(row['sentence'].lower())
+                row['sentence'] = nlp.same_words.replace_same_word(row['sentence'].lower())
                 result_nlp = nlp.get_predict(row['sentence'])
 
                 if (result_nlp["type_ask"] != nlp.nlp_train_data[index]["type_ask"]) or (result_nlp["entities"] != nlp.nlp_train_data[index]["entities"]):
