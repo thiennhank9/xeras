@@ -74,6 +74,8 @@ coral/yarn-error.log
 
 # ignore pycache backend
 backend/xeras/**/__pycache__/*
+backend/xeras/ner/logs/*
+backend/xeras/ner/model/*
 backend/.idea/*
 backend/**/migrations/*
 !backend/**/migrations/__init__.py
