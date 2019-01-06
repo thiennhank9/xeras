@@ -17,6 +17,8 @@ class FeatureTransformer(BaseEstimator, TransformerMixin):
         return result
 
 class SVMModel(object):
+    max_tier = 5
+    
     def __init__(self):
         self.clf = self._init_pipeline()
 
@@ -26,7 +28,7 @@ class SVMModel(object):
             ("transformer", FeatureTransformer()),
             ("vect", CountVectorizer()),
             ("tfidf", TfidfTransformer()),
-            ("clf-svm", SGDClassifier(loss='log', penalty='l2', alpha=1e-3, max_iter=5, random_state=None))
+            ("clf-svm", SGDClassifier(loss='log', penalty='l2', alpha=1e-3, max_iter=100, random_state=None))
         ])
 
         return pipe_line

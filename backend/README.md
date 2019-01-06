@@ -12,4 +12,4 @@
 
 * to test NLP please use file test_nlp.py by running cmd:
 cd xeras/backend
-python test_nlp.py
+python -W ignore test_nlp.py

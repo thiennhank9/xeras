@@ -1,6 +1,6 @@
+import datetime
 import pandas as pd
 from .libs import SVMModel
-import datetime
 
 class GetTextClassification(object):
     train_data_df = []
@@ -29,7 +29,7 @@ class GetTextClassification(object):
         time_amount = time_end - time_start
         print("--- TC: Amount time is " + str(time_amount) + " ---")
 
-    def setup(self, tc_train_data = []):
+    def setup(self, tc_train_data=[]):
         self.load_train_data(tc_train_data)
         self.train_model()
 
@@ -39,7 +39,7 @@ class GetTextClassification(object):
         predict_data.append({"feature": input_sentence, "target": ""})
         to_predict = pd.DataFrame(predict_data)
 
-        print("--- TC: Predicting ---")
+        # print("--- TC: Predicting ---")
         # Get predict result of input
         predict_result = self.model_predict.predict(to_predict.feature)
 

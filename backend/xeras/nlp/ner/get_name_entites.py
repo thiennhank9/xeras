@@ -13,6 +13,7 @@ class GetNameEntities:
     TRAIN_DATA = []
     nlp = None
     is_used_model = False
+    n_iter = 100
 
     def load_train_data(self, ner_train_data = []):
         print("--- NER: Loading file train ---")
@@ -92,7 +93,7 @@ class GetNameEntities:
             self.save_model()
 
     def get_predict(self, sentence='Bản màu vàng còn hàng ở Q9 TPHCM ko shop'):
-        print("--- NER: Predicting ---")
+        # print("--- NER: Predicting ---")
 
         doc = self.nlp(sentence)
         return [(ent.label_, ent.text) for ent in doc.ents]
