@@ -35,7 +35,7 @@ class GetNameEntities:
     def save_model(self):
         self.nlp.to_disk(PATH_MODEL_NER)
 
-    def train_model(self, n_iter=10):
+    def train_model(self, n_iter=100):
         print("--- NER: Building model ---")
         time_start = datetime.datetime.now()
         print("--- NER: Start building model at " + str(time_start) + " ---")

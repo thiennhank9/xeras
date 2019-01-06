@@ -1,11 +1,12 @@
 from xeras.nlp.nlp import NLP
 
 
-SAMPLE_SENTENCE = 'Ko lấy quà được giảm bao nhiêu v ạ'
+SAMPLE_SENTENCE = 'Bản màu vàng còn hàng ở Q9 TPHCM ko shop'
 
 
 if __name__ == '__main__':
     nlp = NLP()
-    # nlp.set_is_used_model(False)
+    # nlp.set_is_used_model(True)
     nlp.setup()
-    print(nlp.get_predict(SAMPLE_SENTENCE))
+    nlp.test_accuracy()
+    # print(nlp.get_predict(SAMPLE_SENTENCE))
