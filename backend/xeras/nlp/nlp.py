@@ -43,9 +43,7 @@ class NLP:
         for index, row in csv_file_pd.iterrows():
             # First, convert other word to be the true word
             row['sentence'] = self.same_words.replace_same_word(row['sentence'].lower())
-            
-            print(row['sentence'])
-
+            row['sentence'] = re.sub('[!@#$]', '', row['sentence'])
             train_data = {}
             train_data["sentence"] = row["sentence"]
 
@@ -97,8 +95,8 @@ class NLP:
         
         self.load_train()
 
-        self.tc.setup(self.tc_train_data)
-        self.ner.setup(self.ner_train_data, self.is_used_model)
+        # self.tc.setup(self.tc_train_data)
+        # self.ner.setup(self.ner_train_data, self.is_used_model)
 
     def get_predict(self, sentence=Settings.SAMPLE_SENTENCE):
         sentence = self.same_words.replace_same_word(sentence.lower().strip())
