@@ -16,6 +16,7 @@ def comment_answer(request):
 
         try:
             result = config_api[detail_question_type](**data)
+            print('result:', result)
             return JsonResponse({'result': result}, status=200)
         except ValueError:
             return JsonResponse({'error': ValueError}, status=400)

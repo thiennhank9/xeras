@@ -4,10 +4,10 @@ list_api = {
     },
     'hoi_gia_mau_rom': {
         'positive_answer': [
-            'gia cua san pham {phone_name} la {phone_price}'
+            'sản phẩm {phone_name} hiện có giá là {phone_price} triệu đồng'
         ],
         'negative_answer': [
-            'san pham {phone_name} hien dang het hang, cam on ban da quan tam!!!'
+            'sản phẩm {phone_name} hiện đang hết hàng, cảm ơn bạn đã quan tâm!!!'
         ],
         'answer_key': 'phone_price'
     }
