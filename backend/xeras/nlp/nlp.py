@@ -29,6 +29,9 @@ class NLP:
         self.same_words = SameWords()
         self.same_words.set_is_used_same_words(self.is_used_same_words)
 
+    def set_lines_limitation(self, lines_limitation=100):
+        self.lines_limitation = lines_limitation
+        
     def set_is_used_model(self, is_used_model=False):
         self.is_used_model = is_used_model
 

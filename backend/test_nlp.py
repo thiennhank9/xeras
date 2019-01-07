@@ -9,7 +9,9 @@ TEST_SAME_WORD = "Iphone 7 có đang khuyến mãi ko?"
 def test_accuracy():
     nlp = NLP()
     # nlp.set_is_used_model(True)
+    nlp.set_lines_limitation(1100)
     nlp.setup()
+
     nlp.test_accuracy()
     print(nlp.get_predict(SAMPLE_SENTENCE))
 
