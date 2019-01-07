@@ -15,24 +15,22 @@ class TestAccuracy:
                 row['sentence'] = nlp.same_words.replace_same_word(row['sentence'].lower())
                 result_nlp = nlp.get_predict(row['sentence'])
 
-                is_type_ask_right = result_nlp["type_ask"] != nlp.nlp_train_data[index]["type_ask"]
-                is_entities_right = set(result_nlp["entities"]) != set(nlp.nlp_train_data[index]["entities"])
+                is_type_ask_wrong = result_nlp["type_ask"] != nlp.nlp_train_data[index]["type_ask"]
+                is_entities_wrong = set(result_nlp["entities"]) != set(nlp.nlp_train_data[index]["entities"])
 
-                if is_type_ask_right or is_entities_right:
+                if is_type_ask_wrong or is_entities_wrong:
                     count_wrong_total += 1
 
                     test_accuracy.write("Wrong line at: " + str(index) + "\n")
 
-                    if is_type_ask_right:
+                    if is_type_ask_wrong:
                         test_accuracy.write("Wrong type ask - Result NLP: " + result_nlp["type_ask"] + "\n")
                         test_accuracy.write("Expected by train: " + nlp.nlp_train_data[index]["type_ask"] + "\n")
-                    else:
                         count_wrong_type_ask += 1
 
-                    if is_entities_right:
+                    if is_entities_wrong:
                         test_accuracy.write("Wrong entities - Result NLP: " + str(result_nlp["entities"]) + "\n")
                         test_accuracy.write("Expected by train: " + str(nlp.nlp_train_data[index]["entities"]) + "\n")
-                    else:
                         count_wrong_entities += 1
 
             total_accuracy = round(100*(1 - count_wrong_total/len(nlp.nlp_train_data)), 2)

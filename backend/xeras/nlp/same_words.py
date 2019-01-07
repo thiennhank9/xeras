@@ -38,6 +38,9 @@ class SameWords:
         self.same_words_array.sort(key=get_other_word_len, reverse=True)
     
     def replace_same_word(self, sentence=Settings.SAMPLE_SENTENCE):
+        if not self.is_used_same_words:
+            return sentence
+        
         sentence = sentence.lower().strip()
         sentence = re.sub('[!@#$]', '', sentence)
         replaced_words = []
