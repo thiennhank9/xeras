@@ -78,7 +78,7 @@ class SameWords:
                     sentence_end = ""
 
                     if index_start != 0:
-                        sentence_start = sentence[:index_start-1]
+                        sentence_start = sentence[:index_start]
                     if index_end != (len(sentence) - 1):
                         sentence_end = sentence[index_end+1:]
 
