@@ -48,15 +48,16 @@ class SameWords:
 
         for same_words_ele in self.same_words_array:
             (other_word_len, other_word, true_word) = same_words_ele
-            re_finditer = re.finditer(r'\b{0}\b'.format(other_word), sentence)
-
+            re_finditer = re.finditer(r"\b{0}\b".format(other_word), sentence)
+            
             if re_finditer:
                 plus = 0
-
+                
                 for match_other_word in re_finditer:
                     # Get the previous index replaced
                     for replaced_word in replaced_words:
-                        word_indexs = re.finditer(r'\b{0}\b'.format(replaced_word), sentence)
+                        
+                        word_indexs = re.finditer(r"\b{0}\b".format(replaced_word), sentence)
                         if word_indexs:
                             for word_index in word_indexs:
                                 replaced_indexs.append((word_index.start(), word_index.end()))
@@ -64,7 +65,7 @@ class SameWords:
                     is_in = False
 
                     index_start = match_other_word.start() + plus
-                    index_end = match_other_word.end() + plus
+                    index_end = match_other_word.start() + plus + len(other_word)
 
                     # Check if current other word is in replaced index
                     for (index_previous_start, index_previous_end) in replaced_indexs:
@@ -82,8 +83,9 @@ class SameWords:
 
                     if index_start != 0:
                         sentence_start = sentence[:index_start]
+
                     if index_end != (len(sentence) - 1):
-                        sentence_end = sentence[index_end+1:]
+                        sentence_end = sentence[index_end:]
 
                     sentence = sentence_start + true_word + sentence_end
 
