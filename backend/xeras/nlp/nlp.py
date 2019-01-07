@@ -20,6 +20,7 @@ class NLP:
     is_used_model = False
     is_used_same_words = True
     ner_tiers = 50
+    lines_limitation = 100
 
     def __init__(self):
         self.tc = TC()
@@ -41,6 +42,8 @@ class NLP:
         csv_file_pd = pd.read_csv(Settings.PATH_FILE_TRAIN, sep=';')
         print("--- NLP: Get " + str(len(csv_file_pd)) + " sentences from file train ---")
         for index, row in csv_file_pd.iterrows():
+            if index == self.lines_limitation:
+                break
             # First, convert other word to be the true word
             row['sentence'] = self.same_words.replace_same_word(row['sentence'].lower())
             row['sentence'] = re.sub('[!@#$]', '', row['sentence'])

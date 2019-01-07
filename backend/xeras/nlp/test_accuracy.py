@@ -12,7 +12,10 @@ class TestAccuracy:
         print("--- Test Accuracy: Doing ---")
         with open("test_accuracy.txt", "w", encoding="utf-8") as test_accuracy:
             for index, row in csv_file_pd.iterrows():
-                row['sentence'] = nlp.same_words.replace_same_word(row['sentence'].lower())
+                if index == nlp.lines_limitation:
+                    break
+                # row['sentence'] = nlp.same_words.replace_same_word(row['sentence'].lower().strip())
+
                 result_nlp = nlp.get_predict(row['sentence'])
 
                 is_type_ask_wrong = result_nlp["type_ask"] != nlp.nlp_train_data[index]["type_ask"]
@@ -22,7 +25,7 @@ class TestAccuracy:
                     count_wrong_total += 1
 
                     test_accuracy.write("Wrong line at: " + str(index) + "\n")
-
+                    test_accuracy.write("Wrong sentence: " + row['sentence'] + "\n")
                     if is_type_ask_wrong:
                         test_accuracy.write("Wrong type ask - Result NLP: " + result_nlp["type_ask"] + "\n")
                         test_accuracy.write("Expected by train: " + nlp.nlp_train_data[index]["type_ask"] + "\n")
