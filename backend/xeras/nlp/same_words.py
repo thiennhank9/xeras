@@ -85,7 +85,7 @@ class SameWords:
                     if index_end != (len(sentence) - 1):
                         sentence_end = sentence[index_end+1:]
 
-                    sentence = sentence_start + true_word + " " + sentence_end
+                    sentence = sentence_start + true_word + sentence_end
 
                     # Append true word to replaced word
                     replaced_words.append(true_word)
@@ -95,6 +95,7 @@ class SameWords:
                     plus += (len(true_word) - len(other_word))
 
         sentence = sentence.lower().strip()
+        # sentence= re.sub(' +', ' ',sentence)
         sentence = re.sub('[!@#$]', '', sentence)
-
+       
         return sentence
