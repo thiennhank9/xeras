@@ -15,18 +15,13 @@ class TestAccuracy:
                 if (result_nlp["type_ask"] != nlp.nlp_train_data[index]["type_ask"]) or (result_nlp["entities"] != nlp.nlp_train_data[index]["entities"]):
                     count_wrong += 1
 
-                    # print("Wrong line at: " + str(index))
                     test_accuracy.write("Wrong line at: " + str(index) + "\n")
 
                     if (result_nlp["type_ask"] != nlp.nlp_train_data[index]["type_ask"]):
-                        # print("Wrong type ask - Result NLP: " + result_nlp["type_ask"])
-                        # print("Expected by train: " + self.nlp_train_data[index]["type_ask"])
                         test_accuracy.write("Wrong type ask - Result NLP: " + result_nlp["type_ask"] + "\n")
                         test_accuracy.write("Expected by train: " + nlp.nlp_train_data[index]["type_ask"] + "\n")
 
                     if (set(result_nlp["entities"]) != set(nlp.nlp_train_data[index]["entities"])):
-                        # print("Wrong entities - Result NLP: " + str(result_nlp["entities"]))
-                        # print("Expected by train: " + str(self.nlp_train_data[index]["entities"]))
                         test_accuracy.write("Wrong entities - Result NLP: " + str(result_nlp["entities"]) + "\n")
                         test_accuracy.write("Expected by train: " + str(nlp.nlp_train_data[index]["entities"]) + "\n")
 

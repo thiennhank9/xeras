@@ -95,8 +95,8 @@ class NLP:
         
         self.load_train()
 
-        # self.tc.setup(self.tc_train_data)
-        # self.ner.setup(self.ner_train_data, self.is_used_model)
+        self.tc.setup(self.tc_train_data)
+        self.ner.setup(self.ner_train_data, self.is_used_model)
 
     def get_predict(self, sentence=Settings.SAMPLE_SENTENCE):
         sentence = self.same_words.replace_same_word(sentence.lower().strip())
