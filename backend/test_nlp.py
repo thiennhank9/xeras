@@ -4,7 +4,7 @@ from xeras.nlp.same_words import SameWords
 
 
 SAMPLE_SENTENCE = 'Bản màu vàng còn hàng ở Q9 TPHCM ko shop'
-TEST_SAME_WORD = "Iphone 7 có đang khuyến mãi ko?"
+TEST_SAME_WORD = "Anh ơi, em muốn mua iphone 6s 32gb vào cuối tuần này, không biết cửa hàng ở 4B cộng hoà còn nhiều hàng để xem không vậy?"
 
 def test_accuracy():
     nlp = NLP()
@@ -13,7 +13,7 @@ def test_accuracy():
     nlp.setup()
 
     nlp.test_accuracy()
-    print(nlp.get_predict(SAMPLE_SENTENCE))
+    # print(nlp.get_predict(SAMPLE_SENTENCE))
 
 def test_same_word():
     same_words = SameWords()

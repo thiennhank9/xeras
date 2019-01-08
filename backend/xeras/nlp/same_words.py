@@ -5,9 +5,13 @@ import xeras.nlp.nlp_settings as Settings
 def get_other_word_len(element):
     return element[0]
 
+def get_true_word_len(element):
+    return element[0]
+
 class SameWords:
     same_words_dict = {}
     same_words_array = []
+    true_words_array = []
     is_used_same_words = True
 
     def set_is_used_same_words(self, is_used_same_words=True):
@@ -16,9 +20,13 @@ class SameWords:
     def load_same_words(self):
         csv_file_pd = pd.read_csv(Settings.PATH_FILE_SAME_WORDS, sep=';')
 
+        if not self.is_used_same_words:
+            return
+        
         for index, row in csv_file_pd.iterrows():
             true_word = row["true_word"].lower().strip()
             other_words_array = row["other_words"].split(',')
+            self.true_words_array.append((len(true_word), true_word))
 
             for other_word in other_words_array:
                 # Lower and remove front and back spaces
@@ -34,8 +42,10 @@ class SameWords:
         
         # Remove duplicates
         self.same_words_array = list(set(self.same_words_array))
+        self.true_words_array = list(set(self.true_words_array))
         # Sort by other word by length, descending
         self.same_words_array.sort(key=get_other_word_len, reverse=True)
+        self.true_words_array.sort(key=get_true_word_len, reverse=True)
     
     def replace_same_word(self, sentence=Settings.SAMPLE_SENTENCE):
         if not self.is_used_same_words:
@@ -46,6 +56,37 @@ class SameWords:
         replaced_words = []
         replaced_indexs = []
 
+        # Search by true word
+        for true_word_ele in self.true_words_array:
+            (true_word_len, true_word) = true_word_ele
+            re_finditer = re.finditer(r"\b{0}\b".format(true_word), sentence)
+
+            if re_finditer:
+                for match_true_word in re_finditer:
+                    for replaced_word in replaced_words:
+                        word_indexs = re.finditer(r"\b{0}\b".format(replaced_word), sentence)
+                        if word_indexs:
+                            for word_index in word_indexs:
+                                replaced_indexs.append((word_index.start(), word_index.end()))
+                    
+                    is_in = False
+                    replaced_indexs = list(set(replaced_indexs))
+
+                    index_start = match_true_word.start()
+                    index_end = match_true_word.start() + len(true_word)
+
+                    for (index_previous_start, index_previous_end) in replaced_indexs:
+                        if (index_previous_start <= index_start and index_start <= index_previous_end) or (index_previous_start <= index_end and index_end <= index_previous_end) or (index_start <= index_previous_start and index_previous_end <= index_end):
+                            is_in = True
+                            break
+                    
+                    if is_in:
+                        continue
+                    
+                    replaced_words.append(true_word)
+                    replaced_words = list(set(replaced_words))
+
+        # Search by other word
         for same_words_ele in self.same_words_array:
             (other_word_len, other_word, true_word) = same_words_ele
             re_finditer = re.finditer(r"\b{0}\b".format(other_word), sentence)
@@ -63,6 +104,7 @@ class SameWords:
                                 replaced_indexs.append((word_index.start(), word_index.end()))
 
                     is_in = False
+                    replaced_indexs = list(set(replaced_indexs))
 
                     index_start = match_other_word.start() + plus
                     index_end = match_other_word.start() + plus + len(other_word)
