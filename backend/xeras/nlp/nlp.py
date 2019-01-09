@@ -2,9 +2,9 @@ import re
 import pandas as pd
 from xeras.nlp.tc.get_text_classification import GetTextClassification as TC
 from xeras.nlp.ner.get_name_entites import GetNameEntities as NER
-import xeras.nlp.nlp_settings as Settings
-from xeras.nlp.test_accuracy import TestAccuracy
-from xeras.nlp.same_words import SameWords
+import xeras.nlp.settings.nlp_settings as Settings
+from xeras.nlp.settings.test_accuracy import TestAccuracy
+from xeras.nlp.settings.same_words import SameWords
 
 
 class NLP:
@@ -17,10 +17,10 @@ class NLP:
     tc_train_data = []
     ner_train_data = []
 
-    is_used_model = False
-    is_used_same_words = True
-    ner_tiers = 50
-    lines_limitation = 100
+    is_used_model = Settings.DEFAULT_IS_USED_MODEL
+    ner_tiers = Settings.DEFAULT_NER_TIERS
+    is_used_same_words = Settings.DEFAULT_IS_USED_SAME_WORDS
+    lines_limitation = Settings.DEFAULT_LINES_LIMITATION
 
     def __init__(self):
         self.tc = TC()
@@ -29,15 +29,18 @@ class NLP:
         self.same_words = SameWords()
         self.same_words.set_is_used_same_words(self.is_used_same_words)
 
-    def set_lines_limitation(self, lines_limitation=100):
+    def set_lines_limitation(self, lines_limitation=Settings.DEFAULT_LINES_LIMITATION):
         self.lines_limitation = lines_limitation
         
-    def set_is_used_model(self, is_used_model=False):
+    def set_is_used_model(self, is_used_model=Settings.DEFAULT_IS_USED_MODEL):
         self.is_used_model = is_used_model
 
-    def set_is_used_same_words(self, is_used_same_words=False):
+    def set_is_used_same_words(self, is_used_same_words=Settings.DEFAULT_IS_USED_SAME_WORDS):
         self.is_used_same_words = is_used_same_words
         self.same_words.set_is_used_same_words(is_used_same_words)
+
+    def set_ner_tiers(self, ner_tiers=Settings.DEFAULT_NER_TIERS):
+        self.ner_tiers = ner_tiers
 
     def load_train(self):
         self.nlp_train_data = []
@@ -102,7 +105,7 @@ class NLP:
         self.load_train()
 
         self.tc.setup(self.tc_train_data)
-        self.ner.setup(self.ner_train_data, self.is_used_model)
+        self.ner.setup(self.ner_train_data, self.is_used_model, self.ner_tiers)
 
     def get_predict(self, sentence=Settings.SAMPLE_SENTENCE):
         sentence = self.same_words.replace_same_word(sentence.lower().strip())
@@ -115,6 +118,7 @@ class NLP:
     def test_accuracy(self):
         self.accuracy = TestAccuracy()
         self.accuracy.test_accuracy(self)
+
 
 if __name__ == '__main__':
     nlp = NLP()

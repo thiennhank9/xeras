@@ -1,5 +1,5 @@
 import pandas as pd
-import xeras.nlp.nlp_settings as Settings
+import xeras.nlp.settings.nlp_settings as Settings
 
 class TestAccuracy:
 
@@ -14,7 +14,6 @@ class TestAccuracy:
             for index, row in csv_file_pd.iterrows():
                 if index == nlp.lines_limitation:
                     break
-                # row['sentence'] = nlp.same_words.replace_same_word(row['sentence'].lower().strip())
 
                 result_nlp = nlp.get_predict(row['sentence'])
 
@@ -26,6 +25,7 @@ class TestAccuracy:
 
                     test_accuracy.write("Wrong line at: " + str(index) + "\n")
                     test_accuracy.write("Wrong sentence: " + row['sentence'] + "\n")
+
                     if is_type_ask_wrong:
                         test_accuracy.write("Wrong type ask - Result NLP: " + result_nlp["type_ask"] + "\n")
                         test_accuracy.write("Expected by train: " + nlp.nlp_train_data[index]["type_ask"] + "\n")
@@ -41,18 +41,18 @@ class TestAccuracy:
             entities_accuracy = round(100*(1 - count_wrong_entities/len(nlp.ner_train_data)), 2)
 
             print("Total wrong lines: " + str(count_wrong_total))
-            print("Total accuracy is: " + str(total_accuracy) + "%\n")
+            print("Total accuracy is: " + str(total_accuracy) + "%")
             test_accuracy.write("Total wrong lines: " + str(count_wrong_total) + "\n")
-            test_accuracy.write("Total accuracy is: " + str(total_accuracy) + "%" + "\n\n")
+            test_accuracy.write("Total accuracy is: " + str(total_accuracy) + "%" + "\n")
 
             print("Type ask wrong lines: " + str(count_wrong_type_ask))
-            print("Type ask accuracy is: " + str(type_ask_accuracy) + "%\n")
+            print("Type ask accuracy is: " + str(type_ask_accuracy) + "%")
             test_accuracy.write("Type ask wrong lines: " + str(count_wrong_type_ask) + "\n")
-            test_accuracy.write("Type ask accuracy is: " + str(type_ask_accuracy) + "%\n\n")
+            test_accuracy.write("Type ask accuracy is: " + str(type_ask_accuracy) + "%\n")
 
             print("Entities wrong lines: " + str(count_wrong_entities))
-            print("Entities accuracy is: " + str(entities_accuracy) + "%\n")
+            print("Entities accuracy is: " + str(entities_accuracy) + "%")
             test_accuracy.write("Entities wrong lines: " + str(count_wrong_entities) + "\n")
-            test_accuracy.write("Entities accuracy is: " + str(entities_accuracy) + "%\n\n")
+            test_accuracy.write("Entities accuracy is: " + str(entities_accuracy) + "%\n")
 
             print("--- Test Accuracy: Done ---")

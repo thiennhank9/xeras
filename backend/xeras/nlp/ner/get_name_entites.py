@@ -3,17 +3,18 @@ import pandas as pd
 import spacy
 from spacy.util import minibatch, compounding
 import datetime
+import xeras.nlp.settings.nlp_settings as Settings
 
 
-PATH_MODEL_NER = 'xeras/nlp/ner/model'
-PATH_LOGS_NER = 'xeras/nlp/ner/logs/ner_logs.csv'
+PATH_MODEL_NER = Settings.PATH_MODEL_NER
+PATH_LOGS_NER = Settings.PATH_LOGS_NER
 
 
 class GetNameEntities:
     TRAIN_DATA = []
     nlp = None
-    is_used_model = False
-    n_iter = 100
+    is_used_model = Settings.DEFAULT_IS_USED_MODEL
+    ner_tiers = Settings.DEFAULT_NER_TIERS
 
     def load_train_data(self, ner_train_data = []):
         print("--- NER: Loading file train ---")
@@ -36,7 +37,7 @@ class GetNameEntities:
     def save_model(self):
         self.nlp.to_disk(PATH_MODEL_NER)
 
-    def train_model(self, n_iter=100):
+    def train_model(self):
         print("--- NER: Building model ---")
         time_start = datetime.datetime.now()
         print("--- NER: Start building model at " + str(time_start) + " ---")
@@ -62,7 +63,7 @@ class GetNameEntities:
         other_pipes = [pipe for pipe in self.nlp.pipe_names if pipe != 'ner']
         with self.nlp.disable_pipes(*other_pipes):  # only train NER
             optimizer = self.nlp.begin_training()
-            for itn in range(n_iter):
+            for itn in range(self.ner_tiers):
                 random.shuffle(self.TRAIN_DATA)
                 losses = {}
                 # batch up the examples using spaCy's minibatch
@@ -82,8 +83,9 @@ class GetNameEntities:
         time_amount = time_end - time_start
         print("--- NER: Amount time is " + str(time_amount) + " ---")
 
-    def setup(self, ner_train_data = [], is_used_model=False):
+    def setup(self, ner_train_data = [], is_used_model=Settings.DEFAULT_IS_USED_MODEL, ner_tiers=Settings.DEFAULT_NER_TIERS):
         self.is_used_model = is_used_model
+        self.ner_tiers = ner_tiers
 
         self.load_train_data(ner_train_data)
         if is_used_model:

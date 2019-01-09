@@ -1,6 +1,6 @@
 import re
 import pandas as pd
-import xeras.nlp.nlp_settings as Settings
+import xeras.nlp.settings.nlp_settings as Settings
 
 def get_other_word_len(element):
     return element[0]
@@ -12,9 +12,9 @@ class SameWords:
     same_words_dict = {}
     same_words_array = []
     true_words_array = []
-    is_used_same_words = True
+    is_used_same_words = Settings.DEFAULT_IS_USED_SAME_WORDS
 
-    def set_is_used_same_words(self, is_used_same_words=True):
+    def set_is_used_same_words(self, is_used_same_words=Settings.DEFAULT_IS_USED_SAME_WORDS):
         self.is_used_same_words = is_used_same_words
 
     def load_same_words(self):

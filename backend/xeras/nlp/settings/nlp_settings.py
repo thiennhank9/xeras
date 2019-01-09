@@ -1,0 +1,9 @@
+PATH_FILE_TRAIN = 'xeras/nlp/files/train_data.csv'
+PATH_FILE_SAME_WORDS = 'xeras/nlp/files/same_words.csv'
+PATH_MODEL_NER = 'xeras/nlp/ner/model'
+PATH_LOGS_NER = 'xeras/nlp/ner/logs/ner_logs.csv'
+DEFAULT_LINES_LIMITATION = 1100
+DEFAULT_NER_TIERS = 100
+DEFAULT_IS_USED_MODEL = False
+DEFAULT_IS_USED_SAME_WORDS = True
+SAMPLE_SENTENCE = 'Ipx giá nhiêu nhỉ'

@@ -1,6 +1,6 @@
 import re
 from xeras.nlp.nlp import NLP
-from xeras.nlp.same_words import SameWords
+from xeras.nlp.settings.same_words import SameWords
 
 
 SAMPLE_SENTENCE = 'Bản màu vàng còn hàng ở Q9 TPHCM ko shop'
@@ -9,7 +9,8 @@ TEST_SAME_WORD = "Anh ơi, em muốn mua iphone 6s 32gb vào cuối tuần này,
 def test_accuracy():
     nlp = NLP()
     # nlp.set_is_used_model(True)
-    nlp.set_lines_limitation(1100)
+    # nlp.set_lines_limitation(1100)
+    # nlp.set_ner_tiers(10)
     nlp.setup()
 
     nlp.test_accuracy()
