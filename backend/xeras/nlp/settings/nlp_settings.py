@@ -1,7 +1,10 @@
-PATH_FILE_TRAIN = 'xeras/nlp/files/train_data.csv'
-PATH_FILE_SAME_WORDS = 'xeras/nlp/files/same_words.csv'
+PATH_FILE_TRAIN = 'xeras/nlp/train/train_data.csv'
+PATH_FILE_SAME_WORDS = 'xeras/nlp/train/same_words.csv'
 PATH_MODEL_NER = 'xeras/nlp/ner/model'
 PATH_LOGS_NER = 'xeras/nlp/ner/logs/ner_logs.csv'
+PATH_CORRECT_SENTENCES = 'xeras/nlp/test_results/correct_sentences.xlsx'
+PATH_WRONG_SENTENCES = 'xeras/nlp/test_results/wrong_sentences.xlsx'
+PATH_TEST_ACCURACY = 'xeras/nlp/test_results/test_accurary.txt'
 DEFAULT_LINES_LIMITATION = 1100
 DEFAULT_NER_TIERS = 100
 DEFAULT_IS_USED_MODEL = False
