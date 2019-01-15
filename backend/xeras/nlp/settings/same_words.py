@@ -139,7 +139,7 @@ class SameWords:
                     plus += (len(true_word) - len(other_word))
 
         sentence = sentence.lower().strip()
-        # sentence= re.sub(' +', ' ',sentence)
+        sentence = re.sub(' +', ' ',sentence)
         sentence = re.sub('[!@#$]', '', sentence)
        
         return sentence
