@@ -9,10 +9,10 @@ Mình muốn mua Iphone X hàng nhập khẩu từ Mỹ giá nhiêu;hoi_gia;PHON
 Bản 64gb mắc hơn 32gb nhiêu;hoi_gia;IS_COMPARE:mắc hơn|ROM:64|ROM:32
 Giá 22tr2 là tính thuế VAT 10% chưa shop;hoi_gia;MONEY:22tr2|TAX:10%|IS_INCLUDE_TAX:thuế VAT
 Tính thuế nữa là giá nhiêu vậy bạn;hoi_gia;IF_INCLUDE_TAX:Tính thuế nữa
-Mua SS9+ có được tặng kèm gì ko shop;hoi_khuyen_mai;PHONE:SS9+|SALE_OFF_GIFF:tặng kèm
+Mua SS9+ có được tặng kèm gì ko shop;hoi_khuyen_mai;PHONE:SS9+|SALE_OFF_GIFF:tặng kèm gì
 Iphone 7 có đang khuyến mãi ko?;hoi_khuyen_mai;PHONE:Iphone 7|IS_SALE_OFF_NOW:đang khuyến mãi ko
-Ủa giờ còn giảm giá 1tr không;hoi_khuyen_mai;IS_SALE_OFF_NOW:giảm giá 1tr không
-Mình mua trả góp vậy có được giảm 2tr không;hoi_khuyen_mai;IS_SALE_OFF_INSTALLMENT:giảm 2tr không
+Ủa giờ giảm giá 1tr không;hoi_khuyen_mai;IS_SALE_OFF_NOW:giảm giá 1tr không
+Mình mua trả góp vậy có được giảm 2tr không;hoi_tra_gop;IS_NEEDED:mua trả góp|IS_SALE_OFF_INSTALLMENT:giảm 2tr không
 Khi nào hết chương trình giảm giá sốc với đồ tặng kèm cho con này vậy bạn;hoi_khuyen_mai;WHEN_END_SALE_OFF:Khi nào hết chương trình
 Máy này sử dụng cục sạc mấy chấu thế;hoi_phan_cung;WHAT_CHARGER:sạc mấy chấu
 Sạc thường mấy tiếng mới đầy pin vậy;hoi_phan_cung;HOW_LONG_CHARGER:Sạc thường mấy tiếng
@@ -23,7 +23,7 @@ Xài chip gì vậy shop;hoi_phan_cung;WHAT_CHIP:chip gì
 Camera trước nhiêu chấm vậy;hoi_phan_cung;WHAT_FRONT_CAMERA:Camera trước
 Xiaomi này là vỏ nhôm hay nhựa vậy;hoi_phan_cung;MANUFACTURER:Xiaomi|WHAT_PHONE_CASE:vỏ nhôm hay nhựa
 Máy này ram nhiêu?;hoi_phan_cung;WHAT_RAM:ram nhiêu
-Máy này dung lượng rom là 32 hay 64?;hoi_phan_cung;WHAT_ROM:dung lượng rom là|ROM:32|ROM:64
+Máy này dung lượng rom là 32 hay 64?;hoi_phan_cung;WHAT_ROM:dung lượng rom|ROM:32|ROM:64
 Màn hình con SS9+ nhiêu inch nhỉ;hoi_phan_cung;PHONE:SS9+|WHAT_INCH:nhiêu inch nhỉ
 Có tai thỏ ko shop?;hoi_phan_cung;IS_EAR_RABBIT:tai thỏ
 Có tràn màn hình không?;hoi_phan_cung;IS_OVER_FLOW_SCREEN:tràn màn hình
@@ -58,14 +58,14 @@ Cho xin địa chỉ ở Tiền Giang bạn ơi;hoi_dia_chi;LOCATION:Tiền Gian
 Tư vấn e trả góp ạ;hoi_tra_gop;IS_NEEDED:Tư vấn e trả góp
 Em năm nay 18t, có bằng lái xe trả góp được không;hoi_tra_gop;YEAR_OLD:18|GIAY_TO:bằng lái xe
 Trả trước 30% là nhiêu tiền, rồi trả còn lại hết nhiều;hoi_tra_gop;HOW_MUCH_FIRST_PAY:30%|HOW_MUCH_LEFT:trả còn lại
-Có hỗ trợ thanh toán qua thẻ tín dụng không;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:thanh toán qua thẻ tín
+Có hỗ trợ thanh toán qua thẻ tín dụng không;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:thanh toán qua thẻ tín dụng
 Có thanh toán qua thẻ tín dụng không;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:thanh toán qua thẻ tín dụng
-Có hỗ trợ trả góp qua thẻ ngân hàng hay tín dụng không;hoi_tra_gop;IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT:trả góp qua thẻ ngân hàng
-Có trả góp qua thẻ ngân hàng hay tín dụng không;hoi_tra_gop;IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT:trả góp qua thẻ ngân hàng
+Có hỗ trợ trả góp qua thẻ ngân hàng hay tín dụng không;hoi_tra_gop;IS_NEEDED:hỗ trợ|IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT:trả góp qua thẻ ngân hàng
+Có trả góp qua thẻ ngân hàng hay tín dụng không;hoi_tra_gop;IS_NEEDED:trả góp
 Cần giấy tờ gì để mang ra làm thủ tục trả góp được nhỉ;hoi_tra_gop;WHAT_NEEDED_PAPERS:Cần giấy tờ gì
 Kính cường lực bị vỡ có bảo hành không vậy;hoi_bao_hanh;IS_BROKEN_GLASS:Kính cường lực bị vỡ
 Vừa mua mà hư loa rồi, cứ rè rè mai ra đổi;hoi_bao_hanh;IS_BROKEN_VOLUME:hư loa
-không lấy quà tặng giá bao nhiêu ạ?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:không lấy quà tặng giá bao nhiêu
+không lấy quà tặng giá bao nhiêu ạ?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:không lấy quà tặng
 A9 2018.neu tru gif 1500k minh ko lay km cua cellphones co dc ko.gia tot nhat nhu nao ad;hoi_gia;PHONE:A9 2018|IS_PRICE_AFTER_SALE_OFF_PRICE:ko lay km
 Quà of cellphone là quà gì v à;hoi_khuyen_mai;SALE_OFF_GIFF:Quà of cellphone
 Tư vấn giùm nếu không quà tặg thì giảm bao nhiêu nữa ạ;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:không quà tặg thì giảm bao nhiêu
@@ -80,7 +80,7 @@ Cellphones có tiệm nào ở biên hòa không? Nhận điện thoại rồi t
 Trả trước 30% góp 12th mỗi tháng góp nhiêu vập bạn;hoi_tra_gop;HOW_MUCH_FIRST_PAY:30%|HOW_MUCH_LEFT:góp 12th
 Nếu không nhận khuyến mãi thì có được trừ tiền vào sản phẩm không shop ?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:không nhận khuyến mãi
 trả trước 10% và gop 12thang đc ko ạ;hoi_tra_gop;IS_NEEDED:gop 12thang
-Có trả trước 10% và góp trong 9 tháng ko;hoi_tra_gop;IS_NEEDED:góp trong 9 tháng
+Có trả trước 10% và góp trong 9 tháng ko;hoi_tra_gop;IS_NEEDED:có trả trước|IS_NEEDED:góp trong 9 tháng
 a9 có chống nước chống bụi ko vậy;hoi_phan_cung;PHONE:a9|IS_WATER_PROTECTED:chống nước
 Cho mình hỏi là không lấy toàn bộ quà cáp gì thì giá cuối cùng phải thanh toán là bao nhiêu vậy Shop?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:không lấy toàn bộ quà cáp
 Cho hỏi mức giá khi không lấy quà;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:không lấy quà
@@ -95,9 +95,9 @@ Cho em hỏi là nếu như không lấy pin và loa thì giá sản phẩm sẽ
 Nếu không lấy tất cả quà thì giá là bao nhiêu;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:không lấy tất cả quà
 nếu ko lấy quà tặng thì giá còn bao nhiêu ạ + có hỗ trợ trả góp 0% lãi ko ạ?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:ko lấy quà tặng
 Sản phầm này có hỗ trợ trả góp không ạ? và Nếu trả góp thì có ưu đãi gì không ạ?;hoi_tra_gop;IS_NEEDED:hỗ trợ trả góp
-Mình muốn trả góp qua thẻ Visa thì hình thức như thế nào,bn tháng .;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:trả góp qua thẻ Visa
-Cần thủ tục gì không?;hoi_tra_gop;IS_NEEDED:thủ tục gì
-Nếu ko lấy Pin sạc dự phòng Loa bluetooth, Film và Spotify trong phần quà tặng của A9 thì có đc trừ vào giá 12tr490 ko ạ ;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:ko lấy Pin sạc dự phòng
+Mình muốn trả góp qua thẻ Visa thì hình thức như thế nào,bn tháng .;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:trả góp qua thẻ
+Cần thủ tục gì không?;hoi_tra_gop;IS_NEEDED:cần thủ tục gì
+Nếu ko lấy Pin sạc dự phòng Loa bluetooth, Film và Spotify trong phần quà tặng của A9 thì có đc trừ vào giá 12tr490 ko ạ ;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:ko lấy Pin sạc
 Nếu sp này không lấy quà tặng thì giá sẽ còn bn ạ;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:không lấy quà tặng
 San pham co samsung pay khong?;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:co samsung pay
 E này có chống nước k ad?;hoi_phan_cung;IS_WATER_PROTECTED:có chống nước
@@ -106,14 +106,14 @@ Cho mình xin thông tin quà tặng bên mình ạ;hoi_khuyen_mai;SALE_OFF_GIFF
 Hàng này mới 100% àh shop , shop có máy chip snap drangon không;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:mới 100% àh
 Trả góp 0% qua Home là trả trước và mỗi tháng trả bao nhiêu ạ? Cửa hàng ở Thái Hà còn máy ko ạ?;hoi_dia_chi;LOCATION:Thái Hà
 trả trước bao nhiêu % ạ;hoi_tra_gop;IS_NEEDED:trả trước bao nhiêu
-Bạn ơi, S9+ mua trả góp qua thẻ tín dụng ntn vậy?;hoi_tra_gop;IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT:trả góp qua thẻ tín dụng
-bạn ơi, hiện tại ở HN còn ko bạn?;hoi_dia_chi;LOCATION:HN
+Bạn ơi, S9+ mua trả góp qua thẻ tín dụng ntn vậy?;hoi_tra_gop;IS_NEEDED:mua trả góp
+bạn ơi, hiện tại ở HN còn ko bạn?;hoi_con_hang;LOCATION:HN
 S9+ có trả góp ưu đãi gì bạn nhỉ?;hoi_khuyen_mai;IS_SALE_OFF_INSTALLMENT:trả góp ưu đãi gì|PHONE:S9+
 Nếu mình ko lấy phiếu mua hàng thì có giảm giá ko vậy shop?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:ko lấy phiếu mua hàng thì có giảm giá
 S9plus có chống nước chống bụi ko?;hoi_phan_cung;IS_WATER_PROTECTED:chống nước|PHONE:S9plus
 Mình muốn mua máy màu vàng nhưng ở Q6 thì shop nào gần nhất và shop có dán màn hình miễn phí không ạ ? ;hoi_dia_chi;COLOR:vàng|LOCATION:Q6
-E trả trc 50% thì có dc lãi suất 0% k ạ;hoi_tra_gop;IS_NEEDED:trả trc 50%
-Ý mình là ss s9 plus màu hoàng kim;hoi_gia;PHONE:s9 plus|COLOR:hoàng kim
+E trả trc 50% thì có dc lãi suất 0% k ạ;hoi_tra_gop;IS_NEEDED:e trả trc 50%
+Ý mình là ss s9 plus màu hoàng kim;hoi_con_hang;PHONE:s9 plus|COLOR:hoàng kim
 Cho hỏi có đc hưởng giá ưu đãi của hom nay kg. Mình ở HN. Hay là tặng pmh 4tr600. Mình thay giá hom nay đang tốt.;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:giá ưu đãi
 Cho hỏi ss s9 plus hoàng kim có ct trả góp 0% qua home credit kg?;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:ct trả góp 0% qua home credit|PHONE:s9 plus|COLOR:hoàng kim
 Cho minh hoi gop 12 thang co dc ko vay;hoi_tra_gop;IS_NEEDED:gop 12 thang
@@ -123,7 +123,7 @@ Còn áp dụng chương trình 20tr tại HCM ko shop?;hoi_khuyen_mai;IS_SALE_O
 mua note 9 512GB bằng giá 128GB - chỉ còn 20.390.000 hcm con hang k vay;hoi_con_hang;PHONE:note 9|ROM:512|ROM:128
 Chương trình nâng cấp bản 512GB còn hàng ở HCM ko Ad ?;hoi_con_hang;ROM:512|LOCATION:HCM
 Hôm nay ngày 26/11 còn áp dụng chương trình khuyến mãi này k shop;hoi_khuyen_mai;IS_SALE_OFF_NOW:còn áp dụng chương trình khuyến mãi
-Mua trả góp 0% ở xa làm hồ sơ được ko shop,mình ở Ninh Thuận;hoi_tra_gop;IS_NEEDED:Mua trả góp 0%|LOCATION:Ninh Thuận
+Mua trả góp 0% ở xa làm hồ sơ được ko shop,mình ở Ninh Thuận;hoi_tra_gop;IS_NEEDED:Mua trả góp|LOCATION:Ninh Thuận
 Ở quảng bình còn note 9 512gb giá 20.390 k ad;hoi_con_hang;PHONE:note 9|ROM:512|LOCATION:quảng bình
 Chào bạn. Mình mua note 9 128gb ở cellphones. Giờ muốn nâng cấp bản 512GB thì phải phụ thêm bao nhiêu tiền?;hoi_doi_cu_lay_moi;PHONE:note 9|ROM:128|ROM:512
 E dùng con S8+. Nó vỡ màn hình. Bây giờ muốn đổi máy s7 cần bao nhiêu tiền ạ?;hoi_doi_cu_lay_moi;PHONE:S8+|PHONE:s7
@@ -141,7 +141,7 @@ Quà có được hoàn trả hoặc đổi không ?;hoi_doi_cu_lay_moi;CAN_SELL
 có đc trừ thẳng quà không ??;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:trừ thẳng quà
 Cho mình hỏi đây là máy lock hay máy gì 512gb mà 32tr vậy..;hoi_nguon_hang;WHAT_FROM_TYPE:máy lock hay máy gì|ROM:512
 Cho em hỏi bên mình có chính sách trả góp 0% trong kỳ hạn 3 tháng không ạ?;hoi_tra_gop;IS_NEEDED:trả góp 0%
-XS max bản 512 GB ở HCM hết hàng...nhưng ở Hà nội thì còn hàng..cua hang minh co thể giao vào HCM bán cho khách k..và khoang bao lâu hàng về HCM ?;hoi_khi_nao;PHONE:XS max|LOCATION:HCM|LOCATION:Hà nội|ROM:512
+XS max bản 512 GB ở HCM còn hàng không?;hoi_con_hang;PHONE:XS max|LOCATION:HCM|ROM:512
 sao con này rẽ vạy ad 500gb mà co 35tr là sao ạ;hoi_gia;ROM:500|MONEY:35tr
 Phiếu mua hàng 500k có được trừ thẳng vào sản phẩm không?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:trừ thẳng vào sản phẩm
 Cho hỏi là có mã giảm cho khách hàng mới khi nhận thông báo qua email 10%, thì lúc mua hàng được áp dụng chung với cả galaxy gift và phiếu mua hàng 500k luôn phải ko shop?;hoi_khuyen_mai;SALE_OFF_GIFF:mua hàng được áp dụng chung
@@ -162,8 +162,8 @@ Mình mua máy ở cellphones giờ muốn bán lại để mua j6+ có được
 Mình còn đc giảm PMH 500k khi mua j6+ nữa không ? Mình ở Q.7;hoi_khuyen_mai;IS_SALE_OFF_NOW:còn đc giảm|PHONE:j6+
 còn tặng PMH 500K nữa không ạ ?;hoi_khuyen_mai;IS_SALE_OFF_NOW:còn tặng
 Khi mình mua j6+ ý. Đc KM PMH 540k thì có trừ thằg vào tiền mua j6+ k ạ;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:có trừ thằg vào tiền mua|PHONE:j6+
-j6+ này mua trả góp thì có đc KM PMH 540k không ạ? hàng này ở Hà Nội còn không ạ;hoi_khuyen_mai;IS_SALE_OFF_INSTALLMENT:mua trả góp|PHONE:j6+
-j6+ mau đỏ bao jo có hàng shop ?;hoi_khi_nao;PHONE:j6+|COLOR:đỏ
+j6+ này ở Hà Nội còn không ạ;hoi_con_hang;LOCATION:Hà Nội|PHONE:j6+
+j6+ mau đỏ bao giờ có vậy ?;hoi_khi_nao;PHONE:j6+|COLOR:đỏ
 kg co mau hong ha shop ?;hoi_con_hang;COLOR:hong
 Cho em hỏi samsung galaxy j6 plus giá 4.690.000 sau khi trừ  phiếu mua hàng là còn 4.190.000 phải không ạ ?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:sau khi trừ|PHONE:samsung galaxy j6 plus
 em ở bình dương cầm mua j6 plus;hoi_dia_chi;LOCATION:bình dương|PHONE:j6 plus
@@ -173,24 +173,25 @@ shop có cửa hàng nào gần chùa láng nhất k v?;hoi_dia_chi;LOCATION:ch�
 Khi nào về màu đỏ vậy ạ;hoi_khi_nao;COLOR:đỏ
 j6 plus sài chip snap 430 hay 425 z ad;hoi_phan_cung;WHAT_CHIP:sài chip snap 430 hay 425 z|PHONE:j6 plus
 J6+ bên mình có màu đỏ chưa shop;hoi_con_hang;PHONE:J6+|COLOR:đỏ
-Mình không lấy PMH 500.000₫ thì khi mua máy chỉ phải trả 4.190.000₫ phải không ad? Và mình ở Tân Mỹ- Mỹ Đình thì ra cửa hàng nào gần nhất vậy ad? Cảm ơn!;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:chỉ phải trả|LOCATION:Tân Mỹ|LOCATION:Mỹ Đình
+Mình không lấy PMH 500.000₫ thì khi mua máy chỉ phải trả 4.190.000₫ phải không ad? Và mình ở Tân Mỹ- Mỹ Đình thì ra cửa hàng nào gần nhất vậy ad? Cảm ơn!;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:chỉ phải trả|LOCATION:Mỹ Đình
 Samsung galaxy j6+ có giá là 4.190.000 phải ko a, vạy nếu cộng PMH 500k vào thì giá của  sansung galaxy j6+ sẻ  có giá là bao nhiêu vạy a;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:cộng PMH 500k|PHONE:Samsung galaxy j6+
 Thế giờ e mua j6plus ko lấy phiếu mua hàng thì e phải trả bn tiền ạ;hoi_gia;PHONE:j6plus|IS_PRICE_AFTER_SALE_OFF_PRICE:phải trả bn
 j6 plus còn mầu khác k bạn;hoi_con_hang;WHAT_ELSE_COLOR:còn mầu khác|PHONE:j6 plus
 Phiếu mua hàng này chỉ có áp dụng  với mua online ko a?;hoi_khuyen_mai;IS_SALE_OFF_NOW:chỉ có áp dụng  với mua online
 mình muốn đổi máy cũ với máy này có bù trừ gì thêm không? có thì gồm những gì v ad?;hoi_doi_cu_lay_moi;EXTRA_MONEY:bù trừ gì thêm
-Cho em hỏi máy này có bộ nhớ chính xác là 3G/32G hay 4G/64G vậy;hoi_phan_cung;WHAT_ROM:bộ nhớ chính xác|ROM:32|ROM:64
-Mua tra gop can nhung j vay;hoi_tra_gop;IS_NEEDED:tra gop can
-Hàng này 2 sim vật lý và là hàng mới đúng không shop? mình muốn mua máy màu trắng bên shop có hàng không?;hoi_phan_cung;HOW_NUMBER_SIM:2 sim
+Cho em hỏi máy này có bộ nhớ chính xác là 3G/32G hay 4G/64G vậy;hoi_phan_cung;WHAT_ROM:bộ nhớ chính xác
+Mua tra gop can nhung j vay;hoi_tra_gop;IS_NEEDED:mua tra gop can
+Hàng này 2 sim vật lý đúng không shop?;hoi_phan_cung;HOW_NUMBER_SIM:2 sim
+mình muốn mua máy màu trắng bên shop có hàng không?;hoi_con_hang;OTHER:có hàng không
 Quá kì vậy note 9 mới còn có 21 tr bản 512 g thoi;hoi_gia;PHONE:note 9|ROM:512
 Sao báo kêu note 9 512 g giảm còn 21tr mà hãng bán giá cũ vậy;hoi_gia;PHONE:note 9|ROM:512
 cái nay 2 sim nano hả cellphone?;hoi_phan_cung;WHAT_SIM:sim nano
-nếu ko lấy quà thì có được giảm giá không, khi mua trả góp thì dựa trên giá gốc hay giá giảm vậy;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:được giảm giá không
+nếu ko lấy quà thì có được giảm giá không, khi mua trả góp thì dựa trên giá gốc hay giá giảm vậy;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:ko lấy quà|IS_PRICE_AFTER_SALE_OFF_PRICE:được giảm giá không
 shop cho hỏi k lấy quà trừ được bn tiền vậy;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:k lấy quà
 nó là màn OLED mà s trên đây ghi AMOLED vậy ??;hoi_phan_cung;IS_OVER_FLOW_SCREEN:màn OLED
 Mình ở gần khu thái hà. Bên bạn có thể chuyển máy từ hồ tùng mậu về thái hà có dc ko;hoi_con_hang;LOCATION:thái hà
 E mới mua 3i đc 7 ngày h muốn đổi lên 20 pro đk ko ạ cần tư vấn;hoi_doi_cu_lay_moi;PROCEDURE:muốn đổi lên|PHONE:3i
-Mình có mua 1máy p20 pro được 3 tháng, có mua thêm gói bảo hành Vip 1tr7 . Giờ máy mình bị rơi, trầy xướt phần viền. Có bảo hành lại cho mình ko;hoi_bao_hanh;IS_BROKEN_GLASS:bị rơi
+Mình có mua 1máy p20 pro được 3 tháng, máy bị rơi. Có bảo hành lại cho mình ko;hoi_bao_hanh;IS_BROKEN_GLASS:bị rơi
 Ko lấy quà giá bao nhiêu, mình ở sài gòn;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:Ko lấy quà
 Ở HN còn máy không ?;hoi_con_hang;LOCATION:HN
 Nếu không lấy loa + sim thì trừ bao nhiêu tiền ?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:không lấy loa + sim 
@@ -209,8 +210,8 @@ Nay trả góp s v a/c;hoi_tra_gop;IS_NEEDED:trả góp s v
 Hà Nội còn không bạn nhỉ?;hoi_con_hang;LOCATION:Hà Nội
 cho em xin giá trừ quà;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:trừ quà
 Lúc trước thấy con này được bảo hành rơi vỡ màn hình 3 tháng, bảo hành tận nhà luôn, giờ còn được áp dụng không shop ơi;hoi_bao_hanh;IS_BROKEN_GLASS:rơi vỡ màn hình
-Cho mình xin giá đã trừ quà, ;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:trừ quà
-Cho anh xin giá sau trừ quà nha !;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:trừ quà
+Cho mình xin giá đã trừ quà, ;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:đã trừ quà
+Cho anh xin giá sau trừ quà nha !;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:sau trừ quà
 Em muốn mua trả góp thì như thế nào! và trừ quà đi có trừ vào giá máy không ạ! Có gì liên hệ cho em biết với ạ;hoi_tra_gop;IS_NEEDED:mua trả góp
 Giá trừ quà còn bao nhiêu shop;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:Giá trừ quà
 cho mình hỏi trừ quà sp còn bao nhiêu vậy shop;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:trừ quà
@@ -222,33 +223,32 @@ Trừ quà còn bao nhiêu tiền shop ơi?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRIC
 ben go vap con hang ko zenfon max pro ma mau bac;hoi_con_hang;LOCATION:go vap|PHONE:zenfon max pro|COLOR:bac
 giá sản phẩm?;hoi_gia;OTHER:giá sản phẩm
 Phiếu mua hàng có được trừ vào giá sản phẩm luôn không ạ?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:trừ vào giá sản phẩm
-Em muốn mua mà chả thấy giá ;hoi_gia;OTHER:mua mà chả thấy giá
+Em muốn mua mà chả thấy giá;hoi_gia;OTHER:muốn mua
 vay o bình dương có chi nhánh k AD;hoi_dia_chi;LOCATION:bình dương
-chưa có hàng về ha ad;hoi_khi_nao;OTHER:hàng về
-và shop có cho trả tiền bằng thẻ ngân hàng không ạ?;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:trả tiền bằng thẻ
+chưa có hàng về ha ad;hoi_khi_nao;OTHER:chưa có hàng
+và shop có cho trả tiền bằng thẻ ngân hàng không ạ?;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:bằng thẻ ngân hàng
 Còn hàng full box nguyên seal ko shop;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:full box nguyên seal
 ở đồng tháp có bán không ạ;hoi_con_hang;LOCATION:đồng tháp
 chơi game đc ko;hoi_nhu_cau;IS_FINE_WHILE_PLAYING:chơi game đc
 hàng này là hàng mới nguyên siêu à;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:hàng mới
 Xin chào! Em ở TPHCM có thì có thể mua dòng điện thoại này ở chi nhánh nào ạ?;hoi_dia_chi;LOCATION:TPHCM
-Chào Ad. Em muốn mua trả góp qua hình thức trả góp qua thẻ tín dụng của ngân hàng Maritime Bank thì cần phải làm những thủ tục và giấy tờ gì. Và khi lấy máy phải trả trước bao nhiêu tiền ạ. Tks Ad.;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:trả góp qua thẻ tín dụng
+Em muốn mua trả góp qua hình thức trả góp qua thẻ tín dụng của ngân hàng Maritime Bank thì cần phải làm những thủ tục và giấy tờ gì;hoi_tra_gop;IS_NEEDED:mua trả góp
 E ở bình thuận mua trả góp 30% có chuyển máy đến ko ạ ;hoi_tra_gop;IS_NEEDED:trả góp 30%|LOCATION:bình thuận
 nếu mua trả góp thì mình đưa trước bao nhiêu phần trăm vậy ac;hoi_tra_gop;IS_NEEDED:mua trả góp
 Ở vũng tàu có chi nhánh k ạ;hoi_dia_chi;LOCATION:vũng tàu
 Con này có ở bắc ninh ko ạ;hoi_dia_chi;LOCATION:bắc ninh
-Máy còn hàng ở của hàng ở Bình Dương ko. ;hoi_dia_chi;LOCATION:Bình Dương
+Máy còn hàng ở của hàng ở Bình Dương ko;hoi_con_hang;LOCATION:Bình Dương
 con này chơi free fire mượt được ko anh;hoi_nhu_cau;GAME:free fire
-Cho mình hỏi Max pro M1 4g có bán ở Cái Bè.Tiền Giang k ạ;hoi_dia_chi;PHONE:Max pro M1|RAM:4|LOCATION:Tiền Giang
-Còn hàng k ad...minh ở càu diễn...shop có địa chỉ nao gàn khu vuc đó k;hoi_con_hang;LOCATION:càu diễn
+Cho mình hỏi Max pro M1 4g có bán ở Cái Bè.Tiền Giang k ạ;hoi_con_hang;PHONE:Max pro M1|RAM:4|LOCATION:Tiền Giang
 co kiêu tra góp trước 0% hay 10%;hoi_tra_gop;IS_NEEDED:tra góp trước
-Ad cho hỏi. Có hỗ trợ trả góp trả trước 0% ko ạ. Thủ tục cần cmnd+ bằng lái gốc và có cần số đt  hay gì khác ko ạ;hoi_tra_gop;IS_NEEDED:trả góp trả trước
-bên mình có máy chưa kích họat không ạ?;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:chưa kích họat
-Giá bao nhiêu ạ;hoi_gia;OTHER:bao nhiêu
+Ad cho hỏi. Có hỗ trợ trả góp trả trước 0% ko ạ. Thủ tục cần cmnd+ bằng lái gốc và có cần số đt  hay gì khác ko ạ;hoi_tra_gop;IS_NEEDED:hỗ trợ
+bên mình có máy chưa kích họat không ạ?;hoi_con_hang;IS_BRAND_NEW_OR_LIKE_NEW:chưa kích họat
+Giá bao nhiêu ạ;hoi_gia;OTHER:giá bao nhiêu
 bao giờ nhập tiếp màu đen ạ?;hoi_khi_nao;COLOR:đen
 hết màu đen rồi ạ?;hoi_con_hang;COLOR:đen
 sản phẩm này còn hàng ở chi nhánh nào ở tphcm ạ?;hoi_dia_chi;LOCATION:tphcm
 Sản phẩm này còn hàng k ạ ?;hoi_con_hang;OTHER:còn hàng
-năm 2019 em mua năm 2019 em mua được không ? Hàng lúc đó có giảm giá không ạ ? Em mong lúc đấy ở Hà Nội còn hàng ạ /__\;hoi_khuyen_mai;WHEN_END_SALE_OFF:năm 2019 em mua
+em mua năm 2019 lúc đó có giảm giá không ạ;hoi_khuyen_mai;WHEN_END_SALE_OFF:năm 2019 lúc đó có giảm giá không
 Máy sẵn tiếng việt chưa shop, mình ở cao bằng shop có ship ko? Và phí ship là bnh ạ?;hoi_phan_mem;IS_VIETNAMESE_INSTALLED:tiếng việt
 có chạy tiếng việt không ạ;hoi_phan_mem;IS_VIETNAMESE_INSTALLED:tiếng việt
 Còn ap ở HN ko shop, cả cũ,mới;hoi_con_hang;LOCATION:HN
@@ -257,7 +257,7 @@ Bạn oi ở Khương Đình Hà Nội có mầu xanh không?;hoi_con_hang;LOCAT
 Hết hàng rồi hả shop ? ;hoi_con_hang;OTHER:Hết hàng rồi
 Ko có bản 64 gb ạ;hoi_con_hang;ROM:64
 hàng này còn ko;hoi_con_hang;OTHER:còn ko
-cho e hỏi là mua tại shop có ưu đãi gì k nhỉ?;hoi_khuyen_mai;SALE_OFF_GIFF:ưu đãi gì k
+cho e hỏi là mua tại shop có ưu đãi gì k nhỉ?;hoi_khuyen_mai;SALE_OFF_GIFF:ưu đãi gì
 Shop ơi hỏi tý, có màu đen không ạ ? Mình ở Hà Nội;hoi_con_hang;LOCATION:Hà Nội|COLOR:đen
 Cho e hoi hang nay la xuất xứ từ đâu;hoi_nguon_hang;OTHER:xuất xứ
 có tiếng việt k ;hoi_phan_mem;IS_VIETNAMESE_INSTALLED:có tiếng việt
@@ -270,11 +270,11 @@ Cho anh xin giá sau trừ quà nha!;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:sau t
 Cho e xin gia sau khi tru qua.;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:sau khi tru qua
 Em muốn mua trả góp thì như thế nào! và trừ quà đi có trừ vào giá máy không ạ! Có gì liên hệ cho em biết với ạ;hoi_tra_gop;IS_NEEDED:mua trả góp
 Giá trừ quà còn bao nhiêu shop;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:Giá trừ quà
-cho mình hỏi trừ quà sp còn bao nhiêu vậy shop;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:trừ quà sp
+cho mình hỏi trừ quà sp còn bao nhiêu vậy shop;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:trừ quà
 Trừ quà giá sản phẩm còn bao nhiêu ạ?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:Trừ quà
  Giá sau khi trừ hết quà bao nhiêu ạ;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:sau khi trừ hết quà
 Trừ quà còn bao nhiêu ạ?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:Trừ quà
-Phương  tư vấn mình giá sau khi trừ hết quà nhé;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:trừ hết quà
+Tư vấn mình giá sau khi trừ hết quà nhé;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:trừ hết quà
 Trừ quà còn bao nhiêu tiền shop ơi?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:Trừ quà
 cho dia chi cu the mai minh qua mua;hoi_dia_chi;OTHER:qua mua
 ben go vap con hang ko zenfon max pro ma mau bac;hoi_con_hang;LOCATION:go vap|PHONE:zenfon max pro|COLOR:bac
@@ -285,7 +285,7 @@ chưa có hàng về ha ad;hoi_khi_nao;OTHER:chưa có hàng
 và shop có cho trả tiền bằng thẻ ngân hàng không ạ?;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:bằng thẻ ngân hàng
 Còn hàng full box nguyên seal ko shop;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:full box nguyên seal
 ở đồng tháp có bán không ạ;hoi_con_hang;LOCATION:đồng tháp
-chơi game đc ko;hoi_nhu_cau;IS_FINE_WHILE_PLAYING:game đc ko
+chơi game đc ko;hoi_nhu_cau;IS_FINE_WHILE_PLAYING:chơi game đc
 hàng này là hàng mới nguyên siêu à;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:hàng mới
 Xin chào! Em ở TPHCM có thì có thể mua dòng điện thoại này ở chi nhánh nào ạ?;hoi_dia_chi;LOCATION:TPHCM
 Chào Ad. Em muốn mua trả góp qua hình thức trả góp qua thẻ tín dụng của ngân hàng Maritime Bank thì cần phải làm những thủ tục và giấy tờ gì. Và khi lấy máy phải trả trước bao nhiêu tiền ạ. Tks Ad.;hoi_tra_gop;IS_NEEDED:mua trả góp
@@ -295,11 +295,11 @@ E ở sóc sơn bh mua khi nào hàng đến;hoi_khi_nao;LOCATION:sóc sơn
 Con này có ở bắc ninh ko ạ;hoi_con_hang;LOCATION:bắc ninh
 Máy còn hàng ở của hàng ở Bình Hưng ko.;hoi_con_hang;LOCATION:Bình Hưng
 Cho mình hỏi Max pro M1 4g có bán ở Cái Bè.Tiền Giang k ạ;hoi_con_hang;PHONE:Max pro M1|RAM:4|LOCATION:Tiền Giang
-co kiêu tra góp trước 0% hay 10% ;hoi_tra_gop;IS_NEEDED:góp trước
-Ad cho hỏi. Có hỗ trợ trả góp trả trước 0% ko ạ. Thủ tục cần cmnd+ bằng lái gốc và có cần số đt  hay gì khác ko ạ;hoi_tra_gop;IS_NEEDED:trả góp trả trước
+co kiêu tra góp trước 0% hay 10% ;hoi_tra_gop;IS_NEEDED:tra góp trước
+Ad cho hỏi. Có hỗ trợ trả góp trả trước 0% ko ạ. Thủ tục cần cmnd+ bằng lái gốc và có cần số đt  hay gì khác ko ạ;hoi_tra_gop;IS_NEEDED:hỗ trợ
 bao giờ nhập tiếp màu đen ạ?;hoi_khi_nao;COLOR:đen
 hết màu đen rồi ạ?;hoi_con_hang;COLOR:đen
-sản phẩm này còn hàng ở chi nhánh nào ở tphcm ạ?;hoi_con_hang;LOCATION:tphcm
+sản phẩm này còn hàng ở chi nhánh nào ở tphcm ạ?;hoi_dia_chi;LOCATION:tphcm
 mình ở đông anh hà nội, phiền shop xem hộ mình còn hàng k?;hoi_con_hang;LOCATION:đông anh
 Bạn oi ở Khương Đình Hà Nội có mầu xanh không?;hoi_con_hang;LOCATION:Khương Đình|COLOR:xanh
 Hết hàng rồi hả shop ? ;hoi_con_hang;OTHER:Hết hàng rồi hả
@@ -333,18 +333,18 @@ giá máy sony xa1 plus. Ở 4B Cộng Hoà, P. 4, Q. Tân Bình được không
 Cho hỏi, hàng nầy đã sử dụng hay nguyên hộp vậy shop;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:đã sử dụng
 Shop còn hàng không ạ;hoi_con_hang;OTHER:còn hàng không
 Cho mình hỏi sản phẩm này còn hàng không ạ ?;hoi_con_hang;OTHER:còn hàng không
-Trả góp bằng thẻ tín dụng VP bank, thì trả trước bao nhiêu ạ?;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:thẻ tín dụng
-khi nào có hàng v shop;hoi_khi_nao;OTHER:nào có hàng
+Trả góp bằng thẻ tín dụng VP bank, thì trả trước bao nhiêu ạ?;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:bằng thẻ tín dụng|IS_NEEDED:trả góp
+khi nào có hàng v shop;hoi_khi_nao;WHEN:Khi nào
 Khi nào mới có hàng vậy ạ? E muốn mua 1 chiếc xa1 plus nên shop có thể cho e biết chi tiết khi nào có hàng lại không ạ?;hoi_khi_nao;PHONE:xa1 plus
-Còn hàng ko vay;hoi_con_hang;OTHER:hàng ko
-còn hàng không shop;hoi_con_hang;OTHER:hàng không
-Còn hàng ko ạ;hoi_con_hang;OTHER:hàng ko
+Còn hàng ko vay;hoi_con_hang;OTHER:còn hàng ko
+còn hàng không shop;hoi_con_hang;OTHER:còn hàng không
+Còn hàng ko ạ;hoi_con_hang;OTHER:còn hàng ko
 cho e hỏi hà nội còn hàng k ạ;hoi_con_hang;LOCATION:hà nội
 HCM còn hàng không ad?;hoi_con_hang;LOCATION:HCM
 XA1 còn màu vàng k ad;hoi_con_hang;PHONE:XA1|COLOR:vàng
 Còn hàng mẫu xanh kg;hoi_con_hang;COLOR:xanh
 Khi vực TP.HCM có hàng mới màu đen không vậy ạ;hoi_con_hang;LOCATION:TP.HCM|COLOR:đen
-Khu vực Hà Nội có hàng chưa shop;hoi_khi_nao;LOCATION:Hà Nội
+Khu vực Hà Nội có hàng chưa shop;hoi_con_hang;LOCATION:Hà Nội
 Hcm còn  Hàn  ko ạk;hoi_con_hang;LOCATION:Hcm
 ở trên web ghi địa chỉ 4B cộng hòa ở TPHCM có còn hàng ko ạ ?? sao em thấy để còn hàng;hoi_con_hang;LOCATION:cộng hòa
 CÒN K SHOP ƠI, CÒN THÌ Ở ĐỊA CHỈ NÀO ĐANG BÁN SHOP;hoi_dia_chi;OTHER:CÒN K SHOP
@@ -356,9 +356,9 @@ Còn phiên bản màu khác không ak;hoi_con_hang;WHAT_ELSE_COLOR:màu khác
 chơi đc pubg ko vậy;hoi_nhu_cau;GAME:pubg
 con hang ko ad o tren;hoi_con_hang;OTHER:con hang ko
 còn hàng tại tphcm k ạ;hoi_con_hang;LOCATION:tphcm
-Giạ còn máy này màu đen không ạ tư vấn cho mình với. Mình ở hcm. Sdt;hoi_con_hang;COLOR:đen
+Giạ còn máy này màu đen không ạ tư vấn cho mình với. Mình ở hcm. Sdt;hoi_con_hang;COLOR:đen|LOCATION:hcm
 sao mk thấy rẻ hơn ở thế giói di đọng và fpt shop liệu máy có phải chính hãng k ạ;hoi_nguon_hang;WHAT_FROM_TYPE:phải chính hãng
-hàng còn về ko ạ ??;hoi_khi_nao;OTHER:còn về ko
+hàng còn về ko ạ ??;hoi_khi_nao;OTHER:hàng còn về ko
 Giờ sản phẩm còn về k hay chấm dứt hàng lun rồi ạ e còn biết chờ;hoi_khi_nao;OTHER:còn về k hay chấm dứt
 Chừng nào sản phẩm này về lại ạ?;hoi_khi_nao;OTHER:về lại
 Còn hàng k shop;hoi_con_hang;OTHER:Còn hàng k
@@ -371,21 +371,21 @@ Không lây quà thi gia may con bao nhiêu vay shop;hoi_gia;IS_PRICE_AFTER_SALE
 quà không biết có km đến mùng 2/12 không nhỉ;hoi_khuyen_mai;WHEN_END_SALE_OFF:km đến
 Shop cho e hỏi bộ quà tặng gồm những gì ạ?;hoi_khuyen_mai;SALE_OFF_GIFF:bộ quà tặng
 Shop cho e hỏi k lấy bộ quà 2,2triệu thì giá máy giảm còn bao nhiêu vậy ạ ?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:k lấy bộ quà
-Cho hỏi không lấy quà có đc trừ tiền không,mình muốn mua trả góp qua hd sài gon thì cần gì;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:không lấy quà
+Cho hỏi không lấy quà có đc trừ tiền không;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:không lấy quà
 Mua trả góp qua thẻ thì mỗi tháng bn tiền b?;hoi_tra_gop;IS_NEEDED:Mua trả góp
 Nova 3 9.490.000 tru tay nghe con bao nhieu ad;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:tru tay nghe
 Nếu em ko nhận qùa có đc giảm gía ko ạ;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:ko nhận qùa
 còn hàng ở hcm ko ad;hoi_con_hang;LOCATION:hcm
 nova 3 có màu xanh ko ;hoi_con_hang;PHONE:nova 3|COLOR:xanh
 Hết hàng màu tím rồi phải ko ạ;hoi_con_hang;COLOR:tím
-Quà 2 triệu trừ quà giá còn bao nhiêu vậy ạ;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:trừ quà giá còn
-cho t hỏi chương trình khuyến mại TAI NGHE OVER-EAR JBL T450BT kéo dài đến khi nào.Bây h còn được khuyến mại pin dự phòng k;hoi_khuyen_mai;WHEN_END_SALE_OFF:kéo dài đến khi nào
+Quà 2 triệu trừ quà giá còn bao nhiêu vậy ạ;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:trừ quà
+cho t hỏi chương trình khuyến mại TAI NGHE OVER-EAR JBL T450BT kéo dài đến khi nào;hoi_khuyen_mai;WHEN_END_SALE_OFF:kéo dài đến khi nào
 Liên hệ giá ko nhận quà nhé;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:giá ko nhận quà
 Hôm trước hỏi nv bảo 8tr790 mà hôm nay lại 8tr990;hoi_gia;OTHER:hỏi nv bảo
-cho mình hỏi nếu không lấy quà thì có được trừ vào sp không;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:được trừ vào sp
+cho mình hỏi nếu không lấy quà thì có được trừ vào sp không;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:không lấy quà
 nova 3 còn hàng ở cửa hàng nào ạ?;hoi_dia_chi;PHONE:nova 3
 Khi nào có bản màu đen hay màu vàng vậy shop;hoi_khi_nao;COLOR:đen
-Ko lấy quà tặng thì giá còn bao nhiêu ạ ??;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:Ko lấy quà
+Ko lấy quà tặng thì giá còn bao nhiêu ạ ??;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:Ko lấy quà tặng
 Quận 7 có hàng nova 3 ko ạ, ra mua trực tiềp vẩn dc kmãi bt fải ko ạ , hàng mới 100% ko ạ ??;hoi_con_hang;PHONE:nova 3|LOCATION:Quận 7
 Hiện tại máy đang giảm giá phải ko ạ , có khuyến mãi gì ko , nếu ko lấy quà thì có dc trừ tiền vào giá sản phẩm ko ạ ????;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:ko lấy quà
 Máy bắn pubg có mượt ko ạ;hoi_nhu_cau;GAME:pubg
@@ -403,13 +403,13 @@ Máy này có chống nước không;hoi_phan_cung;IS_WATER_PROTECTED:chống n�
 HI shop, dòng này còn màu đỏ không ạ?;hoi_con_hang;COLOR:đỏ
 Cho e hỏi nếu mua online và ko nhận quà thì dc trừ bao nhiêu tiền vào giá sản phẩm ạ;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:ko nhận quà
 hiện tại máy có mấy màu vậy ạ?;hoi_con_hang;WHAT_ELSE_COLOR:có mấy màu
-Trả góp qua thẻ tín dụng thì hồ sơ cần những gì ah? Số tiền cần trả trc tối thiểu bn ạ?;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:qua thẻ tín dụng
+Trả góp qua thẻ tín dụng thì hồ sơ cần những gì ah? Số tiền cần trả trc tối thiểu bn ạ?;hoi_tra_gop;IS_NEEDED:trả góp|IS_SUPPORTED_BUYING_THROUGH_CREDIT:qua thẻ tín dụng
 Mình muốn mua máy trả góp qua công ty tài chính, tư vấn cho mình khoản trả trước và góp hàng tháng, mình ở hà nội;hoi_tra_gop;LOCATION:hà nội|IS_NEEDED:mua máy trả góp
 giá đó đã bao gồm VAT chưa ạ?;hoi_gia;IF_INCLUDE_TAX:gồm VAT
 Có trả góp 30 phần trăm ko trả góp nhiêu tháng;hoi_tra_gop;IS_NEEDED:Có trả góp
 Máy này là đã qua sử dụng chưa vậy?;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:đã qua sử dụng chưa
 Mình muốn mua iphone X 64GB máy LL/A mới, không biết ở TP.HCM của hang nào còn vậy ad;hoi_dia_chi;PHONE:Iphone X|ROM:64|CODE:LL/A|LOCATION:TP.HCM
-Đây là máy mới đầy đủ tai nghe cáp sạc k ạ?;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:là máy mới
+Đây là máy mới đầy đủ tai nghe cáp sạc k ạ?;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:Đây là máy mới
 Khi dang ki nhan bang tin tu cellphone thi mua dien thoai co dc giam 10% k ad?;hoi_khuyen_mai;IS_SALE_OFF:mua dien thoai co dc giam
 Giá tiền này có bao gồm tai nghe không dây chưa ạ;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:có bao gồm
 Ở phan đăng lưu còn hàng không ạ;hoi_con_hang;LOCATION:phan đăng lưu
@@ -417,27 +417,27 @@ Xin thủ tục trả góp qua công ty tài chính ;hoi_tra_gop;IS_NEEDED:thủ
 Đây là máy mới tinh à shop. ;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:máy mới tinh à
 Còn hàng CPO tại q9 hok shop .;hoi_con_hang;LOCATION:q9
 hiện tại cellphone q9 coa màu bạc giá 22tr ko shop?;hoi_con_hang;LOCATION:q9|COLOR:bạc|MONEY:22tr
-phiên bản màu bạc ở ngoài hà nội còn chỗ nào có và giá là bao nhiêu vậy shop ?;hoi_dia_chi;LOCATION:hà nội
+phiên bản màu bạc ở ngoài hà nội còn chỗ nào có vậy shop ?;hoi_dia_chi;LOCATION:hà nội
 Ở TPHCM, cửa hàng Nguyễn Thị Thập còn hàng Bản IPX 64gb màu đen LL/A không ạ? Giá cả thế nào shop?;hoi_con_hang;LOCATION:TPHCM|LOCATION:Nguyễn Thị Thập|PHONE:IPX|ROM:64|COLOR:đen|CODE:LL/A
 Ở HN còn cửa hàng nào có mã LL/A k ạ;hoi_dia_chi;LOCATION:HN|CODE:LL/A
-cho mình hỏi Bình Thạnh có hàng LL/A k ?;hoi_dia_chi;LOCATION:Bình Thạnh|CODE:LL/A
+cho mình hỏi Bình Thạnh có hàng LL/A k ?;hoi_con_hang;LOCATION:Bình Thạnh|CODE:LL/A
 Cho mình hỏi ipX 64gb ở Thái Hà có hàng LL/A ko nhỉ?;hoi_con_hang;LOCATION:Thái Hà|PHONE:ipX|ROM:64|CODE:LL/A
-sản phẩm này còn ở 543 Nguyễn Trãi, P. Thanh Xuân Nam, Q. Thanh Xuân k ạ;hoi_con_hang;LOCATION:Nguyễn Trãi|LOCATION:Thanh Xuân Nam|LOCATION:Thanh Xuân
-cho mình hỏi trả góp iphone x 64gb thì mình thanh toán trước bao nhiêu % vậy ah;hoi_tra_gop;PHONE:iphone x|ROM:64|IS_NEEDED:hỏi trả góp
+sản phẩm này còn ở 543 Nguyễn Trãi, P. Thanh Xuân Nam, Q. Thanh Xuân k ạ;hoi_con_hang;LOCATION:Nguyễn Trãi|LOCATION:Thanh Xuân
+cho mình hỏi trả góp iphone x 64gb thì mình thanh toán trước bao nhiêu % vậy ah;hoi_tra_gop;PHONE:iphone x|ROM:64|IS_NEEDED:trả góp
 283 Hồ Tùng Mậu - Nam Từ Liêm còn hàng không ạ;hoi_con_hang;LOCATION:Hồ Tùng Mậu|LOCATION:Nam Từ Liêm
 trả góp yêu cầu những gì và bn tuổi ?;hoi_tra_gop;IS_NEEDED:yêu cầu những gì
 Bao h shop ở Thái Hà có hàng vậy ad ?;hoi_khi_nao;LOCATION:Thái Hà
 mình có ip 7 plus 128GB, muốn đổi sang ipX 256GB thì phải bù thêm bao nhiêu nữa?;hoi_doi_cu_lay_moi;PHONE:ip 7 plus|ROM:128|PHONE:ipX|ROM:256
 E muốn mua ipx trả góp 0% a tư vấn vs ạ;hoi_tra_gop;PHONE:ipx|IS_NEEDED:trả góp 0%
 Cho hỏi HCM còn ip X mã LL/A bản 64GB màu xám ko ạ. Hôm trước mình ghé cửa hàng ở xô quyết nghệ tĩnh có đặt rồi, k biết khi nào có vậy. Chủ nhật này có hàng k ạ. ;hoi_con_hang;PHONE:ip X|CODE:LL/A|ROM:64|COLOR:xám|LOCATION:HCM
-Cho hỏi HCM còn ip X mã LL/A bản 64GB ko ạ;hoi_dia_chi;PHONE:ip X|CODE:LL/A|ROM:64|LOCATION:HCM
-cho mình hỏi trả góp là phải cần những gì ạ mình đang có khoảng 10tr ạ ;hoi_tra_gop;IS_NEEDED:trả góp là phải cần
+Cho hỏi HCM còn ip X mã LL/A bản 64GB ko ạ;hoi_con_hang;PHONE:ip X|CODE:LL/A|ROM:64|LOCATION:HCM
+cho mình hỏi trả góp là phải cần những gì ạ mình đang có khoảng 10tr ạ ;hoi_tra_gop;IS_NEEDED:trả góp
 Máy này trả góp bằng thẻ visa có phải trả trước bn% ko ?;hoi_tra_gop;IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT:trả góp bằng thẻ
 Máy xách tay thị trường nào ạ;hoi_nguon_hang;LOCATION:thị trường
 iphone x LL/A sliver 64gb new có ko a;hoi_con_hang;PHONE:iphone x|CODE:LL/A|ROM:64
 Cho em địa chỉ ở hn với ạ;hoi_dia_chi;LOCATION:hn
 có máy LL/A sliver 64gb kh ạ nguyen seal;hoi_con_hang;CODE:LL/A|COLOR:sliver|ROM:64
-Đây là hàng xách tay mới 100% hay hàng CPO vậy shop?;hoi_nguon_hang;WHAT_FROM_TYPE:xách tay mới 100% hay hàng CPO
+Đây là hàng xách tay mới 100% hay hàng CPO vậy shop?;hoi_nguon_hang;WHAT_FROM_TYPE:hàng xách tay mới 100% hay hàng CPO
 giá tổng cộng bao gồm thuế ở TPHCM là bao nhiêu vậy shop?;hoi_gia;IF_INCLUDE_TAX:bao gồm thuế|LOCATION:TPHCM
 giá có bao gồm thuế VAT không bạn ơi;hoi_gia;IS_INCLUDE_TAX:gồm thuế VAT không
 mẫu này màu trắng mã LL/A khu vực cầu giấy hiện còn hàng k vậy?;hoi_con_hang;COLOR:trắng|CODE:LL/A|LOCATION:cầu giấy
@@ -451,17 +451,17 @@ Sp mi8 pro này tặng pmh 2.100k có trừ thẳng vào giá ko vậy ad.;hoi_g
 trả góp 0% dc k ad và cần những gì;hoi_tra_gop;IS_NEEDED:trả góp 0%
 Trừ tiền quà ra thì bao nhiêu;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:Trừ tiền quà
 Con này có xạc xạc nhanh và chống nước k ạ;hoi_phan_cung;IS_WATER_PROTECTED:chống nước
-Tôi đang làm việc ở hạ long quảng ninh.muốn trả góp qua thể bidv thì làm thế nào ạ;hoi_tra_gop;LOCATION:quảng ninh|IS_NEEDED:muốn trả góp
+Tôi đang làm việc ở hạ long quảng ninh.muốn trả góp qua thể bidv thì làm thế nào ạ;hoi_tra_gop;LOCATION:quảng ninh|IS_NEEDED:trả góp
 Cho mình hỏi là thẻ master card debit có trả góp dc không ạ :?;hoi_tra_gop;IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT:master card debit có trả góp
 Cho Mình Hỏi  K Lấy Quà Có Trừ Tiền Trên Sản Phẩm K;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:K Lấy Quà
-Giá bao nhiêu vậy ạ;hoi_gia;OTHER:bao nhiêu vậy
+Giá bao nhiêu vậy ạ;hoi_gia;OTHER:bao nhiêu
 Có thông tin về hàng mi 8 pro chưa ạ;hoi_khi_nao;OTHER:Có thông tin
 Xiaomi mi 8 pro shop có hàng chưa? Giáo bao nhiêu?;hoi_con_hang;PHONE:Xiaomi mi 8 pro
 Khi nao hang ve bao minh;hoi_khi_nao;OTHER:hang ve
-HCM có hàng chưa ad. Giá dự kiến bao nhiêu?;hoi_khi_nao;LOCATION:HCM
+HCM có hàng chưa ad?;hoi_khi_nao;LOCATION:HCM
 Khi nao hàng về hanoi báo mazz;hoi_khi_nao;LOCATION:hanoi
 Ở HN còn hàng k v??;hoi_con_hang;LOCATION:HN
-sản phẩm bên mình có hỗ trợ tiếng Việt không vậy bạn?;hoi_phan_mem;IS_VIETNAMESE_INSTALLED:tiếng Việt
+sản phẩm bên mình có hỗ trợ tiếng Việt không vậy bạn?;hoi_phan_mem;IS_NEEDED:hỗ trợ|IS_VIETNAMESE_INSTALLED:tiếng Việt
 Ad cho em hỏi cửa hàng mình địa chỉ ở đâu trong khu vực hồ chí minh v ạ;hoi_dia_chi;LOCATION:hồ chí minh
 Ở long an có hổ trợ trả gốp đc ko ad;hoi_tra_gop;LOCATION:long an|IS_NEEDED:hổ trợ trả gốp
 Mình ở Thủ Đức mình muốn mua màu xanh thì cửa hàng nào còn bạn?;hoi_dia_chi;LOCATION:Thủ Đức|COLOR:xanh
@@ -477,36 +477,35 @@ Cho Mh hỏi hiện tại mua e này có được khuyến mãi gì k ạ?;hoi_k
 Co may mau den 64GB o cong hoa k vay shop?;hoi_con_hang;COLOR:den|ROM:64|LOCATION:cong hoa
 Hà Nội vẫn chưa có xanh à ad;hoi_khi_nao;COLOR:xanh|LOCATION:Hà Nội
 Bên mình giảm giá đến khi nào ạ?;hoi_khuyen_mai;WHEN_END_SALE_OFF:giảm giá đến khi nào
-ngoài màu đen thì bao giờ có màu khác vậy ;hoi_khi_nao;WHAT_ELSE_COLOR:có màu khác|COLOR:đen
+ngoài màu đen thì bao giờ có màu khác vậy ;hoi_con_hang;WHAT_ELSE_COLOR:có màu khác|COLOR:đen
 Chi nhánh ở Phứơc Long B còn hàng k ạ, nếu còn thì khỏang 3,4 ngay nua e có thể ghé xem máy dc k ạ;hoi_con_hang;LOCATION:Phứơc Long B
 Nhập khẩu chính hãng hay là hàng công ty vậy ad;hoi_nguon_hang;WHAT_FROM_TYPE:chính hãng hay là hàng công ty
 trên địa bàn tỉnh long an thị trấn bến lức có cửa hàng hay chi nhánh nào của cellphones k ạ....;hoi_dia_chi;LOCATION:long an
-muốn trả góp 0 % thì cần thủ tục hồ sơ như nào ạ....và nếu như thanh toán qua thẻ tín dụng thì e dùng viettinbank được k ạ...nếu như vậy 1 tháng e phải thanh toán là bao nhiêu ạ...mong được phản hồi sớm;hoi_tra_gop;IS_NEEDED:cần thủ tục
-ở cellphones Quang Trung, gò vấp, TPCHM có bản 4G/64G màu xanh dương chưa ạ;hoi_con_hang;LOCATION:Quang Trung|RAM:4|ROM:64|COLOR:xanh dương
-Khi nào thì bản 64GB mới có trả góp 0% HD saison vậy ạ;hoi_khi_nao;OTHER:Khi nào thì bản
+muốn trả góp 0 % thì cần thủ tục hồ sơ như nào ạ....và nếu như thanh toán qua thẻ tín dụng thì e dùng viettinbank được k ạ...nếu như vậy 1 tháng e phải thanh toán là bao nhiêu ạ...mong được phản hồi sớm;hoi_tra_gop;IS_NEEDED:trả góp|IS_NEEDED:cần thủ tục
+ở cellphones Quang Trung, gò vấp, TPCHM có bản 4G/64G màu xanh dương chưa ạ;hoi_con_hang;LOCATION:Quang Trung|COLOR:xanh dương
+Khi nào thì bản 64GB mới có trả góp 0% HD saison vậy ạ;hoi_khi_nao;IS_NEEDED:trả góp
 Tra gop bjo trả truoc tầm 1t đc k ạ;hoi_tra_gop;IS_NEEDED:trả truoc tầm 1t
 đến bao giờ giảm giá kết thúc ạ;hoi_khuyen_mai;WHEN_END_SALE_OFF:giảm giá kết thúc
-giá 5tr100 áp dụng đến bao giờ vậy shop,sản phẩm có hỗ trợ sạc nhanh không ạ;hoi_khuyen_mai;WHEN_END_SALE_OFF:áp dụng đến bao giờ
+giá 5tr100 áp dụng đến bao giờ vậy shop;hoi_khuyen_mai;WHEN_END_SALE_OFF:áp dụng đến bao giờ
 Có chi nhánh ở cà mau k ạ;hoi_dia_chi;LOCATION:cà mau
 chi nhanh hau giang con hang k ;hoi_con_hang;LOCATION:hau giang
 chi nhánh 3/2 hiện có còn hàng k vậy ạ;hoi_con_hang;LOCATION:chi nhánh 3/2
-Có trả góp k thông qu ngân hàng bản 64gb k ạ. ;hoi_tra_gop;IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT:thông qu ngân hàng|ROM:64
-Ac cho e hỏi e mới mua máy đc nửa tháng. Giờ máy có hiện tượng loa ngoài đôi lúc to lúc nhỏ. K ổn định. BG xử lý ntn ạ;hoi_bao_hanh;IS_BROKEN_VOLUME:loa ngoài đôi lúc to
+Có trả góp k thông qua ngân hàng bản 64gb k ạ. ;hoi_tra_gop;IS_NEEDED:trả góp|IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT:thông qua ngân hàng|ROM:64
 Hi ad, giá trên là đã bao gồm VAT chưa?;hoi_gia;IF_INCLUDE_TAX:bao gồm VAT
-Cho em hỏi khi nào mới có những màu khác ;hoi_khi_nao;WHAT_ELSE_COLOR:có những màu khác
+Cho em hỏi khi nào mới có những màu khác ;hoi_khi_nao;OTHER:hỏi khi nào|WHAT_ELSE_COLOR:có những màu khác
 co qua tang gi kem them khong shop ;hoi_khuyen_mai;SALE_OFF_GIFF:qua tang gi
 Bên mình còn màu xanh dương ko vậy shop;hoi_con_hang;COLOR:xanh dương
 Cho mình hỏi Đã kích hoạt vậy máy còn mới bao nhiu %;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:Đã kích hoạt
 Còn hàng không ạ?;hoi_con_hang;OTHER:Còn hàng không
 Đã kích hoạt là máy cũ xài rồi phải không ;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:Đã kích hoạt
-Hiện còn máy không ạ;hoi_con_hang;OTHER:Hiện còn máy
+Hiện còn máy không ạ;hoi_con_hang;OTHER:Hiện còn máy không
 CÒN TÍNH NĂNG KHÁNG NƯỚC KHÔNG AD ƠI?????????????????;hoi_phan_cung;IS_WATER_PROTECTED:KHÁNG NƯỚC
 máy này là 2 sim phải không shop;hoi_phan_cung;HOW_NUMBER_SIM:2 sim phải không
 E ở nam từ liêm...báo giá dùm e ạ;hoi_gia;LOCATION:nam từ liêm
 Xz premium đa kích hoạt gia bao nhiêu shop;hoi_gia;PRICE_OF_OLD_PHONE:đa kích hoạt|PHONE:Xz premium
 Mình trả trước 50% và góp 12 tháng thì mỗi tháng phải trả bao nhiêu ;hoi_tra_gop;IS_NEEDED:trả trước 50%
 E trả trc 40% và góp trong 8 tháng thì mỗi tháng phải trả bnhiêu ạ;hoi_tra_gop;IS_NEEDED:E trả trc 40%
-không trả trc có đc trả góp không ạ hay bắt buộc phải trả trc 20%;hoi_tra_gop;IS_NEEDED:trả trc 20%
+không trả trc có đc trả góp không ạ hay bắt buộc phải trả trc 20%;hoi_tra_gop;IS_NEEDED:trả góp|IS_NEEDED:trả trc 20%
 Vay may nay da qua su dung chua ?;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:da qua su dung
 Sản phẩm A8 giảm giá  đến ngày nào vậy shop;hoi_khuyen_mai;WHEN_END_SALE_OFF:giảm giá  đến ngày
 a8 màu tím ở gò vấp còn ko ạ?;hoi_con_hang;PHONE:a8|COLOR:tím|LOCATION:gò vấp
@@ -517,21 +516,21 @@ Máy này còn màu đen ko shop?;hoi_con_hang;COLOR:đen
 Máy màu xanh dương ko còn à shop?;hoi_con_hang;COLOR:xanh dương
 Màu tím khói có ở 543 Nguyễn Trãi ko shop?;hoi_con_hang;COLOR:tím khói|LOCATION:Nguyễn Trãi
 Màu Tím khói nơi nào còn không ạ? Mình ở Gò Vấp.;hoi_dia_chi;LOCATION:Gò Vấp|COLOR:Tím khói
-màu đen tp.HCM còn hàng ko ạ? Em ở Bình Thạnh có shop nào gần hem;hoi_dia_chi;LOCATION:Bình Thạnh|COLOR:đen
-tp.HCM còn màu đen ko ạ? em ở bình thạnh;hoi_dia_chi;LOCATION:bình thạnh|COLOR:đen
+màu đen tp.HCM còn hàng ko ạ? Em ở Bình Thạnh;hoi_con_hang;LOCATION:Bình Thạnh|COLOR:đen
+tp.HCM còn màu đen ko ạ? em ở bình thạnh;hoi_con_hang;LOCATION:bình thạnh|COLOR:đen
 san pham co tra gop 0% qua homecredit ko vay;hoi_tra_gop;IS_NEEDED:co tra gop
 Cho hỏi chống nước hok z;hoi_phan_cung;IS_WATER_PROTECTED:chống nước
 mình muốn trả góp nhưng chỉ có mỗi chứng minh thì sao vậy shop ??? có được không ???;hoi_tra_gop;IS_NEEDED:chứng minh
-Tặng phiếu mua hàng.có trừ luôn vào khi mua máy ko ạ;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:có trừ luôn
+Tặng phiếu mua hàng. Có trừ luôn vào khi mua máy ko ạ;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:có trừ luôn
 Con này có bản 64G k bạn? hay chỉ có 32G thôi?;hoi_con_hang;ROM:64|ROM:32
 E k muốn lấy phiếu mua hàng mà muốn trừ thẳng vào giá sản phẩm được không ad;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:trừ thẳng vào giá
 Có trả góp ko ak;hoi_tra_gop;IS_NEEDED:Có trả góp
 em can ban samsung a8 e mua hom mung 9 vj can tien nen em can ban ai co nhu cau sdt ;hoi_doi_cu_lay_moi;PHONE:samsung a8
 Samsung a5 2017 còn không ad;hoi_con_hang;PHONE:Samsung a5
-Sam sung a8 tgdd con giam gia ko a co mau vang ko a;hoi_khuyen_mai;IS_SALE_OFF_NOW:con giam gia ko|PHONE:Sam sung a8
-Mua ss A8 có dc giảm ngay 1.900.000 vào giá không shop?;hoi_giam_gia;IS_SALE_OFF_NOW:dc giảm ngay|PHONE:ss A8
+Sam sung a8 tgdd con giam gia ko a co mau vang ko a;hoi_con_hang;IS_SALE_OFF_NOW:con giam gia ko|PHONE:Sam sung a8|COLOR:vang
+Mua ss A8 có dc giảm ngay 1.900.000 vào giá không shop?;hoi_gia;IS_SALE_OFF_NOW:dc giảm ngay|PHONE:ss A8
 1 máy cũ giá 7.690k còn ko shop ơi!!;hoi_gia;PRICE_OF_OLD_PHONE:máy cũ giá
-mua trả góp ntn.lãi xuất bao nhieu vay;hoi_tra_gop;IS_NEEDED:trả góp ntn
+mua trả góp ntn.lãi xuất bao nhieu vay;hoi_tra_gop;IS_NEEDED:trả góp
 máy samsung a8 này khi mua online có là hàng chính hãng không ạ? Chế độ bảo hành như thế nào vậy shop;hoi_nguon_hang;WHAT_FROM_TYPE:là hàng chính hãng|PHONE:samsung a8
 Máy samsung galaxy A8 ở hà nội ở chi nhánh nào còn hàng?;hoi_dia_chi;PHONE:samsung galaxy A8|LOCATION:hà nội
 Hi shop? cho minh hoi A8 tím bên Quang Trung có sẵn ko;hoi_con_hang;LOCATION:Quang Trung|PHONE:A8|COLOR:tím
@@ -548,10 +547,10 @@ Mình muốn tư vấn kỹ khi mua A8 2018 trả góp;hoi_tra_gop;PHONE:A8|IS_N
 A8 đã kích hoạt là hàng đã sài rồi pk ?;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:đã kích hoạt|PHONE:A8
 neu k lay khuyen mai con bao nhiu tien  a;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:k lay khuyen mai
 Bên mình có thu đt a7 2016 để đổi lấy a8 2018 thì mình phải bù bao nhiêu z;hoi_doi_cu_lay_moi;PHONE:a7|PHONE:a8
-Có trả góp 0% ko ạ;hoi_tra_gop;IS_PRICE_AFTER_SALE_OFF_PRICE:Có trả góp
+Có trả góp 0% ko ạ;hoi_tra_gop;IS_NEEDED:Có trả góp 0%
 A8+ Đã kích hoạt giờ gía bao nhiêu vâyk ad;hoi_gia;PRICE_OF_OLD_PHONE:Đã kích hoạt|PHONE:A8+
-Hiện tại ở khu vực thái Hà còn màu gì b nhỉ?;hoi_con_hang;WHAT_ELSE_COLOR:còn màu gì
-Mình muốn mua trả góp mấy ip 6s 32g này thì mình phải trả trước bao nhiêu và cần những giấy tờ gì để làm thủ tục vậy;hoi_tra_gop;PHONE:ip 6s|ROM:32|IS_NEEDED:trả trước bao nhiêu
+Hiện tại ở khu vực thái Hà còn màu gì b nhỉ?;hoi_con_hang;LOCATION:thái Hà|WHAT_ELSE_COLOR:còn màu gì
+Mình muốn mua trả góp mấy ip 6s 32g này thì mình phải trả trước bao nhiêu và cần những giấy tờ gì để làm thủ tục vậy;hoi_tra_gop;IS_NEEDED:mua trả góp|PHONE:ip 6s|ROM:32|IS_NEEDED:trả trước bao nhiêu
 Shop cho mình hỏi còn hàng ở chi nhánh Võ Văn Ngân Thủ Đức ko v??;hoi_con_hang;LOCATION:Võ Văn Ngân|LOCATION:Thủ Đức
 Cho mình hỏi nếu mua máy + sạc + tai nghe tổng là bao nhiêu vậy shop?;hoi_gia;OTHER:tổng là bao nhiêu
 Với lại đây là bản quốc tế ạ ?;hoi_nguon_hang;IS_GLOBAL:bản quốc tế
@@ -560,16 +559,16 @@ Có tặng phụ kiện gì k ạ;hoi_khuyen_mai;SALE_OFF_GIFF:tặng phụ ki�
 Cửa hàng 543 Nguyễn Trãi còn máy màu xám không ạ?;hoi_con_hang;LOCATION:Nguyễn Trãi|COLOR:xám
 Còn màu hồng ở khu vực Hà Nội không ạ;hoi_con_hang;COLOR:hồng|LOCATION:Hà Nội
 Mình cần thông tin sản phầm Iphone 6s 32gb cửa hàng xô viết nghệ tĩnh shop ơi;hoi_con_hang;PHONE:Iphone 6s|ROM:32|LOCATION:Xô viết nghệ tĩnh
-cho mình hỏi còn hàng k ạ;hoi_con_hang;OTHER:mình hỏi
+cho mình hỏi còn hàng k ạ;hoi_con_hang;OTHER:còn hàng k
 sản phẩm ở khu vực HN còn màu bạc, hoặc màu xám không ạ?;hoi_con_hang;LOCATION:HN|COLOR:xám|COLOR:bạc
 Còn iphone 6s mới khôg à;hoi_con_hang;PHONE:iphone 6s
-Còn hàng k bạn, mình ở dĩ an có chi nhánh nào gần đó k;hoi_dia_chi;LOCATION:dĩ an
+Còn hàng k bạn, mình ở dĩ an có chi nhánh nào gần đó k;hoi_dia_chi;OTHER:còn hàng k|LOCATION:dĩ an
 Cho e hōi màu hong con hang k za;hoi_con_hang;COLOR:hong
 Có trung tâm nào ở hà nội còn đt này k;hoi_dia_chi;LOCATION:hà nội
 iphone6s 32 ben shop con hang k a;hoi_con_hang;PHONE:iphone6s|ROM:32
 e muốn mua trả góp thì như thế nào ạ?;hoi_tra_gop;IS_NEEDED:mua trả góp
 Cho e hỏi e sn 99 năm nay 19t đc trả góp chưa ạ;hoi_tra_gop;IS_NEEDED:đc trả góp
-Anh ơi, em muốn mua iphone 6s 32gb vào cuối tuần này, không biết cửa hàng ở 4B cộng hoà còn nhiều hàng để  xem không vậy?;hoi_con_hang;PHONE:iphone 6s|ROM:32|LOCATION:cộng hòa
+Anh ơi, em muốn mua iphone 6s 32gb vào cuối tuần này, không biết cửa hàng ở 4B cộng hoà còn nhiều hàng để  xem không vậy?;hoi_con_hang;PHONE:iphone 6s|ROM:32|LOCATION:cộng hoà
 Trả góp o% hay sao qtv;hoi_tra_gop;IS_NEEDED:Trả góp
 Cho mình hỏi Chương trình trả góp ntn ad?;hoi_tra_gop;IS_NEEDED:trả góp
 Bản quốc tế hay block vậy;hoi_nguon_hang;IS_GLOBAL:quốc tế hay block
@@ -593,10 +592,10 @@ E có khoảng 3tr, muốn mua máy trả góp có được không ạ;hoi_tra_g
 Cho e biết rõ tình trạng máy đc ko ạ;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:tình trạng máy
 mua trả góp kỳ hạn 6 tháng thì trả trước bn và hàng tháng trả bn ạ;hoi_tra_gop;IS_NEEDED:mua trả góp
 Mua trả trước 10% được không ;hoi_tra_gop;IS_NEEDED:Mua trả trước
-Mua trả góp thì trả trước 10% là bao nhiêu tiền và 1 tháng bao nhiêu (trả góp 15 tháng) ;hoi_tra_gop;IS_NEEDED:trả góp thì trả trước
+Mua trả góp thì trả trước 10% là bao nhiêu tiền và 1 tháng bao nhiêu (trả góp 15 tháng) ;hoi_tra_gop;IS_NEEDED:trả góp
 Máy này là máy mới người ta test máy thử không thích nên không lấy đúng không;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:là máy mới
 Máy có chất lượng như máy mới không ;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:là như máy mới
-Máy này là máy chính hãng mà Sao rẻ vậy;hoi_nguon_hang;WHAT_FROM_TYPE:máy chính hãng
+Máy này là máy chính hãng mà Sao rẻ vậy;hoi_nguon_hang;WHAT_FROM_TYPE:chính hãng
 Có bán tra gop ko;hoi_tra_gop;IS_NEEDED:bán tra gop
 còn hàng màu bạc không shop ?;hoi_con_hang;COLOR:bạc
 máy chỉ kích hoạt thôi hay đã qua sử dụng rồi;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:kích hoạt
@@ -608,41 +607,40 @@ Cho e hỏi địa chỉ mua hàng ở Hà Nội ạ;hoi_dia_chi;LOCATION:Hà N�
 Dạ cho em hỏi mình mua chả góp trả sau ak;hoi_tra_gop;IS_NEEDED:mua chả góp
 Sản phẩm chính hãng vn phải ko;hoi_nguon_hang;WHAT_FROM_TYPE:Sản phẩm chính hãng|LOCATION:vn
 Con mau xanh khong shop. Minh o kv quan 9;hoi_con_hang;COLOR:xanh|LOCATION:quan 9
-Cho mình hỏi khi mua trả góp, các sp đi kèm những gì?;hoi_khuyen_mai;SALE_OFF_GIFF:sp đi kèm
+Cho mình hỏi khi mua trả góp, các sp đi kèm những gì?;hoi_khuyen_mai;IS_NEEDED:trả góp|SALE_OFF_GIFF:sp đi kèm
 cho mình hỏi shop còn hàng màu gold không;hoi_con_hang;COLOR:gold
 với cả có cửa hàng bán tại khu vực cầu giấy không;hoi_dia_chi;LOCATION:cầu giấy
 mình ở tp cà mau đang có 6tr muốn trả góp được không? xin tư vấn giúp ạ;hoi_tra_gop;IS_NEEDED:muốn trả góp|LOCATION:cà mau
 S8 plus .full box luôn hả shop.o khu vực Hai Bà Trưng còn hàng ko . còn những màu gi.quan tâm;hoi_con_hang;LOCATION:Hai Bà Trưng
 S8+ có đc tặng quà ko ad;hoi_khuyen_mai;SALE_OFF_GIFF:có đc tặng quà
 bên mình giá bán hiện tại vẫn là 12.790.000 à shop ?;hoi_gia;OTHER:hiện tại vẫn
-Giữ giùm em màu đen nha ad;hoi_dia_chi;COLOR:đen
+Giữ giùm em màu đen nha ad;hoi_con_hang;COLOR:đen
 Ad ơi giảm đến khi nào vậy ad?;hoi_khuyen_mai;WHEN_END_SALE_OFF:giảm đến khi nào
 Cellphones Âu cơ quận tân bình HCM còn hàng ko ad;hoi_con_hang;LOCATION:Âu cơ|LOCATION:tân bình|LOCATION:HCM
 Mình có s8+ muốn đổi sang xsmax có được k?;hoi_doi_cu_lay_moi;PHONE:s8+|PHONE:xsmax
 Khi mua s8+ có được tặng kèm sạc không dây không?;hoi_khuyen_mai;PHONE:s8+|SALE_OFF_GIFF:tặng kèm sạc
 đây là hàng cty mới nguyên hộp ạ;hoi_nguon_hang;WHAT_FROM_TYPE:hàng cty mới nguyên hộp
-S8+ nguyên tem chính hãng đủ phụ kiện đây ạ;hoi_khuyen_mai;SALE_OFF_GIFF:đủ phụ kiện|PHONE:S8+
+S8+ nguyên tem chính hãng đủ phụ kiện đây ạ;hoi_nguon_hang;PHONE:S8+|SALE_OFF_GIFF:đủ phụ kiện
 s8 plus có chuẩn kháng nước, kháng bụi, sạc nhanh không;hoi_phan_cung;IS_WATER_PROTECTED:kháng nước|PHONE:s8 plus
 Ở ho chi minh con may s8+ màu xanh hoac bac k vay? Giá bao nhiêu;hoi_con_hang;LOCATION:ho chi minh|PHONE:s8+|COLOR:xanh|COLOR:bac
-Chi nhánh Cầu Giấy còn Tím không ạ?;hoi_dia_chi;LOCATION:Cầu Giấy|COLOR:Tím
+Chi nhánh Cầu Giấy còn Tím không ạ?;hoi_con_hang;LOCATION:Cầu Giấy|COLOR:Tím
 cho mình hỏi trả góp có lãi suất không và thanh toán như thế nào;hoi_tra_gop;IS_NEEDED:trả góp
 Còn hàng ở hà nội ko ạ;hoi_con_hang;LOCATION:hà nội
 Cho mình hỏi con này con mới 100% kg QTV.va mình muôn mua trả góp qua thẻ BIDV được không. Va trả trước 30% nha .va mình sai gòn quận 2 thì mua ở cửa hang nào gần nhất;hoi_tra_gop;IS_NEEDED:trả góp
-Còn hàng k vậy;hoi_con_hang;OTHER:k vậy
+Còn hàng k vậy;hoi_con_hang;OTHER:còn hàng k
 mình mua xiaomi mi 8 64gb dc 2 tháng kèm gói bảo hành kim cương. giờ mún đổi sang s8 plus thì phải bù bao nhiu shop?;hoi_doi_cu_lay_moi;PHONE:xiaomi mi 8|ROM:64|PHONE:s8 plus
 shop cho hỏi con này hàng nước nào vậy;hoi_nguon_hang;OTHER:nước nào
 Sản phẩm nguyên seal ko ạ;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:nguyên seal
 Trả góp thế nào ạ, hạn bao nhiêu, trả trước bao nhiêu, hơn giá gốc bao nhiêu.;hoi_tra_gop;IS_NEEDED:Trả góp thế nào
 Có chương trình thu mua máy cũ giá tốt không ? Mình đang dùng Samsung S8 cũng mua tại chính cửa hàng này luôn, nay muốn đổi thành S8 plus. Trả lời sớm giúp mình để còn kịp chương trình khuyến mãi.;hoi_doi_cu_lay_moi;PHONE:Samsung S8|PHONE:S8 plus
 Có thu lại điện thoại cũ ko ạ? Mình mua của Cellphones oppo F1s.. Giờ muốn bán oppo để mua ss s8plus ạ;hoi_doi_cu_lay_moi;PHONE:oppo F1s|PHONE:ss s8plus
-Máy mới 100%  chưa activer p khong bạn;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:chưa activer
+Máy mới 100%  chưa activer p khong bạn;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:mới 100%|IS_BRAND_NEW_OR_LIKE_NEW:chưa activer
 Cho mình  camera note 8 vs s8+ note 8 hơn nhìu ko ạ;hoi_phan_cung;WHAT_FRONT_CAMERA:camera
 ở xa có cà thẻ ko ad,* Giảm tới 1% giá hóa đơnvậy là sao ad.;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:có cà thẻ
 Máy s8+ là hàng fullbox hay sao shop.mua ở xa như thế nào shop?bảo hành ra sao;hoi_nguon_hang;PHONE:s8+|IS_BRAND_NEW_OR_LIKE_NEW:fullbox
 Còn giá 12.990.000 ko ạ;hoi_gia;OTHER:Còn
 Em có cái s8+ sao có 1 sim vậy anh..loại máy dòng này em không rành anh tư vấn giúp em với..rong 64g ram 4g ..máy có chống nước không anh;hoi_phan_cung;IS_WATER_PROTECTED:chống nước
 giá hiện tại bao nhiu zậy ad;hoi_gia;OTHER:giá hiện tại
-Ko có ho khẩu có dc ko ban;hoi_tra_gop;IS_NEEDED:Ko có ho khẩu
 Trả góp cần giấy tờ gì hả bạn;hoi_tra_gop;IS_NEEDED:cần giấy tờ gì
 S8 + cũ giá Bn v ạ;hoi_gia;PRICE_OF_OLD_PHONE:cũ giá Bn|PHONE:S8 +
 Máy này đã kích hoạt chưa? Giá còn khuyến mại 13,3tr k ad?;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:kích hoạt
@@ -669,7 +667,7 @@ Muốn lấy sim không lấy loa giá bao nhiêu vậy shop?;hoi_gia;IS_PRICE_A
 Ở quận 9 còn san phẩm màu tím không?;hoi_con_hang;LOCATION:quận 9|COLOR:tím
 Con này pin dùng liên tục đc bao nhiêu lâu vay;hoi_phan_cung;HOW_LONG_PIN:pin dùng liên tục
 Chương trình áp đụng cho đến khi nào vậy ad.;hoi_khuyen_mai;WHEN_END_SALE_OFF:đến khi nào
-Mua trả góp có đc tặng quà không ;hoi_khuyen_mai;SALE_OFF_GIFF:tặng quà
+Mua trả góp có đc tặng quà không ;hoi_khuyen_mai;IS_NEEDED:trả góp|SALE_OFF_GIFF:tặng quà
 E mua đt lấy sim KO lấy loa thì được giảm bao nhiu ad;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:KO lấy loa
 Nếu em mua mỗi máy và chỉ lấy sạc dự phòng thì giá như thế nào ạ?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:chỉ lấy sạc
 Sao e mua k có quà hay khuyến mãi gì vậy;hoi_khuyen_mai;SALE_OFF_GIFF:k có quà hay khuyến mãi
@@ -692,8 +690,8 @@ Black friday giảm giá bao nhiêu, trả góp đc giảm giá k. Và k lấy q
 ngày Black Friday giảm bao nhiêu ạ ?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:giảm bao nhiêu
 Mình ở HCM nếu mình không lấy quà thì giá nó như nào ạ;hoi_gia;LOCATION:HCM|IS_PRICE_AFTER_SALE_OFF_PRICE:không lấy quà
 Cho e hỏi hiện tại mua nova 3i có ưu đãi gì?;hoi_khuyen_mai;SALE_OFF_GIFF:ưu đãi gì|PHONE:nova 3i
-19 tuổi đầy đủ giấy tờ có thể trả góp được không ạ;hoi_tra_gop;IS_NEEDED:có thể trả góp
-có trả góp qua thẻ tín dụng của maritime bank hem;hoi_tra_gop;IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT:trả góp qua thẻ
+19 tuổi đầy đủ giấy tờ có thể trả góp được không ạ;hoi_tra_gop;IS_NEEDED:trả góp
+có trả góp qua thẻ tín dụng của maritime bank hem;hoi_tra_gop;IS_NEEDED:trả góp
 Mình ở tân bình không biết mua ở cửa hàng nào gần nhất ạ ? ;hoi_dia_chi;LOCATION:tân bình
 add oi hiện bên cellphone còn khuyến mãi ko vậy? ;hoi_khuyen_mai;IS_SALE_OFF_NOW:còn khuyến mãi ko
 Chính sách không lấy bộ quà tặng thì được giảm giá máy còn 5790k dc thực hiện đến bao giờ ạ?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:không lấy bộ quà
@@ -715,10 +713,10 @@ Có màu xám ko;hoi_con_hang;COLOR:xám
 Đây là bản vna ak ad ;hoi_nguon_hang;WHAT_FROM_TYPE:bản vna
 shop cho mình hỏi bên mình còn iphone X vna màu bạc không ạ;hoi_con_hang;PHONE:iphone X|COLOR:bạc
 Cho mình hỏi hà nội còn màu bạc không nhỉ;hoi_con_hang;LOCATION:hà nội|COLOR:bạc
-cho mình hỏi có con IpX 64GB mới màu bạc ko ạ??? Mình ở tphcm;hoi_con_hang;PHONE:|ROM:64|COLOR:bạc|LOCATION:tphcm
+cho mình hỏi có con IpX 64GB mới màu bạc ko ạ??? Mình ở tphcm;hoi_con_hang;PHONE:IpX|ROM:64|COLOR:bạc|LOCATION:tphcm
 Đag xai 7+ muôn lên X thj bu thêm khoag bao nkjêu vây shop?;hoi_doi_cu_lay_moi;PHONE:7+|PHONE:X
 Shop cho e hỏi là máy đang thảm khảo là máy mới chính hãng nguyên seal hay máy CPO?;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:nguyên seal
-Shop oi iphone x chinh hang duoc nhap tu dau ve a co nhap tu my ko ma phai la chinh hang;hoi_nguon_hang;LOCATION:my
+Shop oi iphone x phai la hàng mỹ k?;hoi_nguon_hang;LOCATION:mỹ
 có thanh toán bằng thẻ đc ko ad;hoi_tra_gop;IS_SUPPORTED_BUYING_THROUGH_CREDIT:thanh toán bằng thẻ
 Giá cả khuyến mãi có gì khác ko;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:Giá cả khuyến mãi có gì khác
 Máy có nguyen seal ko ạ, chưa bóc lớp ni lông ngoài hop chứ ạ?;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:nguyen seal
@@ -1078,7 +1076,7 @@ Hiện tại còn thu cũ lên đời k ạ?;hoi_doi_cu_lay_moi;OTHER:thu cũ l�
 Giá hiện tại là bao nhiêu s9+;hoi_gia;PHONE:s9+
 Giá hiện giờ bao nhiêu add, mình mua trả góp trả trước bao nhiêu;hoi_gia;OTHER:Giá hiện giờ bao nhiêu
 Giá hien tại bao nhiu zay ad8;hoi_gia;OTHER:Giá hien tại bao nhiu
-trả góp 0% với home credit có được giảm giá không ad?;hoi_giam_gia;IS_SALE_OFF_INSTALLMENT:trả góp 0% với home credit có được giảm giá
+trả góp 0% với home credit có được giảm giá không ad?;hoi_gia;IS_SALE_OFF_INSTALLMENT:trả góp 0% với home credit có được giảm giá
 Mình đang xài s7 edge thì có chtrinh đổi dth k shop;hoi_doi_cu_lay_moi;PHONE:s7 edge
 Hàng mỹ hay là vna vậy shop;hoi_nguon_hang;LOCATION:mỹ
 Giá hotsale là 17.990.000đ rồi có được giảm thêm 4.400.000đ của CellphoneS nữa không Ad?;hoi_khuyen_mai;IS_SALE_OFF_NOW:có được giảm thêm

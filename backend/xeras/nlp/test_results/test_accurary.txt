@@ -1,182 +1,820 @@
-Wrong line at: 0
-Wrong sentence: Bản màu vàng còn hàng ở Q9 TPHCM ko shop
-Wrong entities - Result NLP: [('PHONE', 'q9 tphcm')]
-Expected by train: [('COLOR', 'màu vàng'), ('LOCATION', 'q9'), ('LOCATION', 'tphcm')]
 Wrong line at: 1
 Wrong sentence: Còn đang giảm giá không shop ơi
-Wrong entities - Result NLP: [('IS_SALE_OFF', 'đang giảm')]
-Expected by train: [('IS_SALE_OFF', 'đang giảm giá')]
-Wrong line at: 2
-Wrong sentence: Ipx giá nhiêu nhỉ?
-Wrong entities - Result NLP: [('PHONE', 'iphone x')]
-Expected by train: [('PHONE_NAME', 'iphone x')]
-Wrong line at: 3
-Wrong sentence: Iphone X bản 64gb vàng đốm giờ giá nhiêu vậy?
-Wrong entities - Result NLP: [('PHONE', 'iphone x'), ('ROM', '64')]
-Expected by train: [('PHONE', 'iphone x'), ('ROM', '64'), ('COLOR', 'vàng')]
-Wrong line at: 4
-Wrong sentence: Giảm giá 1tr4 là còn 3tr6 phải không bạn
-Wrong entities - Result NLP: []
-Expected by train: [('IS_PRICE_AFTER_SALE_OFF_PRICE', 'giảm giá 1tr4 là còn 3tr6')]
-Wrong line at: 5
-Wrong sentence: Ở Thái Nguyên giá SS8+ giờ nhiêu
-Wrong entities - Result NLP: [('PHONE', 'thái nguyên')]
-Expected by train: [('LOCATION', 'thái nguyên'), ('PHONE', 'ss8+')]
-Wrong line at: 6
-Wrong sentence: Mình muốn mua Iphone X hàng nhập khẩu từ Mỹ giá nhiêu
-Wrong entities - Result NLP: [('PHONE', 'iphone x')]
-Expected by train: [('PHONE', 'iphone x'), ('LOCATION', 'mỹ'), ('IS_PHONE_FROM', 'hàng nhập khẩu')]
-Wrong line at: 7
-Wrong sentence: Bản 64gb mắc hơn 32gb nhiêu
-Wrong entities - Result NLP: [('ROM', '64'), ('ROM', 'mắc'), ('ROM', '32')]
-Expected by train: [('IS_COMPARE', 'mắc hơn'), ('ROM', '64'), ('ROM', '32')]
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_giam_gia
 Wrong line at: 8
 Wrong sentence: Giá 22tr2 là tính thuế VAT 10% chưa shop
-Wrong entities - Result NLP: [('PHONE', '22tr2 là')]
+Wrong entities - Result NLP: [('MONEY', '22tr2'), ('IS_INCLUDE_TAX', 'tính thuế vat 10')]
 Expected by train: [('MONEY', '22tr2'), ('TAX', '10%'), ('IS_INCLUDE_TAX', 'thuế vat')]
-Wrong line at: 9
-Wrong sentence: Tính thuế nữa là giá nhiêu vậy bạn
-Wrong entities - Result NLP: []
-Expected by train: [('IF_INCLUDE_TAX', 'tính thuế nữa')]
-Wrong line at: 10
-Wrong sentence: Mua SS9+ có được tặng kèm gì ko shop
-Wrong entities - Result NLP: [('PHONE', 'ss9+')]
-Expected by train: [('PHONE', 'ss9+'), ('SALE_OFF_GIFF', 'tặng kèm')]
-Wrong line at: 11
-Wrong sentence: Iphone 7 có đang khuyến mãi ko?
-Wrong entities - Result NLP: [('PHONE', 'iphone 7')]
-Expected by train: [('PHONE', 'iphone 7'), ('IS_SALE_OFF_NOW', 'đang khuyến mãi ko')]
-Wrong line at: 12
-Wrong sentence: Ủa giờ còn giảm giá 1tr không
-Wrong entities - Result NLP: []
-Expected by train: [('IS_SALE_OFF_NOW', 'giảm giá 1tr không')]
-Wrong line at: 13
-Wrong sentence: Mình mua trả góp vậy có được giảm 2tr không
-Wrong entities - Result NLP: []
-Expected by train: [('IS_SALE_OFF_INSTALLMENT', 'giảm 2tr không')]
-Wrong line at: 14
-Wrong sentence: Khi nào hết chương trình giảm giá sốc với đồ tặng kèm cho con này vậy bạn
-Wrong entities - Result NLP: []
-Expected by train: [('WHEN_END_SALE_OFF', 'khi nào hết chương trình')]
-Wrong line at: 15
-Wrong sentence: Máy này sử dụng cục sạc mấy chấu thế
-Wrong entities - Result NLP: []
-Expected by train: [('WHAT_CHARGER', 'sạc mấy chấu')]
-Wrong line at: 16
-Wrong sentence: Sạc thường mấy tiếng mới đầy pin vậy
-Wrong entities - Result NLP: [('HOW_LONG_CHARGER', 'sạc thường')]
-Expected by train: [('HOW_LONG_CHARGER', 'sạc thường mấy tiếng')]
-Wrong line at: 17
-Wrong sentence: Pin xài bao lâu tiếng vậy
-Wrong entities - Result NLP: [('HOW_LONG_PIN', 'pin xài')]
-Expected by train: [('HOW_LONG_PIN', 'pin xài bao lâu')]
-Wrong line at: 18
-Wrong sentence: IphoneX pin xài bao lâu?
-Wrong entities - Result NLP: [('PHONE', 'iphone x')]
-Expected by train: [('PHONE', 'iphone x'), ('HOW_LONG_PIN', 'pin xài bao lâu')]
-Wrong line at: 19
-Wrong sentence: Pin IphoneX xài bao lâu?
-Wrong entities - Result NLP: [('HOW_LONG_PIN', 'pin iphone x')]
-Expected by train: [('HOW_LONG_PIN', 'pin iphone x xài bao lâu')]
-Wrong line at: 21
-Wrong sentence: Camera trước nhiêu chấm vậy
-Wrong entities - Result NLP: []
-Expected by train: [('WHAT_FRONT_CAMERA', 'camera trước')]
 Wrong line at: 22
 Wrong sentence: Xiaomi này là vỏ nhôm hay nhựa vậy
-Wrong entities - Result NLP: [('MANUFACTURER', 'xiaomi')]
-Expected by train: [('MANUFACTURER', 'xiaomi'), ('WHAT_PHONE_CASE', 'vỏ nhôm hay nhựa')]
+Wrong type ask - Result NLP: hoi_nguon_hang
+Expected by train: hoi_phan_cung
 Wrong line at: 23
 Wrong sentence: Máy này ram nhiêu?
-Wrong entities - Result NLP: []
-Expected by train: [('WHAT_RAM', 'ram nhiêu')]
+Wrong type ask - Result NLP: hoi_gia
+Expected by train: hoi_phan_cung
 Wrong line at: 24
 Wrong sentence: Máy này dung lượng rom là 32 hay 64?
-Wrong entities - Result NLP: [('ROM', '32'), ('ROM', '64')]
-Expected by train: [('WHAT_ROM', 'dung lượng rom là'), ('ROM', '32'), ('ROM', '64')]
+Wrong type ask - Result NLP: hoi_nguon_hang
+Expected by train: hoi_phan_cung
 Wrong line at: 26
 Wrong sentence: Có tai thỏ ko shop?
-Wrong entities - Result NLP: []
-Expected by train: [('IS_EAR_RABBIT', 'tai thỏ')]
-Wrong line at: 27
-Wrong sentence: Có tràn màn hình không?
-Wrong entities - Result NLP: []
-Expected by train: [('IS_OVER_FLOW_SCREEN', 'tràn màn hình')]
-Wrong line at: 28
-Wrong sentence: SS7+ có màn hình tràn không?
-Wrong entities - Result NLP: [('PHONE', 'ss7+')]
-Expected by train: [('PHONE', 'ss7+'), ('IS_OVER_FLOW_SCREEN', 'màn hình tràn')]
-Wrong line at: 29
-Wrong sentence: Con này có hỗ trợ 4g được không nhỉ?
-Wrong entities - Result NLP: [('IS_4G', 'hỗ trợ')]
-Expected by train: [('IS_4G', 'hỗ trợ 4g')]
-Wrong line at: 30
-Wrong sentence: SS7+ có hỗ trợ 4g được không nhỉ?
-Wrong entities - Result NLP: [('PHONE', 'ss7+'), ('IS_4G', 'hỗ trợ')]
-Expected by train: [('PHONE', 'ss7+'), ('IS_4G', 'hỗ trợ 4g')]
-Wrong line at: 31
-Wrong sentence: Này dùng 1 sim hay 2 sim
-Wrong entities - Result NLP: []
-Expected by train: [('HOW_NUMBER_SIM', '1 sim hay 2 sim')]
-Wrong line at: 32
-Wrong sentence: Dùng sim ghép hay thường vậy bạn
-Wrong entities - Result NLP: []
-Expected by train: [('WHAT_SIM', 'sim ghép hay thường')]
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_phan_cung
 Wrong line at: 35
 Wrong sentence: Ủa máy cài android 6 hay 7
-Wrong entities - Result NLP: [('PHONE', 'android 6')]
-Expected by train: [('WHAT_OS', 'android 6 hay 7')]
+Wrong type ask - Result NLP: hoi_nguon_hang
+Expected by train: hoi_phan_mem
 Wrong line at: 36
 Wrong sentence: Mua về có update lên 8 được không
-Wrong entities - Result NLP: []
-Expected by train: [('CAN_UPDATE', 'có update lên'), ('VERSION_TO_UPDATE', '8')]
-Wrong line at: 37
-Wrong sentence: Xiaomi này có cài sẵn tiếng Việt không, shop có hỗ trợ cài miễn phí hay phải tự cài
-Wrong entities - Result NLP: [('MANUFACTURER', 'xiaomi')]
-Expected by train: [('IS_VIETNAMESE_INSTALLED', 'cài sẵn tiếng việt'), ('MANUFACTURER', 'xiaomi')]
-Wrong line at: 38
-Wrong sentence: Iphone XS Max có hỗ trợ tiếng Việt không?
-Wrong entities - Result NLP: [('PHONE', 'iphone xs')]
-Expected by train: [('PHONE', 'iphone xs max'), ('IS_SUPPORT_INSTALLED', 'hỗ trợ tiếng việt')]
-Wrong line at: 39
-Wrong sentence: Ủa này hàng từ Mỹ hay Đài Loan bạn
-Wrong entities - Result NLP: [('LOCATION', 'mỹ')]
-Expected by train: [('LOCATION', 'mỹ'), ('LOCATION', 'đài loan')]
-Wrong line at: 40
-Wrong sentence: Bản Iphone XS này là quốc tế hả
-Wrong entities - Result NLP: [('PHONE', 'iphone xs')]
-Expected by train: [('PHONE', 'iphone xs'), ('IS_GLOBAL', 'là quốc tế')]
+Wrong type ask - Result NLP: hoi_tra_gop
+Expected by train: hoi_phan_mem
 Wrong line at: 41
 Wrong sentence: Phải mã hàng LL/A không
-Wrong entities - Result NLP: []
-Expected by train: [('WHAT_CODE', 'phải mã hàng ll/a')]
-Wrong line at: 42
-Wrong sentence: Ủa này là hàng nhập khẩu xách tay hay chính hãng vậy shop
-Wrong entities - Result NLP: []
-Expected by train: [('WHAT_FROM_TYPE', 'xách tay hay chính hãng')]
-Wrong line at: 43
-Wrong sentence: Này là mới đập hộp hay like new
-Wrong entities - Result NLP: []
-Expected by train: [('IS_BRAND_NEW_OR_LIKE_NEW', 'đập hộp hay like new')]
-Wrong line at: 45
-Wrong sentence: Chơi game liên tục 3h được không
-Wrong entities - Result NLP: []
-Expected by train: [('HOW_LONG_PIN_PLAYING_GAME', 'chơi game liên tục 3h')]
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_nguon_hang
 Wrong line at: 46
 Wrong sentence: Không biết con này chơi alpha 8 có lag không ae nhỉ
-Wrong entities - Result NLP: [('GAME', 'alpha 8')]
-Expected by train: [('GAME', 'alpha 8'), ('IS_FINE_WHILE_PLAYING', 'có lag không')]
-Wrong line at: 48
-Wrong sentence: Iphone XS xám bạc còn không
-Wrong entities - Result NLP: [('PHONE', 'iphone xs')]
-Expected by train: [('PHONE', 'iphone xs'), ('COLOR', 'xám bạc')]
-Wrong line at: 49
-Wrong sentence: Còn màu nào khác không
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_nhu_cau
+Wrong line at: 56
+Wrong sentence: Tư vấn e trả góp ạ
+Wrong entities - Result NLP: [('IS_NEEDED', 'tư vấn')]
+Expected by train: [('IS_NEEDED', 'tư vấn e trả góp')]
+Wrong line at: 61
+Wrong sentence: Có hỗ trợ trả góp qua thẻ ngân hàng hay tín dụng không
+Wrong entities - Result NLP: [('IS_NEEDED', 'hỗ trợ trả góp')]
+Expected by train: [('IS_NEEDED', 'hỗ trợ'), ('IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT', 'trả góp qua thẻ ngân hàng')]
+Wrong line at: 62
+Wrong sentence: Có trả góp qua thẻ ngân hàng hay tín dụng không
+Wrong entities - Result NLP: [('IS_NEEDED', 'có trả góp')]
+Expected by train: [('IS_NEEDED', 'trả góp')]
+Wrong line at: 64
+Wrong sentence: Kính cường lực bị vỡ có bảo hành không vậy
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_bao_hanh
+Wrong line at: 65
+Wrong sentence: Vừa mua mà hư loa rồi, cứ rè rè mai ra đổi
+Wrong type ask - Result NLP: hoi_gia
+Expected by train: hoi_bao_hanh
+Wrong line at: 67
+Wrong sentence: A9 2018.neu tru gif 1500k minh ko lay km cua cellphones co dc ko.gia tot nhat nhu nao ad
+Wrong entities - Result NLP: [('IS_PRICE_AFTER_SALE_OFF_PRICE', 'ko lay km')]
+Expected by train: [('PHONE', 'samsung a9'), ('IS_PRICE_AFTER_SALE_OFF_PRICE', 'ko lay km')]
+Wrong line at: 96
+Wrong sentence: Mình muốn trả góp qua thẻ Visa thì hình thức như thế nào,bn tháng .
+Wrong entities - Result NLP: [('IS_NEEDED', 'trả góp')]
+Expected by train: [('IS_SUPPORTED_BUYING_THROUGH_CREDIT', 'trả góp qua thẻ')]
+Wrong line at: 105
+Wrong sentence: Trả góp 0% qua Home là trả trước và mỗi tháng trả bao nhiêu ạ? Cửa hàng ở Thái Hà còn máy ko ạ?
+Wrong type ask - Result NLP: hoi_tra_gop
+Expected by train: hoi_dia_chi
+Wrong entities - Result NLP: [('IS_NEEDED', 'trả góp 0%'), ('LOCATION', 'thái hà')]
+Expected by train: [('LOCATION', 'thái hà')]
+Wrong line at: 109
+Wrong sentence: S9+ có trả góp ưu đãi gì bạn nhỉ?
+Wrong type ask - Result NLP: hoi_tra_gop
+Expected by train: hoi_khuyen_mai
+Wrong line at: 120
+Wrong sentence: Còn áp dụng chương trình 20tr tại HCM ko shop?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khuyen_mai
+Wrong line at: 128
+Wrong sentence: Pin ko trâu như mình nghĩ
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_phan_cung
+Wrong line at: 130
+Wrong sentence: Tư vấn giùm mình trả góp 0% cần trả trước bao nhiêu và của công ty tài chính nào vậy?
+Wrong entities - Result NLP: [('IS_NEEDED', 'trả góp')]
+Expected by train: [('IS_NEEDED', 'trả góp 0%')]
+Wrong line at: 134
+Wrong sentence: Chào ad.. cho m hỏi.. giá note 9 512gb 20.990.000d là còn khuyến mãi, tặng kèm gì không ạ.. m mua online ntn ạ..
+Wrong entities - Result NLP: [('PHONE', 'samsung note 9'), ('ROM', '512'), ('MONEY', '20.990.000d'), ('SALE_OFF_GIFF', 'còn khuyến mãi'), ('SALE_OFF_GIFF', 'tặng kèm gì')]
+Expected by train: [('PHONE', 'samsung note 9'), ('ROM', '512'), ('MONEY', '20.990.000d'), ('SALE_OFF_GIFF', 'tặng kèm gì không')]
+Wrong line at: 145
+Wrong sentence: Cho hỏi là có mã giảm cho khách hàng mới khi nhận thông báo qua email 10%, thì lúc mua hàng được áp dụng chung với cả galaxy gift và phiếu mua hàng 500k luôn phải ko shop?
+Wrong entities - Result NLP: [('SALE_OFF_GIFF', 'mua hàng được áp dụng chung với cả galaxy gift')]
+Expected by train: [('SALE_OFF_GIFF', 'mua hàng được áp dụng chung')]
+Wrong line at: 146
+Wrong sentence: Mình đang ở số 2 Trần phú - Hà Đông - Hà Nội . Mình muốn mua j6 plus . Cho hỏi có của hàng nào gần mình không bạn . Và phiếu mua hàng còn dc áp dụng không bạn
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 164
+Wrong sentence: j6+ mau đỏ bao giờ có vậy ?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 167
+Wrong sentence: em ở bình dương cầm mua j6 plus
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 180
+Wrong sentence: Cho em hỏi máy này có bộ nhớ chính xác là 3G/32G hay 4G/64G vậy
+Wrong type ask - Result NLP: hoi_nguon_hang
+Expected by train: hoi_phan_cung
+Wrong line at: 182
+Wrong sentence: Hàng này 2 sim vật lý đúng không shop?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_phan_cung
+Wrong line at: 184
+Wrong sentence: Quá kì vậy note 9 mới còn có 21 tr bản 512 g thoi
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_gia
+Wrong line at: 192
+Wrong sentence: Mình có mua 1máy p20 pro được 3 tháng, máy bị rơi. Có bảo hành lại cho mình ko
+Wrong type ask - Result NLP: hoi_tra_gop
+Expected by train: hoi_bao_hanh
+Wrong line at: 200
+Wrong sentence: P20 pro có trống nước ko anh
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_phan_cung
+Wrong line at: 213
+Wrong sentence: Em muốn mua trả góp thì như thế nào! và trừ quà đi có trừ vào giá máy không ạ! Có gì liên hệ cho em biết với ạ
+Wrong type ask - Result NLP: hoi_gia
+Expected by train: hoi_tra_gop
+Wrong line at: 223
+Wrong sentence: Phiếu mua hàng có được trừ vào giá sản phẩm luôn không ạ?
+Wrong entities - Result NLP: [('IS_PRICE_AFTER_SALE_OFF_PRICE', 'trừ vào giá')]
+Expected by train: [('IS_PRICE_AFTER_SALE_OFF_PRICE', 'trừ vào giá sản phẩm')]
+Wrong line at: 237
+Wrong sentence: Con này có ở bắc ninh ko ạ
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 240
+Wrong sentence: Cho mình hỏi Max pro M1 4g có bán ở Cái Bè.Tiền Giang k ạ
+Wrong entities - Result NLP: [('PHONE', 'asus zenfone max pro m1'), ('RAM', '4'), ('LOCATION', 'bè.tiền giang')]
+Expected by train: [('PHONE', 'asus zenfone max pro m1'), ('RAM', '4'), ('LOCATION', 'tiền giang')]
+Wrong line at: 245
+Wrong sentence: bao giờ nhập tiếp màu đen ạ?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 250
+Wrong sentence: Máy sẵn tiếng việt chưa shop, mình ở cao bằng shop có ship ko? Và phí ship là bnh ạ?
+Wrong entities - Result NLP: [('IS_VIETNAMESE_INSTALLED', 'máy sẵn tiếng việt')]
+Expected by train: [('IS_VIETNAMESE_INSTALLED', 'tiếng việt')]
+Wrong line at: 255
+Wrong sentence: Hết hàng rồi hả shop ? 
+Wrong entities - Result NLP: [('OTHER', 'hết hàng rồi hả')]
+Expected by train: [('OTHER', 'hết hàng rồi')]
+Wrong line at: 269
+Wrong sentence: Em muốn mua trả góp thì như thế nào! và trừ quà đi có trừ vào giá máy không ạ! Có gì liên hệ cho em biết với ạ
+Wrong type ask - Result NLP: hoi_gia
+Expected by train: hoi_tra_gop
+Wrong line at: 273
+Wrong sentence:  Giá sau khi trừ hết quà bao nhiêu ạ
+Wrong entities - Result NLP: [('IS_PRICE_AFTER_SALE_OFF_PRICE', 'trừ hết quà')]
+Expected by train: [('IS_PRICE_AFTER_SALE_OFF_PRICE', 'sau khi trừ hết quà')]
+Wrong line at: 295
+Wrong sentence: Cho mình hỏi Max pro M1 4g có bán ở Cái Bè.Tiền Giang k ạ
+Wrong entities - Result NLP: [('PHONE', 'asus zenfone max pro m1'), ('RAM', '4'), ('LOCATION', 'bè.tiền giang')]
+Expected by train: [('PHONE', 'asus zenfone max pro m1'), ('RAM', '4'), ('LOCATION', 'tiền giang')]
+Wrong line at: 298
+Wrong sentence: bao giờ nhập tiếp màu đen ạ?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 315
+Wrong sentence: Máy có tiếng việt không ad?
+Wrong entities - Result NLP: [('IS_VIETNAMESE_INSTALLED', 'máy có tiếng việt')]
+Expected by train: [('IS_VIETNAMESE_INSTALLED', 'tiếng việt')]
+Wrong line at: 322
+Wrong sentence: hung yen co chi nhanh nao ko 
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 359
+Wrong sentence: hàng còn về ko ạ ??
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 360
+Wrong sentence: Giờ sản phẩm còn về k hay chấm dứt hàng lun rồi ạ e còn biết chờ
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 366
+Wrong sentence: Cho mình hỏi chương trình không nhận quà mà đc giảm tiền kéo dài bao lâu vậy
+Wrong type ask - Result NLP: hoi_gia
+Expected by train: hoi_khuyen_mai
+Wrong entities - Result NLP: [('IS_PRICE_AFTER_SALE_OFF_PRICE', 'không nhận quà')]
+Expected by train: [('WHEN_END_SALE_OFF', 'kéo dài bao lâu')]
+Wrong line at: 384
+Wrong sentence: nova 3 còn hàng ở cửa hàng nào ạ?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 385
+Wrong sentence: Khi nào có bản màu đen hay màu vàng vậy shop
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 388
+Wrong sentence: Hiện tại máy đang giảm giá phải ko ạ , có khuyến mãi gì ko , nếu ko lấy quà thì có dc trừ tiền vào giá sản phẩm ko ạ ????
+Wrong entities - Result NLP: [('SALE_OFF_GIFF', 'khuyến mãi gì'), ('IS_PRICE_AFTER_SALE_OFF_PRICE', 'ko lấy quà')]
+Expected by train: [('IS_PRICE_AFTER_SALE_OFF_PRICE', 'ko lấy quà')]
+Wrong line at: 389
+Wrong sentence: Máy bắn pubg có mượt ko ạ
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_nhu_cau
+Wrong line at: 391
+Wrong sentence: Hi shop! cho e hỏi mua trả góp có đc nhận thêm km 1tr và Tai phone ko?
+Wrong type ask - Result NLP: hoi_tra_gop
+Expected by train: hoi_khuyen_mai
+Wrong line at: 404
+Wrong sentence: Trả góp qua thẻ tín dụng thì hồ sơ cần những gì ah? Số tiền cần trả trc tối thiểu bn ạ?
+Wrong entities - Result NLP: [('IS_NEEDED', 'trả góp')]
+Expected by train: [('IS_NEEDED', 'trả góp'), ('IS_SUPPORTED_BUYING_THROUGH_CREDIT', 'qua thẻ tín dụng')]
+Wrong line at: 409
+Wrong sentence: Mình muốn mua iphone X 64GB máy LL/A mới, không biết ở TP.HCM của hang nào còn vậy ad
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 410
+Wrong sentence: Đây là máy mới đầy đủ tai nghe cáp sạc k ạ?
 Wrong entities - Result NLP: []
-Expected by train: [('WHAT_ELSE_COLOR', 'màu nào khác')]
-Total wrong lines: 44
-Total accuracy is: 12.0%
-Type ask wrong lines: 0
-Type ask accuracy is: 100.0%
-Entities wrong lines: 44
-Entities accuracy is: 12.0%
+Expected by train: [('IS_BRAND_NEW_OR_LIKE_NEW', 'đây là máy mới')]
+Wrong line at: 418
+Wrong sentence: phiên bản màu bạc ở ngoài hà nội còn chỗ nào có vậy shop ?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 427
+Wrong sentence: Bao h shop ở Thái Hà có hàng vậy ad ?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 437
+Wrong sentence: có máy LL/A sliver 64gb kh ạ nguyen seal
+Wrong entities - Result NLP: [('ASK_OLD_PHONE', 'có máy'), ('CODE', 'll/a'), ('COLOR', 'sliver'), ('ROM', '64')]
+Expected by train: [('CODE', 'll/a'), ('COLOR', 'sliver'), ('ROM', '64')]
+Wrong line at: 440
+Wrong sentence: giá có bao gồm thuế VAT không bạn ơi
+Wrong entities - Result NLP: [('IF_INCLUDE_TAX', 'bao gồm thuế vat')]
+Expected by train: [('IS_INCLUDE_TAX', 'gồm thuế vat không')]
+Wrong line at: 452
+Wrong sentence: Tôi đang làm việc ở hạ long quảng ninh.muốn trả góp qua thể bidv thì làm thế nào ạ
+Wrong entities - Result NLP: [('IS_NEEDED', 'trả góp')]
+Expected by train: [('LOCATION', 'quảng ninh'), ('IS_NEEDED', 'trả góp')]
+Wrong line at: 455
+Wrong sentence: Giá bao nhiêu vậy ạ
+Wrong entities - Result NLP: [('OTHER', 'giá bao nhiêu')]
+Expected by train: [('OTHER', 'bao nhiêu')]
+Wrong line at: 459
+Wrong sentence: HCM có hàng chưa ad?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 465
+Wrong sentence: Mình ở Thủ Đức mình muốn mua màu xanh thì cửa hàng nào còn bạn?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 476
+Wrong sentence: Hà Nội vẫn chưa có xanh à ad
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 480
+Wrong sentence: Nhập khẩu chính hãng hay là hàng công ty vậy ad
+Wrong entities - Result NLP: [('IS_PHONE_FROM', 'nhập khẩu chính')]
+Expected by train: [('WHAT_FROM_TYPE', 'chính hãng hay là hàng công ty')]
+Wrong line at: 487
+Wrong sentence: giá 5tr100 áp dụng đến bao giờ vậy shop
+Wrong type ask - Result NLP: hoi_gia
+Expected by train: hoi_khuyen_mai
+Wrong line at: 491
+Wrong sentence: Có trả góp k thông qua ngân hàng bản 64gb k ạ. 
+Wrong entities - Result NLP: [('IS_NEEDED', 'có trả góp'), ('IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT', 'thông qua ngân hàng'), ('ROM', '64')]
+Expected by train: [('IS_NEEDED', 'trả góp'), ('IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT', 'thông qua ngân hàng'), ('ROM', '64')]
+Wrong line at: 494
+Wrong sentence: co qua tang gi kem them khong shop 
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khuyen_mai
+Wrong line at: 500
+Wrong sentence: CÒN TÍNH NĂNG KHÁNG NƯỚC KHÔNG AD ƠI?????????????????
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_phan_cung
+Wrong line at: 501
+Wrong sentence: máy này là 2 sim phải không shop
+Wrong type ask - Result NLP: hoi_nguon_hang
+Expected by train: hoi_phan_cung
+Wrong line at: 507
+Wrong sentence: Vay may nay da qua su dung chua ?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_nguon_hang
+Wrong line at: 510
+Wrong sentence: cho hỏi máy màu tím vẫn đang giảm giá phải ko shop
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khuyen_mai
+Wrong line at: 516
+Wrong sentence: Màu Tím khói nơi nào còn không ạ? Mình ở Gò Vấp.
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 526
+Wrong sentence: em can ban samsung a8 e mua hom mung 9 vj can tien nen em can ban ai co nhu cau sdt 
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_doi_cu_lay_moi
+Wrong line at: 541
+Wrong sentence: Galaxy a8 2018 màu gold ở Hn giá trừ khuyến mãi còn bao nhiều vậy b?
+Wrong entities - Result NLP: [('PHONE', 'galaxy samsung a8'), ('COLOR', 'gold'), ('LOCATION', 'hn'), ('IS_PRICE_AFTER_SALE_OFF_PRICE', 'khuyến mãi còn bao nhiều')]
+Expected by train: [('IS_PRICE_AFTER_SALE_OFF_PRICE', 'khuyến mãi còn bao nhiều'), ('PHONE', 'galaxy samsung a8'), ('LOCATION', 'hn')]
+Wrong line at: 548
+Wrong sentence: Có trả góp 0% ko ạ
+Wrong entities - Result NLP: [('IS_NEEDED', 'có trả góp')]
+Expected by train: [('IS_NEEDED', 'có trả góp 0%')]
+Wrong line at: 583
+Wrong sentence: Iphone 6s 32gb còn hàng ở những cơ sở nào ạ
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 584
+Wrong sentence: bao giờ thì có hàng màu hồng ở hn nhỉ,nay gọi mà k đâu còn
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 593
+Wrong sentence: Mua trả góp thì trả trước 10% là bao nhiêu tiền và 1 tháng bao nhiêu (trả góp 15 tháng) 
+Wrong entities - Result NLP: [('IS_NEEDED', 'mua trả góp')]
+Expected by train: [('IS_NEEDED', 'trả góp')]
+Wrong line at: 604
+Wrong sentence: Cho e hỏi địa chỉ mua hàng ở Hà Nội ạ
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 610
+Wrong sentence: với cả có cửa hàng bán tại khu vực cầu giấy không
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 621
+Wrong sentence: S8+ nguyên tem chính hãng đủ phụ kiện đây ạ
+Wrong entities - Result NLP: [('SALE_OFF_GIFF', 'đủ phụ kiện')]
+Expected by train: [('PHONE', 'samsung s8'), ('SALE_OFF_GIFF', 'đủ phụ kiện')]
+Wrong line at: 627
+Wrong sentence: Cho mình hỏi con này con mới 100% kg QTV.va mình muôn mua trả góp qua thẻ BIDV được không. Va trả trước 30% nha .va mình sai gòn quận 2 thì mua ở cửa hang nào gần nhất
+Wrong entities - Result NLP: [('IS_BRAND_NEW_OR_LIKE_NEW', 'mới 100%'), ('IS_NEEDED', 'trả góp')]
+Expected by train: [('IS_NEEDED', 'trả góp')]
+Wrong line at: 630
+Wrong sentence: shop cho hỏi con này hàng nước nào vậy
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_nguon_hang
+Wrong line at: 636
+Wrong sentence: Cho mình  camera note 8 vs s8+ note 8 hơn nhìu ko ạ
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_phan_cung
+Wrong line at: 640
+Wrong sentence: Em có cái s8+ sao có 1 sim vậy anh..loại máy dòng này em không rành anh tư vấn giúp em với..rong 64g ram 4g ..máy có chống nước không anh
+Wrong entities - Result NLP: [('HOW_NUMBER_SIM', '1 sim'), ('IS_WATER_PROTECTED', 'chống nước')]
+Expected by train: [('IS_WATER_PROTECTED', 'chống nước')]
+Wrong line at: 643
+Wrong sentence: S8 + cũ giá Bn v ạ
+Wrong entities - Result NLP: [('PRICE_OF_OLD_PHONE', 'cũ giá bn')]
+Expected by train: [('PRICE_OF_OLD_PHONE', 'cũ giá bn'), ('PHONE', 'samsung s8 +')]
+Wrong line at: 644
+Wrong sentence: Máy này đã kích hoạt chưa? Giá còn khuyến mại 13,3tr k ad?
+Wrong entities - Result NLP: [('IS_BRAND_NEW_OR_LIKE_NEW', 'đã kích hoạt')]
+Expected by train: [('IS_BRAND_NEW_OR_LIKE_NEW', 'kích hoạt')]
+Wrong line at: 645
+Wrong sentence: Sản phẩm này màu tím còn ở cửa hàng nào bạn ơi
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 646
+Wrong sentence: Em có con s8 plus cũ mà màu đen giờ muốn đổi mấy mới mà màu tím không biết có được không và được áp dụng trả góp không ạ?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_doi_cu_lay_moi
+Wrong line at: 659
+Wrong sentence: máy đã kích hoạt có đc tạng phiếu mua hàng 1tr4 ko ad
+Wrong type ask - Result NLP: hoi_nguon_hang
+Expected by train: hoi_khuyen_mai
+Wrong entities - Result NLP: [('IS_BRAND_NEW_OR_LIKE_NEW', 'đã kích hoạt'), ('SALE_OFF_GIFF', 'đc tạng phiếu')]
+Expected by train: [('SALE_OFF_GIFF', 'đc tạng phiếu')]
+Wrong line at: 660
+Wrong sentence: Hiện tại mình mua máy ở celllhones được 30 ngày. Máy màu xanh muốn để lại ho bạn nào cần. Giá 10tr5 máy mới leng cưng lhe:  máy còn bh hơn 11 tháng
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_doi_cu_lay_moi
+Wrong line at: 661
+Wrong sentence: Hàng này k có các gói khuyen mãi ha shop
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khuyen_mai
+Wrong line at: 662
+Wrong sentence: cho mình hỏi đã kích hoạt là đã qua sử dụng à
+Wrong entities - Result NLP: [('IS_BRAND_NEW_OR_LIKE_NEW', 'đã kích hoạt')]
+Expected by train: [('IS_BRAND_NEW_OR_LIKE_NEW', 'kích hoạt')]
+Wrong line at: 668
+Wrong sentence: Mua trả góp có đc tặng quà không 
+Wrong entities - Result NLP: [('IS_NEEDED', 'mua trả góp'), ('SALE_OFF_GIFF', 'có đc tặng quà')]
+Expected by train: [('IS_NEEDED', 'trả góp'), ('SALE_OFF_GIFF', 'tặng quà')]
+Wrong line at: 692
+Wrong sentence: có trả góp qua thẻ tín dụng của maritime bank hem
+Wrong entities - Result NLP: [('IS_NEEDED', 'có trả góp')]
+Expected by train: [('IS_NEEDED', 'trả góp')]
+Wrong line at: 694
+Wrong sentence: add oi hiện bên cellphone còn khuyến mãi ko vậy? 
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khuyen_mai
+Wrong line at: 697
+Wrong sentence: Ad ơi cho hỏi bộ quà tặng 1tr7 là bao gồm gồm đồ j vậy ạ thank ad
+Wrong entities - Result NLP: [('SALE_OFF_GIFF', 'bộ quà tặng'), ('SALE_OFF_GIFF', 'bao gồm')]
+Expected by train: [('SALE_OFF_GIFF', 'bao gồm')]
+Wrong line at: 706
+Wrong sentence: có trả góp % cho máy mã vn k shop?
+Wrong entities - Result NLP: [('IS_NEEDED', 'có trả góp')]
+Expected by train: [('IS_NEEDED', 'trả góp')]
+Wrong line at: 708
+Wrong sentence: Ad giữ máy cho e nhe
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 709
+Wrong sentence: có trả gop k ạ
+Wrong entities - Result NLP: [('IS_NEEDED', 'có trả gop')]
+Expected by train: [('IS_NEEDED', 'trả gop')]
+Wrong line at: 715
+Wrong sentence: Đag xai 7+ muôn lên X thj bu thêm khoag bao nkjêu vây shop?
+Wrong entities - Result NLP: [('PHONE', '7+')]
+Expected by train: [('PHONE', '7+'), ('PHONE', 'x')]
+Wrong line at: 716
+Wrong sentence: Shop cho e hỏi là máy đang thảm khảo là máy mới chính hãng nguyên seal hay máy CPO?
+Wrong entities - Result NLP: [('IS_BRAND_NEW_OR_LIKE_NEW', 'mới chính hãng'), ('IS_BRAND_NEW_OR_LIKE_NEW', 'nguyên seal')]
+Expected by train: [('IS_BRAND_NEW_OR_LIKE_NEW', 'nguyên seal')]
+Wrong line at: 719
+Wrong sentence: Giá cả khuyến mãi có gì khác ko
+Wrong type ask - Result NLP: hoi_khuyen_mai
+Expected by train: hoi_gia
+Wrong line at: 727
+Wrong sentence: Thành phố HCM có hàng ipX 64g chính hãng chưa ạ?
+Wrong entities - Result NLP: [('LOCATION', 'hcm'), ('PHONE', 'iphone x'), ('ROM', '64'), ('WHAT_FROM_TYPE', 'chính hãng chưa')]
+Expected by train: [('LOCATION', 'hcm'), ('PHONE', 'iphone x'), ('ROM', '64'), ('WHAT_FROM_TYPE', 'chính hãng')]
+Wrong line at: 728
+Wrong sentence: Mình muốn trả góp iPhone X theo thẻ tín dụng maritime Bank
+Wrong entities - Result NLP: [('IS_NEEDED', 'trả góp')]
+Expected by train: [('IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT', 'trả góp iphone x theo thẻ tín dụng')]
+Wrong line at: 737
+Wrong sentence: Xs max 512Gb gold 2sim phải không ạ?
+Wrong type ask - Result NLP: hoi_doi_cu_lay_moi
+Expected by train: hoi_phan_cung
+Wrong line at: 740
+Wrong sentence: Cho mình hỏi ở HN máy 8+ màu xám có bản của thị trường nào ạ?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 742
+Wrong sentence: 8plus màu đen có máy của Mỹ hong shop
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_nguon_hang
+Wrong line at: 762
+Wrong sentence: Cho mình hỏi là giờ muốn mua iphone 8plus 64gb , mình muốn mua trả góp trong vòng 12 tháng và trả trước 50% vậy số tiền 50% là bao nhiêu vậy ạ với giấy tờ mình có CMND và bằng lái đủ chưa ?
+Wrong entities - Result NLP: [('PHONE', 'iphone iphone 8 plus'), ('ROM', '64'), ('IS_NEEDED', 'mua trả góp')]
+Expected by train: [('IS_NEEDED', 'mua trả góp')]
+Wrong line at: 771
+Wrong sentence: Dạ cho e hỏi iphone 8 plus 64gb màu bạc nhập khẩu ở nước nào v ạ
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_nguon_hang
+Wrong entities - Result NLP: [('PHONE', 'iphone 8 plus'), ('ROM', '64'), ('LOCATION', 'nước nào')]
+Expected by train: [('PHONE', 'iphone 8'), ('ROM', '64'), ('LOCATION', 'nước nào')]
+Wrong line at: 776
+Wrong sentence: Shop check giúp mình cửa hàng khu vực Q10, Q1 và Q3 nha
+Wrong entities - Result NLP: [('LOCATION', 'q10'), ('LOCATION', 'q3')]
+Expected by train: [('LOCATION', 'q10'), ('LOCATION', 'q1'), ('LOCATION', 'q3')]
+Wrong line at: 783
+Wrong sentence: Cho em hỏi mua điện thoại trả góp bao nhiêu tháng ?
+Wrong entities - Result NLP: [('OTHER', 'hỏi mua điện'), ('IS_NEEDED', 'trả góp')]
+Expected by train: [('IS_NEEDED', 'trả góp')]
+Wrong line at: 784
+Wrong sentence: Loại này bao nhiêu GB vậy ạ????
+Wrong type ask - Result NLP: hoi_gia
+Expected by train: hoi_phan_cung
+Wrong line at: 803
+Wrong sentence: Mua trả góp trả trc bao nhieu tiền ạ
+Wrong entities - Result NLP: [('IS_NEEDED', 'mua trả góp'), ('IS_NEEDED', 'trả trc bao nhieu')]
+Expected by train: [('IS_NEEDED', 'trả trc bao nhieu')]
+Wrong line at: 815
+Wrong sentence: Ad ơi hết ngày 27/11/2018 còn giảm ko ad
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khuyen_mai
+Wrong line at: 818
+Wrong sentence: shop ơi. còn khuyến mại s9 này k ạ. ở hà nội còn hàng k ạ
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khuyen_mai
+Wrong line at: 836
+Wrong sentence: Trả góp s9 có dc mua vs giá giảm ko?
+Wrong type ask - Result NLP: hoi_tra_gop
+Expected by train: hoi_khuyen_mai
+Wrong entities - Result NLP: [('IS_NEEDED', 'trả góp'), ('IS_SALE_OFF_NOW', 'giá giảm ko')]
+Expected by train: [('IS_SALE_OFF_NOW', 'giá giảm ko')]
+Wrong line at: 838
+Wrong sentence: Cho e hỏi h e mua trả góp đưa trước 30% và góp 6tháng , thì mỗi tháng e góp bao nhiêu v ak
+Wrong entities - Result NLP: [('IS_NEEDED', 'trả góp')]
+Expected by train: []
+Wrong line at: 856
+Wrong sentence: mình muốn mua ip xs max vàng chính hãng, tư vấn giúp mình trả góp 0% qua thẻ tín dụng nhé
+Wrong type ask - Result NLP: hoi_tra_gop
+Expected by train: hoi_gia
+Wrong line at: 857
+Wrong sentence: Ad cho hỏi mình có con ip x 256 gb mua ở Canada, shop thu lại và bù bao nhiêu để lên xs mã 64 gb
+Wrong type ask - Result NLP: hoi_doi_cu_lay_moi
+Expected by train: hoi_gia
+Wrong line at: 869
+Wrong sentence: Ad ơi cho em hỏi của hàng mình ở hà nội địa chỉ ở đâu ạ
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 873
+Wrong sentence: Có trả góp 0% ko ạ
+Wrong entities - Result NLP: [('IS_NEEDED', 'có trả góp')]
+Expected by train: [('IS_NEEDED', 'trả góp')]
+Wrong line at: 878
+Wrong sentence: 8+ đỏ ở Hàng bài còn ko ạ
+Wrong entities - Result NLP: [('PHONE', '8+'), ('COLOR', 'đỏ'), ('LOCATION', 'hàng bài')]
+Expected by train: [('PHONE', '8+'), ('LOCATION', 'hàng bài')]
+Wrong line at: 881
+Wrong sentence: Máy xách tay này khi mua thì shop có thể cho mình biết máy nhập khẩu từ nc nào ko vậy????
+Wrong entities - Result NLP: [('WHAT_FROM_TYPE', 'xách tay này khi mua'), ('LOCATION', 'nc nào')]
+Expected by train: [('LOCATION', 'nc nào')]
+Wrong line at: 887
+Wrong sentence: Còn hàng ko shop. Thủ tục trả góp như thế nào vậy ạ.
+Wrong type ask - Result NLP: hoi_tra_gop
+Expected by train: hoi_con_hang
+Wrong line at: 888
+Wrong sentence: Xin hỏi mẫu này là hàng xách tay, còn nguyên seal, chưa active đúng ko?
+Wrong entities - Result NLP: [('WHAT_FROM_TYPE', 'hàng xách tay, còn'), ('IS_BRAND_NEW_OR_LIKE_NEW', 'nguyên seal')]
+Expected by train: [('IS_BRAND_NEW_OR_LIKE_NEW', 'nguyên seal')]
+Wrong line at: 895
+Wrong sentence: hàng này là hàng xách tay hay hàng công ty vậy ad?
+Wrong entities - Result NLP: [('WHAT_FROM_TYPE', 'hàng xách tay hay hàng công ty')]
+Expected by train: [('WHAT_FROM_TYPE', 'xách tay hay hàng công ty')]
+Wrong line at: 896
+Wrong sentence: nếu mua trả góp thì mỗi tháng trả bao nhiêu ạ?
+Wrong entities - Result NLP: [('IS_NEEDED', 'mua trả góp')]
+Expected by train: [('IS_NEEDED', 'trả góp')]
+Wrong line at: 898
+Wrong sentence: nếu mua trả góp thì mỗi tháng trả bao nhiêu ạ?
+Wrong entities - Result NLP: [('IS_NEEDED', 'mua trả góp')]
+Expected by train: [('IS_NEEDED', 'trả góp')]
+Wrong line at: 902
+Wrong sentence: có bản LL chưa ad?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_phan_cung
+Wrong line at: 903
+Wrong sentence: hiện đang có bản gì vậy?
+Wrong type ask - Result NLP: hoi_khuyen_mai
+Expected by train: hoi_phan_cung
+Wrong line at: 904
+Wrong sentence: Khoảng bao lâu thì khu vực tphcm có mẫu này 64gb bản LL vậy ạ
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 906
+Wrong sentence: Mình mua trả góp trả trước 5 triệu thì tính ntn ad nhỉ?
+Wrong entities - Result NLP: [('IS_NEEDED', 'mua trả góp')]
+Expected by train: [('IS_NEEDED', 'trả góp')]
+Wrong line at: 909
+Wrong sentence: Ở hcm khu vực nào có hàng vậy shop?
+Wrong type ask - Result NLP: hoi_dia_chi
+Expected by train: hoi_con_hang
+Wrong line at: 917
+Wrong sentence: Cho e hỏi là ip 8+ đỏ còn hàng ở nguyễn văn cừ hà nội k ạ và máy mới là chính hãng nhập fpt à à shop
+Wrong type ask - Result NLP: hoi_nguon_hang
+Expected by train: hoi_con_hang
+Wrong line at: 919
+Wrong sentence: Hàng chính hãng mới nguyên seal full box hàng ll/A.
+Wrong entities - Result NLP: [('WHAT_FROM_TYPE', 'hàng chính hãng'), ('IS_BRAND_NEW_OR_LIKE_NEW', 'nguyên seal')]
+Expected by train: [('IS_BRAND_NEW_OR_LIKE_NEW', 'nguyên seal')]
+Wrong line at: 920
+Wrong sentence: Giá hiện tại là bao nhiêu.
+Wrong entities - Result NLP: [('OTHER', 'giá hiện tại'), ('OTHER', 'bao nhiêu')]
+Expected by train: [('OTHER', 'bao nhiêu')]
+Wrong line at: 922
+Wrong sentence: con hang ko ad
+Wrong entities - Result NLP: [('OTHER', 'con hang ko')]
+Expected by train: [('OTHER', 'hang ko')]
+Wrong line at: 923
+Wrong sentence: Bao h có hàng zay ad
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 924
+Wrong sentence: Ad khi nào có hàng lại vậy??
+Wrong entities - Result NLP: [('OTHER', 'ad khi nào có')]
+Expected by train: [('OTHER', 'khi nào có hàng')]
+Wrong line at: 928
+Wrong sentence: shop ơi cho mình hỏi Note 8 này là hàng chính hãng của samsung việt nam ha là hàng xách tay ạ?
+Wrong entities - Result NLP: [('PHONE', 'samsung note 8'), ('WHAT_FROM_TYPE', 'hàng xách tay')]
+Expected by train: [('WHAT_FROM_TYPE', 'hàng xách tay')]
+Wrong line at: 929
+Wrong sentence: hàng còn ở cửa hàng nào vậy CellphoneS ơi
+Wrong type ask - Result NLP: hoi_dia_chi
+Expected by train: hoi_con_hang
+Wrong entities - Result NLP: [('OTHER', 'hàng còn ở cửa hàng nào')]
+Expected by train: [('OTHER', 'hàng còn ở cửa hàng')]
+Wrong line at: 935
+Wrong sentence: Dạ cho em hỏi ở Tp.HCM có cửa hàng nào còn máy màu đen hoặc vàng không ạ 
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 936
+Wrong sentence: Cho mình hỏi máy mới chính hãng hay là hàng xách tay vậy
+Wrong entities - Result NLP: [('IS_BRAND_NEW_OR_LIKE_NEW', 'mới chính hãng'), ('WHAT_FROM_TYPE', 'hàng xách tay')]
+Expected by train: [('WHAT_FROM_TYPE', 'chính hãng')]
+Wrong line at: 938
+Wrong sentence: hàng chính hãng nguyên seal giá 14tr à ad?
+Wrong type ask - Result NLP: hoi_nguon_hang
+Expected by train: hoi_gia
+Wrong entities - Result NLP: [('WHAT_FROM_TYPE', 'hàng chính hãng'), ('OTHER', 'à ad')]
+Expected by train: [('OTHER', 'à ad')]
+Wrong line at: 940
+Wrong sentence: Hàng này chính hãng mới nguyên hộp luôn hả shop
+Wrong entities - Result NLP: [('WHAT_FROM_TYPE', 'chính hãng mới nguyên hộp luôn hả')]
+Expected by train: [('IS_BRAND_NEW_OR_LIKE_NEW', 'mới nguyên hộp')]
+Wrong line at: 944
+Wrong sentence: Còn hàng ko shop?
+Wrong entities - Result NLP: [('OTHER', 'còn hàng ko')]
+Expected by train: [('OTHER', 'hàng ko')]
+Wrong line at: 951
+Wrong sentence: Mình có mua 7+ 128GB bên cửa hàng giờ mình muốn đổi trả để mua trả góp sản phẩm này có được k ?
+Wrong type ask - Result NLP: hoi_tra_gop
+Expected by train: hoi_doi_cu_lay_moi
+Wrong line at: 952
+Wrong sentence: Còn hàng ko ad.
+Wrong entities - Result NLP: [('OTHER', 'còn hàng ko')]
+Expected by train: [('OTHER', 'hàng ko')]
+Wrong line at: 953
+Wrong sentence: Mua trả góp 0% là trên giá 13tr990k hay gì vậy.
+Wrong entities - Result NLP: [('IS_NEEDED', 'mua trả góp')]
+Expected by train: [('IS_NEEDED', 'trả góp')]
+Wrong line at: 960
+Wrong sentence: Hiện màu đen còn ở những CN nào ở HN ạ
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 963
+Wrong sentence: mình sử dụng ở nước ngoài có được không.
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_nguon_hang
+Wrong line at: 966
+Wrong sentence: Có những màu nào zay ad
+Wrong entities - Result NLP: [('WHAT_ELSE_COLOR', 'có những màu nào')]
+Expected by train: []
+Wrong line at: 968
+Wrong sentence: phiên bản mi6x ram 6gb có hàng ko shop
+Wrong entities - Result NLP: [('PHONE', 'xiaomi mi 6x')]
+Expected by train: [('PHONE', 'xiaomi mi 6x'), ('RAM', '6')]
+Wrong line at: 969
+Wrong sentence: Có trả góp 0% qua cty tài chính k ạ
+Wrong entities - Result NLP: [('IS_NEEDED', 'có trả góp')]
+Expected by train: [('IS_NEEDED', 'trả góp')]
+Wrong line at: 971
+Wrong sentence: K bt bh có màu đen vậy ạ
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 972
+Wrong sentence: Dien thoai choi lien quan ok k
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_nhu_cau
+Wrong line at: 973
+Wrong sentence: Con ni chụp ảnh có tốt ko shop
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_nhu_cau
+Wrong line at: 975
+Wrong sentence: may co choi game ngon ko ad
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_nhu_cau
+Wrong entities - Result NLP: [('IS_FINE_WHILE_PLAYING', 'choi game ngon')]
+Expected by train: [('IS_FINE_WHILE_PLAYING', 'choi game')]
+Wrong line at: 978
+Wrong sentence: con này chơi PUBG mobile có mượt không ạ nó có hơn con note 5 pro không ạ
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_nhu_cau
+Wrong line at: 983
+Wrong sentence: Cuối cùng là androione hay androi 8.1 ạ?
+Wrong type ask - Result NLP: hoi_nguon_hang
+Expected by train: hoi_phan_mem
+Wrong line at: 988
+Wrong sentence: Cho mình hỏi khu vực nào ở hà nội còn hàng vậy. Cảm ơn
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong entities - Result NLP: [('OTHER', 'hàng vậy')]
+Expected by train: []
+Wrong line at: 989
+Wrong sentence: Xiaomi Mi 6X 64GB (Ram 6GB) Mới Nguyên Seal  giá bao nhiêu vậy 
+Wrong entities - Result NLP: [('PHONE', 'xiaomi mi 6x'), ('ROM', '64')]
+Expected by train: [('PHONE', 'xiaomi mi 6x'), ('ROM', '64'), ('RAM', '6')]
+Wrong line at: 999
+Wrong sentence: Cửa hàng ở lê văn việt q9 còn hàng màu gì vậy ac
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_nguon_hang
+Wrong line at: 1000
+Wrong sentence: Hà Nội cửa hàng nào còn hàng vậy?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 1001
+Wrong sentence: Hcm còn hàng ở showroom nào vậy ạ
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 1002
+Wrong sentence: Khi nào bên shop có màu đen ở HCM
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 1006
+Wrong sentence: Cửa hành mình có ở cần thơ ko anh 
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_dia_chi
+Wrong line at: 1008
+Wrong sentence: Có cửa hàng nào gần quận Tân Phú không ad?
+Wrong entities - Result NLP: [('LOCATION', 'tân phú')]
+Expected by train: []
+Wrong line at: 1009
+Wrong sentence: miui ở phiên bản miui mấy ạ ?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_phan_mem
+Wrong line at: 1015
+Wrong sentence: có hỗ trợ trả góp trong vòng 6 tháng không ạ
+Wrong entities - Result NLP: [('IS_NEEDED', 'hỗ trợ trả góp')]
+Expected by train: [('IS_NEEDED', 'trả góp')]
+Wrong line at: 1016
+Wrong sentence: bản này là bản chính hãng hay là bản xách tay
+Wrong entities - Result NLP: [('IS_GLOBAL', 'là bản chính hãng hay'), ('WHAT_FROM_TYPE', 'bản xách tay')]
+Expected by train: []
+Wrong line at: 1017
+Wrong sentence: Đây là bản chính hãng hay sao
+Wrong entities - Result NLP: [('WHAT_FROM_TYPE', 'bản chính hãng hay sao')]
+Expected by train: [('WHAT_FROM_TYPE', 'chính hãng hay sao')]
+Wrong line at: 1025
+Wrong sentence: có bản 4g ram rom64 ko ad
+Wrong entities - Result NLP: [('RAM', '4')]
+Expected by train: [('RAM', '4'), ('ROM', '64')]
+Wrong line at: 1027
+Wrong sentence: cho e hỏi máy này có thể cập nhật lên android 8.0 được ko ạ?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_phan_mem
+Wrong line at: 1033
+Wrong sentence: Chiếc này chi nhánh hcm đag có giá bn vậy?
+Wrong type ask - Result NLP: hoi_dia_chi
+Expected by train: hoi_gia
+Wrong line at: 1036
+Wrong sentence: Máy có tiếng Việt k shop ơi, mình ở xa muốn mua 1 cái
+Wrong entities - Result NLP: [('IS_VIETNAMESE_INSTALLED', 'máy có tiếng việt')]
+Expected by train: [('IS_VIETNAMESE_INSTALLED', 'máy có tiếng việt k')]
+Wrong line at: 1037
+Wrong sentence: còn hàng ko shop
+Wrong entities - Result NLP: [('OTHER', 'còn hàng ko')]
+Expected by train: [('OTHER', 'hàng ko')]
+Wrong line at: 1045
+Wrong sentence: Máy chính hãng của thị trường nào vậy
+Wrong entities - Result NLP: [('WHAT_FROM_TYPE', 'chính hãng'), ('LOCATION', 'thị trường')]
+Expected by train: [('WHAT_FROM_TYPE', 'chính hãng')]
+Wrong line at: 1048
+Wrong sentence: Máy này là máy mới 100% hay máy kích hoạt rồi thế!?
+Wrong entities - Result NLP: [('IS_BRAND_NEW_OR_LIKE_NEW', 'máy mới')]
+Expected by train: [('IS_BRAND_NEW_OR_LIKE_NEW', 'mới 100%')]
+Wrong line at: 1053
+Wrong sentence: Có bảng LL/A lh mình nhé
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 1054
+Wrong sentence: Có mã LL/A chưa shop
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 1055
+Wrong sentence: Đã có hàng LL/A chưa ad
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khi_nao
+Wrong line at: 1057
+Wrong sentence: Iphone 7plus rose gold 32gb đổi 8plus 64gb thì bù bao nhiêu vậy shop?? 
+Wrong entities - Result NLP: [('PHONE', 'iphone 7 plus'), ('COLOR', 'rose gold'), ('ROM', '32'), ('PHONE', 'iphone 8 plus'), ('ROM', '64')]
+Expected by train: [('PHONE', 'iphone 8 plus'), ('COLOR', 'rose gold'), ('ROM', '32'), ('PHONE', 'iphone 8 plus'), ('ROM', '64')]
+Wrong line at: 1059
+Wrong sentence: Ip6s+ 16g đổi củ lấy mới ip8+ 64g bù khoảg bao nhiu tiền v shop?
+Wrong entities - Result NLP: [('PHONE', 'iphone 6s+'), ('ROM', '16'), ('PHONE', 'ip8+'), ('ROM', '64')]
+Expected by train: [('PHONE', 'iphone 6s'), ('ROM', '16'), ('PHONE', 'ip8+'), ('ROM', '64')]
+Wrong line at: 1061
+Wrong sentence: hàng chính hãng  VN/A hả bạn
+Wrong entities - Result NLP: [('WHAT_FROM_TYPE', 'hàng chính hãng'), ('CODE', 'vn/a')]
+Expected by train: []
+Wrong line at: 1066
+Wrong sentence: Cho hỏi ở hà nội còn màu trắng không
+Wrong entities - Result NLP: [('LOCATION', 'hà nội'), ('COLOR', 'trắng')]
+Expected by train: []
+Wrong line at: 1072
+Wrong sentence: mua trả góp có khuyến mãi gì k ad
+Wrong type ask - Result NLP: hoi_tra_gop
+Expected by train: hoi_khuyen_mai
+Wrong entities - Result NLP: [('IS_NEEDED', 'mua trả góp'), ('SALE_OFF_GIFF', 'có khuyến mãi gì')]
+Expected by train: [('SALE_OFF_GIFF', 'có khuyến mãi gì')]
+Wrong line at: 1073
+Wrong sentence: Hiện tại còn thu cũ lên đời k ạ?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_doi_cu_lay_moi
+Wrong line at: 1074
+Wrong sentence: Giá hiện tại là bao nhiêu s9+
+Wrong entities - Result NLP: [('OTHER', 'giá hiện tại'), ('PHONE', 'samsung s9')]
+Expected by train: [('PHONE', 'samsung s9')]
+Wrong line at: 1075
+Wrong sentence: Giá hiện giờ bao nhiêu add, mình mua trả góp trả trước bao nhiêu
+Wrong type ask - Result NLP: hoi_tra_gop
+Expected by train: hoi_gia
+Wrong line at: 1077
+Wrong sentence: trả góp 0% với home credit có được giảm giá không ad?
+Wrong type ask - Result NLP: hoi_tra_gop
+Expected by train: hoi_gia
+Wrong entities - Result NLP: [('IS_NEEDED', 'trả góp 0%')]
+Expected by train: [('IS_SALE_OFF_INSTALLMENT', 'trả góp 0% với home credit có được giảm giá')]
+Wrong line at: 1080
+Wrong sentence: Giá hotsale là 17.990.000đ rồi có được giảm thêm 4.400.000đ của CellphoneS nữa không Ad?
+Wrong type ask - Result NLP: hoi_gia
+Expected by train: hoi_khuyen_mai
+Wrong line at: 1082
+Wrong sentence: Con km gi ko shop ?
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khuyen_mai
+Wrong line at: 1086
+Wrong sentence: Em muốn mua máy mới s9+ màu xanh,cho e hỏi máy còn nguyên hộp nguyên seal ko ạ?
+Wrong entities - Result NLP: [('COLOR', 'xanh'), ('IS_BRAND_NEW_OR_LIKE_NEW', 'nguyên seal')]
+Expected by train: [('IS_BRAND_NEW_OR_LIKE_NEW', 'nguyên seal')]
+Wrong line at: 1091
+Wrong sentence: Cho mình hỏi còn sale không ạ
+Wrong type ask - Result NLP: hoi_con_hang
+Expected by train: hoi_khuyen_mai
+Total wrong lines: 198
+Total accuracy is: 81.95%
+Type ask wrong lines: 113
+Type ask accuracy is: 89.7%
+Entities wrong lines: 96
+Entities accuracy is: 91.17%
