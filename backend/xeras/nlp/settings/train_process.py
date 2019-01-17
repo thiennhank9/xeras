@@ -8,12 +8,21 @@ class TrainProcess:
     entities = {}
     indexs_lines_wrong = []
 
-    def load_train(self, nlp):
+    def reset(self, nlp):
+        self.type_asks = []
+        self.entities = {}
+        self.indexs_lines_wrong = []
+
         nlp.nlp_train_data = []
+        nlp.ner_train_data = []
+        nlp.tc_train_data = []
+
+    def load_train(self, nlp):
+        self.reset(nlp)
 
         csv_file_pd = pd.read_csv(Settings.PATH_FILE_TRAIN, sep=';')
-        print("--- NLP: Get " + str(len(csv_file_pd)) + " sentences from file train ---")
-
+        print("--- NLP: There are " + str(len(csv_file_pd)) + " sentences from file train ---")
+        print(f"--- NLP: LIMITATION LINES: {nlp.lines_limitation} ---")
         with open(Settings.PATH_VALIDATE_DATA_TRAIN, "w", encoding="utf-8") as validate_data_train:
 
             for index, row in csv_file_pd.iterrows():
@@ -94,6 +103,6 @@ class TrainProcess:
             validate_data_train.write(f"Total Type Asks: {total_types_ask}\n")
 
             if total_wrong_lines_train != 0:
-                print("THERE ARE SOME WRONG DATA TRAIN LINES\nPLEASE CHECK IN xeras/nlp/train/validate_data_train.txt")
+                print("--- Validate train: THERE ARE SOME WRONG DATA TRAIN LINES ---\n--- PLEASE CHECK IN xeras/nlp/train/validate_data_train.txt ---")
             else:
-                print("NO DATA TRAIN LINES - WONDERFUL!")
+                print("--- Validate train: NO WRONG DATA TRAIN LINES - WONDERFUL! ---")

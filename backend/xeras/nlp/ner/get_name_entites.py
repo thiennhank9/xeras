@@ -18,6 +18,7 @@ class GetNameEntities:
 
     def load_train_data(self, ner_train_data = []):
         print("--- NER: Loading file train ---")
+        self.TRAIN_DATA = []
         self.TRAIN_DATA = ner_train_data
 
         self.print_log_file_df()

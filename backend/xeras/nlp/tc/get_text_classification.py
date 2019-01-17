@@ -13,6 +13,7 @@ class GetTextClassification(object):
     def load_train_data(self, tc_train_data = []):
         # Add train data to data frame
         print("--- TC: Loading file train ---")
+        self.train_data_df = []
         self.train_data_df = pd.DataFrame(tc_train_data)
         print("--- TC: Processed " + str(len(self.train_data_df)) + " sentences train ---")
 

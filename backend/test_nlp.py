@@ -24,5 +24,5 @@ def test_validate_data_train():
 
 if __name__ == '__main__':
     test_validate_data_train()
-    # test_accuracy()
+    test_accuracy()
     # test_same_word()
