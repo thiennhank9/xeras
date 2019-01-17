@@ -1,5 +1,6 @@
 PATH_FILE_TRAIN = 'xeras/nlp/train/train_data.csv'
 PATH_FILE_SAME_WORDS = 'xeras/nlp/train/same_words.csv'
+PATH_VALIDATE_DATA_TRAIN = 'xeras/nlp/train/validate_data_train.txt'
 PATH_MODEL_NER = 'xeras/nlp/ner/model'
 PATH_LOGS_NER = 'xeras/nlp/ner/logs/ner_logs.csv'
 PATH_CORRECT_SENTENCES = 'xeras/nlp/test_results/correct_sentences.xlsx'

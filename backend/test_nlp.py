@@ -8,20 +8,21 @@ TEST_SAME_WORD = "Anh ơi, em muốn mua iphone 6s 32gb vào cuối tuần này,
 
 def test_accuracy():
     nlp = NLP()
-    # nlp.set_is_used_model(True)
-    # nlp.set_lines_limitation(1100)
-    # nlp.set_ner_tiers(10)
     nlp.setup()
-
     nlp.test_accuracy()
     # print(nlp.get_predict(SAMPLE_SENTENCE))
 
 def test_same_word():
     same_words = SameWords()
     same_words.load_same_words()
-    print(TEST_SAME_WORD)
-    print(same_words.replace_same_word(TEST_SAME_WORD))
+    # print(TEST_SAME_WORD)
+    # print(same_words.replace_same_word(TEST_SAME_WORD))
+
+def test_validate_data_train():
+    nlp = NLP()
+    nlp.only_validate_train_data()
 
 if __name__ == '__main__':
-    test_accuracy()
+    test_validate_data_train()
+    # test_accuracy()
     # test_same_word()

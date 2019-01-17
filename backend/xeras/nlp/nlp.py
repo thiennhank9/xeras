@@ -45,6 +45,16 @@ class NLP:
     def set_ner_tiers(self, ner_tiers=Settings.DEFAULT_NER_TIERS):
         self.ner_tiers = ner_tiers
 
+    def only_validate_train_data(self):
+        self.tc = TC()
+        self.ner = NER()
+        self.same_words = SameWords()
+
+        if self.is_used_same_words:
+            self.same_words.load_same_words()
+        
+        self.load_train()
+
     def load_train(self):
         self.train_process.load_train(self)
 
@@ -53,7 +63,7 @@ class NLP:
         self.ner = NER()
         self.same_words = SameWords()
 
-        if (self.is_used_same_words):
+        if self.is_used_same_words:
             self.same_words.load_same_words()
         
         self.load_train()
