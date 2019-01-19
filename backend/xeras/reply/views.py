@@ -13,8 +13,6 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
 # 
-import xeras.site2.api as api
-# 
 from xeras.reply.framework.main import get_answer_by_question_type
 
 # NLP module

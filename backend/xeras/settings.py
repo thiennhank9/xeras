@@ -25,9 +25,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'xeras.site1',
     'rest_framework',
-    'xeras.site2',
     'xeras.reply'
 ]
 

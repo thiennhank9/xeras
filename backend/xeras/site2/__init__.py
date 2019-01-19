@@ -1,1 +1,0 @@
-default_app_config = 'xeras.site2.config.Site2Config'

@@ -1,0 +1,35 @@
+Line 515: Wrong Entity with (COLOR:tím khói)
+---------
+Line 595: Wrong Entity with (IS_BRAND_NEW_OR_LIKE_NEW:là như máy mới)
+---------
+Line 617: Wrong Entity with (LOCATION:tân bình)
+---------
+Line 672: Wrong Entity with (LOCATION:thái hà)
+---------
+Line 742: Wrong Entity with (LOCATION:Mỹ)
+---------
+Line 771: Wrong Entity with (COLOR:bạc)
+---------
+Line 838: Wrong Entity with (IS_NEEDED:mua trả góp)
+---------
+Line 859: Wrong Entity with (PHONE:xs max)
+---------
+Line 923: Wrong Entity with (OTHER:Bao h có hàng)
+---------
+Line 966: Wrong Entity with (WHAT_ELSE_COLOR:những màu nào)
+---------
+Line 988: Wrong Entity with (LOCATION:hà nội)
+---------
+Line 1007: Wrong Entity with (LOCATION:Đà Lạt)
+---------
+Line 1008: Wrong Entity with (LOCATION:Tân Phú)
+---------
+Line 1016: Wrong Entity with (WHAT_FROM_TYPE:chính hãng hãy xách là tay)
+---------
+Line 1058: Wrong Entity with (COLOR:đen nhám)
+Line 1058: Wrong Entity with (ROM:32)
+---------
+Line 1066: Wrong Entity with (COLOR:trằng)
+---------
+Total wrong lines in data train: 16
+Total Type Asks: 13
