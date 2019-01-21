@@ -72,7 +72,7 @@ const User = new Schema(
     gender: {
       type: String,
       required: true,
-      default: "Nữ"
+      default: "Nam"
     },
 
     // TODO: find a way that we can instead utilize MongoDB 3.4's collation

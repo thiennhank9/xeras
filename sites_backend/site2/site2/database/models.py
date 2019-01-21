@@ -132,7 +132,7 @@ class Phone(models.Model):
     phoneChargerType = models.TextField(blank=True, default="2 chấu")
     phoneChargerTime = models.FloatField(blank=True, default=2.0)
     phoneTimeUsing = models.FloatField(blank=True, default=2.0)
-    phoneChip = models.FloatField(blank=True, default="")
+    phoneChip = models.FloatField(blank=True, default=2.0)
     fromCountry = models.TextField(blank=True, default="Mỹ")
     phoneScreenWidth = models.FloatField(blank=True)
     phoneScreenHeight = models.FloatField(blank=True)
@@ -156,7 +156,7 @@ class Phone(models.Model):
     phoneNote = models.TextField(blank=True)
 
     def __str__(self):
-        return '%s - ROM:%s - RAM:%s' % (self.phoneName, self.phoneMemory, self.phoneRAM)
+        return '%s - ROM:%s - RAM:%s - %s' % (self.phoneName, self.phoneMemory, self.phoneRAM, self.phoneColor)
 
     class Meta:
         managed = True
@@ -193,3 +193,33 @@ class SaleOff(models.Model):
     class Meta:
         managed = True
         db_table = 'SaleOff'
+
+
+class ReceivedTime(models.Model):
+    storeId = models.ForeignKey('Store', on_delete=models.CASCADE, db_column='storeId')
+    phoneId = models.ForeignKey('Phone', on_delete=models.CASCADE, db_column='phoneId')
+    receivedTime = models.DateField(blank=True, null=True)
+
+    def __str__(self):
+        received_time = self.receivedTime.strftime('%d-%m-%Y')
+        return '%s - %s - Received time: %s' % (self.phoneId.phoneName, self.storeId.storeName, received_time)
+
+    class Meta:
+        managed = True
+        db_table = 'ReceivedTime'
+
+
+class Resell(models.Model):
+    resellName = models.TextField(default=None)
+    phoneId = models.ForeignKey('Phone', on_delete=models.CASCADE, db_column='phoneId')
+    dateStart = models.DateField(blank=True)
+    dateEnd = models.DateField(blank=True)
+    other = models.TextField() # is this giff or other content
+
+    def __str__(self):
+        return '%s - %s - Duration: %s -> %s ' % (self.resellName, self.phoneId.phoneName, 
+        self.dateStart.strftime('%d-%m-%Y'), self.dateEnd.strftime('%d-%m-%Y'))
+
+    class Meta:
+        managed = True
+        db_table = 'Resell'        

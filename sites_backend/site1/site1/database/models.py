@@ -1,6 +1,6 @@
 from django.db import models
 import random
-
+import datetime
 
 def random_int():
     return random.randint(1,15)
@@ -236,3 +236,33 @@ class StoreInventory(models.Model):
     class Meta:
         managed = True
         db_table = 'StoreInventory'
+
+
+class DayReceivedPhone(models.Model):
+    storeId = models.ForeignKey('Store', on_delete=models.CASCADE, db_column='storeId')
+    productId = models.ForeignKey('Product', on_delete=models.CASCADE, db_column='productId')
+    receivedDate = models.DateField(blank=True, null=True)
+
+    def __str__(self):
+        received_date = self.receivedDate.strftime('%d-%m-%Y')
+        return '%s - %s - received_date: %s' % (self.productId.productName, self.storeId.storeName, received_date)
+
+    class Meta:
+        managed = True
+        db_table = 'DayReceivedPhone'
+
+
+class BuyAndAllowChange(models.Model):
+    buyAndAllowChangeName = models.TextField(default=None)
+    productId = models.ForeignKey('Product', on_delete=models.CASCADE, db_column='productId')
+    dateStart = models.DateField(blank=True)
+    dateEnd = models.DateField(blank=True)
+    other = models.TextField() # is this giff or other content
+
+    def __str__(self):
+        return '%s - %s - duration: %s -> %s ' % (self.buyAndAllowChangeName, self.productId.productName, 
+        self.dateStart.strftime('%d-%m-%Y'), self.dateEnd.strftime('%d-%m-%Y'))
+
+    class Meta:
+        managed = True
+        db_table = 'BuyAndAllowChange'        

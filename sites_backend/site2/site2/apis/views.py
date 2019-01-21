@@ -6,7 +6,6 @@ from rest_framework.parsers import JSONParser
 # import config api
 from site2.apis.config_api import config_api
 
-
 @csrf_exempt
 def comment_answer(request):
     if request.method == 'POST':

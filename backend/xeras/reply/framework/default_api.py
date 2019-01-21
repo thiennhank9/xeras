@@ -10,5 +10,7 @@ default_api = {
     **software.software_api,
     **stocking.stocking_api,
     **address.address_api,
-    **warranty.warranty_api
+    **warranty.warranty_api,
+    **resell.resell_api,
+    **received_day.received_day_api
 }

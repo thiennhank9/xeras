@@ -37,6 +37,9 @@ def concat_head_text_and_end_text(body_text, **keywork):
     else:
         user_vocative = 'Bạn'
 
+    # for this morning
+    user_vocative = 'Bạn'
+
     sentence_ingredients['head_text'] = sentence_ingredients['head_text'].format(user_vocative=user_vocative)
     sentence_ingredients['end_text'] = sentence_ingredients['end_text'].format(user_vocative=user_vocative)
 

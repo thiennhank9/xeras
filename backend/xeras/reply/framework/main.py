@@ -29,11 +29,14 @@ def get_answer_by_question_type(*arguments, **keywords):
     keywords = {**keywords, **entities}
     detail_question_type = get_type_question[general_question_type].type_question(*arguments, **keywords)
 
+    # print question_type and ner
+    print("question type: ", detail_question_type)
+    print("entites: ", {**entities, 'phone_name': keywords['phone_name']})
+
     # combine
     keywords['general_question_type'] = general_question_type
     keywords['detail_question_type'] = detail_question_type
     combine_api = concat_api_from_site(*arguments, **keywords)
-    # print('nlp_predict_object:', nlp_predict_object)
 
     # predict answer
     try:

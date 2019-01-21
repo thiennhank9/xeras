@@ -8,3 +8,5 @@ from . import sale_off as sale_off
 from . import software as software
 from . import stocking as stocking
 from . import warranty as warranty
+from . import received_time as received_time
+from . import resell as resell

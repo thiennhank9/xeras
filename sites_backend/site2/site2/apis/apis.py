@@ -9,6 +9,8 @@ from site2.database.models import Warranty
 from site2.database.models import Phone
 from site2.database.models import AmountPhoneByStore
 from site2.database.models import SaleOff
+from site2.database.models import ReceivedTime
+from site2.database.models import Resell
 from django.db.models import Q
 
 import datetime
@@ -81,6 +83,11 @@ def get_store_inverter(phone_name):
         return get_list_store_inverter_by_phone_name(phone_name)[0]
     else:
         return None
+
+
+def get_list_received_day(phone_name):
+    return ReceivedTime.objects.filter(Q(phoneId__phoneName__icontains=phone_name) | Q(phoneId__phoneOtherNames__icontains=phone_name)).\
+    filter(receivedTime__gte=datetime.date.today())
 
 
 # def get_store_by_location(phone_name, *option, **options):
@@ -383,7 +390,7 @@ def get_from_type(phone_name, **options):
 
 def is_like_new(phone_name, **options):
     phone_info = get_phone_info(phone_name)
-    print(f'{phone_info.phoneProductId.productName} - {phone_info.ROM} GB - {phone_info.color}')
+    print(f'{phone_info.phoneName} - {phone_info.ROM} GB - {phone_info.color}')
     if phone_info is not None:
         if 'like new' in phone_info.status:
             return True
@@ -466,7 +473,7 @@ def is_stocking_phone_by_store(phone_name, *option, **options):
 
 def is_stocking_phone_by_code(phone_name, *option, **options):
     list_store_inverter = get_list_store_inverter_by_phone_name(phone_name). \
-        filter(productId__in=Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name)).filter(phoneCode__icontains=options['code']))
+        filter(phoneId__in=Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name)).filter(phoneCode__icontains=options['code']))
     if list_store_inverter.exists():
         return list_store_inverter[0].amount > 0
     else:
@@ -475,7 +482,7 @@ def is_stocking_phone_by_code(phone_name, *option, **options):
 
 def is_stocking_phone_by_RAM(phone_name, *option, **options):
     list_store_inverter = get_list_store_inverter_by_phone_name(phone_name). \
-        filter(productId__in=Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name)).filter(phoneRAM=options['RAM']))
+        filter(phoneId__in=Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name)).filter(phoneRAM=options['RAM']))
     if list_store_inverter.exists():
         return list_store_inverter[0].amount > 0
     else:
@@ -484,7 +491,7 @@ def is_stocking_phone_by_RAM(phone_name, *option, **options):
 
 def is_stocking_phone_by_ROM(phone_name,  *option, **options):
     list_store_inverter = get_list_store_inverter_by_phone_name(phone_name). \
-        filter(productId__in=Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name)).filter(phoneMemory=options['ROM']))
+        filter(phoneId__in=Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name)).filter(phoneMemory=options['ROM']))
     if list_store_inverter.exists():
         return list_store_inverter[0].amount > 0
     else:
@@ -536,3 +543,89 @@ def get_warranty_duration(phone_name, **options):
 
 def get_warranty_note(phone_name, *option, **options):
     return get_warranty_info_by_field_name(phone_name, 'warrantyNote')
+
+
+# Expected Received Date
+
+def get_received_date_by_color(list_received_date, phone_name, color):
+    return list_received_date.filter(phoneId__in=Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name)).filter(phoneColor__icontains=color))
+
+
+def get_received_date_by_RAM(list_received_date, phone_name, RAM):
+    return list_received_date.filter(phoneId__in=Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name)).filter(phoneRAM=RAM))
+
+
+def get_received_date_by_ROM(list_received_date, phone_name, ROM):
+    return list_received_date.filter(phoneId__in=Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name)).filter(phoneMemory=ROM))
+
+
+def get_received_date_by_store(list_received_date, phone_name, where):
+    return list_received_date.filter(Q(storeId__storeCityId__cityName__icontains=where) | Q(storeId__storeProvinceId__provinceName__icontains=where) | Q(storeId__storeDistrictId__districtName__icontains=where))
+
+
+def get_received_date_by_phone_property(phone_name, **options):
+    list_received_date = get_list_received_day(phone_name)
+
+    if 'color' in options:
+        list_received_date = get_received_date_by_color(list_received_date, phone_name, options['color'])
+    if 'RAM' in options:
+        list_received_date = get_received_date_by_RAM(list_received_date, phone_name, options['RAM'])
+    if 'ROM' in options:
+        list_received_date = get_received_date_by_ROM(list_received_date, phone_name, options['ROM'])
+    if 'where' in options:
+        list_received_date = get_received_date_by_store(list_received_date, phone_name, options['where'])
+
+    if list_received_date.exists():
+        return list_received_date
+    else:
+        return None
+
+
+def get_received_date_when_have_week(phone_name, **options):
+    list_received_date = get_received_date_by_phone_property(phone_name, **options)
+
+    today = datetime.datetime.today()
+    day_number_of_weekday = {'thứ 2': 0, 'thứ 3': 1, 'thứ 4': 2, 'thứ 5': 3, 'thứ 6': 4, 'thứ 7': 5, 'chủ nhật': 6}
+
+    today_number_of_weekday = today.weekday()
+    expected_day_number_of_weekday = day_number_of_weekday[options['date']]
+    distance_day = 0
+
+    if options['week'] in ['tuần này']:
+        distance_day = expected_day_number_of_weekday - today_number_of_weekday
+
+    if options['week'] in ['tuần sau', 'tuần tới']:
+        distance_day = expected_day_number_of_weekday - today_number_of_weekday + 7
+
+    expected_day = today + datetime.timedelta(days=distance_day)
+
+    list_received_date = list_received_date.filter(receivedTime__lte=expected_day)
+
+    if list_received_date.exists():
+        return list_received_date
+    else:
+        return None
+
+
+def get_received_date(phone_name, **options):
+    if 'week' in options:
+        list_received_date = get_received_date_when_have_week(phone_name, **options)
+    else:
+        list_received_date = get_received_date_by_phone_property(phone_name, **options)
+
+    if list_received_date is not None:
+        return list_received_date[0].receivedTime.strftime('%d-%m-%Y')
+    else:
+        return None
+
+
+# buy older and allow change phone
+
+def is_buy_older_allow_change_available(phone_name, **options):
+    list_event_available = Resell.objects.filter(Q(phoneId__phoneName__icontains=phone_name) | Q(phoneId__phoneOtherNames__icontains=phone_name)).\
+        filter(dateStart__lte=datetime.date.today()).filter(dateEnd__gte=datetime.date.today())
+
+    if list_event_available.exists():
+        return True
+    else:
+        return False

@@ -4,7 +4,7 @@ from . import hardware as hardware
 from . import installment as installment
 from . import phone_source as phone_source
 from . import price as price
-from . import received_time as received_time
+from . import received_day as received_day
 from . import resell as resell
 from . import sale_off as sale_off
 from . import software as software
@@ -20,7 +20,7 @@ type_question = {
     'hoi_nhu_cau': feature,
     'hoi_con_hang': stocking,
     'hoi_dia_chi': address,
-    'hoi_khi_nao': received_time,
+    'hoi_khi_nao': received_day,
     'hoi_tra_gop': installment,
     'hoi_bao_hanh': warranty,
     'hoi_doi_cu_lay_moi': resell

@@ -10,5 +10,7 @@ config_api = {
     **software.software_api,
     **stocking.stocking_api,
     **address.address_api,
-    **warranty.warranty_api
+    **warranty.warranty_api,
+    **received_time.received_time_api,
+    **resell.resell_api
 }
