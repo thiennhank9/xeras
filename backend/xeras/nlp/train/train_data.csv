@@ -514,7 +514,7 @@ Ad cho em hỏi gói trả góp 0% ạ;hoi_tra_gop;IS_NEEDED:trả góp 0%
 màu tím vẫn giá 8tr à shop, có sẵn hàng ko ạ;hoi_con_hang;COLOR:tím
 Máy này còn màu đen ko shop?;hoi_con_hang;COLOR:đen
 Máy màu xanh dương ko còn à shop?;hoi_con_hang;COLOR:xanh dương
-Màu tím khói có ở 543 Nguyễn Trãi ko shop?;hoi_con_hang;COLOR:tím khói|LOCATION:Nguyễn Trãi
+Màu tím khói có ở 543 Nguyễn Trãi ko shop?;hoi_con_hang;COLOR:tím khói|LOCATION:Nguyễn Trãi
 Màu Tím khói nơi nào còn không ạ? Mình ở Gò Vấp.;hoi_dia_chi;LOCATION:Gò Vấp|COLOR:Tím khói
 màu đen tp.HCM còn hàng ko ạ? Em ở Bình Thạnh;hoi_con_hang;LOCATION:Bình Thạnh|COLOR:đen
 tp.HCM còn màu đen ko ạ? em ở bình thạnh;hoi_con_hang;LOCATION:bình thạnh|COLOR:đen
@@ -594,7 +594,7 @@ mua trả góp kỳ hạn 6 tháng thì trả trước bn và hàng tháng trả
 Mua trả trước 10% được không ;hoi_tra_gop;IS_NEEDED:Mua trả trước
 Mua trả góp thì trả trước 10% là bao nhiêu tiền và 1 tháng bao nhiêu (trả góp 15 tháng) ;hoi_tra_gop;IS_NEEDED:trả góp
 Máy này là máy mới người ta test máy thử không thích nên không lấy đúng không;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:là máy mới
-Máy có chất lượng như máy mới không ;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:là như máy mới
+Máy có chất lượng như máy mới không ;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:như máy mới
 Máy này là máy chính hãng mà Sao rẻ vậy;hoi_nguon_hang;WHAT_FROM_TYPE:chính hãng
 Có bán tra gop ko;hoi_tra_gop;IS_NEEDED:bán tra gop
 còn hàng màu bạc không shop ?;hoi_con_hang;COLOR:bạc
@@ -616,7 +616,7 @@ S8+ có đc tặng quà ko ad;hoi_khuyen_mai;SALE_OFF_GIFF:có đc tặng q
 bên mình giá bán hiện tại vẫn là 12.790.000 à shop ?;hoi_gia;OTHER:hiện tại vẫn
 Giữ giùm em màu đen nha ad;hoi_con_hang;COLOR:đen
 Ad ơi giảm đến khi nào vậy ad?;hoi_khuyen_mai;WHEN_END_SALE_OFF:giảm đến khi nào
-Cellphones Âu cơ quận tân bình HCM còn hàng ko ad;hoi_con_hang;LOCATION:Âu cơ|LOCATION:tân bình|LOCATION:HCM
+Cellphones Âu cơ quận tân bình HCM còn hàng ko ad;hoi_con_hang;LOCATION:Âu cơ|LOCATION:tân bình|LOCATION:HCM
 Mình có s8+ muốn đổi sang xsmax có được k?;hoi_doi_cu_lay_moi;PHONE:s8+|PHONE:xsmax
 Khi mua s8+ có được tặng kèm sạc không dây không?;hoi_khuyen_mai;PHONE:s8+|SALE_OFF_GIFF:tặng kèm sạc
 đây là hàng cty mới nguyên hộp ạ;hoi_nguon_hang;WHAT_FROM_TYPE:hàng cty mới nguyên hộp
@@ -671,7 +671,7 @@ Mua trả góp có đc tặng quà không ;hoi_khuyen_mai;IS_NEEDED:trả góp|S
 E mua đt lấy sim KO lấy loa thì được giảm bao nhiu ad;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:KO lấy loa
 Nếu em mua mỗi máy và chỉ lấy sạc dự phòng thì giá như thế nào ạ?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:chỉ lấy sạc
 Sao e mua k có quà hay khuyến mãi gì vậy;hoi_khuyen_mai;SALE_OFF_GIFF:k có quà hay khuyến mãi
-Ở thái hà còn màu trắng k ạ;hoi_con_hang;LOCATION:thái hà|COLOR:trắng
+Ở thái hà còn màu trắng k ạ;hoi_con_hang;LOCATION:thái hà|COLOR:trắng
 Liệu mua chả góp có khuyến mãi hay quà gì k ad;hoi_khuyen_mai;SALE_OFF_GIFF:có khuyến mãi
 Màu tím, hcm còn ở chi nhánh nào vậy shop?;hoi_dia_chi;COLOR:tím|LOCATION:hcm
 mình có những cửa hàng nào vậy shop;hoi_dia_chi;OTHER:cửa hàng nào
@@ -741,7 +741,7 @@ bạn ơi cho mình hỏi có đổi đc từ iphone 8plus lên xs max 64 gb có
 Mình xin giá cụ thể đc ko ạ;hoi_gia;OTHER:giá cụ thể
 Cho mình hỏi ở HN máy 8+ màu xám có bản của thị trường nào ạ?;hoi_dia_chi;LOCATION:HN|PHONE:8+|COLOR:xám
 mình muốn trả trước 40% góp 9th thì có được ko ạ?;hoi_tra_gop;IS_NEEDED:trả trước
-8plus màu đen có máy của Mỹ hong shop;hoi_nguon_hang;PHONE:8plus|COLOR:đen|LOCATION:Mỹ
+8plus màu đen có máy của Mỹ hong shop;hoi_nguon_hang;PHONE:8plus|COLOR:đen|LOCATION:Mỹ
 Ở Hà nội 8plus có phiên bản LL/A không ad?;hoi_con_hang;LOCATION:Hà nội|PHONE:8plus|CODE:LL/A
 trả góp lãi suất s ad.đưa trc bao nhiêu và mỗi tháng góp bao nhiêu.;hoi_tra_gop;IS_NEEDED:trả góp lãi suất
 Cho em hỏi đây có phải dòng quốc tế khg ạ;hoi_nguon_hang;IS_GLOBAL:phải dòng quốc tế
@@ -770,7 +770,7 @@ Cho mình hỏi mình mua điện thoại này có xuất đc hóa đơn VAT ko 
 Nếu viết hóa đơn đỏ luôn thì giá có thay đổi không?;hoi_gia;IF_INCLUDE_TAX:Nếu viết hóa đơn đỏ
 IPhone 8 plus bản màu đỏ 64gb còn ở cửa hàng Âu Cơ Tân Bình k ah;hoi_con_hang;PHONE:IPhone 8 plus|COLOR:đỏ|ROM:64|LOCATION:Âu Cơ
 Iphone 8 plus đỏ 64gb ở Nguyễn văn cừ còn k ad?;hoi_con_hang;PHONE:Iphone 8 plus|COLOR:đỏ|ROM:64|LOCATION:Nguyễn văn cừ
-Dạ cho e hỏi iphone 8 plus 64gb màu bạc nhập khẩu ở nước nào v ạ;hoi_nguon_hang;PHONE:iphone 8|ROM:64|COLOR:bạc|LOCATION:nước nào
+Dạ cho e hỏi iphone 8 plus 64gb màu bạc nhập khẩu ở nước nào v ạ;hoi_nguon_hang;PHONE:iphone 8|ROM:64|COLOR:bạc|LOCATION:nước nào
 Ad cho hỏi iphone 8 plus Chính hãng màu gold ở quận 9 còn k ạ;hoi_con_hang;PHONE:iphone 8 plus|COLOR:gold|LOCATION:quận 9
 Cho tôi hỏi trả góp bằng thẻ có cần chính chủ không vậy?;hoi_tra_gop;IS_NEEDED:trả góp
 Máy iPhone 8plus màu đen mã LL/A còn hàng ko shop?;hoi_con_hang;PHONE:iPhone 8plus|COLOR:đen|CODE:LL/A
@@ -837,7 +837,7 @@ Này hàng mới nguyên hợp hả ad;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:n
 Giảm giá đến ngày nào vậy ad ?;hoi_khuyen_mai;WHEN_END_SALE_OFF:Giảm giá đến ngày nào
 Trả góp s9 có dc mua vs giá giảm ko?;hoi_khuyen_mai;IS_SALE_OFF_NOW:giá giảm ko
 Cho e hỏi mình trả góp s9 kia Kon giá 12tr990k HK z a;hoi_tra_gop;IS_NEEDED:trả góp
-Cho e hỏi h e mua trả góp đưa trước 30% và góp 6tháng , thì mỗi tháng e góp bao nhiêu v ak;hoi_tra_gop;IS_NEEDED:mua trả góp
+Cho e hỏi h e mua trả góp đưa trước 30% và góp 6tháng , thì mỗi tháng e góp bao nhiêu v ak;hoi_tra_gop;IS_NEEDED:mua trả góp
 Mình đang dùng a8+ muốn lên đổi s9 thì giá cả thế nào shop;hoi_doi_cu_lay_moi;PHONE:a8+|PHONE:s9
 Cái này hàng chính hãng còn nguyên 100% lun hay sao ?;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:còn nguyên 100%
 Mình dang xai samsung S8 , muon doi len S9, cua hang co thu lai khong ad??;hoi_doi_cu_lay_moi;PHONE:samsung S8|PHONE:S9
@@ -858,7 +858,7 @@ Em đổi s8+ len ip xs max 64 được không ạ.;hoi_doi_cu_lay_moi;PHONE:s8+
 mình muốn mua ip xs max vàng chính hãng, tư vấn giúp mình trả góp 0% qua thẻ tín dụng nhé;hoi_gia;PHONE:ip xs max|COLOR:vàng
 Ad cho hỏi mình có con ip x 256 gb mua ở Canada, shop thu lại và bù bao nhiêu để lên xs mã 64 gb;hoi_gia;PHONE:ip x|ROM:256
 con Iphone x giá 25tr đợt đó giờ muốn đổi sang Iphone XS Max thì thêm bao nhiêu ạ.;hoi_doi_cu_lay_moi;PHONE:Iphone x|PHONE:IPhone XS Max
-iphone 7plus 32gb đổi lên xs mas 64 thì bù bao nhiêu bạn;hoi_doi_cu_lay_moi;PHONE:iphone 7plus|ROM:32|PHONE:xs max|ROM:64
+iphone 7plus 32gb đổi lên xs max 64 thì bù bao nhiêu bạn;hoi_doi_cu_lay_moi;PHONE:iphone 7plus|ROM:32|PHONE:xs max|ROM:64
 Iphone x 64 gb đổi lên x max 64 thì thêm bn tiền ạ;hoi_doi_cu_lay_moi;PHONE:Iphone x|ROM:64|PHONE:x max|ROM:64
 Mình muốn đổi IP 8Plus 64Gb Gold thì phải bù bao nhiêu vậy;hoi_doi_cu_lay_moi;PHONE:IP 8 Plus|ROM:64|COLOR:Gold
 Bao giờ có hàng xs max gold về vậy;hoi_khi_nao;PHONE:xs max|COLOR:gold
@@ -922,7 +922,7 @@ Hàng chính hãng mới nguyên seal full box hàng ll/A.;hoi_nguon_hang;IS_BRA
 Giá hiện tại là bao nhiêu.;hoi_gia;OTHER:bao nhiêu
 Giá của note 8 hiện tại là bao nhiêu ạ;hoi_gia;PHONE:note 8
 con hang ko ad;hoi_con_hang;OTHER:hang ko
-Bao h có hàng zay ad;hoi_khi_nao;OTHER:Bao h có hàng
+Bao h có hàng zay ad;hoi_khi_nao;OTHER:Bao h có hàng
 Ad khi nào có hàng lại vậy??;hoi_khi_nao;OTHER:khi nào có hàng
 trả gop home thì co lãi suất k.và tra trước va góp ntn;hoi_tra_gop;IS_NEEDED:trả gop
 Sp này hiện tại còn ko ạ.e ở tphcm;hoi_con_hang;LOCATION:tphcm
@@ -965,7 +965,7 @@ bạn cho mình hỏi hàng này là bản quốc tế phải không.;hoi_nguon_
 mình sử dụng ở nước ngoài có được không.;hoi_nguon_hang;IS_GLOBAL:sử dụng ở nước ngoài
 Hàng này của nước nào vậy shop;hoi_nguon_hang;LOCATION:nước nào
 Bên mình có bản 128gb ko ạ;hoi_con_hang;ROM:128
-Có những màu nào zay ad;hoi_con_hang;WHAT_ELSE_COLOR:những màu nào
+Có những màu nào zay ad;hoi_con_hang;WHAT_ELSE_COLOR:những màu nào
 Cửa hàng có đổi Mi A1 lên đời Mi A2 ko ah;hoi_doi_cu_lay_moi;PHONE:Mi A1|PHONE:Mi A2
 phiên bản mi6x ram 6gb có hàng ko shop;hoi_con_hang;PHONE:mi6x|RAM:6
 Có trả góp 0% qua cty tài chính k ạ;hoi_tra_gop;IS_NEEDED:trả góp
@@ -987,7 +987,7 @@ bản 64gb bao nhiêu vậy bạn ?;hoi_gia;ROM:64
 Cửa hàng ở hồ chí minh của mình ở đâu v ạ;hoi_dia_chi;LOCATION:hồ chí minh
 Máy là mi6X chạy phần mềm cho nội địa Trung Quốc ạ?;hoi_nguon_hang;PHONE:mi6X|WHAT_FROM_TYPE:cho nội địa|LOCATION:Trung Quốc
 Dạ có bản mi 6x k ạ;hoi_con_hang;PHONE:mi 6x
-Cho mình hỏi khu vực nào ở hà nội còn hàng vậy. Cảm ơn;hoi_dia_chi;LOCATION:hà nội
+Cho mình hỏi khu vực nào ở hà nội còn hàng vậy. Cảm ơn;hoi_dia_chi;LOCATION:hà nội
 Xiaomi Mi 6X 64GB (Ram 6GB) Mới Nguyên Seal  giá bao nhiêu vậy ;hoi_gia;PHONE:Xiaomi Mi 6X|ROM:64|RAM:6
 Có máy cũ 99% không ạ;hoi_con_hang;ASK_OLD_PHONE:Có máy cũ 99%
 Mi A2 này là chính hãng ở Việt Nam hả Ad;hoi_nguon_hang;WHAT_FROM_TYPE:chính hãng
@@ -1006,8 +1006,8 @@ Cell phone s cho xem giá  trả góp đc ko;hoi_tra_gop;IS_NEEDED:trả góp
 Cho em hỏi điện thoại này có tiếng anh ko ạ hay chỉ có tiếng trung thôi?;hoi_phan_mem;IS_VIETNAMESE_INSTALLED:điện thoại này có tiếng anh ko ạ
 em dưới 18t có mua trả góp được ko shop?;hoi_tra_gop;IS_NEEDED:trả góp
 Cửa hành mình có ở cần thơ ko anh ;hoi_dia_chi;LOCATION:cần thơ
-Cho mik hỏi là có cửa hàng ở Đà Lạt không;hoi_dia_chi;LOCATION:Đà Lạt
-Có cửa hàng nào gần quận Tân Phú không ad?;hoi_dia_chi;LOCATION:Tân Phú
+Cho mik hỏi là có cửa hàng ở Đà Lạt không;hoi_dia_chi;LOCATION:Đà Lạt
+Có cửa hàng nào gần quận Tân Phú không ad?;hoi_dia_chi;LOCATION:Tân Phú
 miui ở phiên bản miui mấy ạ ?;hoi_phan_mem;WHAT_OS:ở phiên bản miui mấy ạ
 có nâng đc lên miui kk ạ ?;hoi_phan_mem;CAN_UPDATE:có nâng đc lên
 có nâng đc lên miui đc kk ạ ?;hoi_phan_mem;CAN_UPDATE:có nâng đc lên
@@ -1015,7 +1015,7 @@ máy này đang sale còn 3.690.000đ ạ ?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRIC
 Đắc nông có K ad ơi;hoi_con_hang;LOCATION:Đắc nông
 Bảo hành tại trung tâm ủy quyền là những nơi có bán máy này à shop;hoi_dia_chi;OTHER:nơi có bán máy
 có hỗ trợ trả góp trong vòng 6 tháng không ạ;hoi_tra_gop;IS_NEEDED:trả góp
-bản này là bản chính hãng hay là bản xách tay;hoi_nguon_hang;WHAT_FROM_TYPE:chính hãng hãy xách là tay
+bản này là bản chính hãng hay là bản xách tay;hoi_nguon_hang;WHAT_FROM_TYPE:chính hãng hay là bản xách tay
 Đây là bản chính hãng hay sao;hoi_nguon_hang;WHAT_FROM_TYPE:chính hãng hay sao
 Bên mình còn hàng 64Gb màu j vậy?;hoi_con_hang;WHAT_ELSE_COLOR:màu j vậy|ROM:64
 ở quảng ngãi điện thoại này bán ở đâu;hoi_dia_chi;LOCATION:quảng ngãi
@@ -1057,7 +1057,7 @@ Có mã LL/A chưa shop;hoi_khi_nao;CODE:LL/A
 Đã có hàng LL/A chưa ad;hoi_khi_nao;CODE:LL/A
 mình trả trước 10tr vậy gớp ntn;hoi_tra_gop;IS_NEEDED:trả trước
 Iphone 7plus rose gold 32gb đổi 8plus 64gb thì bù bao nhiêu vậy shop?? ;hoi_doi_cu_lay_moi;PHONE:Iphone 8 plus|COLOR:rose gold|ROM:32|PHONE:8plus|ROM:64
-Iphone 7plus đen nhám 128gb thì đổi 8plus 64 ghi thì bù bao nhiêu ạ;hoi_doi_cu_lay_moi;PHONE:Iphone 7plus|COLOR:đen nhám|ROM:32|PHONE:8plus|ROM:64
+Iphone 7plus đen nhám 128gb thì đổi 8plus 64 ghi thì bù bao nhiêu ạ;hoi_doi_cu_lay_moi;PHONE:Iphone 7plus|COLOR:đen nhám|ROM:128|PHONE:8plus|ROM:64
 Ip6s+ 16g đổi củ lấy mới ip8+ 64g bù khoảg bao nhiu tiền v shop?;hoi_doi_cu_lay_moi;PHONE:Ip6s+|ROM:16|PHONE:ip8+|ROM:64
 Đã có hàng VN/A chưa?;hoi_khi_nao;CODE:VN/A
 hàng chính hãng  VN/A hả bạn;hoi_nguon_hang;WHAT_CODE:chính hãng VN/A hả
@@ -1065,7 +1065,7 @@ hàng chính hãng  VN/A hả bạn;hoi_nguon_hang;WHAT_CODE:chính hãng VN/A h
 sạc mấy chân v ạ?;hoi_phan_cung;WHAT_CHARGER:sạc mấy chân
 Cho mình hỏi bản này là mã hàng Việt Nam phải không ạ.;hoi_nguon_hang;WHAT_FROM_TYPE:hàng Việt Nam
 Ad cho e hỏi iphone 8plus bản mỹ 64g thì bn v ad;hoi_gia;PHONE:iphone 8plus|ROM:64
-Cho hỏi ở hà nội còn màu trắng không;hoi_con_hang;COLOR:trằng
+Cho hỏi ở hà nội còn màu trắng không;hoi_con_hang;COLOR:trắng
 Sạc của iphone là 2 chân hay 3 chân ạ.;hoi_phan_cung;WHAT_CHARGER:Sạc của iphone là 2 chân
 ad cho hỏi mình muốn mua trả góp 0% của home cridit là giá 18.900.000 phai ko?;hoi_tra_gop;IS_NEEDED:mua trả góp
 S9+ gia bao nhieu shop;hoi_gia;PHONE:S9+
