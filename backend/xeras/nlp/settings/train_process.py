@@ -1,5 +1,6 @@
 import re
 import pandas as pd
+import json
 import xeras.nlp.settings.nlp_settings as Settings
 
 
@@ -21,7 +22,8 @@ class TrainProcess:
         self.reset(nlp)
 
         csv_file_pd = pd.read_csv(Settings.PATH_FILE_TRAIN, sep=';')
-        print("--- NLP: There are " + str(len(csv_file_pd)) + " sentences from file train ---")
+        print("--- NLP: There are " + str(len(csv_file_pd)) +
+              " sentences from file train ---")
         print(f"--- NLP: LIMITATION LINES: {nlp.lines_limitation} ---")
         with open(Settings.PATH_VALIDATE_DATA_TRAIN, "w", encoding="utf-8") as validate_data_train:
 
@@ -29,7 +31,8 @@ class TrainProcess:
                 if index == nlp.lines_limitation:
                     break
                 # First, convert other word to be the true word
-                row['sentence'] = nlp.same_words.replace_same_word(row['sentence'].lower())
+                row['sentence'] = nlp.same_words.replace_same_word(
+                    row['sentence'].lower())
                 row['sentence'] = re.sub('[!@#$]', '', row['sentence'])
                 train_data = {}
                 train_data["sentence"] = row["sentence"]
@@ -44,14 +47,15 @@ class TrainProcess:
                         self.type_asks.append(row["type"].lower())
                 else:
                     # Write line wrong type ask - missing type ask
-                    validate_data_train.write(f"Line {index}: Missing Type Ask\n")
+                    validate_data_train.write(
+                        f"Line {index}: Missing Type Ask\n")
                     self.indexs_lines_wrong.append(index)
 
                 # Load train data for NER
                 sentence = row["sentence"].lower()
 
                 temp_entities = row["entities"]
-                
+
                 # Check if there is no entities, just skip
                 if not temp_entities:
                     continue
@@ -67,10 +71,11 @@ class TrainProcess:
                     entity_word = two_str[1]
 
                     # Convert the enity to be true word
-                    two_str[1] = nlp.same_words.replace_same_word(two_str[1].strip().lower())
+                    two_str[1] = nlp.same_words.replace_same_word(
+                        two_str[1].strip().lower())
                     index_start = sentence.find(two_str[1])
                     index_end = index_start + len(two_str[1])
-                    
+
                     # Only append train data if entity is in sentence
                     if index_start != -1:
                         entities.append((index_start, index_end, two_str[0]))
@@ -79,11 +84,13 @@ class TrainProcess:
                         if entity_key not in self.entities:
                             self.entities[entity_key] = []
 
-                        self.entities[entity_key].append(entity_word)       
-                        self.entities[entity_key] = list(set(self.entities[entity_key]))
+                        self.entities[entity_key].append(entity_word)
+                        self.entities[entity_key] = list(
+                            set(self.entities[entity_key]))
                     else:
                         # write line wrong entity - can not find entity in sentence
-                        validate_data_train.write(f"Line {index}: Wrong Entity with ({entity})\n")
+                        validate_data_train.write(
+                            f"Line {index}: Wrong Entity with ({entity})\n")
                         if index not in self.indexs_lines_wrong:
                             self.indexs_lines_wrong.append(index)
 
@@ -95,14 +102,25 @@ class TrainProcess:
 
                 # Only append train data if there is at lease an entity
                 if (entities):
-                    nlp.ner_train_data.append((sentence, {'entities': entities}))
+                    nlp.ner_train_data.append(
+                        (sentence, {'entities': entities}))
 
             total_wrong_lines_train = len(self.indexs_lines_wrong)
             total_types_ask = len(self.type_asks)
-            validate_data_train.write(f"Total wrong lines in data train: {total_wrong_lines_train}\n")
+
+            validate_data_train.write(
+                f"Total wrong lines in data train: {total_wrong_lines_train}\n")
             validate_data_train.write(f"Total Type Asks: {total_types_ask}\n")
 
             if total_wrong_lines_train != 0:
                 print("--- Validate train: THERE ARE SOME WRONG DATA TRAIN LINES ---\n--- PLEASE CHECK IN xeras/nlp/train/validate_data_train.txt ---")
             else:
                 print("--- Validate train: NO WRONG DATA TRAIN LINES - WONDERFUL! ---")
+
+        with open(Settings.PATH_ALL_TYPE_ASK, "w", encoding="utf-8") as all_type_ask_file:
+            all_type_ask_file.write(f"There are total {len(self.type_asks)} types ask.\n")
+            for type_ask in self.type_asks:
+                all_type_ask_file.write(f"{type_ask}\n")
+
+        with open(Settings.PATH_ALL_ENTITIES, "w", encoding="utf-8") as all_entities_file:
+            json.dump(self.entities, all_entities_file, ensure_ascii=False, indent=2)

@@ -1,0 +1,14 @@
+There are total 13 types ask.
+hoi_con_hang
+hoi_giam_gia
+hoi_gia
+hoi_khuyen_mai
+hoi_tra_gop
+hoi_phan_cung
+hoi_phan_mem
+hoi_nguon_hang
+hoi_nhu_cau
+hoi_dia_chi
+hoi_bao_hanh
+hoi_doi_cu_lay_moi
+hoi_khi_nao
