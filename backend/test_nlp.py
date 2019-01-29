@@ -22,7 +22,12 @@ def test_validate_data_train():
     nlp = NLP()
     nlp.only_validate_train_data()
 
+def get_predict_type_ask_from_file():
+    nlp = NLP()
+    nlp.get_predict_type_ask_from_file()
+
 if __name__ == '__main__':
-    test_validate_data_train()
-    test_accuracy()
+    # test_validate_data_train()
+    # test_accuracy()
     # test_same_word()
+    get_predict_type_ask_from_file()

@@ -6,13 +6,19 @@ import xeras.nlp.settings.nlp_settings as Settings
 from xeras.nlp.settings.test_accuracy import TestAccuracy
 from xeras.nlp.settings.same_words import SameWords
 from xeras.nlp.settings.train_process import TrainProcess
+from xeras.nlp.settings.extend_predict import ExtendPredict
+
 
 class NLP:
+    is_used_ner = True
+    is_used_tc = True
+
     tc = None
     ner = None
     accuracy = None
     same_words = None
     train_process = None
+    extend_predict = None
 
     nlp_train_data = []
     tc_train_data = []
@@ -68,8 +74,11 @@ class NLP:
         
         self.load_train()
 
-        self.tc.setup(self.tc_train_data)
-        self.ner.setup(self.ner_train_data, self.is_used_model, self.ner_tiers)
+        if self.is_used_tc:
+            self.tc.setup(self.tc_train_data)
+
+        if self.is_used_ner:
+            self.ner.setup(self.ner_train_data, self.is_used_model, self.ner_tiers)
 
     def get_predict(self, sentence=Settings.SAMPLE_SENTENCE):
         if self.is_used_same_words:
@@ -79,11 +88,26 @@ class NLP:
             sentence = re.sub(' +', ' ',sentence)
             sentence = re.sub('[!@#$]', '', sentence)
 
-        type_ask = self.tc.get_predict(sentence)
-        entities = self.ner.get_predict(sentence)
+        type_ask = ""
+        entities = []
+
+        if self.is_used_tc:
+            type_ask = self.tc.get_predict(sentence)
+
+        if self.is_used_ner:
+            entities = self.ner.get_predict(sentence)
 
         return {'type_ask': type_ask, 'entities': entities}
-        
+
+    def get_predict_type_ask_from_file(self, path_file_in=Settings.PATH_INPUT_TYPE_ASKS, path_file_out=Settings.PATH_OUTPUT_TYPE_ASKS):
+        self.is_used_tc = True
+        self.is_used_ner = False
+
+        self.setup()
+
+        extend_predict = ExtendPredict()
+        extend_predict.get_predict_type_ask_from_file(self, path_file_in, path_file_out)
+
     def test_accuracy(self):
         self.accuracy = TestAccuracy()
         self.accuracy.test_accuracy(self)
