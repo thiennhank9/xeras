@@ -33,7 +33,7 @@ module.exports = {
                 const dataToNLP = {
                     'comment': comment['comment'].body,
                     'site': site,
-                    'phone_name': 'iphone xs max',
+                    'phone_name': 'iphone x',
                     'user': cloneUser
                 }
 
