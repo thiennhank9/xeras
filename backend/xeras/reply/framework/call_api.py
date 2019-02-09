@@ -1,5 +1,4 @@
 from xeras.reply.framework.factory_api_by_site import concat_api_from_site
-from xeras.reply.framework.detect_answer import get_answer
 
 # import for apply post request
 import requests
@@ -44,14 +43,21 @@ def save_response_answer_by_api(combine_api, *arguments, **keywords):
                 # clone response answer
                 answer_value = response_answer
 
-                for field in list_access_field_name:
-                    # check filed in list
-                    list_access_by_index = field.split('[')
-                    for index_access_field in list_access_by_index:
-                        index_access_field = index_access_field.replace("]", "")
-                        if index_access_field.isdigit():
-                            index_access_field = int(index_access_field)
-                        answer_value = answer_value[index_access_field]
+                try:
+                    for field in list_access_field_name:
+                        # check filed in list
+                        list_access_by_index = field.split('[')
+                        for index_access_field in list_access_by_index:
+                            index_access_field = index_access_field.replace("]", "")
+                            if index_access_field.isdigit():
+                                index_access_field = int(index_access_field)
+                            answer_value = answer_value[index_access_field]
+                except Exception as e:
+                    print('error:', e)
+                    answer_value = []
+
+                print('answer_value:', answer_value)
+
                                             
                 # save to answer key
                 keywords[r_key_name] = answer_value

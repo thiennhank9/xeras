@@ -18,7 +18,7 @@ def is_correct_with_check_key(combine_api, **keywords):
     if check_answer_key is not '':
         if check_answer_key in keywords:
             print('check_answer_key_value:', keywords[check_answer_key])
-            if keywords[check_answer_key] in [None, False]:
+            if keywords[check_answer_key] in [None, False, [], '']:
                 print('check: False')
                 return False
             else:

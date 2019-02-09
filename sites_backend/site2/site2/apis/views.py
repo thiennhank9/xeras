@@ -5,6 +5,7 @@ from rest_framework.parsers import JSONParser
 
 # import config api
 from site2.apis.config_api import config_api
+from site2.apis.new_apis import get_phone_info, get_sale_off, get_phone_store, get_store_by_location, get_installment, get_event_exchange
 
 @csrf_exempt
 def comment_answer(request):
@@ -18,3 +19,95 @@ def comment_answer(request):
             return JsonResponse({'result': result}, status=200)
         except ValueError:
             return JsonResponse({'error': ValueError}, status=400)
+
+
+@csrf_exempt
+def phone_info(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        # print('data:', data)
+
+        try:
+            result = get_phone_info(**data)
+            # print('result:', result)
+            return JsonResponse(result, status=200)
+        except ValueError:
+            return JsonResponse({'error': ValueError}, status=400)
+
+
+@csrf_exempt
+def sale_off(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        print('data:', data)
+
+        try:
+            result = get_sale_off(**data)
+            return JsonResponse(result, status=200)
+        except ValueError:
+            return JsonResponse({'error': ValueError}, status=400)
+
+
+@csrf_exempt
+def phone_store(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        print('data:', data)
+
+        try:
+            result = get_phone_store(**data)
+            return JsonResponse(result, status=200)
+        except ValueError:
+            return JsonResponse({'error': ValueError}, status=400)
+
+
+@csrf_exempt
+def store(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        print('data:', data)
+
+        try:
+            result = get_store_by_location(**data)
+            return JsonResponse(result, status=200)
+        except ValueError:
+            return JsonResponse({'error': ValueError}, status=400)            
+
+
+@csrf_exempt
+def installment(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        print('data:', data)
+
+        try:
+            result = get_installment(**data)
+            return JsonResponse(result, status=200)
+        except ValueError:
+            return JsonResponse({'error': ValueError}, status=400)        
+
+
+@csrf_exempt
+def warranty(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        print('data:', data)
+
+        try:
+            result = get_warranty(**data)
+            return JsonResponse(result, status=200)
+        except ValueError:
+            return JsonResponse({'error': ValueError}, status=400)            
+
+
+@csrf_exempt
+def event_exchange(request):
+    if request.method == 'POST':
+        data = JSONParser().parse(request)
+        print('data:', data)
+
+        try:
+            result = get_event_exchange(**data)
+            return JsonResponse(result, status=200)
+        except ValueError:
+            return JsonResponse({'error': ValueError}, status=400)            

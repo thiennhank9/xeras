@@ -1,7 +1,7 @@
 phone_source_api = {
     'hoi_nhap_tu_quoc_gia': {
         'positive_answer': [
-            '''sản phẩm nhập từ quốc gia {from_country} {user_vocative} nhé'''
+            '''sản phẩm nhập từ {from_country} {user_vocative} nhé'''
         ],
         'negative_answer': [
             '''hiện hệ thống chưa có thông tin {user_vocative} yêu cầu, mong {user_vocative} thông cảm,

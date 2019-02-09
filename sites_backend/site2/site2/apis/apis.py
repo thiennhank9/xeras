@@ -27,7 +27,7 @@ def get_first_item_of_list(query_list):
 
 
 def get_list_phone_info_by_name(phone_name):
-    return Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name))
+    return Phone.objects.filter(Q(phoneName__iexact=phone_name) | Q(phoneOtherNames__iexact=phone_name))
 
 
 def get_phone_info(phone_name):
@@ -46,7 +46,7 @@ def get_field_phone_info(phone_name, field):
 
 
 def get_sale_off_by_phone_name(phone_name):
-    return SaleOff.objects.filter(Q(saleOffPhoneId__phoneName__icontains=phone_name) | Q(saleOffPhoneId__phoneOtherNames__icontains=phone_name)).\
+    return SaleOff.objects.filter(Q(saleOffPhoneId__phoneName__iexact=phone_name) | Q(saleOffPhoneId__phoneOtherNames__iexact=phone_name)).\
         filter(saleOffDateStart__lte=datetime.date.today()).filter(saleOffDateEnd__gte=datetime.date.today())
 
 
@@ -69,13 +69,13 @@ def get_phone_from_country(phone_name, country):
 def get_phone_feature(phone_name):
     phone_info = get_phone_info(phone_name)
     if phone_info is not None:
-        return phone_info.phoneFeature
+        return phone_info.phoneDemandNote
     else:
         return None
 
 
 def get_list_store_inverter_by_phone_name(phone_name):
-    return AmountPhoneByStore.objects.filter(Q(phoneId__phoneName__icontains=phone_name) | Q(phoneId__phoneOtherNames__icontains=phone_name))
+    return AmountPhoneByStore.objects.filter(Q(phoneId__phoneName__iexact=phone_name) | Q(phoneId__phoneOtherNames__iexact=phone_name))
 
 
 def get_store_inverter(phone_name):
@@ -86,7 +86,7 @@ def get_store_inverter(phone_name):
 
 
 def get_list_received_day(phone_name):
-    return ReceivedTime.objects.filter(Q(phoneId__phoneName__icontains=phone_name) | Q(phoneId__phoneOtherNames__icontains=phone_name)).\
+    return ReceivedTime.objects.filter(Q(phoneId__phoneName__iexact=phone_name) | Q(phoneId__phoneOtherNames__iexact=phone_name)).\
     filter(receivedTime__gte=datetime.date.today())
 
 
@@ -124,7 +124,7 @@ def get_store_by_location(where, *option, **options):
 
 
 def get_info_installment_by_phone_name(phone_name):
-    list_phone = Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name))
+    list_phone = Phone.objects.filter(Q(phoneName__iexact=phone_name) | Q(phoneOtherNames__iexact=phone_name))
     list_installment = [phone.phoneInstallmentId for phone in list_phone]
     if len(list_installment) != 0:
         return list_installment[0]
@@ -141,7 +141,7 @@ def get_info_installment_by_field_name(phone_name, field):
 
 
 def get_warranty_info_by_field_name(phone_name, field):
-    list_phone = Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name))
+    list_phone = Phone.objects.filter(Q(phoneName__iexact=phone_name) | Q(phoneOtherNames__iexact=phone_name))
     list_warranty = [phone.phoneWarrantyId for phone in list_phone]
     if len(list_warranty) != 0:
         return list_warranty[0].__dict__[field]
@@ -173,7 +173,7 @@ def get_price_by_phone_name(phone_name, *option, **options):
 
 
 def get_price_by_sale_off(phone_name, **option):
-    list_sale_off = SaleOff.objects.filter(Q(saleOffPhoneId__phoneName__icontains=phone_name) | Q(saleOffPhoneId__phoneOtherNames__icontains=phone_name)).\
+    list_sale_off = SaleOff.objects.filter(Q(saleOffPhoneId__phoneName__iexact=phone_name) | Q(saleOffPhoneId__phoneOtherNames__iexact=phone_name)).\
         filter(saleOffDateStart__lte=datetime.date.today()).filter(saleOffDateEnd__gte=datetime.date.today())
     sale_off = get_first_item_of_list(list_sale_off)
     if sale_off is not None:
@@ -190,7 +190,7 @@ def get_price_for_old(phone_name, *option):
 
 def get_price_by_store(phone_name,  *option, **options):
     list_store_inventory = AmountPhoneByStore.objects.filter(Q(storeId__storeCityId__cityName__icontains=options['where']) | Q(storeId__storeProvinceId__provinceName__icontains=options['where']) | Q(storeId__storeDistrictId__districtName__icontains=options['where']) | Q(storeId__storeAddress__icontains=options['where'])).\
-        filter(Q(phoneId__phoneName__icontains=phone_name) | Q(phoneId__phoneOtherNames__icontains=phone_name))
+        filter(Q(phoneId__phoneName__iexact=phone_name) | Q(phoneId__phoneOtherNames__iexact=phone_name))
     store_inventory = get_first_item_of_list(list_store_inventory)
     if store_inventory is not None:
         phone_info = get_list_phone_info_by_name(store_inventory.phoneId.phoneName)[0]
@@ -390,7 +390,7 @@ def get_from_type(phone_name, **options):
 
 def is_like_new(phone_name, **options):
     phone_info = get_phone_info(phone_name)
-    print(f'{phone_info.phoneName} - {phone_info.ROM} GB - {phone_info.color}')
+    # print(f'{phone_info.phoneName} - {phone_info.ROM} GB - {phone_info.color}')
     if phone_info is not None:
         if 'like new' in phone_info.status:
             return True
@@ -406,7 +406,7 @@ def is_like_new(phone_name, **options):
 def get_feature_playing_game(phone_name, *option, **options):
     phone_feature = get_phone_feature(phone_name) # ex: phone_feature = "lien quan, max settings; alpha 8, medium"
     if phone_feature is not None:
-        list_game_info = phone_feature.game.split(';')
+        list_game_info = phone_feature.split(';')
         for game_info in list_game_info:
             game_info = game_info.split(",")
             game_name = game_info[0]
@@ -447,7 +447,7 @@ def is_stocking_phone_by_name(phone_name, *option, **options):
 
 def is_stocking_phone_by_color(phone_name, *option, **options):
     list_store_inverter = get_list_store_inverter_by_phone_name(phone_name).\
-        filter(phoneId__in=Phone.objects.filter((Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name))).filter(phoneColor__icontains=options['color']))
+        filter(phoneId__in=Phone.objects.filter((Q(phoneName__iexact=phone_name) | Q(phoneOtherNames__iexact=phone_name))).filter(phoneColor__icontains=options['color']))
     if list_store_inverter.exists():
         return list_store_inverter[0].amount > 0
     else:
@@ -473,7 +473,7 @@ def is_stocking_phone_by_store(phone_name, *option, **options):
 
 def is_stocking_phone_by_code(phone_name, *option, **options):
     list_store_inverter = get_list_store_inverter_by_phone_name(phone_name). \
-        filter(phoneId__in=Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name)).filter(phoneCode__icontains=options['code']))
+        filter(phoneId__in=Phone.objects.filter(Q(phoneName__iexact=phone_name) | Q(phoneOtherNames__iexact=phone_name)).filter(phoneCode__icontains=options['code']))
     if list_store_inverter.exists():
         return list_store_inverter[0].amount > 0
     else:
@@ -482,7 +482,7 @@ def is_stocking_phone_by_code(phone_name, *option, **options):
 
 def is_stocking_phone_by_RAM(phone_name, *option, **options):
     list_store_inverter = get_list_store_inverter_by_phone_name(phone_name). \
-        filter(phoneId__in=Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name)).filter(phoneRAM=options['RAM']))
+        filter(phoneId__in=Phone.objects.filter(Q(phoneName__iexact=phone_name) | Q(phoneOtherNames__iexact=phone_name)).filter(phoneRAM=options['RAM']))
     if list_store_inverter.exists():
         return list_store_inverter[0].amount > 0
     else:
@@ -491,7 +491,7 @@ def is_stocking_phone_by_RAM(phone_name, *option, **options):
 
 def is_stocking_phone_by_ROM(phone_name,  *option, **options):
     list_store_inverter = get_list_store_inverter_by_phone_name(phone_name). \
-        filter(phoneId__in=Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name)).filter(phoneMemory=options['ROM']))
+        filter(phoneId__in=Phone.objects.filter(Q(phoneName__iexact=phone_name) | Q(phoneOtherNames__iexact=phone_name)).filter(phoneMemory=options['ROM']))
     if list_store_inverter.exists():
         return list_store_inverter[0].amount > 0
     else:
@@ -504,7 +504,7 @@ def is_stocking_phone_by_ROM(phone_name,  *option, **options):
 def get_list_store_have_phone(phone_name, *option, **options):
     list_store_inverter_in_location = get_store_by_location(where=options['where'])
     if list_store_inverter_in_location is not None:
-        list_store_inverter = AmountPhoneByStore.objects.filter(Q(storeId__storeAddress__in=list_store_inverter_in_location), Q(phoneId__phoneName__icontains=phone_name) | Q(phoneId__phoneOtherNames__icontains=phone_name), Q(amount__gt=0))
+        list_store_inverter = AmountPhoneByStore.objects.filter(Q(storeId__storeAddress__in=list_store_inverter_in_location), Q(phoneId__phoneName__iexact=phone_name) | Q(phoneId__phoneOtherNames__iexact=phone_name), Q(amount__gt=0))
         if list_store_inverter.exists():
             return [store_inverter.storeId.storeAddress for store_inverter in list_store_inverter]
         else:
@@ -548,15 +548,15 @@ def get_warranty_note(phone_name, *option, **options):
 # Expected Received Date
 
 def get_received_date_by_color(list_received_date, phone_name, color):
-    return list_received_date.filter(phoneId__in=Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name)).filter(phoneColor__icontains=color))
+    return list_received_date.filter(phoneId__in=Phone.objects.filter(Q(phoneName__iexact=phone_name) | Q(phoneOtherNames__iexact=phone_name)).filter(phoneColor__icontains=color))
 
 
 def get_received_date_by_RAM(list_received_date, phone_name, RAM):
-    return list_received_date.filter(phoneId__in=Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name)).filter(phoneRAM=RAM))
+    return list_received_date.filter(phoneId__in=Phone.objects.filter(Q(phoneName__iexact=phone_name) | Q(phoneOtherNames__iexact=phone_name)).filter(phoneRAM=RAM))
 
 
 def get_received_date_by_ROM(list_received_date, phone_name, ROM):
-    return list_received_date.filter(phoneId__in=Phone.objects.filter(Q(phoneName__icontains=phone_name) | Q(phoneOtherNames__icontains=phone_name)).filter(phoneMemory=ROM))
+    return list_received_date.filter(phoneId__in=Phone.objects.filter(Q(phoneName__iexact=phone_name) | Q(phoneOtherNames__iexact=phone_name)).filter(phoneMemory=ROM))
 
 
 def get_received_date_by_store(list_received_date, phone_name, where):
@@ -622,7 +622,7 @@ def get_received_date(phone_name, **options):
 # buy older and allow change phone
 
 def is_buy_older_allow_change_available(phone_name, **options):
-    list_event_available = Resell.objects.filter(Q(phoneId__phoneName__icontains=phone_name) | Q(phoneId__phoneOtherNames__icontains=phone_name)).\
+    list_event_available = Resell.objects.filter(Q(phoneId__phoneName__iexact=phone_name) | Q(phoneId__phoneOtherNames__iexact=phone_name)).\
         filter(dateStart__lte=datetime.date.today()).filter(dateEnd__gte=datetime.date.today())
 
     if list_event_available.exists():

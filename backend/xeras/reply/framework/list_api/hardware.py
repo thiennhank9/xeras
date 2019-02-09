@@ -111,7 +111,7 @@ hardware_api = {
     },
     'hoi_co_bao_nhieu_sim': {
         'positive_answer': [
-            '''sản phẩm có hỗ trợ {number_sim_support} sim {user_vocative} nhé'''
+            '''sản phẩm hỗ trợ {number_sim_support} sim {user_vocative} nhé'''
         ],
         'negative_answer': [
             '''sản phẩm không hỗ trợ {user_vocative} nhé,

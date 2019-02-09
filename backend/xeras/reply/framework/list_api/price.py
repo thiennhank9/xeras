@@ -24,7 +24,7 @@ price_api = {
             '''giá của sản phẩm {phone_name} ở {where} là {phone_price}00.000 triệu đồng. Hãy nhanh chân đến cửa hàng {user_vocative} nhé'''
         ],
         'negative_answer': [
-            '''hiện tại cửa hàng {where} không còn sản phẩm {phone_name}, {user_vocative} vui lòng để lại thông tin để nhận được thông báo sớm nhất nhé'''
+            '''hiện tại cửa hàng {where} không còn sản phẩm {phone_name} tại {where}, {user_vocative} vui lòng để lại thông tin để nhận được thông báo sớm nhất nhé'''
         ],
         'answer_key': 'phone_price'
     },

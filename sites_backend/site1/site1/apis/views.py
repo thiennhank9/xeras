@@ -5,7 +5,6 @@ from rest_framework.parsers import JSONParser
 
 # import config api
 from site1.apis.config_api import config_api
-from site1.apis.apis import is_stocking_phone_by_store
 from site1.apis.new_apis import get_phone_info, get_sale_off, get_phone_store, get_store_by_location, get_installment, get_warranty, get_event_exchange
 
 
@@ -39,6 +38,7 @@ def phone_info(request):
             return JsonResponse(result, status=200)
         except ValueError:
             return JsonResponse({'error': ValueError}, status=400)
+
 
 @csrf_exempt
 def sale_off(request):

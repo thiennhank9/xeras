@@ -21,7 +21,7 @@ installment_api = {
     },
     'hoi_ho_tro_thanh_toan_the_dua_tren_cua_hang': {
         'positive_answer': [
-            '''hiện tại bên mình có các cửa hàng sau hỗ trợ thanh toán tại {store_address}, {user_vocative} có thể gọi điện tới tổng đài hỗ trợ để được tư vấn trực tiếp'''
+            '''{user_vocative} có thể thanh toán tại cửa hàng {store_address}, {user_vocative} có thể gọi điện tới tổng đài hỗ trợ để được tư vấn trực tiếp'''
         ],
         'negative_answer': [
             '''hiện tại bên mình chỉ chấp nhận thanh toán bằng tiền mặt, để biết chi tiết hơn {user_vocative} có thể liên hệ tổng đài hỗ trợ để được tư vấn trực tiếp

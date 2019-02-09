@@ -11,7 +11,7 @@ feature_api = {
     },
     'hoi_thoi_gian_choi_game': {
         'positive_answer': [
-            '''điện thoại có thể chơi game tầm {game_time} tiếng {user_vocative} nhé'''
+            '''điện thoại có thể dùng tầm {game_time} tiếng {user_vocative} nhé'''
         ],
         'negative_answer': [
             '''hiện hệ thống chưa có thông tin {user_vocative} yêu cầu, mong {user_vocative} thông cảm,
