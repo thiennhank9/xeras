@@ -5,7 +5,7 @@ warranty_api = {
         ],
         'negative_answer': [
             '''hiện không có thông tin bảo hành,
-            bạn hãy để lại thông tin liên hệ để nhận được thông báo sớm nhất nhé'''
+            {user_vocative} hãy để lại thông tin liên hệ để nhận được thông báo sớm nhất nhé'''
         ],
         'answer_key': 'warranty_note'
     }

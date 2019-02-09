@@ -2,5 +2,5 @@
 from site1.apis import apis as api
 
 address_api = {
-    'hoi_dia_chi_danh_sach_cua_hang': api.get_store_by_location
+    'hoi_dia_chi_danh_sach_cua_hang': api.get_list_store_have_phone
 }

@@ -1,10 +1,10 @@
 def type_question(*arguments, **keywords):
+    if 'where' in keywords:
+        return 'hoi_con_hang_theo_dia_diem'
     if 'color' in keywords:
         return 'hoi_con_hang_theo_mau_sac'
     if 'what_else_color' in keywords:
         return 'hoi_con_mau_khac_khong'
-    if 'where' in keywords:
-        return 'hoi_con_hang_theo_dia_diem'
     if 'code' in keywords:
         return 'hoi_con_hang_theo_ma'
     if 'RAM' in keywords:
