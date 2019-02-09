@@ -10,7 +10,6 @@ phone_source_api = {
         'api_url': 'http://127.0.0.1:7000/apis/phone_info/',
         'answer_keys': ['isGlobal'],
         'check_answer_key': 'isGlobal'
-        
     },
     'hoi_ma_hang': {
         'api_url': 'http://127.0.0.1:7000/apis/phone_info/',
