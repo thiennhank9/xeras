@@ -1,7 +1,7 @@
 feature_api = {
     'hoi_kha_nang_choi_game': {
         'positive_answer': [
-            '''điện thoại có thể chơi game {game_setting} {user_vocative} nhé'''
+            '''điện thoại có thể {game_setting} {user_vocative} nhé'''
         ],
         'negative_answer': [
             '''hiện hệ thống chưa có thông tin {user_vocative} yêu cầu, mong {user_vocative} thông cảm,

@@ -1,7 +1,7 @@
 sale_off_api = {
     'hoi_do_tang_kem_khuyen_mai': {
         'positive_answer': [
-            '''hiện tại bên mình có chương trình khuyến mãi, khi mua {phone_name} sẽ có tặng kèm {list_giff}.
+            '''hiện tại khi mua {phone_name} sẽ được {list_giff}.
             Bạn hãy nhanh chóng tới cửa hàng nhé'''
         ],
         'negative_answer': [

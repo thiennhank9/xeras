@@ -1,7 +1,7 @@
 hardware_api = {
     'hoi_sac_may_chau': {
         'positive_answer': [
-            '''hiện tại sản phẩm sử dụng sạc {phone_charge_type} {user_vocative} nhé'''
+            '''hiện tại sản phẩm sử dụng {phone_charge_type} {user_vocative} nhé'''
         ],
         'negative_answer': [
             '''hiện hệ thống chưa có thông tin {user_vocative} yêu cầu, mong {user_vocative} thông cảm,
