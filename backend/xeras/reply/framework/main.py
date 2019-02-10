@@ -36,26 +36,30 @@ def get_answer_by_question_type(*arguments, **keywords):
     # combine
     keywords['general_question_type'] = general_question_type
     keywords['detail_question_type'] = detail_question_type
+
+    # test - config detail_question_type
     # keywords['detail_question_type'] = 'hoi_mua_cu_doi_moi'
     combine_api = concat_api_from_site(*arguments, **keywords)
 
     # return {'question type': detail_question_type, 'entities': {**entities, 'phone_name': keywords['phone_name']}}
 
-    keywords = save_response_answer_by_api(combine_api, *arguments, **keywords)
-    if keywords['isNull'] is not True:
-        keywords = change_name_key_words(combine_api, **keywords)
-    # return keywords
-    answer = get_answer(combine_api, *arguments, **keywords)
+    # test - get error when running
+    # keywords = save_response_answer_by_api(combine_api, *arguments, **keywords)
+    # if keywords['isNull'] is not True:
+    #     keywords = change_name_key_words(combine_api, **keywords)
+    # # return keywords
+    # answer = get_answer(combine_api, *arguments, **keywords)
 
     # predict answer
-    # try:
-    #     keywords = save_response_answer_by_api(combine_api, *arguments, **keywords)
-    #     if keywords['isNull'] is not True:
-    #         keywords = change_name_key_words(combine_api, **keywords)
-    #     # return keywords
-    #     answer = get_answer(combine_api, *arguments, **keywords)
-    # except:
-    #     answer = "Xin lỗi, hiện tại câu hỏi vẫn chưa hỗ trợ, chúng tôi sẽ cố gắng khắc phục trong thời gian sớm nhất, mong bạn thông cảm!"
+    try:
+        keywords = save_response_answer_by_api(combine_api, *arguments, **keywords)
+        if keywords['isNull'] is not True:
+            keywords = change_name_key_words(combine_api, **keywords)
+        # return keywords
+        answer = get_answer(combine_api, *arguments, **keywords)
+    except Exception as error:
+        print('error message:', error)
+        answer = "Xin lỗi, hiện tại câu hỏi vẫn chưa hỗ trợ, chúng tôi sẽ cố gắng khắc phục trong thời gian sớm nhất, mong bạn thông cảm!"
     return answer
 
 
