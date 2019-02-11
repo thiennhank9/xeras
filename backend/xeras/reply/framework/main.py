@@ -36,14 +36,30 @@ def get_answer_by_question_type(*arguments, **keywords):
     # combine
     keywords['general_question_type'] = general_question_type
     keywords['detail_question_type'] = detail_question_type
+
+    # test - config detail_question_type
+    # keywords['detail_question_type'] = 'hoi_mua_cu_doi_moi'
     combine_api = concat_api_from_site(*arguments, **keywords)
+
+    # return {'question type': detail_question_type, 'entities': {**entities, 'phone_name': keywords['phone_name']}}
+
+    # test - get error when running
+    # keywords = save_response_answer_by_api(combine_api, *arguments, **keywords)
+    # if keywords['isNull'] is not True:
+    #     keywords = change_name_key_words(combine_api, **keywords)
+    # # return keywords
+    # answer = get_answer(combine_api, *arguments, **keywords)
 
     # predict answer
     try:
         keywords = save_response_answer_by_api(combine_api, *arguments, **keywords)
+        if keywords['isNull'] is not True:
+            keywords = change_name_key_words(combine_api, **keywords)
+        # return keywords
         answer = get_answer(combine_api, *arguments, **keywords)
-    except:
-        answer = "Xin lỗi, hiện tại câu hỏi vẫn chưa, chúng tôi sẽ cố gắng khắc phục trong thời gian sớm nhất, mong bạn thông cảm!"
+    except Exception as error:
+        print('error message:', error)
+        answer = "Xin lỗi, hiện tại câu hỏi vẫn chưa hỗ trợ, chúng tôi sẽ cố gắng khắc phục trong thời gian sớm nhất, mong bạn thông cảm!"
     return answer
 
 
@@ -69,6 +85,10 @@ def get_entities_from_predict_object(**predict_object):
         entity_key = entity[0]
         entity_value = entity[1]
 
+        if entity_key == 'PHONE':
+            object_entities['comment_have_phone_name'] = True
+            print('comment have phone name')
+
         # convert special key from ner to normal key for query database
         if entity_key in mapping_key:
             entity_key = mapping_key[entity_key]
@@ -79,3 +99,12 @@ def get_entities_from_predict_object(**predict_object):
         object_entities[entity_key] = entity_value
 
     return object_entities
+
+
+def change_name_key_words(combine_api, **keywords):
+    detail_question_type = keywords['detail_question_type']
+    key_name_mapping = combine_api[detail_question_type]['answer_keys_mapping']
+    for replace_name, current_name in key_name_mapping.items():
+        if current_name in keywords:
+            keywords[replace_name] = keywords.pop(current_name)
+    return keywords

@@ -132,7 +132,7 @@ class Phone(models.Model):
     phoneChargerType = models.TextField(blank=True, default="2 chấu")
     phoneChargerTime = models.FloatField(blank=True, default=2.0)
     phoneTimeUsing = models.FloatField(blank=True, default=2.0)
-    phoneChip = models.FloatField(blank=True, default=2.0)
+    phoneChip = models.TextField(blank=True, default="")
     fromCountry = models.TextField(blank=True, default="Mỹ")
     phoneScreenWidth = models.FloatField(blank=True)
     phoneScreenHeight = models.FloatField(blank=True)
@@ -140,6 +140,7 @@ class Phone(models.Model):
     phoneScreenType = models.TextField(blank=True, default="")
     phonePin = models.IntegerField(blank=True)
     phoneNumberOfSim = models.IntegerField(blank=True)
+    phoneSimType = models.TextField(blank=True, default="")
     phoneMemory = models.IntegerField(blank=True)
     phoneRAM = models.IntegerField(blank=True)
     phoneFrontCamera = models.FloatField(blank=True)
@@ -150,6 +151,8 @@ class Phone(models.Model):
     phone3G = models.TextField(blank=True, default="")
     phoneTypeNote = models.TextField(blank=True)
     phoneDemandNote = models.TextField(blank=True)
+    phoneFeatureTimeUsing = models.TextField(blank=True, default="")
+    phoneCase = models.TextField(blank=True, default="")
     phoneRating = models.FloatField(blank=True)
     phoneTopSeller = models.FloatField(blank=True)
     phoneTags = models.TextField(blank=True)
@@ -169,7 +172,7 @@ class AmountPhoneByStore(models.Model):
     amount = models.IntegerField(blank=True, default=random_int)
 
     def __str__(self):
-        return '%s - %s - amount: %s' % (self.storeId.storeName, self.phoneId.phoneName, self.amount)
+        return '%s - %s - %s - amount: %s' % (self.storeId.storeName, self.phoneId.phoneName, self.phoneId.phoneColor, self.amount)
 
     class Meta:
         managed = True
