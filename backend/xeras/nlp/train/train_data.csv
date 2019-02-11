@@ -8,6 +8,89 @@ Giảm giá 1tr4 là còn 3tr6 phải không bạn;hoi_gia;IS_PRICE_AFTER_SALE_O
 Mình muốn mua Iphone X hàng nhập khẩu từ Mỹ giá nhiêu;hoi_gia;PHONE:Iphone X|LOCATION:Mỹ|IS_PHONE_FROM:hàng nhập khẩu
 Bản 64gb mắc hơn 32gb nhiêu;hoi_gia;IS_COMPARE:mắc hơn|ROM:64|ROM:32
 Giá 22tr2 là tính thuế VAT 10% chưa shop;hoi_gia;MONEY:22tr2|TAX:10%|IS_INCLUDE_TAX:thuế VAT
+iphone xs max bao nhiêu?;hoi_gia;PHONE:iphone xs max
+iphone xs max nhiêu?;hoi_gia;PHONE:iphone xs max
+giá khuyến mãi nhiêu;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:khuyến mãi
+giá khuyến mãi iphone x bao nhiêu?;hoi_gia;IS_PRICE_AFTER_SALE_OFF_PRICE:khuyến mãi|PHONE:iphone x
+iphone x giá sau khuyến mãi nhiêu?;hoi_gia;PHONE:iphone x|IS_PRICE_AFTER_SALE_OFF_PRICE:khuyến mãi
+iphone x sau khuyến mãi nhiêu?;hoi_gia;PHONE:iphone x|IS_PRICE_AFTER_SALE_OFF_PRICE:khuyến mãi
+giá iphone x sau khuyến mãi bao nhiêu?;hoi_gia;PHONE:iphone x|IS_PRICE_AFTER_SALE_OFF_PRICE:khuyến mãi
+iphone x tại chi nhánh tân bình giá nhiêu?;hoi_gia;PHONE:iphone x|LOCATION:tân bình
+iphone x nhập từ Mỹ giá nhiêu;hoi_gia;PHONE:iphone x|LOCATION:Mỹ|IS_PHONE_FROM:nhập từ
+Iphone x hàng mỹ giá nhiêu;hoi_gia;PHONE:iphone x|LOCATION:mỹ|IS_PHONE_FROM:hàng
+Điện thoại nhập từ Mỹ nhiêu vậy?;hoi_gia;IS_PHONE_FROM:nhập từ
+Ủa giờ còn giảm giá 1tr không;hoi_khuyen_mai;IS_SALE_OFF_NOW:còn giảm giá
+giờ còn giảm giá không shop?;hoi_khuyen_mai;IS_SALE_OFF_NOW:còn giảm giá
+Mua Iphone X còn khuyến mãi không?;hoi_khuyen_mai;PHONE:Iphone X|IS_SALE_OFF_NOW:còn khuyến mãi
+còn khuyến mãi nữa không;hoi_khuyen_mai;IS_SALE_OFF_NOW:còn khuyến mãi
+Khi nào hết chương trình giảm giá vậy?;hoi_khuyen_mai;WHEN_END_SALE_OFF:Khi nào hết
+Ngày nào là hết khuyến mãi vậy;hoi_khuyen_mai;WHEN_END_SALE_OFF:hết khuyến mãi
+Bao giờ thì hết chương trình khuyến mãi;hoi_khuyen_mai;WHEN_END_SALE_OFF:bao giờ thì hết
+máy sử dụng sạc mấy chấu thế;hoi_phan_cung;WHAT_CHARGER:sạc mấy chấu
+máy dùng sạc mấy chân vậy;hoi_phan_cung;WHAT_CHARGER:sạc mấy chân
+máy sạc trong bao lâu;hoi_phan_cung;HOW_LONG_CHARGER:sạc trong bao lâu
+sạc bao lâu thì đầy;hoi_phan_cung;HOW_LONG_CHARGER:sạc bao lâu
+sạc trong bao lâu thì đầy;hoi_phan_cung;HOW_LONG_CHARGER:sạc bao lâu
+xài được trong bao lâu vậy;hoi_phan_cung;HOW_LONG_PIN:xài được trong bao lâu
+máy dùng liên tục trong bao lâu;hoi_phan_cung;HOW_LONG_PIN:dùng liên tục
+máy dùng tối đa nhiêu tiếng;hoi_phan_cung;HOW_LONG_PIN:máy dùng tối đa
+dùng liên tục trong bao lâu;hoi_phan_cung;HOW_LONG_PIN:dùng liên 
+máy sử dụng chip gì vậy?;hoi_phan_cung;WHAT_CHIP:chip gì
+máy dùng chip gì vậy?;hoi_phan_cung;WHAT_CHIP:chip gì
+dùng chip gì vậy shop?;hoi_phan_cung;WHAT_CHIP:chip gì
+máy dùng chip nào vậy?;hoi_phan_cung;WHAT_CHIP:chip nào
+cam trước nhiêu chấm vậy?;hoi_phan_cung;WHAT_FRONT_CAMERA:cam trước
+máy này dùng vỏ gì thế?;hoi_phan_cung;WHAT_PHONE_CASE:vỏ gì
+máy làm bằng chất liệu gì thế;hoi_phan_cung;WHAT_PHONE_CASE:chất liệu
+điện thoại làm bằng nhôm à;hoi_phan_cung;WHAT_PHONE_CASE:làm bằng nhôm
+máy sử dụng ram nhiêu;hoi_phan_cung;WHAT_RAM:ram nhiêu
+máy dùng ram nhiêu thế;hoi_phan_cung;WHAT_RAM:ram nhiêu
+phiên bản ram bao nhiêu;hoi_phan_cung;WHAT_RAM:ram bao nhiêu
+máy phiên bản rom nhiêu thế;hoi_phan_cung;WHAT_ROM:rom nhiêu thế
+phiên bản bộ nhớ bao nhiêu;hoi_phan_cung;WHAT_ROM:bộ nhớ bao nhiêu
+Iphone x bộ nhớ nhiêu thế?;hoi_phan_cung;WHAT_ROM:bộ nhớ nhiêu
+Màn hình bao nhiêu inch vậy shop?;hoi_phan_cung;WHAT_INCH:nhiêu inch
+Màn hình kích thước nhiêu vậy?;hoi_phan_cung;WHAT_INCH:kích thước nhiêu
+máy dùng màn hình tai thỏ không shop?;hoi_phan_cung;IS_EAR_RABBIT:tai thỏ
+máy có mạng 4g không vậy;hoi_phan_cung;IS_4G:4g
+máy có hỗ trợ mạng 4g không vậy?;hoi_phan_cung;IS_4G:4g
+Con này có hỗ trợ mạng 4g không vậy?;hoi_phan_cung;IS_4G:4g
+Máy hỗ trợ bao nhiêu sim vậy?;hoi_phan_cung;HOW_NUMBER_SIM:bao nhiêu sim
+Máy sử dụng bao nhiêu sim vậy?;hoi_phan_cung;HOW_NUMBER_SIM:bao nhiêu sim
+Máy dùng bao nhiêu sim vậy?;hoi_phan_cung;HOW_NUMBER_SIM:bao nhiêu sim
+iphone x sử dụng hệ điều hàng ios mấy vậy;hoi_phan_mem;WHAT_OS:ios mấy
+máy sử dụng hệ điều hành gì ạ;hoi_phan_mem;WHAT_OS:hệ điều hành
+phiên bản hệ điều hành mặc định của máy là gì;hoi_phan_mem;WHAT_OS:hệ điều hành
+mới mua thì máy sử dụng hệ điều hành gì vậy;hoi_phan_mem;WHAT_OS:hệ điều hành
+samsung galaxay sử dụng phiên bản android mấy vậy?;hoi_phan_mem;WHAT_OS:androi mấy
+hệ điều hành máy hiện tại đang dùng là gì vậy ạ?;hoi_phan_mem;WHAT_OS:hệ điều hành
+hàng xuất xứ từ đâu vậy shop?;hoi_nguon_hang;ETC:xuất xứ
+xuất xứ từ đâu vậy shop?;hoi_nguon_hang;ETC:xuất xứ
+phiên bản quốc tế à shop?;hoi_nguon_hang;IS_GLOBAL:quốc tế
+có phải là bản lock không shop?;hoi_nguon_hang;IS_GLOBAL:lock
+máy bản khóa mạng à shop?;hoi_nguon_hang;IS_GLOBAL:khóa mạng
+bản khóa mạng à shop?;hoi_nguon_hang;IS_GLOBAL:khóa mạng
+Máy mã hàng LL/A phải không?;hoi_nguon_hang;WHAT_CODE:mã hàng|CODE:LL/A
+máy mã hàng gì thế?;hoi_nguon_hang;WHAT_CODE:mã hàng
+có phải hàng like new không;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:like new
+máy cũ à shop?;hoi_nguon_hang;IS_BRAND_NEW_OR_LIKE_NEW:máy cũ
+Chơi pubg max setting được không;hoi_nhu_cau;GAME:pubg
+Khả năng đủ chơi liên quân không shop;hoi_nhu_cau;GAME:liên quân
+chơi liên quân có bị lag không;hoi_nhu_cau;GAME:liên quân
+chơi game được bao nhiêu tiếng;hoi_nhu_cau;HOW_LONG_PIN_PLAYING_GAME:bao nhiêu tiếng
+chơi game liên tục được lâu không;hoi_nhu_cau;HOW_LONG_PIN_PLAYING_GAME:lâu không
+chơi game được bao lâu?;hoi_nhu_cau;HOW_LONG_PIN_PLAYING_GAME:bao lâu
+nghe nhạc liên tục được bao lâu;hoi_nhu_cau;FEATURE:nhạc|HOW_LONG_PIN_PLAYING_GAME:bao lâu
+máy nghe nhạc trong bao lâu;hoi_nhu_cau;FEATURE:nhạc|HOW_LONG_PIN_PLAYING_GAME:bao lâu
+máy nghe nhạc được lâu không;hoi_nhu_cau;FEATURE:nhạc|HOW_LONG_PIN_PLAYING_GAME:lâu không
+bản bộ nhớ 64gb còn không ạ?;hoi_con_hang;ROM:64
+cho xin danh sách cửa hàng tại quận 3 shop ơi?;hoi_dia_chi;LOCATION:quận 3
+cho xin danh sách cửa hàng tại quận 5 shop ơi?;hoi_dia_chi;LOCATION:quận 5
+cho xin danh sách cửa hàng tại quận 10 shop ơi?;hoi_dia_chi;LOCATION:quận 10
+con này còn bảo hành không shop?;hoi_bao_hanh;IS_WARRANTY:bảo hành
+em mới mua được 3 tháng, còn bảo hành không ạ?;hoi_bao_hanh;IS_WARRANTY:bảo hành
+mình muốn bảo hành điện thoại thì cần gì?;hoi_bao_hanh;IS_WARRANTY:bảo hành
+con này có bảo hành rơi vỡ không shop?;hoi_bao_hanh;IS_WARRANTY:bảo hành
 Tính thuế nữa là giá nhiêu vậy bạn;hoi_gia;IF_INCLUDE_TAX:Tính thuế nữa
 Mua SS9+ có được tặng kèm gì ko shop;hoi_khuyen_mai;PHONE:SS9+|SALE_OFF_GIFF:tặng kèm gì
 Iphone 7 có đang khuyến mãi ko?;hoi_khuyen_mai;PHONE:Iphone 7|IS_SALE_OFF_NOW:đang khuyến mãi ko
@@ -901,7 +984,7 @@ nếu mua trả góp thì mỗi tháng trả bao nhiêu ạ?;hoi_tra_gop;IS_NEED
 Còn hàng ở nguyễn văn cừ HN ko ạ?;hoi_con_hang;LOCATION:nguyễn văn cừ|LOCATION:HN
 còn hàng k bạn;hoi_con_hang;OTHER:còn hàng k
 Máy có mã thị trường Châu Âu đang có ở cửa hàng nào Tp.HCM vậy ạ? ;hoi_dia_chi;LOCATION:Tp.HCM
-có bản LL chưa ad?;hoi_phan_cung;WHAT_CODE:bản LL
+có bản LL chưa ad?;hoi_nguon_hang;WHAT_CODE:bản LL
 hiện đang có bản gì vậy?;hoi_phan_cung;WHAT_CODE:bản gì
 Khoảng bao lâu thì khu vực tphcm có mẫu này 64gb bản LL vậy ạ;hoi_khi_nao;LOCATION:tphcm|ROM:64|CODE:LL
 Có được trả trước 1 nửa rồi máy tới thì trả luôn được kh ạ ;hoi_tra_gop;IS_NEEDED:trả trước

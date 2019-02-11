@@ -1,4 +1,4 @@
-Å´transitions⁄h‚[
+Å´transitions⁄k¢[
   {
     "clas":0,
     "move":1,
@@ -290,1397 +290,1445 @@
   {
     "clas":48,
     "move":1,
-    "label":"IF_INCLUDE_TAX",
-    "name":"B-IF_INCLUDE_TAX"
-  },
-  {
-    "clas":49,
-    "move":2,
-    "label":"IF_INCLUDE_TAX",
-    "name":"I-IF_INCLUDE_TAX"
-  },
-  {
-    "clas":50,
-    "move":3,
-    "label":"IF_INCLUDE_TAX",
-    "name":"L-IF_INCLUDE_TAX"
-  },
-  {
-    "clas":51,
-    "move":4,
-    "label":"IF_INCLUDE_TAX",
-    "name":"U-IF_INCLUDE_TAX"
-  },
-  {
-    "clas":52,
-    "move":1,
-    "label":"SALE_OFF_GIFF",
-    "name":"B-SALE_OFF_GIFF"
-  },
-  {
-    "clas":53,
-    "move":2,
-    "label":"SALE_OFF_GIFF",
-    "name":"I-SALE_OFF_GIFF"
-  },
-  {
-    "clas":54,
-    "move":3,
-    "label":"SALE_OFF_GIFF",
-    "name":"L-SALE_OFF_GIFF"
-  },
-  {
-    "clas":55,
-    "move":4,
-    "label":"SALE_OFF_GIFF",
-    "name":"U-SALE_OFF_GIFF"
-  },
-  {
-    "clas":56,
-    "move":1,
     "label":"IS_SALE_OFF_NOW",
     "name":"B-IS_SALE_OFF_NOW"
   },
   {
-    "clas":57,
+    "clas":49,
     "move":2,
     "label":"IS_SALE_OFF_NOW",
     "name":"I-IS_SALE_OFF_NOW"
   },
   {
-    "clas":58,
+    "clas":50,
     "move":3,
     "label":"IS_SALE_OFF_NOW",
     "name":"L-IS_SALE_OFF_NOW"
   },
   {
-    "clas":59,
+    "clas":51,
     "move":4,
     "label":"IS_SALE_OFF_NOW",
     "name":"U-IS_SALE_OFF_NOW"
   },
   {
-    "clas":60,
-    "move":1,
-    "label":"IS_NEEDED",
-    "name":"B-IS_NEEDED"
-  },
-  {
-    "clas":61,
-    "move":2,
-    "label":"IS_NEEDED",
-    "name":"I-IS_NEEDED"
-  },
-  {
-    "clas":62,
-    "move":3,
-    "label":"IS_NEEDED",
-    "name":"L-IS_NEEDED"
-  },
-  {
-    "clas":63,
-    "move":4,
-    "label":"IS_NEEDED",
-    "name":"U-IS_NEEDED"
-  },
-  {
-    "clas":64,
-    "move":1,
-    "label":"IS_SALE_OFF_INSTALLMENT",
-    "name":"B-IS_SALE_OFF_INSTALLMENT"
-  },
-  {
-    "clas":65,
-    "move":2,
-    "label":"IS_SALE_OFF_INSTALLMENT",
-    "name":"I-IS_SALE_OFF_INSTALLMENT"
-  },
-  {
-    "clas":66,
-    "move":3,
-    "label":"IS_SALE_OFF_INSTALLMENT",
-    "name":"L-IS_SALE_OFF_INSTALLMENT"
-  },
-  {
-    "clas":67,
-    "move":4,
-    "label":"IS_SALE_OFF_INSTALLMENT",
-    "name":"U-IS_SALE_OFF_INSTALLMENT"
-  },
-  {
-    "clas":68,
+    "clas":52,
     "move":1,
     "label":"WHEN_END_SALE_OFF",
     "name":"B-WHEN_END_SALE_OFF"
   },
   {
-    "clas":69,
+    "clas":53,
     "move":2,
     "label":"WHEN_END_SALE_OFF",
     "name":"I-WHEN_END_SALE_OFF"
   },
   {
-    "clas":70,
+    "clas":54,
     "move":3,
     "label":"WHEN_END_SALE_OFF",
     "name":"L-WHEN_END_SALE_OFF"
   },
   {
-    "clas":71,
+    "clas":55,
     "move":4,
     "label":"WHEN_END_SALE_OFF",
     "name":"U-WHEN_END_SALE_OFF"
   },
   {
-    "clas":72,
+    "clas":56,
     "move":1,
     "label":"WHAT_CHARGER",
     "name":"B-WHAT_CHARGER"
   },
   {
-    "clas":73,
+    "clas":57,
     "move":2,
     "label":"WHAT_CHARGER",
     "name":"I-WHAT_CHARGER"
   },
   {
-    "clas":74,
+    "clas":58,
     "move":3,
     "label":"WHAT_CHARGER",
     "name":"L-WHAT_CHARGER"
   },
   {
-    "clas":75,
+    "clas":59,
     "move":4,
     "label":"WHAT_CHARGER",
     "name":"U-WHAT_CHARGER"
   },
   {
-    "clas":76,
+    "clas":60,
     "move":1,
     "label":"HOW_LONG_CHARGER",
     "name":"B-HOW_LONG_CHARGER"
   },
   {
-    "clas":77,
+    "clas":61,
     "move":2,
     "label":"HOW_LONG_CHARGER",
     "name":"I-HOW_LONG_CHARGER"
   },
   {
-    "clas":78,
+    "clas":62,
     "move":3,
     "label":"HOW_LONG_CHARGER",
     "name":"L-HOW_LONG_CHARGER"
   },
   {
-    "clas":79,
+    "clas":63,
     "move":4,
     "label":"HOW_LONG_CHARGER",
     "name":"U-HOW_LONG_CHARGER"
   },
   {
-    "clas":80,
+    "clas":64,
     "move":1,
     "label":"HOW_LONG_PIN",
     "name":"B-HOW_LONG_PIN"
   },
   {
-    "clas":81,
+    "clas":65,
     "move":2,
     "label":"HOW_LONG_PIN",
     "name":"I-HOW_LONG_PIN"
   },
   {
-    "clas":82,
+    "clas":66,
     "move":3,
     "label":"HOW_LONG_PIN",
     "name":"L-HOW_LONG_PIN"
   },
   {
-    "clas":83,
+    "clas":67,
     "move":4,
     "label":"HOW_LONG_PIN",
     "name":"U-HOW_LONG_PIN"
   },
   {
-    "clas":84,
+    "clas":68,
     "move":1,
     "label":"WHAT_CHIP",
     "name":"B-WHAT_CHIP"
   },
   {
-    "clas":85,
+    "clas":69,
     "move":2,
     "label":"WHAT_CHIP",
     "name":"I-WHAT_CHIP"
   },
   {
-    "clas":86,
+    "clas":70,
     "move":3,
     "label":"WHAT_CHIP",
     "name":"L-WHAT_CHIP"
   },
   {
-    "clas":87,
+    "clas":71,
     "move":4,
     "label":"WHAT_CHIP",
     "name":"U-WHAT_CHIP"
   },
   {
-    "clas":88,
+    "clas":72,
     "move":1,
     "label":"WHAT_FRONT_CAMERA",
     "name":"B-WHAT_FRONT_CAMERA"
   },
   {
-    "clas":89,
+    "clas":73,
     "move":2,
     "label":"WHAT_FRONT_CAMERA",
     "name":"I-WHAT_FRONT_CAMERA"
   },
   {
-    "clas":90,
+    "clas":74,
     "move":3,
     "label":"WHAT_FRONT_CAMERA",
     "name":"L-WHAT_FRONT_CAMERA"
   },
   {
-    "clas":91,
+    "clas":75,
     "move":4,
     "label":"WHAT_FRONT_CAMERA",
     "name":"U-WHAT_FRONT_CAMERA"
   },
   {
-    "clas":92,
-    "move":1,
-    "label":"MANUFACTURER",
-    "name":"B-MANUFACTURER"
-  },
-  {
-    "clas":93,
-    "move":2,
-    "label":"MANUFACTURER",
-    "name":"I-MANUFACTURER"
-  },
-  {
-    "clas":94,
-    "move":3,
-    "label":"MANUFACTURER",
-    "name":"L-MANUFACTURER"
-  },
-  {
-    "clas":95,
-    "move":4,
-    "label":"MANUFACTURER",
-    "name":"U-MANUFACTURER"
-  },
-  {
-    "clas":96,
+    "clas":76,
     "move":1,
     "label":"WHAT_PHONE_CASE",
     "name":"B-WHAT_PHONE_CASE"
   },
   {
-    "clas":97,
+    "clas":77,
     "move":2,
     "label":"WHAT_PHONE_CASE",
     "name":"I-WHAT_PHONE_CASE"
   },
   {
-    "clas":98,
+    "clas":78,
     "move":3,
     "label":"WHAT_PHONE_CASE",
     "name":"L-WHAT_PHONE_CASE"
   },
   {
-    "clas":99,
+    "clas":79,
     "move":4,
     "label":"WHAT_PHONE_CASE",
     "name":"U-WHAT_PHONE_CASE"
   },
   {
-    "clas":100,
+    "clas":80,
     "move":1,
     "label":"WHAT_RAM",
     "name":"B-WHAT_RAM"
   },
   {
-    "clas":101,
+    "clas":81,
     "move":2,
     "label":"WHAT_RAM",
     "name":"I-WHAT_RAM"
   },
   {
-    "clas":102,
+    "clas":82,
     "move":3,
     "label":"WHAT_RAM",
     "name":"L-WHAT_RAM"
   },
   {
-    "clas":103,
+    "clas":83,
     "move":4,
     "label":"WHAT_RAM",
     "name":"U-WHAT_RAM"
   },
   {
-    "clas":104,
+    "clas":84,
     "move":1,
     "label":"WHAT_ROM",
     "name":"B-WHAT_ROM"
   },
   {
-    "clas":105,
+    "clas":85,
     "move":2,
     "label":"WHAT_ROM",
     "name":"I-WHAT_ROM"
   },
   {
-    "clas":106,
+    "clas":86,
     "move":3,
     "label":"WHAT_ROM",
     "name":"L-WHAT_ROM"
   },
   {
-    "clas":107,
+    "clas":87,
     "move":4,
     "label":"WHAT_ROM",
     "name":"U-WHAT_ROM"
   },
   {
-    "clas":108,
+    "clas":88,
     "move":1,
     "label":"WHAT_INCH",
     "name":"B-WHAT_INCH"
   },
   {
-    "clas":109,
+    "clas":89,
     "move":2,
     "label":"WHAT_INCH",
     "name":"I-WHAT_INCH"
   },
   {
-    "clas":110,
+    "clas":90,
     "move":3,
     "label":"WHAT_INCH",
     "name":"L-WHAT_INCH"
   },
   {
-    "clas":111,
+    "clas":91,
     "move":4,
     "label":"WHAT_INCH",
     "name":"U-WHAT_INCH"
   },
   {
-    "clas":112,
+    "clas":92,
     "move":1,
     "label":"IS_EAR_RABBIT",
     "name":"B-IS_EAR_RABBIT"
   },
   {
-    "clas":113,
+    "clas":93,
     "move":2,
     "label":"IS_EAR_RABBIT",
     "name":"I-IS_EAR_RABBIT"
   },
   {
-    "clas":114,
+    "clas":94,
     "move":3,
     "label":"IS_EAR_RABBIT",
     "name":"L-IS_EAR_RABBIT"
   },
   {
-    "clas":115,
+    "clas":95,
     "move":4,
     "label":"IS_EAR_RABBIT",
     "name":"U-IS_EAR_RABBIT"
   },
   {
-    "clas":116,
-    "move":1,
-    "label":"IS_OVER_FLOW_SCREEN",
-    "name":"B-IS_OVER_FLOW_SCREEN"
-  },
-  {
-    "clas":117,
-    "move":2,
-    "label":"IS_OVER_FLOW_SCREEN",
-    "name":"I-IS_OVER_FLOW_SCREEN"
-  },
-  {
-    "clas":118,
-    "move":3,
-    "label":"IS_OVER_FLOW_SCREEN",
-    "name":"L-IS_OVER_FLOW_SCREEN"
-  },
-  {
-    "clas":119,
-    "move":4,
-    "label":"IS_OVER_FLOW_SCREEN",
-    "name":"U-IS_OVER_FLOW_SCREEN"
-  },
-  {
-    "clas":120,
+    "clas":96,
     "move":1,
     "label":"IS_4G",
     "name":"B-IS_4G"
   },
   {
-    "clas":121,
+    "clas":97,
     "move":2,
     "label":"IS_4G",
     "name":"I-IS_4G"
   },
   {
-    "clas":122,
+    "clas":98,
     "move":3,
     "label":"IS_4G",
     "name":"L-IS_4G"
   },
   {
-    "clas":123,
+    "clas":99,
     "move":4,
     "label":"IS_4G",
     "name":"U-IS_4G"
   },
   {
-    "clas":124,
+    "clas":100,
     "move":1,
     "label":"HOW_NUMBER_SIM",
     "name":"B-HOW_NUMBER_SIM"
   },
   {
-    "clas":125,
+    "clas":101,
     "move":2,
     "label":"HOW_NUMBER_SIM",
     "name":"I-HOW_NUMBER_SIM"
   },
   {
-    "clas":126,
+    "clas":102,
     "move":3,
     "label":"HOW_NUMBER_SIM",
     "name":"L-HOW_NUMBER_SIM"
   },
   {
-    "clas":127,
+    "clas":103,
     "move":4,
     "label":"HOW_NUMBER_SIM",
     "name":"U-HOW_NUMBER_SIM"
   },
   {
-    "clas":128,
-    "move":1,
-    "label":"WHAT_SIM",
-    "name":"B-WHAT_SIM"
-  },
-  {
-    "clas":129,
-    "move":2,
-    "label":"WHAT_SIM",
-    "name":"I-WHAT_SIM"
-  },
-  {
-    "clas":130,
-    "move":3,
-    "label":"WHAT_SIM",
-    "name":"L-WHAT_SIM"
-  },
-  {
-    "clas":131,
-    "move":4,
-    "label":"WHAT_SIM",
-    "name":"U-WHAT_SIM"
-  },
-  {
-    "clas":132,
-    "move":1,
-    "label":"IS_WATER_PROTECTED",
-    "name":"B-IS_WATER_PROTECTED"
-  },
-  {
-    "clas":133,
-    "move":2,
-    "label":"IS_WATER_PROTECTED",
-    "name":"I-IS_WATER_PROTECTED"
-  },
-  {
-    "clas":134,
-    "move":3,
-    "label":"IS_WATER_PROTECTED",
-    "name":"L-IS_WATER_PROTECTED"
-  },
-  {
-    "clas":135,
-    "move":4,
-    "label":"IS_WATER_PROTECTED",
-    "name":"U-IS_WATER_PROTECTED"
-  },
-  {
-    "clas":136,
+    "clas":104,
     "move":1,
     "label":"WHAT_OS",
     "name":"B-WHAT_OS"
   },
   {
-    "clas":137,
+    "clas":105,
     "move":2,
     "label":"WHAT_OS",
     "name":"I-WHAT_OS"
   },
   {
-    "clas":138,
+    "clas":106,
     "move":3,
     "label":"WHAT_OS",
     "name":"L-WHAT_OS"
   },
   {
-    "clas":139,
+    "clas":107,
     "move":4,
     "label":"WHAT_OS",
     "name":"U-WHAT_OS"
   },
   {
-    "clas":140,
+    "clas":108,
     "move":1,
-    "label":"CAN_UPDATE",
-    "name":"B-CAN_UPDATE"
+    "label":"ETC",
+    "name":"B-ETC"
   },
   {
-    "clas":141,
+    "clas":109,
     "move":2,
-    "label":"CAN_UPDATE",
-    "name":"I-CAN_UPDATE"
+    "label":"ETC",
+    "name":"I-ETC"
   },
   {
-    "clas":142,
+    "clas":110,
     "move":3,
-    "label":"CAN_UPDATE",
-    "name":"L-CAN_UPDATE"
+    "label":"ETC",
+    "name":"L-ETC"
   },
   {
-    "clas":143,
+    "clas":111,
     "move":4,
-    "label":"CAN_UPDATE",
-    "name":"U-CAN_UPDATE"
+    "label":"ETC",
+    "name":"U-ETC"
   },
   {
-    "clas":144,
-    "move":1,
-    "label":"VERSION_TO_UPDATE",
-    "name":"B-VERSION_TO_UPDATE"
-  },
-  {
-    "clas":145,
-    "move":2,
-    "label":"VERSION_TO_UPDATE",
-    "name":"I-VERSION_TO_UPDATE"
-  },
-  {
-    "clas":146,
-    "move":3,
-    "label":"VERSION_TO_UPDATE",
-    "name":"L-VERSION_TO_UPDATE"
-  },
-  {
-    "clas":147,
-    "move":4,
-    "label":"VERSION_TO_UPDATE",
-    "name":"U-VERSION_TO_UPDATE"
-  },
-  {
-    "clas":148,
-    "move":1,
-    "label":"IS_VIETNAMESE_INSTALLED",
-    "name":"B-IS_VIETNAMESE_INSTALLED"
-  },
-  {
-    "clas":149,
-    "move":2,
-    "label":"IS_VIETNAMESE_INSTALLED",
-    "name":"I-IS_VIETNAMESE_INSTALLED"
-  },
-  {
-    "clas":150,
-    "move":3,
-    "label":"IS_VIETNAMESE_INSTALLED",
-    "name":"L-IS_VIETNAMESE_INSTALLED"
-  },
-  {
-    "clas":151,
-    "move":4,
-    "label":"IS_VIETNAMESE_INSTALLED",
-    "name":"U-IS_VIETNAMESE_INSTALLED"
-  },
-  {
-    "clas":152,
-    "move":1,
-    "label":"IS_SUPPORT_INSTALLED",
-    "name":"B-IS_SUPPORT_INSTALLED"
-  },
-  {
-    "clas":153,
-    "move":2,
-    "label":"IS_SUPPORT_INSTALLED",
-    "name":"I-IS_SUPPORT_INSTALLED"
-  },
-  {
-    "clas":154,
-    "move":3,
-    "label":"IS_SUPPORT_INSTALLED",
-    "name":"L-IS_SUPPORT_INSTALLED"
-  },
-  {
-    "clas":155,
-    "move":4,
-    "label":"IS_SUPPORT_INSTALLED",
-    "name":"U-IS_SUPPORT_INSTALLED"
-  },
-  {
-    "clas":156,
+    "clas":112,
     "move":1,
     "label":"IS_GLOBAL",
     "name":"B-IS_GLOBAL"
   },
   {
-    "clas":157,
+    "clas":113,
     "move":2,
     "label":"IS_GLOBAL",
     "name":"I-IS_GLOBAL"
   },
   {
-    "clas":158,
+    "clas":114,
     "move":3,
     "label":"IS_GLOBAL",
     "name":"L-IS_GLOBAL"
   },
   {
-    "clas":159,
+    "clas":115,
     "move":4,
     "label":"IS_GLOBAL",
     "name":"U-IS_GLOBAL"
   },
   {
-    "clas":160,
+    "clas":116,
     "move":1,
     "label":"WHAT_CODE",
     "name":"B-WHAT_CODE"
   },
   {
-    "clas":161,
+    "clas":117,
     "move":2,
     "label":"WHAT_CODE",
     "name":"I-WHAT_CODE"
   },
   {
-    "clas":162,
+    "clas":118,
     "move":3,
     "label":"WHAT_CODE",
     "name":"L-WHAT_CODE"
   },
   {
-    "clas":163,
+    "clas":119,
     "move":4,
     "label":"WHAT_CODE",
     "name":"U-WHAT_CODE"
   },
   {
-    "clas":164,
-    "move":1,
-    "label":"WHAT_FROM_TYPE",
-    "name":"B-WHAT_FROM_TYPE"
-  },
-  {
-    "clas":165,
-    "move":2,
-    "label":"WHAT_FROM_TYPE",
-    "name":"I-WHAT_FROM_TYPE"
-  },
-  {
-    "clas":166,
-    "move":3,
-    "label":"WHAT_FROM_TYPE",
-    "name":"L-WHAT_FROM_TYPE"
-  },
-  {
-    "clas":167,
-    "move":4,
-    "label":"WHAT_FROM_TYPE",
-    "name":"U-WHAT_FROM_TYPE"
-  },
-  {
-    "clas":168,
-    "move":1,
-    "label":"IS_BRAND_NEW_OR_LIKE_NEW",
-    "name":"B-IS_BRAND_NEW_OR_LIKE_NEW"
-  },
-  {
-    "clas":169,
-    "move":2,
-    "label":"IS_BRAND_NEW_OR_LIKE_NEW",
-    "name":"I-IS_BRAND_NEW_OR_LIKE_NEW"
-  },
-  {
-    "clas":170,
-    "move":3,
-    "label":"IS_BRAND_NEW_OR_LIKE_NEW",
-    "name":"L-IS_BRAND_NEW_OR_LIKE_NEW"
-  },
-  {
-    "clas":171,
-    "move":4,
-    "label":"IS_BRAND_NEW_OR_LIKE_NEW",
-    "name":"U-IS_BRAND_NEW_OR_LIKE_NEW"
-  },
-  {
-    "clas":172,
-    "move":1,
-    "label":"GAME",
-    "name":"B-GAME"
-  },
-  {
-    "clas":173,
-    "move":2,
-    "label":"GAME",
-    "name":"I-GAME"
-  },
-  {
-    "clas":174,
-    "move":3,
-    "label":"GAME",
-    "name":"L-GAME"
-  },
-  {
-    "clas":175,
-    "move":4,
-    "label":"GAME",
-    "name":"U-GAME"
-  },
-  {
-    "clas":176,
-    "move":1,
-    "label":"HOW_LONG_PIN_PLAYING_GAME",
-    "name":"B-HOW_LONG_PIN_PLAYING_GAME"
-  },
-  {
-    "clas":177,
-    "move":2,
-    "label":"HOW_LONG_PIN_PLAYING_GAME",
-    "name":"I-HOW_LONG_PIN_PLAYING_GAME"
-  },
-  {
-    "clas":178,
-    "move":3,
-    "label":"HOW_LONG_PIN_PLAYING_GAME",
-    "name":"L-HOW_LONG_PIN_PLAYING_GAME"
-  },
-  {
-    "clas":179,
-    "move":4,
-    "label":"HOW_LONG_PIN_PLAYING_GAME",
-    "name":"U-HOW_LONG_PIN_PLAYING_GAME"
-  },
-  {
-    "clas":180,
-    "move":1,
-    "label":"IS_FINE_WHILE_PLAYING",
-    "name":"B-IS_FINE_WHILE_PLAYING"
-  },
-  {
-    "clas":181,
-    "move":2,
-    "label":"IS_FINE_WHILE_PLAYING",
-    "name":"I-IS_FINE_WHILE_PLAYING"
-  },
-  {
-    "clas":182,
-    "move":3,
-    "label":"IS_FINE_WHILE_PLAYING",
-    "name":"L-IS_FINE_WHILE_PLAYING"
-  },
-  {
-    "clas":183,
-    "move":4,
-    "label":"IS_FINE_WHILE_PLAYING",
-    "name":"U-IS_FINE_WHILE_PLAYING"
-  },
-  {
-    "clas":184,
-    "move":1,
-    "label":"WHAT_ELSE_COLOR",
-    "name":"B-WHAT_ELSE_COLOR"
-  },
-  {
-    "clas":185,
-    "move":2,
-    "label":"WHAT_ELSE_COLOR",
-    "name":"I-WHAT_ELSE_COLOR"
-  },
-  {
-    "clas":186,
-    "move":3,
-    "label":"WHAT_ELSE_COLOR",
-    "name":"L-WHAT_ELSE_COLOR"
-  },
-  {
-    "clas":187,
-    "move":4,
-    "label":"WHAT_ELSE_COLOR",
-    "name":"U-WHAT_ELSE_COLOR"
-  },
-  {
-    "clas":188,
+    "clas":120,
     "move":1,
     "label":"CODE",
     "name":"B-CODE"
   },
   {
-    "clas":189,
+    "clas":121,
     "move":2,
     "label":"CODE",
     "name":"I-CODE"
   },
   {
-    "clas":190,
+    "clas":122,
     "move":3,
     "label":"CODE",
     "name":"L-CODE"
   },
   {
-    "clas":191,
+    "clas":123,
     "move":4,
     "label":"CODE",
     "name":"U-CODE"
   },
   {
+    "clas":124,
+    "move":1,
+    "label":"IS_BRAND_NEW_OR_LIKE_NEW",
+    "name":"B-IS_BRAND_NEW_OR_LIKE_NEW"
+  },
+  {
+    "clas":125,
+    "move":2,
+    "label":"IS_BRAND_NEW_OR_LIKE_NEW",
+    "name":"I-IS_BRAND_NEW_OR_LIKE_NEW"
+  },
+  {
+    "clas":126,
+    "move":3,
+    "label":"IS_BRAND_NEW_OR_LIKE_NEW",
+    "name":"L-IS_BRAND_NEW_OR_LIKE_NEW"
+  },
+  {
+    "clas":127,
+    "move":4,
+    "label":"IS_BRAND_NEW_OR_LIKE_NEW",
+    "name":"U-IS_BRAND_NEW_OR_LIKE_NEW"
+  },
+  {
+    "clas":128,
+    "move":1,
+    "label":"GAME",
+    "name":"B-GAME"
+  },
+  {
+    "clas":129,
+    "move":2,
+    "label":"GAME",
+    "name":"I-GAME"
+  },
+  {
+    "clas":130,
+    "move":3,
+    "label":"GAME",
+    "name":"L-GAME"
+  },
+  {
+    "clas":131,
+    "move":4,
+    "label":"GAME",
+    "name":"U-GAME"
+  },
+  {
+    "clas":132,
+    "move":1,
+    "label":"HOW_LONG_PIN_PLAYING_GAME",
+    "name":"B-HOW_LONG_PIN_PLAYING_GAME"
+  },
+  {
+    "clas":133,
+    "move":2,
+    "label":"HOW_LONG_PIN_PLAYING_GAME",
+    "name":"I-HOW_LONG_PIN_PLAYING_GAME"
+  },
+  {
+    "clas":134,
+    "move":3,
+    "label":"HOW_LONG_PIN_PLAYING_GAME",
+    "name":"L-HOW_LONG_PIN_PLAYING_GAME"
+  },
+  {
+    "clas":135,
+    "move":4,
+    "label":"HOW_LONG_PIN_PLAYING_GAME",
+    "name":"U-HOW_LONG_PIN_PLAYING_GAME"
+  },
+  {
+    "clas":136,
+    "move":1,
+    "label":"FEATURE",
+    "name":"B-FEATURE"
+  },
+  {
+    "clas":137,
+    "move":2,
+    "label":"FEATURE",
+    "name":"I-FEATURE"
+  },
+  {
+    "clas":138,
+    "move":3,
+    "label":"FEATURE",
+    "name":"L-FEATURE"
+  },
+  {
+    "clas":139,
+    "move":4,
+    "label":"FEATURE",
+    "name":"U-FEATURE"
+  },
+  {
+    "clas":140,
+    "move":1,
+    "label":"IS_WARRANTY",
+    "name":"B-IS_WARRANTY"
+  },
+  {
+    "clas":141,
+    "move":2,
+    "label":"IS_WARRANTY",
+    "name":"I-IS_WARRANTY"
+  },
+  {
+    "clas":142,
+    "move":3,
+    "label":"IS_WARRANTY",
+    "name":"L-IS_WARRANTY"
+  },
+  {
+    "clas":143,
+    "move":4,
+    "label":"IS_WARRANTY",
+    "name":"U-IS_WARRANTY"
+  },
+  {
+    "clas":144,
+    "move":1,
+    "label":"IF_INCLUDE_TAX",
+    "name":"B-IF_INCLUDE_TAX"
+  },
+  {
+    "clas":145,
+    "move":2,
+    "label":"IF_INCLUDE_TAX",
+    "name":"I-IF_INCLUDE_TAX"
+  },
+  {
+    "clas":146,
+    "move":3,
+    "label":"IF_INCLUDE_TAX",
+    "name":"L-IF_INCLUDE_TAX"
+  },
+  {
+    "clas":147,
+    "move":4,
+    "label":"IF_INCLUDE_TAX",
+    "name":"U-IF_INCLUDE_TAX"
+  },
+  {
+    "clas":148,
+    "move":1,
+    "label":"SALE_OFF_GIFF",
+    "name":"B-SALE_OFF_GIFF"
+  },
+  {
+    "clas":149,
+    "move":2,
+    "label":"SALE_OFF_GIFF",
+    "name":"I-SALE_OFF_GIFF"
+  },
+  {
+    "clas":150,
+    "move":3,
+    "label":"SALE_OFF_GIFF",
+    "name":"L-SALE_OFF_GIFF"
+  },
+  {
+    "clas":151,
+    "move":4,
+    "label":"SALE_OFF_GIFF",
+    "name":"U-SALE_OFF_GIFF"
+  },
+  {
+    "clas":152,
+    "move":1,
+    "label":"IS_NEEDED",
+    "name":"B-IS_NEEDED"
+  },
+  {
+    "clas":153,
+    "move":2,
+    "label":"IS_NEEDED",
+    "name":"I-IS_NEEDED"
+  },
+  {
+    "clas":154,
+    "move":3,
+    "label":"IS_NEEDED",
+    "name":"L-IS_NEEDED"
+  },
+  {
+    "clas":155,
+    "move":4,
+    "label":"IS_NEEDED",
+    "name":"U-IS_NEEDED"
+  },
+  {
+    "clas":156,
+    "move":1,
+    "label":"IS_SALE_OFF_INSTALLMENT",
+    "name":"B-IS_SALE_OFF_INSTALLMENT"
+  },
+  {
+    "clas":157,
+    "move":2,
+    "label":"IS_SALE_OFF_INSTALLMENT",
+    "name":"I-IS_SALE_OFF_INSTALLMENT"
+  },
+  {
+    "clas":158,
+    "move":3,
+    "label":"IS_SALE_OFF_INSTALLMENT",
+    "name":"L-IS_SALE_OFF_INSTALLMENT"
+  },
+  {
+    "clas":159,
+    "move":4,
+    "label":"IS_SALE_OFF_INSTALLMENT",
+    "name":"U-IS_SALE_OFF_INSTALLMENT"
+  },
+  {
+    "clas":160,
+    "move":1,
+    "label":"MANUFACTURER",
+    "name":"B-MANUFACTURER"
+  },
+  {
+    "clas":161,
+    "move":2,
+    "label":"MANUFACTURER",
+    "name":"I-MANUFACTURER"
+  },
+  {
+    "clas":162,
+    "move":3,
+    "label":"MANUFACTURER",
+    "name":"L-MANUFACTURER"
+  },
+  {
+    "clas":163,
+    "move":4,
+    "label":"MANUFACTURER",
+    "name":"U-MANUFACTURER"
+  },
+  {
+    "clas":164,
+    "move":1,
+    "label":"IS_OVER_FLOW_SCREEN",
+    "name":"B-IS_OVER_FLOW_SCREEN"
+  },
+  {
+    "clas":165,
+    "move":2,
+    "label":"IS_OVER_FLOW_SCREEN",
+    "name":"I-IS_OVER_FLOW_SCREEN"
+  },
+  {
+    "clas":166,
+    "move":3,
+    "label":"IS_OVER_FLOW_SCREEN",
+    "name":"L-IS_OVER_FLOW_SCREEN"
+  },
+  {
+    "clas":167,
+    "move":4,
+    "label":"IS_OVER_FLOW_SCREEN",
+    "name":"U-IS_OVER_FLOW_SCREEN"
+  },
+  {
+    "clas":168,
+    "move":1,
+    "label":"WHAT_SIM",
+    "name":"B-WHAT_SIM"
+  },
+  {
+    "clas":169,
+    "move":2,
+    "label":"WHAT_SIM",
+    "name":"I-WHAT_SIM"
+  },
+  {
+    "clas":170,
+    "move":3,
+    "label":"WHAT_SIM",
+    "name":"L-WHAT_SIM"
+  },
+  {
+    "clas":171,
+    "move":4,
+    "label":"WHAT_SIM",
+    "name":"U-WHAT_SIM"
+  },
+  {
+    "clas":172,
+    "move":1,
+    "label":"IS_WATER_PROTECTED",
+    "name":"B-IS_WATER_PROTECTED"
+  },
+  {
+    "clas":173,
+    "move":2,
+    "label":"IS_WATER_PROTECTED",
+    "name":"I-IS_WATER_PROTECTED"
+  },
+  {
+    "clas":174,
+    "move":3,
+    "label":"IS_WATER_PROTECTED",
+    "name":"L-IS_WATER_PROTECTED"
+  },
+  {
+    "clas":175,
+    "move":4,
+    "label":"IS_WATER_PROTECTED",
+    "name":"U-IS_WATER_PROTECTED"
+  },
+  {
+    "clas":176,
+    "move":1,
+    "label":"CAN_UPDATE",
+    "name":"B-CAN_UPDATE"
+  },
+  {
+    "clas":177,
+    "move":2,
+    "label":"CAN_UPDATE",
+    "name":"I-CAN_UPDATE"
+  },
+  {
+    "clas":178,
+    "move":3,
+    "label":"CAN_UPDATE",
+    "name":"L-CAN_UPDATE"
+  },
+  {
+    "clas":179,
+    "move":4,
+    "label":"CAN_UPDATE",
+    "name":"U-CAN_UPDATE"
+  },
+  {
+    "clas":180,
+    "move":1,
+    "label":"VERSION_TO_UPDATE",
+    "name":"B-VERSION_TO_UPDATE"
+  },
+  {
+    "clas":181,
+    "move":2,
+    "label":"VERSION_TO_UPDATE",
+    "name":"I-VERSION_TO_UPDATE"
+  },
+  {
+    "clas":182,
+    "move":3,
+    "label":"VERSION_TO_UPDATE",
+    "name":"L-VERSION_TO_UPDATE"
+  },
+  {
+    "clas":183,
+    "move":4,
+    "label":"VERSION_TO_UPDATE",
+    "name":"U-VERSION_TO_UPDATE"
+  },
+  {
+    "clas":184,
+    "move":1,
+    "label":"IS_VIETNAMESE_INSTALLED",
+    "name":"B-IS_VIETNAMESE_INSTALLED"
+  },
+  {
+    "clas":185,
+    "move":2,
+    "label":"IS_VIETNAMESE_INSTALLED",
+    "name":"I-IS_VIETNAMESE_INSTALLED"
+  },
+  {
+    "clas":186,
+    "move":3,
+    "label":"IS_VIETNAMESE_INSTALLED",
+    "name":"L-IS_VIETNAMESE_INSTALLED"
+  },
+  {
+    "clas":187,
+    "move":4,
+    "label":"IS_VIETNAMESE_INSTALLED",
+    "name":"U-IS_VIETNAMESE_INSTALLED"
+  },
+  {
+    "clas":188,
+    "move":1,
+    "label":"IS_SUPPORT_INSTALLED",
+    "name":"B-IS_SUPPORT_INSTALLED"
+  },
+  {
+    "clas":189,
+    "move":2,
+    "label":"IS_SUPPORT_INSTALLED",
+    "name":"I-IS_SUPPORT_INSTALLED"
+  },
+  {
+    "clas":190,
+    "move":3,
+    "label":"IS_SUPPORT_INSTALLED",
+    "name":"L-IS_SUPPORT_INSTALLED"
+  },
+  {
+    "clas":191,
+    "move":4,
+    "label":"IS_SUPPORT_INSTALLED",
+    "name":"U-IS_SUPPORT_INSTALLED"
+  },
+  {
     "clas":192,
+    "move":1,
+    "label":"WHAT_FROM_TYPE",
+    "name":"B-WHAT_FROM_TYPE"
+  },
+  {
+    "clas":193,
+    "move":2,
+    "label":"WHAT_FROM_TYPE",
+    "name":"I-WHAT_FROM_TYPE"
+  },
+  {
+    "clas":194,
+    "move":3,
+    "label":"WHAT_FROM_TYPE",
+    "name":"L-WHAT_FROM_TYPE"
+  },
+  {
+    "clas":195,
+    "move":4,
+    "label":"WHAT_FROM_TYPE",
+    "name":"U-WHAT_FROM_TYPE"
+  },
+  {
+    "clas":196,
+    "move":1,
+    "label":"IS_FINE_WHILE_PLAYING",
+    "name":"B-IS_FINE_WHILE_PLAYING"
+  },
+  {
+    "clas":197,
+    "move":2,
+    "label":"IS_FINE_WHILE_PLAYING",
+    "name":"I-IS_FINE_WHILE_PLAYING"
+  },
+  {
+    "clas":198,
+    "move":3,
+    "label":"IS_FINE_WHILE_PLAYING",
+    "name":"L-IS_FINE_WHILE_PLAYING"
+  },
+  {
+    "clas":199,
+    "move":4,
+    "label":"IS_FINE_WHILE_PLAYING",
+    "name":"U-IS_FINE_WHILE_PLAYING"
+  },
+  {
+    "clas":200,
+    "move":1,
+    "label":"WHAT_ELSE_COLOR",
+    "name":"B-WHAT_ELSE_COLOR"
+  },
+  {
+    "clas":201,
+    "move":2,
+    "label":"WHAT_ELSE_COLOR",
+    "name":"I-WHAT_ELSE_COLOR"
+  },
+  {
+    "clas":202,
+    "move":3,
+    "label":"WHAT_ELSE_COLOR",
+    "name":"L-WHAT_ELSE_COLOR"
+  },
+  {
+    "clas":203,
+    "move":4,
+    "label":"WHAT_ELSE_COLOR",
+    "name":"U-WHAT_ELSE_COLOR"
+  },
+  {
+    "clas":204,
     "move":1,
     "label":"RAM",
     "name":"B-RAM"
   },
   {
-    "clas":193,
+    "clas":205,
     "move":2,
     "label":"RAM",
     "name":"I-RAM"
   },
   {
-    "clas":194,
+    "clas":206,
     "move":3,
     "label":"RAM",
     "name":"L-RAM"
   },
   {
-    "clas":195,
+    "clas":207,
     "move":4,
     "label":"RAM",
     "name":"U-RAM"
   },
   {
-    "clas":196,
+    "clas":208,
     "move":1,
     "label":"YEAR_OLD",
     "name":"B-YEAR_OLD"
   },
   {
-    "clas":197,
+    "clas":209,
     "move":2,
     "label":"YEAR_OLD",
     "name":"I-YEAR_OLD"
   },
   {
-    "clas":198,
+    "clas":210,
     "move":3,
     "label":"YEAR_OLD",
     "name":"L-YEAR_OLD"
   },
   {
-    "clas":199,
+    "clas":211,
     "move":4,
     "label":"YEAR_OLD",
     "name":"U-YEAR_OLD"
   },
   {
-    "clas":200,
+    "clas":212,
     "move":1,
     "label":"GIAY_TO",
     "name":"B-GIAY_TO"
   },
   {
-    "clas":201,
+    "clas":213,
     "move":2,
     "label":"GIAY_TO",
     "name":"I-GIAY_TO"
   },
   {
-    "clas":202,
+    "clas":214,
     "move":3,
     "label":"GIAY_TO",
     "name":"L-GIAY_TO"
   },
   {
-    "clas":203,
+    "clas":215,
     "move":4,
     "label":"GIAY_TO",
     "name":"U-GIAY_TO"
   },
   {
-    "clas":204,
+    "clas":216,
     "move":1,
     "label":"HOW_MUCH_FIRST_PAY",
     "name":"B-HOW_MUCH_FIRST_PAY"
   },
   {
-    "clas":205,
+    "clas":217,
     "move":2,
     "label":"HOW_MUCH_FIRST_PAY",
     "name":"I-HOW_MUCH_FIRST_PAY"
   },
   {
-    "clas":206,
+    "clas":218,
     "move":3,
     "label":"HOW_MUCH_FIRST_PAY",
     "name":"L-HOW_MUCH_FIRST_PAY"
   },
   {
-    "clas":207,
+    "clas":219,
     "move":4,
     "label":"HOW_MUCH_FIRST_PAY",
     "name":"U-HOW_MUCH_FIRST_PAY"
   },
   {
-    "clas":208,
+    "clas":220,
     "move":1,
     "label":"HOW_MUCH_LEFT",
     "name":"B-HOW_MUCH_LEFT"
   },
   {
-    "clas":209,
+    "clas":221,
     "move":2,
     "label":"HOW_MUCH_LEFT",
     "name":"I-HOW_MUCH_LEFT"
   },
   {
-    "clas":210,
+    "clas":222,
     "move":3,
     "label":"HOW_MUCH_LEFT",
     "name":"L-HOW_MUCH_LEFT"
   },
   {
-    "clas":211,
+    "clas":223,
     "move":4,
     "label":"HOW_MUCH_LEFT",
     "name":"U-HOW_MUCH_LEFT"
   },
   {
-    "clas":212,
+    "clas":224,
     "move":1,
     "label":"IS_SUPPORTED_BUYING_THROUGH_CREDIT",
     "name":"B-IS_SUPPORTED_BUYING_THROUGH_CREDIT"
   },
   {
-    "clas":213,
+    "clas":225,
     "move":2,
     "label":"IS_SUPPORTED_BUYING_THROUGH_CREDIT",
     "name":"I-IS_SUPPORTED_BUYING_THROUGH_CREDIT"
   },
   {
-    "clas":214,
+    "clas":226,
     "move":3,
     "label":"IS_SUPPORTED_BUYING_THROUGH_CREDIT",
     "name":"L-IS_SUPPORTED_BUYING_THROUGH_CREDIT"
   },
   {
-    "clas":215,
+    "clas":227,
     "move":4,
     "label":"IS_SUPPORTED_BUYING_THROUGH_CREDIT",
     "name":"U-IS_SUPPORTED_BUYING_THROUGH_CREDIT"
   },
   {
-    "clas":216,
+    "clas":228,
     "move":1,
     "label":"IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT",
     "name":"B-IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT"
   },
   {
-    "clas":217,
+    "clas":229,
     "move":2,
     "label":"IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT",
     "name":"I-IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT"
   },
   {
-    "clas":218,
+    "clas":230,
     "move":3,
     "label":"IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT",
     "name":"L-IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT"
   },
   {
-    "clas":219,
+    "clas":231,
     "move":4,
     "label":"IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT",
     "name":"U-IS_SUPPORTED_INSTALLMENT_THROUGH_CREDIT"
   },
   {
-    "clas":220,
+    "clas":232,
     "move":1,
     "label":"WHAT_NEEDED_PAPERS",
     "name":"B-WHAT_NEEDED_PAPERS"
   },
   {
-    "clas":221,
+    "clas":233,
     "move":2,
     "label":"WHAT_NEEDED_PAPERS",
     "name":"I-WHAT_NEEDED_PAPERS"
   },
   {
-    "clas":222,
+    "clas":234,
     "move":3,
     "label":"WHAT_NEEDED_PAPERS",
     "name":"L-WHAT_NEEDED_PAPERS"
   },
   {
-    "clas":223,
+    "clas":235,
     "move":4,
     "label":"WHAT_NEEDED_PAPERS",
     "name":"U-WHAT_NEEDED_PAPERS"
   },
   {
-    "clas":224,
+    "clas":236,
     "move":1,
     "label":"IS_BROKEN_GLASS",
     "name":"B-IS_BROKEN_GLASS"
   },
   {
-    "clas":225,
+    "clas":237,
     "move":2,
     "label":"IS_BROKEN_GLASS",
     "name":"I-IS_BROKEN_GLASS"
   },
   {
-    "clas":226,
+    "clas":238,
     "move":3,
     "label":"IS_BROKEN_GLASS",
     "name":"L-IS_BROKEN_GLASS"
   },
   {
-    "clas":227,
+    "clas":239,
     "move":4,
     "label":"IS_BROKEN_GLASS",
     "name":"U-IS_BROKEN_GLASS"
   },
   {
-    "clas":228,
+    "clas":240,
     "move":1,
     "label":"IS_BROKEN_VOLUME",
     "name":"B-IS_BROKEN_VOLUME"
   },
   {
-    "clas":229,
+    "clas":241,
     "move":2,
     "label":"IS_BROKEN_VOLUME",
     "name":"I-IS_BROKEN_VOLUME"
   },
   {
-    "clas":230,
+    "clas":242,
     "move":3,
     "label":"IS_BROKEN_VOLUME",
     "name":"L-IS_BROKEN_VOLUME"
   },
   {
-    "clas":231,
+    "clas":243,
     "move":4,
     "label":"IS_BROKEN_VOLUME",
     "name":"U-IS_BROKEN_VOLUME"
   },
   {
-    "clas":232,
+    "clas":244,
     "move":1,
     "label":"CAN_SELL_BACK",
     "name":"B-CAN_SELL_BACK"
   },
   {
-    "clas":233,
+    "clas":245,
     "move":2,
     "label":"CAN_SELL_BACK",
     "name":"I-CAN_SELL_BACK"
   },
   {
-    "clas":234,
+    "clas":246,
     "move":3,
     "label":"CAN_SELL_BACK",
     "name":"L-CAN_SELL_BACK"
   },
   {
-    "clas":235,
+    "clas":247,
     "move":4,
     "label":"CAN_SELL_BACK",
     "name":"U-CAN_SELL_BACK"
   },
   {
-    "clas":236,
+    "clas":248,
     "move":1,
     "label":"PROCEDURE",
     "name":"B-PROCEDURE"
   },
   {
-    "clas":237,
+    "clas":249,
     "move":2,
     "label":"PROCEDURE",
     "name":"I-PROCEDURE"
   },
   {
-    "clas":238,
+    "clas":250,
     "move":3,
     "label":"PROCEDURE",
     "name":"L-PROCEDURE"
   },
   {
-    "clas":239,
+    "clas":251,
     "move":4,
     "label":"PROCEDURE",
     "name":"U-PROCEDURE"
   },
   {
-    "clas":240,
+    "clas":252,
     "move":1,
     "label":"EXTRA_MONEY",
     "name":"B-EXTRA_MONEY"
   },
   {
-    "clas":241,
+    "clas":253,
     "move":2,
     "label":"EXTRA_MONEY",
     "name":"I-EXTRA_MONEY"
   },
   {
-    "clas":242,
+    "clas":254,
     "move":3,
     "label":"EXTRA_MONEY",
     "name":"L-EXTRA_MONEY"
   },
   {
-    "clas":243,
+    "clas":255,
     "move":4,
     "label":"EXTRA_MONEY",
     "name":"U-EXTRA_MONEY"
   },
   {
-    "clas":244,
+    "clas":256,
     "move":1,
     "label":"BANK",
     "name":"B-BANK"
   },
   {
-    "clas":245,
+    "clas":257,
     "move":2,
     "label":"BANK",
     "name":"I-BANK"
   },
   {
-    "clas":246,
+    "clas":258,
     "move":3,
     "label":"BANK",
     "name":"L-BANK"
   },
   {
-    "clas":247,
+    "clas":259,
     "move":4,
     "label":"BANK",
     "name":"U-BANK"
   },
   {
-    "clas":248,
+    "clas":260,
     "move":1,
     "label":"OTHER",
     "name":"B-OTHER"
   },
   {
-    "clas":249,
+    "clas":261,
     "move":2,
     "label":"OTHER",
     "name":"I-OTHER"
   },
   {
-    "clas":250,
+    "clas":262,
     "move":3,
     "label":"OTHER",
     "name":"L-OTHER"
   },
   {
-    "clas":251,
+    "clas":263,
     "move":4,
     "label":"OTHER",
     "name":"U-OTHER"
   },
   {
-    "clas":252,
+    "clas":264,
     "move":1,
     "label":"WHEN",
     "name":"B-WHEN"
   },
   {
-    "clas":253,
+    "clas":265,
     "move":2,
     "label":"WHEN",
     "name":"I-WHEN"
   },
   {
-    "clas":254,
+    "clas":266,
     "move":3,
     "label":"WHEN",
     "name":"L-WHEN"
   },
   {
-    "clas":255,
+    "clas":267,
     "move":4,
     "label":"WHEN",
     "name":"U-WHEN"
   },
   {
-    "clas":256,
+    "clas":268,
     "move":1,
     "label":"PRICE_OF_OLD_PHONE",
     "name":"B-PRICE_OF_OLD_PHONE"
   },
   {
-    "clas":257,
+    "clas":269,
     "move":2,
     "label":"PRICE_OF_OLD_PHONE",
     "name":"I-PRICE_OF_OLD_PHONE"
   },
   {
-    "clas":258,
+    "clas":270,
     "move":3,
     "label":"PRICE_OF_OLD_PHONE",
     "name":"L-PRICE_OF_OLD_PHONE"
   },
   {
-    "clas":259,
+    "clas":271,
     "move":4,
     "label":"PRICE_OF_OLD_PHONE",
     "name":"U-PRICE_OF_OLD_PHONE"
   },
   {
-    "clas":260,
+    "clas":272,
     "move":1,
     "label":"PHONE_TYPE",
     "name":"B-PHONE_TYPE"
   },
   {
-    "clas":261,
+    "clas":273,
     "move":2,
     "label":"PHONE_TYPE",
     "name":"I-PHONE_TYPE"
   },
   {
-    "clas":262,
+    "clas":274,
     "move":3,
     "label":"PHONE_TYPE",
     "name":"L-PHONE_TYPE"
   },
   {
-    "clas":263,
+    "clas":275,
     "move":4,
     "label":"PHONE_TYPE",
     "name":"U-PHONE_TYPE"
   },
   {
-    "clas":264,
+    "clas":276,
     "move":1,
     "label":"Phone",
     "name":"B-Phone"
   },
   {
-    "clas":265,
+    "clas":277,
     "move":2,
     "label":"Phone",
     "name":"I-Phone"
   },
   {
-    "clas":266,
+    "clas":278,
     "move":3,
     "label":"Phone",
     "name":"L-Phone"
   },
   {
-    "clas":267,
+    "clas":279,
     "move":4,
     "label":"Phone",
     "name":"U-Phone"
   },
   {
-    "clas":268,
+    "clas":280,
     "move":1,
     "label":"PHOTO",
     "name":"B-PHOTO"
   },
   {
-    "clas":269,
+    "clas":281,
     "move":2,
     "label":"PHOTO",
     "name":"I-PHOTO"
   },
   {
-    "clas":270,
+    "clas":282,
     "move":3,
     "label":"PHOTO",
     "name":"L-PHOTO"
   },
   {
-    "clas":271,
+    "clas":283,
     "move":4,
     "label":"PHOTO",
     "name":"U-PHOTO"
   },
   {
-    "clas":272,
+    "clas":284,
     "move":1,
     "label":"ASK_OLD_PHONE",
     "name":"B-ASK_OLD_PHONE"
   },
   {
-    "clas":273,
+    "clas":285,
     "move":2,
     "label":"ASK_OLD_PHONE",
     "name":"I-ASK_OLD_PHONE"
   },
   {
-    "clas":274,
+    "clas":286,
     "move":3,
     "label":"ASK_OLD_PHONE",
     "name":"L-ASK_OLD_PHONE"
   },
   {
-    "clas":275,
+    "clas":287,
     "move":4,
     "label":"ASK_OLD_PHONE",
     "name":"U-ASK_OLD_PHONE"
   },
   {
-    "clas":276,
-    "move":1,
-    "label":"CHIP",
-    "name":"B-CHIP"
-  },
-  {
-    "clas":277,
-    "move":2,
-    "label":"CHIP",
-    "name":"I-CHIP"
-  },
-  {
-    "clas":278,
-    "move":3,
-    "label":"CHIP",
-    "name":"L-CHIP"
-  },
-  {
-    "clas":279,
-    "move":4,
-    "label":"CHIP",
-    "name":"U-CHIP"
-  },
-  {
-    "clas":280,
+    "clas":288,
     "move":5,
     "label":"",
     "name":"O"
