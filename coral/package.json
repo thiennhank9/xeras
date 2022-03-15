@@ -143,7 +143,7 @@
     "kue": "0.11.6",
     "linkify-it": "^2.0.3",
     "lodash": "^4.17.10",
-    "lodash-es": "^4.17.10",
+    "lodash-es": "^4.17.21",
     "marked": "^0.3.6",
     "material-design-lite": "^1.2.1",
     "metascraper": "^3.9.2",
