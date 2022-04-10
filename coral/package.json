@@ -152,7 +152,7 @@
     "metascraper-description": "^3.9.2",
     "metascraper-image": "^3.9.2",
     "metascraper-title": "^3.9.2",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.6",
     "moment": "^2.18.1",
     "mongoose": "^5.2.1",
     "ms": "^2.0.0",
